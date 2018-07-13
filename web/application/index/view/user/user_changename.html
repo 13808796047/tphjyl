@@ -1,0 +1,40 @@
+﻿
+<link rel="stylesheet" href="__CSS__/default_content.min.css">
+
+<div class="content_mid">
+<form action="" method="post" name="updateform" class="form section">
+<input type="hidden" name="flag" value="update" />
+<input type="hidden" name="controller" value="user" />
+<input type="hidden" name="action"	value="changename" />
+<input type="hidden" name="flag" value="update" />
+            <table class="not-table">
+              <tr class="field">
+                <td><label>昵称修改</label></td>
+                <td></td>
+              </tr>
+              <tr class="field">
+                <td><label>用户昵称</label></th>
+                <td><input type="text" name="nickname" value="{$nickname}" class="custom_input" /> <span class="green1">(由2至6个字符组成)</span></td>
+              </tr>
+            </table>
+            <input name="" type="submit" value="保存" class="formChange btn" />
+            <input name="" type="reset" value="重置" class="formReset alert_btn"  onclick="form.reset()"/>
+        </form>
+</div>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script>
+  function changeIframeHeight(height){
+    var parentDOM = $(parent.document);
+    var grandparentDOM = $(parent.parent.document);
+    parentDOM.find("#mainFrame_menu").height(height);
+    grandparentDOM.find("#mainFrame").height($(parent.document).find(".ys-content").outerHeight(true));
+  }
+  $(function(){
+    changeIframeHeight($(".content_mid").outerHeight(true) + 200);
+    if(window.parent.parent){
+    	$(window.parent.parent.document).find(".user-name").text("您好,"+$(".custom_input").val());
+    }
+  })
+</script>
+</body>
+</html>

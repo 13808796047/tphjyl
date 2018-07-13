@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:esun="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>皇家娱乐平台 - 历史号码走势</title>
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <script type="text/javascript" async="" src="__JS__/chart/ga.js"></script>
+    <script>var pri_imgserver = 'http://img.cg070.net';</script>
+    <link href="__CSS__/chart/all.css" rel="stylesheet" type="text/css">
+    <link href="__CSS__/chart/calendar-blue2.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="__JS__/chart/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="__JS__/chart/common.js"></script>
+    <script language="javascript" type="text/javascript" src="__JS__/chart/message.js"></script>
+    <script language="javascript" type="text/javascript" src="__JS__/chart/jquery.dyndatetime.js"></script>
+    <script language="javascript" type="text/javascript" src="__JS__/chart/calendar-utf8.js"></script>
+    <script language="javascript" type="text/javascript" src="__JS__/chart/line.js"></script>
+    <script language="JavaScript">function ResumeError() {
+        return true;
+    }
+    window.onerror = ResumeError; </script>
+</head>
+<body>
+<div id="rightcon">
+    <script language="javascript">
+        fw.onReady(function () {
+            if ($("#chartsTable").width() > $('body').width()) {
+                $('body').width(($("#chartsTable").width() + 30) + "px");
+                $('.history_code').css("width", $("#chartsTable").width() + "px");
+                $('#copyright').css("width", $("#chartsTable").width() + "px");
+            }
+            Chart.init();
+            DrawLine.bind("chartsTable", "has_line");
+
+            DrawLine.color('#FFAAAA');
+            DrawLine.add((parseInt(0) * 10 + 5 + 1 + 5), 2, 10, 0);
+            DrawLine.color('#B9B9FF');
+            DrawLine.add((parseInt(1) * 10 + 5 + 1 + 5), 2, 10, 0);
+            DrawLine.color('#FFAAAA');
+            DrawLine.add((parseInt(2) * 10 + 5 + 1 + 5), 2, 10, 0);
+            DrawLine.color('#B9B9FF');
+            DrawLine.add((parseInt(3) * 10 + 5 + 1 + 5), 2, 10, 0);
+            DrawLine.color('#FFAAAA');
+            DrawLine.add((parseInt(4) * 10 + 5 + 1 + 5), 2, 10, 0);
+            DrawLine.color('#FFAAAA');
+            DrawLine.add((parseInt(5) * 10 + 5 + 1 + 5), 2, 10, 0);
+            DrawLine.color('#FFAAAA');
+            DrawLine.add((parseInt(6) * 10 + 5 + 1 + 5), 2, 10, 0);
+            DrawLine.color('#FFAAAA');
+            DrawLine.add((parseInt(7) * 10 + 5 + 1 + 5), 2, 10, 0);
+            DrawLine.color('#FFAAAA');
+            DrawLine.add((parseInt(8) * 10 + 5 + 1 + 5), 2, 10, 0);
+            DrawLine.color('#FFAAAA');
+            DrawLine.add((parseInt(9) * 10 + 5 + 1 + 5), 2, 10, 0);
+            DrawLine.draw(Chart.ini.default_has_line);
+            resize();
+            jQuery("#starttime").dynDateTime({
+                ifFormat: "%Y-%m-%d",
+                daFormat: "%l;%M %p, %e %m,  %Y",
+                align: "Br",
+                electric: true,
+                singleClick: true,
+                button: ".next()", //next sibling
+                onUpdate: function () {
+                    $("#starttime").change();
+                },
+                showOthers: true,
+                weekNumbers: true,
+                showsTime: false
+            });
+            jQuery("#starttime").change(function () {
+                if (!validateInputDate(jQuery("#starttime").val())) {
+                    jQuery("#starttime").val('');
+                    $.alert("日期格式不正确,正确的格式为:2011-01-01");
+                }
+                if ($("#endtime").val() != "") {
+                    if ($("#starttime").val() > $("#endtime").val()) {
+                        $("#starttime").val("");
+                        $.alert("输入的时间不符合逻辑, 起始时间大于结束时间");
+                    }
+                    else {
+                        if (daysBetween($("#starttime").val(), $("#endtime").val()) > 1) {
+                            $("#starttime").val("");
+                            $.alert("输入的时间跨度不能超过2天！");
+                        }
+                    }
+                }
+            });
+            jQuery("#endtime").dynDateTime({
+                ifFormat: "%Y-%m-%d",
+                daFormat: "%l;%M %p, %e %m,  %Y",
+                align: "Br",
+                electric: true,
+                singleClick: true,
+                button: ".next()", //next sibling
+                onUpdate: function () {
+                    $("#endtime").change();
+                },
+                showOthers: true,
+                weekNumbers: true,
+                showsTime: false
+            });
+            jQuery("#endtime").change(function () {
+                if (!validateInputDate(jQuery("#endtime").val())) {
+                    jQuery("#endtime").val('');
+                    $.alert("日期格式不正确,正确的格式为:2011-01-01");
+                }
+                if ($("#starttime").val() != "") {
+                    if ($("#starttime").val() > $("#endtime").val()) {
+                        $("#endtime").val("");
+                        $.alert("输入的时间不符合逻辑, 起始时间大于结束时间");
+                    }
+                    else {
+                        if (daysBetween($("#starttime").val(), $("#endtime").val()) > 1) {
+                            $("#endtime").val("");
+                            $.alert("输入的时间跨度不能超过2天！");
+                        }
+                    }
+                }
+            });
+            var nols = $("div[class^='ball1']");
+            $("#no_miss").click(function () {
+                var checked = $(this).attr("checked");
+                $.each(nols, function (i, n) {
+                    if (checked == true) {
+                        n.style.display = 'none';
+                    } else {
+                        n.style.display = 'block';
+                    }
+                });
+            });
+        });
+        function resize() {
+            window.onresize = func;
+            function func() {
+                window.location.href = window.location.href;
+            }
+        }
+        function daysBetween(start, end) {
+            var startY = start.substring(0, start.indexOf('-'));
+            var startM = start.substring(start.indexOf('-') + 1, start.lastIndexOf('-'));
+            var startD = start.substring(start.lastIndexOf('-') + 1, start.length);
+
+            var endY = end.substring(0, end.indexOf('-'));
+            var endM = end.substring(end.indexOf('-') + 1, end.lastIndexOf('-'));
+            var endD = end.substring(end.lastIndexOf('-') + 1, end.length);
+
+            var val = (Date.parse(endY + '/' + endM + '/' + endD) - Date.parse(startY + '/' + startM + '/' + startD)) / 86400000;
+            return Math.abs(val);
+        }
+    </script>
+    <style>
+        esun\: * {
+            behavior: url(#default#VML)
+        }
+    </style>
+    <div class="rc_con history">
+        <div class="rc_con_lt"></div>
+        <div class="rc_con_rt"></div>
+        <div class="rc_con_lb"></div>
+        <div class="rc_con_rb"></div>
+        <h5>
+            <div class="rc_con_title" style="background-color: #045750;color: #FFFFFF">皇家娱乐 - {$type_name}历史号码走势</div>
+        </h5>
+        <div class="rc_con_to">
+            <div class="rc_con_ti">
+                <div class="history_code">
+                    <table width="100%" id="tm" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                        <tr>
+                            <td align="left" width="200">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>
+                                    <font color="#FF0000">彩票：</font>
+                                    基本走势
+                                </strong>
+                            </td>
+                            <td align="left">
+                                <form method="POST">
+                                <span>
+                                    <label for="has_line">
+                                        <input type="checkbox" name="checkbox2" value="checkbox" id="has_line">显示折线
+                                    </label>
+                                </span>&nbsp;
+                                    <span>
+                                    <label for="no_miss">
+                                        <input type="checkbox" name="checkbox" value="checkbox" id="no_miss">不带遗漏
+                                    </label>
+                                </span>&nbsp;&nbsp;&nbsp;
+                                    <a href="{:url('/newgame_trend_pk10?type='.$type.'&issuecount=30'.'&type_name='.$type_name)}">最近30期</a>&nbsp;
+                                    <a href="{:url('/newgame_trend_pk10?type='.$type.'&issuecount=50'.'&type_name='.$type_name)}">最近50期</a>&nbsp;
+                                    <a href="{:url('/newgame_trend_pk10?type='.$type.'&issuecount=100'.'&type_name='.$type_name)}">最近100期</a>&nbsp;
+                                    <a href="{:url('/newgame_trend_pk10?type='.$type.'&issuecount=300'.'&type_name='.$type_name)}">最近300期</a>&nbsp;
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="hrc_list">
+                    <div class="hrl_list">
+                        <table id="chartsTable" style="border: 0px;" width="100%" border="0" cellpadding="0" cellspacing="1">
+                            <tbody>
+                            <tr class="th">
+                                <td rowspan="2" style="border-right: #cccccc 1px solid">期号</td>
+                                <td rowspan="2" style="border-right: #cccccc 1px solid" colspan="10">开奖号码</td>
+                                <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">冠军</td>
+                                <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">亚军</td>
+                                <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第三名</td>
+                                <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第四名</td>
+                                <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第五名</td>
+                                <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第六名</td>
+                                <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第七名</td>
+                                <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第八名</td>
+                                <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第九名</td>
+                                <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第十名</td>
+                                <!-- <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">号码分布</td> -->
+                            </tr>
+                            <tr class='th'>
+                                <?php
+                                for ($i = 0; $i < $ns; $i++) {
+                                    for ($ii = $ntx; $ii <= $ntd; $ii++) {
+                                        if($ii == 10 && $i < 10){
+                                            echo "<td class='wdh'  style='border-right: #cccccc 1px solid'>$ii</td>";
+                                        }else{
+                                            echo "<td class='wdh'>$ii</td>";
+                                        }
+                                    }
+                                }
+                                ?>
+                            </tr>
+
+                            <?php
+for ($i = 0; $i <= $nts; $i++) {
+    $s[$i] = 0;
+    $a[$i] = 0;
+    $b[$i] = 0;
+    $c[$i] = 0;
+    $d[$i] = 0;
+}
+
+foreach ($rs as $row) {
+    $na = array();
+    $na2 = array();
+    $na2 = explode(',', $row['data']);
+    $na[1] = $na2[0];
+    $na[2] = $na2[1];
+    $na[3] = $na2[2];
+    $na[4] = $na2[3];
+    $na[5] = $na2[4];
+    $na[6] = $na2[5];
+    $na[7] = $na2[6];
+    $na[8] = $na2[7];
+    $na[9] = $na2[8];
+    $na[10] = $na2[9];
+    for ($i = 0; $i <= $nts; $i++) {
+        $a[$i] = $a[$i] + 1;
+        $c[$i] = $c[$i] + 1;
+        if ($b[$i] < $a[$i]) {
+            $b[$i] = $a[$i];
+        }
+        if ($d[$i] < $c[$i]) {
+            $d[$i] = $c[$i];
+        }
+    }
+    ?>
+                            <td class="issue" style="display: block;width: 80px;border-right: #cccccc 1px solid"><?php echo substr($row['number'], 0);?></td>
+                            <td align="center" width="60">
+                                <div class="wth1 kjcode"><?php echo $na[1];?></div>
+                            </td>
+                            <td align="center" width="30">
+                                <div class="wth1 kjcode"><?php echo $na[2];?></div>
+                            </td>
+                            <td align="center" width="30">
+                                <div class="wth1 kjcode"><?php echo $na[3];?></div>
+                            </td>
+                            <td align="center" width="30">
+                                <div class="wth1 kjcode"><?php echo $na[4];?></div>
+                            </td>
+                            <td align="center" width="30">
+                                <div class="wth1 kjcode"><?php echo $na[5];?></div>
+                            </td>
+                            <td align="center" width="30">
+                                <div class="wth1 kjcode"><?php echo $na[6];?></div>
+                            </td>
+                            <td align="center" width="30">
+                                <div class="wth1 kjcode"><?php echo $na[7];?></div>
+                            </td>
+                            <td align="center" width="30">
+                                <div class="wth1 kjcode"><?php echo $na[8];?></div>
+                            </td>
+                            <td align="center" width="30">
+                                <div class="wth1 kjcode"><?php echo $na[9];?></div>
+                            </td>
+                            <td align="center" width="30" style="border-right: #cccccc 1px solid">
+                                <div class="wth1 kjcode"><?php echo $na[10];?></div>
+                            </td>
+
+                            <?php
+                            $iii = 0;
+                            for ($i = 0; $i < $ns; $i++) {
+                                for ($ii = $ntx; $ii <= $ntd; $ii++) {
+                                    $iii = $iii + 1;
+                                    if($i < 10){
+                                        if ($na[$i + 1] == $ii) {
+                                            if($ii == 10){
+                                                echo "<td class='charball td<?={$i}%2?>' style='border-right: #cccccc 1px solid' id='callBall$i$ii' align='center'><div class='ball0" . ($i % 2 + 1) . '\'>' . $na[$i + 1] . '</div>';
+                                            }else{
+                                                echo "<td class='charball td<?={$i}%2?>' id='callBall$i$ii' align='center'><div class='ball0" . ($i % 2 + 1) . '\'>' . $na[$i + 1] . '</div>';
+                                            }
+                                            $a[$iii] = 0;
+                                            $s[$iii] = $s[$iii] + 1;
+                                        } else {
+                                            if($ii == 10){
+                                                echo "<td class='wdh td<?={$i}%2?>' style='border-right: #cccccc 1px solid' align='center'><div class='ball13'>" . $a[$iii] . '</div>';
+                                            }else{
+                                                echo "<td class='wdh td<?={$i}%2?>' align='center'><div class='ball13'>" . $a[$iii] . '</div>';
+                                            }
+                                            $c[$iii] = 0;
+                                        }
+                                    }else{
+                                        if(strlen($ii) == 1){
+                                            $ii = '0'.(string)$ii;
+                                        }
+                                        $strCount = substr_count($row['data'],$ii);
+                                        if($strCount == 1){
+                                            echo "<td class='wdh td<?={$i}%2?>' align='center'><div class='ball01'>" . $ii . '</div>';
+                                            $a[$iii] = 0;
+                                            $s[$iii] = $s[$iii] + $strCount;
+                                        }else{
+                                            echo "<td class='wdh td<?={$i}%2?>' align='center'><div class='ball13'>" . $a[$iii] . '</div>';
+                                            $c[$iii] = 0;
+                                        }
+                                    }
+                            ?>
+                    <?php
+        }
+    }
+    ?>
+                    </tr>
+                    <?php
+}
+?>
+
+
+                    <tr class=tb>
+                        <td nowrap style='border-right: #cccccc 1px solid'>出现总次数</td>
+                        <td style='border-right: #cccccc 1px solid' align="center" colspan="<?php echo $ns;?>">&nbsp;</td>
+                        <?php
+                        for ($i = 1; $i <= $nts; $i++) {
+                            if(in_array($i,[10,20,30,40,50,60,70,80,90,100])){
+                                echo "<td align='center' style='border-right: #cccccc 1px solid'>".$s[$i]."</td>";
+                            }else{
+                                echo "<td align='center'>".$s[$i]."</td>";
+                            }
+                        }
+                        ?>
+                    </tr>
+                    <tr class=tb>
+                        <td nowrap style='border-right: #cccccc 1px solid'>平均遗漏值</td>
+                        <td style='border-right: #cccccc 1px solid' align="center" colspan="<?php echo $ns;?>">&nbsp;</td>
+                        <?php
+                        for ($i = 1; $i <= $nts; $i++) {
+                            if ($s[$i] == 0) {
+                                $av = $total;
+                            } else {
+                                $av = intval($total / $s[$i]);
+                            }
+
+                            if(in_array($i,[10,20,30,40,50,60,70,80,90,100])){
+                                echo "<td align='center' style='border-right: #cccccc 1px solid'>".$av."</td>";
+                            }else{
+                                echo "<td align='center'>".$av."</td>";
+                            }
+                        }
+                        ?>
+                    </tr>
+                    <tr class=tb>
+                        <td nowrap style='border-right: #cccccc 1px solid'>最大遗漏值</td>
+                        <td style='border-right: #cccccc 1px solid' align="center" colspan="<?php echo $ns;?>">&nbsp;</td>
+                        <?php
+                        for ($i = 1; $i <= $nts; $i++) {
+                            if ($b[$i] - 1 < $a[$i]) {
+                                $bv = $a[$i];
+                            } else {
+                                $bv = $b[$i] - 1;
+                            }
+                            if(in_array($i,[10,20,30,40,50,60,70,80,90,100])){
+                                echo "<td align='center' style='border-right: #cccccc 1px solid'>".$bv."</td>";
+                            }else{
+                                echo "<td align='center'>".$bv."</td>";
+                            }
+                        }
+                        ?>
+                    </tr>
+
+                    <tr class=tb>
+                        <td nowrap style='border-right: #cccccc 1px solid'>最大连出值</td>
+                        <td style='border-right: #cccccc 1px solid' align="center" colspan="<?php echo $ns;?>">&nbsp;</td>
+                        <?php
+                        for ($i = 1; $i <= $nts; $i++) {
+                            if ($d[$i] - 1 < $c[$i]) {
+                                $dv = $c[$i];
+                            } else {
+                                $dv = $d[$i] - 1;
+                            }
+                            if(in_array($i,[10,20,30,40,50,60,70,80,90,100])){
+                                echo "<td align='center' style='border-right: #cccccc 1px solid'>".$dv."</td>";
+                            }else{
+                                echo "<td align='center'>".$dv."</td>";
+                            }
+                        }
+                        ?>
+                    </tr>
+
+                    
+                    <tr class='th'>
+                        <td rowspan="2" style='border-right: #cccccc 1px solid'>期号</td>
+                        <td rowspan="2" colspan="10" style='border-right: #cccccc 1px solid'>开奖号码</td>
+                        <?php
+                            for ($i = 0; $i < $ns; $i++) {
+                                for ($ii = $ntx; $ii <= $ntd; $ii++) {
+                                    if($ii == 10 && $i < 10){
+                                        echo "<td class='wdh'  style='border-right: #cccccc 1px solid'>$ii</td>";
+                                    }else{
+                                    echo "<td class='wdh'>$ii</td>";
+                                    }
+                                }
+                            }
+                        ?>
+                    </tr>
+                    <tr class="th">
+                        <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">冠军</td>
+                        <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">亚军</td>
+                        <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第三名</td>
+                        <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第四名</td>
+                        <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第五名</td>
+                        <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第六名</td>
+                        <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第七名</td>
+                        <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第八名</td>
+                        <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第九名</td>
+                        <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">第十名</td>
+                        <!-- <td colspan="<?php echo $ntn;?>" style="border-right: #cccccc 1px solid">号码分布</td> -->
+                    </tr>
+                    </tbody></table>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div id="copyright">
+    <p>浏览器建议：首选IE 8.0,Chrome浏览器，其次为火狐浏览器,尽量不要使用IE6。</p>
+</div>
+</div>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36352852-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var hidenotice = getCookie("hidenotice");
+        if (hidenotice != 1) {
+            var $bn = $("#bonusnotice", window.top.document);
+            var $mainbox = $("#mainbox", window.top.document);
+            var $leftbox = $("#leftbox", window.top.document);
+            $mainbox.height($leftbox.height() - 35);
+            $bn.css("height", "35px");
+        }
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<canvas width="15" height="14" style="position: absolute; visibility: visible; top: 180px; left: 325px;"></canvas>
+<canvas width="15" height="14" style="position: absolute; visibility: visible; top: 206px; left: 352px;"></canvas>
+<canvas width="15" height="14" style="position: absolute; visibility: visible; top: 232px; left: 352px;"></canvas>
+<canvas width="105" height="22" style="position: absolute; visibility: visible; top: 254px; left: 233px;"></canvas>
+<canvas width="172" height="24" style="position: absolute; visibility: visible; top: 279px; left: 233px;"></canvas>
+<canvas width="118" height="22" style="position: absolute; visibility: visible; top: 306px; left: 287px;"></canvas>
+<canvas width="26" height="18" style="position: absolute; visibility: visible; top: 334px; left: 286px;"></canvas>
+<canvas width="53" height="20" style="position: absolute; visibility: visible; top: 359px; left: 259px;"></canvas>
+<canvas width="78" height="22" style="position: absolute; visibility: visible; top: 384px; left: 260px;"></canvas>
+<canvas width="105" height="22" style="position: absolute; visibility: visible; top: 176px; left: 501px;"></canvas>
+<canvas width="15" height="14" style="position: absolute; visibility: visible; top: 206px; left: 620px;"></canvas>
+<canvas width="40" height="20" style="position: absolute; visibility: visible; top: 229px; left: 594px;"></canvas>
+<canvas width="15" height="14" style="position: absolute; visibility: visible; top: 258px; left: 593px;"></canvas>
+<canvas width="145" height="24" style="position: absolute; visibility: visible; top: 279px; left: 461px;"></canvas>
+<canvas width="53" height="20" style="position: absolute; visibility: visible; top: 307px; left: 460px;"></canvas>
+<canvas width="15" height="14" style="position: absolute; visibility: visible; top: 336px; left: 526px;"></canvas>
+<canvas width="78" height="22" style="position: absolute; visibility: visible; top: 358px; left: 555px;"></canvas>
+<canvas width="40" height="20" style="position: absolute; visibility: visible; top: 385px; left: 594px;"></canvas>
+<canvas width="2" height="10" style="position: absolute; visibility: visible; top: 182px; left: 734px;"></canvas>
+<canvas width="90" height="22" style="position: absolute; visibility: visible; top: 202px; left: 742px;"></canvas>
+<canvas width="90" height="22" style="position: absolute; visibility: visible; top: 228px; left: 742px;"></canvas>
+<canvas width="26" height="18" style="position: absolute; visibility: visible; top: 256px; left: 701px;"></canvas>
+<canvas width="2" height="10" style="position: absolute; visibility: visible; top: 286px; left: 694px;"></canvas>
+<canvas width="90" height="22" style="position: absolute; visibility: visible; top: 306px; left: 702px;"></canvas>
+<canvas width="90" height="22" style="position: absolute; visibility: visible; top: 332px; left: 702px;"></canvas>
+<canvas width="90" height="22" style="position: absolute; visibility: visible; top: 358px; left: 702px;"></canvas>
+<canvas width="2" height="10" style="position: absolute; visibility: visible; top: 390px; left: 800px;"></canvas>
+<canvas width="53" height="20" style="position: absolute; visibility: visible; top: 177px; left: 874px;"></canvas>
+<canvas width="172" height="24" style="position: absolute; visibility: visible; top: 201px; left: 875px;"></canvas>
+<canvas width="78" height="22" style="position: absolute; visibility: visible; top: 228px; left: 969px;"></canvas>
+<canvas width="53" height="20" style="position: absolute; visibility: visible; top: 255px; left: 901px;"></canvas>
+<canvas width="91" height="22" style="position: absolute; visibility: visible; top: 280px; left: 902px;"></canvas>
+<canvas width="118" height="22" style="position: absolute; visibility: visible; top: 306px; left: 875px;"></canvas>
+<canvas width="145" height="24" style="position: absolute; visibility: visible; top: 331px; left: 875px;"></canvas>
+<canvas width="53" height="20" style="position: absolute; visibility: visible; top: 359px; left: 968px;"></canvas>
+<canvas width="53" height="20" style="position: absolute; visibility: visible; top: 385px; left: 901px;"></canvas>
+<canvas width="42" height="20" style="position: absolute; visibility: visible; top: 177px; left: 1213px;"></canvas>
+<canvas width="2" height="10" style="position: absolute; visibility: visible; top: 208px; left: 1206px;"></canvas>
+<canvas width="2" height="10" style="position: absolute; visibility: visible; top: 234px; left: 1206px;"></canvas>
+<canvas width="82" height="22" style="position: absolute; visibility: visible; top: 254px; left: 1116px;"></canvas>
+<canvas width="82" height="22" style="position: absolute; visibility: visible; top: 280px; left: 1116px;"></canvas>
+<canvas width="42" height="20" style="position: absolute; visibility: visible; top: 307px; left: 1213px;"></canvas>
+<canvas width="16" height="16" style="position: absolute; visibility: visible; top: 335px; left: 1240px;"></canvas>
+<canvas width="82" height="22" style="position: absolute; visibility: visible; top: 358px; left: 1144px;"></canvas>
+<canvas width="82" height="22" style="position: absolute; visibility: visible; top: 384px; left: 1144px;"></canvas>
+</body>
+</html>

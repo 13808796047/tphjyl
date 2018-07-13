@@ -1,0 +1,223 @@
+﻿
+<!--消息框代码开始-->
+<link rel="stylesheet" href="http://upccry1.3smao.net/sy2/css/themes/base/jquery.ui.all.css">
+
+<link rel="stylesheet" type="text/css" href="http://upccry1.3smao.net/sy2/css/chosen.new.min.css"/>
+<link rel="stylesheet" href="http://upccry1.3smao.net/sy2/css/default_content.min.css">
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/js/jquery-1.9.1.js"></script>
+<link rel="stylesheet" href="http://upccry1.3smao.net/sy2/css/themes/base/jquery.ui.all.min.css">
+<link rel="stylesheet" type="text/css" href="http://upccry1.3smao.net/sy2/css/chosen.new.min.css"/>
+<link rel="stylesheet" href="http://upccry1.3smao.net/sy2/css/default_contentmin.min.css">
+<script type="text/javascript" src="/sy2/js/chosen.new.jquery.js" ></script>
+<script src="http://upccry1.3smao.net/sy2/js/ui/jquery.ui.core.js"></script>
+<script src="http://upccry1.3smao.net/sy2/js/ui/jquery.ui.widget.js"></script>
+<script src="http://upccry1.3smao.net/sy2/js/ui/jquery.ui.tabs.js"></script>
+
+
+
+
+
+<!--消息框代码结束-->
+
+<script type="text/javascript">
+function changeIframeHeight(height){
+  var parentDOM = $(parent.document);
+  var grandparentDOM = $(parent.parent.document);
+  parentDOM.find("#mainFrame_menu").height(height);
+  grandparentDOM.find("#mainFrame").height($(parent.document).find(".ys-content").outerHeight(true));
+}
+function ajaxtransfer(){
+	var newsecpass=$("#newsecpass").val();
+	$.ajax({
+                type : 'POST',
+                url  : './user_retrievesepas.html',
+                data : 'flag=gener&newsecpass='+newsecpass,
+                timeout : 10000,
+                success : function(data){
+                        if( data == "error" ){//
+                                 $("#showmes").html("<font color='#FF0000'>读取数据出错</font>");
+                                return false;
+                        }else{
+                                switch(data){
+                                        case '0':
+                                                $.alert('资金密码修改失败，新密码可能和原来密码一样');
+                                                break;
+                                        case '-1':
+                                                $.alert('资金密码不能和登陆密码一样!');
+                                                break;
+                                        default :
+                                                $.alert('资金密码修改成功');
+                                                break;
+                                }
+
+                        }
+                },
+                error: function(){
+                        $("#showmes").html("<font color='#FF0000'>读取数据出错</font>");
+                }
+        });
+}
+$(function(){
+	for(var i= 1; i<3; i++){
+		if(i == 1)	{
+			var tarval=	"";
+		}
+		else{
+			var tarval=	"";
+			}
+		  $("#dna_ques_"+i).find("option").each(function (){
+
+			if($(this).val() == tarval){
+				$(this).attr("SELECTED","SELECTED");
+			}
+
+			 });
+		}
+		i++;
+    $('#tabs li a').click(function(e){
+      e.preventDefault();
+    });
+    $( "#tabs" ).tabs({
+      show:function(){
+        changeIframeHeight($(".content_mid").outerHeight(true) + 200);
+      }
+    });
+  $("select").chosen();
+  changeIframeHeight($(".content_mid").outerHeight(true) + 200);
+});
+function checkform(obj)
+{
+  if( obj.dna_ques_1.value == -1 )
+  {
+  	$.alert("请选择密保问题");
+	obj.dna_ques_1.focus();
+
+	return false;
+  }
+  if( obj.ans1.value == "")
+  {
+  	$.alert("请填写密保答案");
+	obj.ans1.focus();
+	return false;
+  }
+  if( obj.dna_ques_2.value == -1 )
+  {
+  	$.alert("请选择密保问题");
+	obj.dna_ques_2.focus();
+	return false;
+  }
+ if( obj.ans2.value == "")
+  {
+  	$.alert("请填写密保答案");
+	obj.ans2.focus();
+	return false;
+  }
+  return true;
+}
+function checksecpass(obj){
+
+ if( !validateUserPss(obj.newsecpass.value) )
+  {
+  	$.alert("密码不符合规则，需要包含英数 8-16 位，且不能连续三位相同，请重新输入");
+
+	obj.newsecpass.focus();
+	return false;
+  }
+	ajaxtransfer();
+	return false;
+}
+</script>
+<style type="text/css">
+.fosize{
+font-size: 12px;
+font-family: 'Microsoft YaHei', 宋体;
+}
+.fosize {display: block;padding: 0 15px 20px;text-align: center;}
+.formTable {
+  border-collapse: collapse;
+  border-width: 1px;
+  border-color: #666666;
+  margin: 0 0 20px;
+  width: 100%;
+}
+.formTable tr:nth-child(even) {background: #ededed;}
+.formTable tr td {padding: 10px 0;  color: #666; font-size: 12px;padding-left: 10px;}
+
+</style>
+</head>
+<body id="lan">
+<div class="content_mid">
+<div class="section">
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">密保设置</a></li>
+		<li><a href="#tabs-2">重置密码</a></li>
+	</ul>
+    <style>table  input {height:25px; width:275px;}</style>
+	<div id="tabs-1">
+		<form action="" method="post" name="changepass">
+
+            <table width="100%" cellspacing="0" cellpadding="0" class="formTable extra">
+                 
+			  <tr>
+                <td width="20%"><font class="green1">*必填</font> &nbsp;问题一：</td>
+                <td><select class="select_text" id="dna_ques_1" name="dna_ques_1">
+                <option value="-1">请选择密保问题</option>
+                <option value="4"   >您母亲的姓名是？</option>
+                <option value="8" >您配偶的生日是？</option>
+                <option value="13"  >您的学号（或工号）是？</option>
+                <option value="5" >您母亲的生日是？</option>
+                <option value="12"  >您高中班主任的名字是？</option>
+                <option value="1" >您父亲的姓名是？</option>
+                <option value="10"  >您小学班主任的名字是？</option>
+                <option value="2" >您父亲的生日是？</option>
+                <option value="7">您配偶的姓名是？</option>
+                <option value="11" >您初中班主任的名字是？</option>
+                <option value="16"  >您最熟悉的童年好友名字是？</option>
+                <option value="17">您最熟悉的学校宿舍室友名字是？</option>
+                <option value="18">对您影响最大的人名字是？</option>
+                </select>
+                </td>
+              </tr>
+			                  <tr>
+                <td>答案：</td>
+                <td><input name="ans1" id="ans1" type="text" value="" maxlength="25" class="custom_input" /><span class="green1">（长度最多为25个字符，并只支持英文和数字） </span></td>
+              </tr>
+              <tr>
+                <td><font class="green1">*必填</font> &nbsp;问题二：</td>
+                <td><select class="select_text" id="dna_ques_2" name="dna_ques_2"><option value="-1">请选择密保问题</option><option value="4">您母亲的姓名是？</option><option value="8">您配偶的生日是？</option><option value="13">您的学号（或工号）是？</option><option value="5">您母亲的生日是？</option><option value="12">您高中班主任的名字是？</option><option value="1">您父亲的姓名是？</option><option value="10">您小学班主任的名字是？</option><option value="2">您父亲的生日是？</option><option value="7">您配偶的姓名是？</option><option value="11">您初中班主任的名字是？</option><option value="16">您最熟悉的童年好友名字是？</option><option value="17">您最熟悉的学校宿舍室友名字是？</option><option value="18">对您影响最大的人名字是？</option></select></td>
+              </tr>
+               <tr>
+                <td>答案：</td>
+                <td><input name="ans2" id="ans2" type="text" width="100px"  value="" maxlength="25" class="custom_input" /><span class="green1">（长度最多为25个字符，并只支持英文和数字） </span></td>
+              </tr>
+            </table>
+            <div align="center">            	<input type="submit" class="btn margin0" value="保存" name="">            	<input style="margin:0\9;" type="reset" value="重置" class="formReset alert_btn" />
+            	</div>
+				<input type="hidden" name="controller" value="user" />
+                <input type="hidden" name="action" value="bindsequestion" />
+           		<input type="hidden" name="flag" value="postdata" />
+
+        </form>
+            <span class="fosize"><b>温馨提示</b>：密保是由用户选定2个问题对应答案组成，如果您的账号资金密码忘记，您可以直接通过验证密保问题和答案，重新设置新密码。</span>
+	</div>
+
+	<div id="tabs-2">
+
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="formTable">
+
+               <tr>
+                <td>您未设置密保，暂时无法使用此功能</td>
+
+              </tr>
+            </table>
+
+    </div>
+	</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

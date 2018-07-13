@@ -1,0 +1,221 @@
+table #chartsTable{
+	border:1px solid #FFFFFF;
+}
+tr{
+	text-align:center;
+}
+#chartsTable td{
+	border:1px solid #FFFFFF;
+}
+.redtext{
+	color:red;
+}
+#title{
+	height:25px;
+	background:#e8eced; 
+}
+.title{
+	height:25px;
+	background:#e8eced; 
+}
+#head{
+	background:#99CCFF;
+	background:url(/static/images/chart/bg1.gif);
+}
+.ball01{
+	font-weight:bold;
+	color:#FFFFFF;
+	width:18px;
+	height:18px;
+	background:url(/static/images/chart/4.png) no-repeat center;
+}
+.ball02{
+	font-weight:bold;
+	color:#FFFFFF;
+	width:18px;
+	height:18px;
+	background:url(/static/images/chart/5.png) no-repeat center;
+}
+.ball03{
+	width:18px;
+	height:18px; 
+	color:#FFFFFF; 
+	background:url(/static/images/chart/6.png) no-repeat center;	
+}
+.ball04{
+	width:18px;
+	height:18px; 
+}
+.ball05{
+	width:18px;
+	height:18px; 
+	color:#FFFFFF;
+	background:url(/static/images/chart/5.png) no-repeat center;	
+}
+.ball06{
+	width:18px;
+	height:18px; 
+	color:#FFFFFF; 
+	background:url(/static/images/chart/6.png) no-repeat center;	
+}
+.wdh{
+
+}
+#titlemessage{
+	height:35px;
+	background:url(/static/images/chart/bg_tb_02.gif);
+}
+#showissue{
+	width:68px;
+	height:23px;
+	border:0px solid #FFFFFF;
+	background:url(../images/cx01.gif);
+}
+input{
+	border:1px solid #CCCCCC;
+}
+#quickbuy{
+	margin:20px 10px 20px 10px;
+	text-align:right;
+}
+#quickbuy a{
+	padding:13px 25px 13px 25px;
+	color:#FFFFFF;
+	font-weight:bold;
+	background:url(../images/quick_buy.jpg) no-repeat;
+}
+.tdleft{
+	padding-left:25px;
+	text-align:left;
+}
+.tdright{
+	text-align:right;
+}
+.smallball {
+    position:absolute;
+    top:-6px; 
+    left:13px; 
+    *left:5px; 
+    background:url(../images/smallball.gif) no-repeat 1px 1px; 
+    width:12px; 
+    height:12px; 
+    font-size:10px;
+    color: #FFF;
+}
+table #missedTable{
+	border:1px solid #FFFFFF;
+}
+#missedTable td{
+	border:1px solid #fff;
+}
+
+.none{
+	background:none!important;
+}
+#navbutton{ 
+
+    cursor:pointer;
+ 	
+}
+.open{
+    cursor:pointer;
+	background: url(../images/new_higame/arrow.png) no-repeat 0px 0px; height:14px; width:30px; 
+}
+.close{
+    cursor:pointer;
+	background: url(../images/new_higame/arrow.png) no-repeat 0px -18px; height:14px;width:30px;
+}
+
+.therm00{
+	font-weight:bold;
+	color:#FFFFFF;
+	width:18px;
+	height:18px;
+	background:url(/static/images/chart/2.png) no-repeat center;
+}
+.therm01{
+	font-weight:bold;
+	color:#FFFFFF;
+	width:18px;
+	height:18px;
+	background:url(/static/images/chart/3.png) no-repeat center;
+}
+.therm02{
+	font-weight:bold;
+	color:#FFFFFF;
+	width:18px;
+	height:18px;
+	background:url(/static/images/chart/1.png) no-repeat center;
+}
+.bottomline{
+border-bottom:solid #666 1px;	
+}
+.lostcolor{
+	
+	background-color:#fef8ac; 
+}
+.lostdiv{
+	color:#aaaaaa;
+}
+.span{
+	background-color:#2eb8d2; 
+}
+.pair{
+	background-color:#fe8098; 
+}
+#titlemessage b{display:inline-block;padding:10px;}
+#titlemessage b a{color:#999;}
+#nav{border-top:1px solid #D7D7D7;}
+#nav a{color:#999;}
+#nav span{display:inline-block;padding:10px;}
+
+.aball01{
+	font-weight:bold;
+	color:#FFFFFF;
+	width:16px;
+	height:16px;
+	background:url(../images/chartBall02.gif) no-repeat center;
+}
+.aball02{
+	font-weight:bold;
+	color:#FFFFFF;
+	width:16px;
+	height:16px;
+	background:url(../images/chartBall01.gif) no-repeat center;
+}
+.aball03{
+	width:16px;
+	height:16px;
+	color:#33CCCC;
+}
+.aball04{
+	width:16px;
+	height:16px;
+	color:#FF9999;
+}
+.aball05{
+	width:16px;
+	height:16px;
+	color:#FFFFFF;	
+	background:url(../images/thermBall02.png) no-repeat center;
+	
+}
+.mainlist{
+	text-decoration:none;
+	list-style:none;
+	color:#900;
+	font-size:20px;
+}
+.sublist{
+	text-decoration:none;
+	list-style:none;
+	color:#000;
+	font-size:16px;
+}
+.kjcode{
+	min-width: 24px;
+	color: #FFF;
+	font-size: 12px;
+	background: url(/static/images/chart/ball.png) no-repeat -59px -57px; 
+	height: 25px;line-height: 25px;
+}

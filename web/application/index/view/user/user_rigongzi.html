@@ -1,0 +1,187 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="__JS__/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="__JS__/details.js" ></script>
+<link rel="stylesheet" type="text/css" href="__CSS__/default_content.min.css"/>
+  <link rel="stylesheet" href="__CSS__/page.css" />
+  <style type="text/css">
+    .caozhili{
+      font-size: 18px;
+      display: block;
+    }
+  </style>
+</head>
+<body id="lan">
+<div class="ys-content">
+	<div class="header">
+      日工资管理  </div>
+  <div class="main">
+    <form action="" method="get" name="search" onsubmit="return">
+      <input type="hidden" name="controller" value="user" />
+      <input type="hidden" name="action" value="list" />
+      <input type="hidden" name="frame" value="show" />
+      <input type="hidden" name="flag" value="search" />
+      <input type="hidden" name="new" value="1" />
+      <div class="section form">
+        <div class="inline-fields">
+          <div class="field">
+            <label for="username" style="min-width: 140px">用户名</label>
+            <input type="text" name="username" id="username" class="custom_input" value="">
+          </div>
+        </div>
+        <input type="submit" value="查询" class="btn">
+      </div>
+    </form>
+    <div id="zz_parent" class="j-ui-mask" style="position: absolute; left: 0px; top: 0px; opacity: 0.5; background-color: rgb(51, 51, 51); z-index: 600; width: 980px; height: 1176px; display: none;"></div>
+    <div id="zz_wind" class="j-ui-miniwindow pop w-9" style="z-index: 700; position: fixed; display: none; left: 212.5px; top: 132.5px;">
+      <div class="hd"><i class="close closeBtn"></i><span class="title">设置日工资</span></div>
+      <div class="bd_box">
+        <div class="bd">
+          <ul class="ui-form">
+            <li class="caozhili">会员名：<span id="hymc"></span>，当前日工资：<span id="dqrgz"></span></li>
+            <li class="caozhili">日工资：
+              <select id="select_rgz" name="select_rgz">
+              <option value="11">请选择当前日工资</option>
+            </select>
+            </li>
+            <li class="caozhili">
+              <table style="border: solid;">
+                <tr style="background: #c7c3c3;"><td>日工资标准</td><td>有效投注人数</td></tr>
+                {volist name="rgz_biaozhun" id="gz"}
+                <tr><td>{$gz.title}</td><td>{$gz.renshu}</td></tr>
+                {/volist}
+              </table>
+            </li>
+          </ul>
+        </div>
+      </div><a style="" href="javascript:shezhirgz();" class="btn confirm">确认<b class="btn-inner"></b></a>
+      <a style="display: inline-block;" href="javascript:hiddeZz();" class="btn cancel">取消<b class="btn-inner"></b></a>
+      <a href="javascript:void(0);" style="display: none;" class="btn closeTip">关闭<b class="btn-inner"></b></a>
+    </div>
+    <div class="list">
+      <form action="" method="get" class="form">
+        <div class="intro_content">
+          &nbsp;&nbsp;&nbsp;&nbsp;我的日工资【{$ri_gong_zi}】，当前可设置【20-{$ri_gong_zi}】，结算日期：次日【05:00】至【07:00】
+                  </div>
+        <table id="userlistDL">
+          <thead>
+            <tr>
+              <th>用户名</th>
+              <th>余额</th>
+              <th>注册时间</th>
+              <th>总人数</th>
+              <th>总余额</th>
+              <th>设置时间</th>
+              <th>工资标准</th>
+              <th>用户操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          {volist name="data_list" id="vo"}
+              <tr>
+                  <td>{$vo.username}</td>
+                  <td>{$vo.coin}</td>
+                  <td>{$vo.regTime|date="Y-m-d H:i",###}</td>
+                  <td>{$vo.zrs}</td>
+                  <td>{$vo.zje}</td>
+                  <td>{$vo.rgz_at}</td>
+                  <td>{$vo.ri_gong_zi}</td>
+                  <td class="userlist-td">
+                    <a href="#" onclick="showZz('{$vo.uid}','{$vo.username}','{$vo.ri_gong_zi}')">设置工资</a>
+                    <a href="./user_rigongzi_detail.html?uid={$vo.uid}">工资记录</a>
+                </tr>
+          {/volist}
+           </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="9" height="20">
+                <!--
+                <div style="float: left">共有  3  会员 共 1/1 页 每页20会员</div>
+                -->
+                <div style="float: left">共有 {$total} 会员 共 {$currentPage}/{$totalPage} 页 每页 10 会员</div>
+                <div style="float: right;display: inline-flex" class="page_right">
+                    <!--<STRONG>1</STRONG>-->
+                    &nbsp;&nbsp;
+                  {$page}
+                </div>
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+	
+	
+	try {
+		var msgCount = 0;
+		window.parent.parent.$('.notification').text(msgCount);
+		if(msgCount < 1)
+		{
+			//window.parent.parent.$('.notification').hide();
+		}else{
+			//window.parent.parent.$('.notification').show();
+		}	
+		
+	} catch (e) {
+		// TODO: handle exception
+	}
+</script></html>
+
+<script type="text/javascript">
+  var touid = 0;
+  var login_rgz = {$ri_gong_zi};
+  var rgz_option = {:json_encode($rgz_option)};
+  function showZz(uid,username,rgz){
+    var html = '<option value="">请选择当前日工资</option>';
+    var idx = 0;
+    for(var a in rgz_option){
+      if(parseInt(a)>parseInt(rgz)){
+        idx++;
+        html += '<option value='+a+'>日工资'+a+'</option>';
+      }
+    }
+    if(idx==0){
+      html = '<option value="">当前没有可设置的日工资</option>';
+    }
+    $("#select_rgz").html(html);
+    touid = uid;
+    document.getElementById ("hymc").innerHTML=username;
+    document.getElementById ("dqrgz").innerHTML=rgz;
+    document.getElementById('zz_parent').style.display = "block";
+    document.getElementById('zz_wind').style.display = "block";
+  }
+  function hiddeZz(){
+    document.getElementById('zz_parent').style.display = "none";
+    document.getElementById('zz_wind').style.display = "none";
+  }
+  function shezhirgz(){
+    var select_rgz = $("#select_rgz").find("option:selected").val();
+    if (confirm("是否确定设置？")){
+      $.ajax({
+        type: "POST",
+        url: "/user/shezhirgz.html",
+        data: { touid: touid,money:select_rgz },
+        dataType: "json",
+        global: false,
+        success: function (data) {
+          if (data.code==1) {
+            alert(data.msg);
+            document.location.reload();
+          }
+          else {
+            alert(data.msg);
+          }
+        },
+        error: null,
+        cache: false
+      });
+    }
+  }
+</script>

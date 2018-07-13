@@ -1,0 +1,419 @@
+var played={}, mysql=require('mysql'),
+http=require('http'),
+url=require('url'),
+rf=require("fs"),
+crypto=require('crypto'),
+querystring=require('querystring'),
+config=require('./config.js'),
+exec=require('child_process').exec,
+execPath=process.argv.join(" "),
+parse=require('./kj-data/parse-calc-count_new.js');
+global.played={};
+require('./String-ext.js');
+// 抛出未知出错时处理
+process.on('uncaughtException', function(e){
+	console.log('出错时处理1：'+e.stack);
+	
+});
+
+// 自动重启
+if(config.restartTime[process.env.coType]){
+	setTimeout(function() {
+		exit();
+	}, config.restartTime[process.env.coType] * 1000);
+}
+var LastactionNo={'5':'','14':'','34':'','36':'','43':'','99':'','100':''};
+var timers={};		// 任务记时器列表
+var encrypt_key='cc40bfe6d972ce96fe3a47d0f7342cb0'; 
+var cs = {//记录执行开奖次数
+	'1':0,
+	'2':0,
+	'3':0,
+	'5':0,
+	'6':0,
+	'9':0,
+	'10':0,
+	'12':0,
+	'14':0,
+	'15':0,
+	'16':0,
+	'17':0,
+	'20':0,
+	'24':0,
+	'25':0,
+	'34':0,
+	'35':0,	
+	'36':0,
+	'37':0,
+	'38':0,
+	'39':0,
+	'40':0,
+	'41':0,
+	'42':0,
+	'43':0
+};
+var QS={};
+var isDo = 0;
+var result = null;
+//显示配置文件
+//console.log(config);
+//读取配置文件并启动委托
+getPlayedFun(runTask);
+
+//创建数据库客户端
+function createMySQLClient(){
+	try{
+		return mysql.createClient(config.dbinfo).on('error', function(err){
+			//console.log(err);
+			throw('连接数据库失败');
+		});
+	}catch(err){
+		log('连接数据库失败：'+err);
+		return false;
+	}
+}
+
+//关闭数据库客户端
+function closeMySQLClient(client){
+	client.end();
+}
+
+//从文件读取开奖号
+function getDataFromFile() { 
+	var data=rf.readFileSync("E:/yhyl/App/App/OpenNumber.ini","utf-8");
+	if(!data) return false;
+	try{
+		var arr = data.trim().split("\r\n");
+		arr = arr[arr.length-1].trim().split("=");
+		data = [];
+		data['number'] = arr[0];
+		data['opencode'] = arr[1].substring(0,9);
+		data['opentime'] = (new Date().getTime() + '').substring(0,10);
+		return data;
+	}catch(err){
+		console.log(err);
+		return false;
+	}
+}
+/**
+ * 入口执行函数
+ */
+function runZY(conf){//运行获取彩种信息,然后提交开奖号码到数据库
+	if(timers[conf.name][conf.timer].timer)  clearTimeout(timers[conf.name][conf.timer].timer); // timers[]任务记时器列表
+	//console.log('');
+	//console.log('开始从'+conf.source+'采集'+conf.title+'数据 type=' +conf.type);
+	var option= conf.option;
+	
+	result = getDataFromFile();
+	
+    if(result){
+		try{
+			var data = conf.parse(result);
+			console.log(data);
+			submitData(data, conf);
+		}catch(err){
+			log('运行出错：%s，休眠%f秒'.format(err, config.errorSleepTime));
+			restartTask(conf, config.errorSleepTime);
+		}
+	}else{
+		restartTask(conf, config.errorSleepTime*100);
+	}
+}
+/**
+ * 入口执行函数
+ */
+function run(conf){//运行获取彩种信息,然后提交开奖号码到数据库
+	if(timers[conf.name][conf.timer].timer)  clearTimeout(timers[conf.name][conf.timer].timer); // timers[]任务记时器列表
+	//console.log('');
+	//console.log('开始从'+conf.source+'采集'+conf.title+'数据 type=' +conf.type);
+	try{
+		var option= conf.option;
+		var req = http.request(conf.option, function(res) {
+	        res.setEncoding('utf8');
+	        res.on("data", function(data) {
+	           data = conf.parse(data);
+	           submitData(data, conf);
+	        });
+	        res.on('end', function() {
+	            return true;
+	        });
+
+	    });
+	    req.on("error", function(e) {
+	    	console.log('Run中http请求时间Error');
+	            if(e){
+	                  console.info('错误信息:'+e);
+	            }  
+	        restartTask(conf, config.errorSleepTime); 
+	    });
+	    req.on('timeout', function(err){
+			console.log('从'+conf.source+'采集'+conf.title+'数据超时');
+			//100毫秒后重启任务
+		    restarttask(conf, 100);
+		});
+		req.end();	
+	}
+	catch(err){
+		console.log('生成开奖号码失败！data.number=空')>>Error.log;
+		isDo = 0;
+		//console.log(JSON.stringify(err));
+		//console.log('运行出错3：%s，休眠%f秒'.format(err, config.errorSleepTime));
+		restartTask(conf, config.errorSleepTime*100);
+	}	
+}
+
+//向数据库中写入开奖号码
+function submitData(data, conf,callback){
+	console.log('++++++++++++++submitData(data, conf)+++++++++++++++++++');
+	console.log(JSON.stringify(data));
+	//console.log('开始提交 '+ conf.title + '['+ conf.type + ']+' 第'+data.number+' 数据：'+data.data);
+	var client=createMySQLClient();
+	var result='';
+	// data.time=Math.floor((new Date(data.time)).getTime()/1000);
+	// console.log(data);
+	client.query("insert into gygy_data(type, time, number, data) values(?,?,?,?)", [data.type, data.time, data.number, data.data], function(err, result){
+	//client.query("call sp_getNewOpenData(?,?,?,?)", [conf.type, actionNo, 0,9], function(err, result){
+     	if(err){
+			// 普通出错
+			if(err.number==1062){//重复插入
+			   console.log('开奖号码已经存在！');
+
+                restartTask(conf, sleep/1000, true);
+                return;
+			}else{
+				console.log('calcJ(data,tru)运行出错1：'+err.message);
+				restartTask(conf, config.errorSleepTime*500);//@@
+			}
+		}else if(result){
+/* 			var myDate = new Date();
+			var year = myDate.getFullYear();       //年
+			var month = myDate.getMonth() + 1;     //月
+			var day = myDate.getDate();            //日
+			if(month < 10) month="0"+month;
+			if(day < 10) day="0"+day;
+			var mytime=year + "-" + month + "-" + day + " " +myDate.toLocaleTimeString();		
+			
+			
+		    var data={
+            type:result[0]['type'],
+            time:result[0]['time'],
+            number:result[0]['number'],
+            data:result[0]['data']
+            }	 */
+
+
+			//setTimeout(calcJ, 100, data);
+            //callback(data, true,setPj);//@@计算返奖
+			// 正常
+			//console.log(JSON.stringify(result));
+			try{
+			     console.log('****准备派奖*****'+data['number']+' '+data['data']);
+				 calcJ(data,true);				
+				//sleep=calc[conf.name](data);
+				sleep = 1000;
+			}catch(err){
+				console.log('执行calcJ(data,true)错误：'+err);
+				restartTask(conf, config.errorSleepTime, true);
+				return;
+			}
+			console.log('**写入'+conf['title']+'第'+data.number+'期数据成功');
+			restartTask(conf, sleep/1000, true);
+		}else{
+			console.log('insert未知运行出错')>>Error.log;
+			restartTask(conf, config.errorSleepTime,true);
+		}
+	});
+	closeMySQLClient(client);//关闭数据库链接
+}
+
+//方法
+function calcJ(data, flag){//,callback
+	log('calcj:'+data.number);
+	console.log('进入计算排奖：'+JSON.stringify(data));
+    var client=createMySQLClient();
+    sql="select id,playedId,weiShu,actionNum,actionData  from gygy_bets where type=? and actionNo=? and isDelete=0 ";
+    if(flag) sql+=" and lotteryNo=''";
+	
+    client.query(sql, [data.type, data.number], function(err, bets){
+        if(err){
+            console.log("读取投注出错："+err)>>读取投注记录错误日志.log;
+        }else{
+            var sql, sqls=[];
+            sql='call kanJiang(?, ?, ?, ?)';
+            console.log('***派奖开始*** strat '+ data.number + ' '+data.data);
+            bets.forEach(function(bet){
+                var fun;
+                try{
+                    fun=parse[played[bet.playedId]];
+                    //console.log(played[bet.playedId]);
+                    if(typeof fun!='function') throw new Error('算法不是可用的函数')>>Error.log;
+                }catch(err){
+                    log('计算玩法[%f]中奖号码算法不可用：%s'.format(bet.playedId, err.message))>>Error.log;
+                    return;
+                }
+
+                try{
+
+                    var zjCount=fun(bet.actionData, data.data, bet.weiShu)||0;
+                    //console.log('zjCount:' + zjCount);
+                }catch(err){
+                    log('计算中奖号码时出错：'+err)>> 派奖函数日志.log;
+                    return;
+                }
+                sqls.push(client.format(sql, [bet.id, zjCount, data.data, 'ssc-'+encrypt_key]));
+            });
+            try{
+                if(QS[data.type]!=data.number)//控制只能，每期只能执行一次“派奖”
+                {
+                     setPj(sqls, data);
+                    //callback(sqls, data);
+                    console.log('***派奖结束*** end   '+data.number +' '+data.data);
+                    QS[data.type]=data.number;
+                }
+                else
+                {   //已经派过奖了
+                    console.log('***kanJiang*** ended '+data.number);
+                }
+            }catch(err){
+                //派奖失败
+                console.log('*****派奖失败*** Error :'+data.number + ' '+data.data+ ' ' + err.message) ;
+            }
+        }
+    });
+    client.end();
+}
+
+function sbData(time, number, data, total,cj_at){
+	console.log('++++++++++++++submitData(data, conf)+++++++++++++++++++');
+	console.log(JSON.stringify(data));
+	var client=createMySQLClient();
+	var result='';
+	data.time=Math.floor((new Date(data.time)).getTime()/1000);
+	client.query("insert into gygy_txffc_data(time, number, data, total,cj_at) values(?,?,?,?,?)", [time, number, data, total, cj_at], function(err, result){
+     	if(err){
+			// 普通出错
+			if(err.number==1062){//重复插入
+			   console.log('开奖号码已经存在！');
+			   return;
+			}else{
+				console.log('sbData 运行出错1：'+err.message);
+			}
+		}else if(result){
+			// 正常
+			console.log('**写入'+number+'期数据成功');
+			return;
+		}else{
+			console.log('insert未知运行出错');
+			return;
+		}
+	});
+	client.end();//关闭数据库链接
+}
+
+//方法
+function setPj(sqls, data){
+    if(sqls.length==0) throw('彩种[%f]第%s期没有投注1'.format(data.type, data.number));
+    //console.log(sqls);
+    var client=createMySQLClient();
+    if(client==false){
+        log('function setPj 连接数据库出错，休眠%f秒继续...'.format(config.errorSleepTime));
+        setTimeout(setPj, config.errorSleepTime, sqls, data); //发生错误时，延时执行"派奖函数"
+    }else{
+        console.log('******派奖函数******');
+        client.query(sqls.join(';'), function(err,result){
+
+            if(err){
+                console.log(data.number +'  派奖失败');
+            }else{
+                console.log(data.number +'  派奖成功');
+            }
+        });
+
+        client.end();
+    }
+	isDo = 0;
+	return ;
+}
+
+function getPlayedFun(cb){
+	//cb 在config.js中定义,秒秒彩\分分彩
+	var client = createMySQLClient();
+	client.query("select id, ruleFun from gygy_played", function(err, data){
+		if(err){
+			log('读取玩法配置出错：'+err.message);
+		}else{
+			data.forEach(function(v){
+				played[v.id]=v.ruleFun;
+				global.played[v.id]=v.ruleFun;
+			});
+			
+			if(cb) cb();//cb此时为执行委托方法runTask()
+		}
+	});
+	client.end();
+}
+
+//debugger  //执行命令：node debug example.js 就可以进入调试模式。
+function runTask(){//运行任务
+	console.log('runTask注册开始')
+	if(config.cp.length) 
+
+	config.cp.forEach(function(conf){//循环从config.js中读取"彩种" {config.cp.foreach}
+		console.log('*** Runtask:  '+conf.title);
+		timers[conf.name]={}; // timers任务记时器列表
+		timers[conf.name][conf.timer]={timer:null, option:conf}; //在config中 timer:'mmc'
+		try{
+			if(conf.enable) //config.js 中设置彩种是否可用
+			setInterval(run, config.runEveryTime*1000, conf);//定时期
+			//setTimeout(run, config.runEveryTime*1000, conf);
+		}catch(err){
+			//timers[conf.name][conf.timer].timer=settimeout(run, config.errorsleeptime*1000, conf);
+			//重启服务
+			restartTask(conf, config.errorsleeptime);
+		}
+	});	
+	console.log('runTask注册完毕')
+}
+//重启任务，flag为true时重启timers[conf.name]下负载的所有timers[opt.name][opt.timer]的timer
+function restartTask(conf, sleep, flag){
+	
+	if(sleep==undefined||sleep<=0) sleep=config.errorSleepTime;
+	
+	if(!timers[conf.name]) timers[conf.name]={}; // timers[]任务记时器列表中不存在的话，初始化一个timers[conf.name]
+	if(!timers[conf.name][conf.timer]) timers[conf.name][conf.timer]={timer:null,option:conf};//timers[conf.name][conf.timer]不存在则初始化一个任务列表
+	
+	if(flag){
+		var opt;
+		for(var t in timers[conf.name]){
+			opt=timers[conf.name][t].option;
+			clearTimeout(timers[opt.name][opt.timer].timer);
+			timers[opt.name][opt.timer].timer=setTimeout(run, sleep*1000, opt);
+			console.log('休眠'+sleep+'秒后从'+opt.source+'采集'+opt.title+'数据...');
+		}
+	}else{
+		clearTimeout(timers[conf.name][conf.timer].timer);// timers[]任务记时器列表
+		timers[conf.name][conf.timer].timer=setTimeout(run, sleep*1000, conf);
+		console.log('休眠'+sleep+'秒后从'+conf.source+'采集'+conf.title+'数据...');
+	}
+}
+//时间比较函数
+function IsDoAction(date,thisActionNo,conf){
+  // Intervals:3,//提前多少秒启动任务
+	// LastactionNo:'',//防止重复执行的冗余字段， 不要管不要改	
+    //var ID=confType;
+	var oDate = new Date(date);
+    var oCurrDate = new Date();
+	var timeSpan=(oDate.getTime()-oCurrDate.getTime())/1000; //相差秒数
+	    console.log('**[' + conf.type+'] ' +thisActionNo + ' 倒计时：'+timeSpan );//+'   Cur:'+ oCurrDate
+	//console.log('传入thisActionNo: '+thisActionNo +' LastNo:'+LastactionNo[conf.type])
+	if(timeSpan <= config.openBeforTime ){//&& thisActionNo!=LastactionNo[conf.type] 
+	    //conf.LastactionNo=thisActionNo;//conf.Intervals;
+	    LastactionNo[conf.type]=thisActionNo;
+		return true;
+		}
+	 
+     else {
+	
+		return false;
+    } 
+}

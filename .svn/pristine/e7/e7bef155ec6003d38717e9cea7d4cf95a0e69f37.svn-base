@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="__CSS__/default_content.min.css">
+<link rel="stylesheet" href="__CSS__/gift.min.css">
+<link rel="stylesheet" href="/static/todo/images/game/game-touzhu.css">
+
+<div class="ys-content">
+    <h4>&nbsp;</h4>
+    <h4>领取时间为：每日09：00 AM至次日05：00 AM</h4>
+    <h4>计算时间为：每日06：00 AM至次日06：00 AM</h4>
+    <div class="list">
+            <table id="userlist" class="table-stylea-table">
+
+                <thead>
+                <tr>
+                    <th>所属周期</th>
+                    <th>总有效人数</th>
+                    <th>总投注额</th>
+                    <th>工资标准</th>
+                    <th>执行标准</th>
+                    <th>统计时间</th>
+                    <th>工资总额</th>
+                    <th>状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="data" id="vo"}
+                <tr>
+                    <td>{$vo.zhouqi}</td>
+                    <td>{$vo.yx_touzhu_ren}</td>
+                    <td>{$vo.touzhu_ze}</td>
+                    <td>{$vo.biaozhun}</td>
+                    <td>{$vo.zx_biaozhun}</td>
+
+                    <td>{$vo.tz_at}</td>
+
+                    <td>{$vo.zonger}</td>
+                    <td>  {$vo.zt}</td>
+                </tr>
+                {/volist}
+                {empty name="data"}
+                    <tr>
+                        <td height="37" colspan="9" align="center">暂无记录</td>
+                    </tr>
+                {/empty}
+                </tbody>
+            </table>
+        </div>
+</div>
+
+</body>
+</html>

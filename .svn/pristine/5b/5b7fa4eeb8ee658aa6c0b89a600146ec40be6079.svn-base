@@ -1,0 +1,116 @@
+function styleAlert(e) {
+    var a = $(document).height();
+    $alert = $('<div class="j-ui-miniwindow pop w-9" style="z-index: 700; position: fixed; display: block; left: 0; top:0; bottom:0; right:0; margin:auto; height:150px;"><div class="hd"><i class="close closeBtn"></i><span class="title">温馨提示</span></div><div class="bd"><div class="bd text-center"><div class="pop-waring"><i class="ico-waring <#=icon-class#>"></i><h4 class="pop-text" style="max-width:310px"><span>' + e + '</span><br></h4></div></div></div><a style="display: none;" href="javascript:void(0);" class="btn confirm">确 认<b class="btn-inner"></b></a><a style="display: none;" href="javascript:void(0);" class="btn cancel">取 消<b class="btn-inner"></b></a><a href="javascript:void(0);" style="display: inline-block;" class="btn closeTip">关 闭<b class="btn-inner"></b></a></div><div class="j-ui-mask" style="position: absolute; left: 0px; top: 0px; opacity: 0.5; z-index: 600; width: 100%; height: ' + a + 'px; display: block; background-color: rgb(51, 51, 51);"></div>'),
+        $(parent.document).find("body").append($alert),
+        $(parent.document).find(".closeTip, .closeBtn").click(function() {
+            $(parent.document).find($alert).remove()
+        })
+}
+function copyUrl(e, a) {
+    for (var t = 0; t < e.length; t++) $("#" + e[t]).on("click",
+        function() {
+            var e = $(this).parent().find("span"),
+                t = e.text(),
+                o = $(this).data("clipboard-text");
+            e.text(o),
+                document.getSelection().removeAllRanges();
+            var n = document.createRange();
+            n.selectNode(e[0]),
+                document.getSelection(e[0]).addRange(n),
+                document.execCommand("copy"),
+                e.text(t),
+                styleAlert(a + o)
+        })
+}
+function SetHome(e, a) {
+    try {
+        e.style.behavior = "url(#default#homepage)",
+            e.setHomePage(a)
+    } catch(e) {
+        if (window.netscape) try {
+            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
+        } catch(e) {
+            styleAlert("抱歉，此操作被浏览器拒绝！\n\n请在浏览器地址栏输入“about:config”并回车然后将[signed.applets.codebase_principal_support]设置为'true'")
+        } else __LAN__ ? "VM" === __LAN__ ? styleAlert("Xin lỗi, trình duyệt mà bạn sử dụng không thể hoàn thành thao tác này. \n\nBạn cần thiết lập 【" + a + "】 thành trang chủ.") : "EN" === __LAN__ && styleAlert("Your Browser does not support this action.\n\nplease add 【" + a + "】 as your favorite bookmarks manually.") : styleAlert("抱歉，您所使用的浏览器无法完成此操作。\n\n您需要手动将【" + a + "】设置为首页。"),
+            "VM" == __LAN__ ? $("div.j-ui-miniwindow.pop.w-9").css("height", "+=60px") : $("div.j-ui-miniwindow.pop.w-9").css("height", "+=30px")
+    }
+}
+function add_favorite(e) {
+    var a = $(e).attr("data-url"),
+        t = $(e).attr("data-title"),
+        o = navigator.userAgent.toLowerCase().indexOf("mac") != -1 ? "Command/Cmd": "CTRL";
+    try {
+        window.external || document.all ? styleAlert(translate.CollectionURL.replace("##CTRL##", o)) : window.sidebar && window.sidebar.addPanel ? window.sidebar.addPanel(t, a) : styleAlert(translate.CollectionURL.replace("##CTRL##", o))
+    } catch(e) {
+        styleAlert(translate.CollectionURL.replace("##CTRL##", o))
+    }
+}
+$(function() {
+    $(document).on("mouseenter", "#global-zeroclipboard-html-bridge",
+        function() {
+            $("#toolbar .screen").addClass("toolbar-active"),
+                $("#J-side-bar").addClass("J-side-bar-acive")
+        }),
+        $(document).on("mouseleave", "#global-zeroclipboard-html-bridge",
+            function() {
+                $("#toolbar .screen").removeClass("toolbar-active"),
+                    $("#J-side-bar").removeClass("J-side-bar-acive")
+            }),
+        $(document).on("click", ".refresh",
+            function() {
+                $.ajax({
+                    url: "/newgame_play.html?tag=getuserbalance",
+                    dataType: "json",
+                    method: "GET",
+                    success: function(e) {
+                        1 == Number(e.isSuccess) && $(".J-balance-show").text(e.availablebalance)
+                    }
+                })
+            });
+    var e;
+    if ($(".hideAmt").unbind("click").bind("click",
+            function() {
+                var a, t = document.cookie;
+                cookiearray = t.split(";");
+                for (var o = 0; o < cookiearray.length; o++) if (1 === cookiearray[o].indexOf("state")) {
+                    e = cookiearray[o].split("=")[1];
+                    break
+                }
+                a = "hide" === e ? "show": "hide",
+                    document.cookie = "state=" + a + ";",
+                    $(".J-balance-show").toggle(),
+                    $(".J-balance-star").toggle(),
+                    $(".refresh").toggle();
+                var n = $(this).attr("src"),
+                    i = "/static/images/matt/eye-open-black.png" == n ? "/static/images/matt/eye-close-black.png": "/static/images/matt/eye-open-black.png";
+                $(this).attr("src", i)
+            }), "interactive" === document.readyState) {
+        var a = document.cookie;
+        cookiearray = a.split(";");
+        for (var t = 0; t < cookiearray.length; t++) 1 === cookiearray[t].indexOf("state") && (e = cookiearray[t].split("=")[1]);
+        "show" === e ? ($(".hideAmt").attr("src", "/static/images/matt/eye-open-black.png"), $(".J-balance-show").show(), $(".J-balance-star").hide(), $(".refresh").show()) : ($(".hideAmt").attr("src", "/static/images/matt/eye-close-black.png"), $(".J-balance-show").hide(), $(".J-balance-star").show(), $(".refresh").hide())
+    }
+}),
+    $(function() {
+        $(document).on("mouseenter", "#global-zeroclipboard-html-bridge",
+            function() {
+                $("#toolbar .screen").addClass("toolbar-active"),
+                    $("#J-side-bar").addClass("J-side-bar-acive")
+            }),
+            $(document).on("mouseleave", "#global-zeroclipboard-html-bridge",
+                function() {
+                    $("#toolbar .screen").removeClass("toolbar-active"),
+                        $("#J-side-bar").removeClass("J-side-bar-acive")
+                }),
+            $(document).on("click", ".refresh",
+                function() {
+                    $.ajax({
+                        url: "/newgame_play.html?tag=getuserbalance",
+                        dataType: "json",
+                        method: "GET",
+                        success: function(e) {
+                            1 == Number(e.isSuccess) && $(".J-balance-show").text(e.availablebalance)
+                        }
+                    })
+                })
+    });

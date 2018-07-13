@@ -1,0 +1,37 @@
+<script src="__JS__/jquery-1.9.1.js" xmlns="http://www.w3.org/1999/html"></script>
+<link rel="stylesheet" type="text/css" href="__CSS__/default_content.min.css"/>
+<style>
+    .sendtime {margin-top: 25px;}
+</style>
+<div class="ys-content">
+    <div class="header">
+        最新公告  </div>
+    <div class="main">
+        <div class="section">
+            <div class="message_content">
+                <div class="up_down">
+                    <span class="title">{$notice.title}</span>
+                </div>
+                <br />
+                <div class="detail">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$notice.content}
+                </div>
+                <div class="sendtime"><?=date("Y-m-d",$notice['addTime'])?></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    //呼叫客戶端內的瀏覽器,另開網頁視窗
+    function ShowVideo(name) {
+        cef.showvideo(name);
+    }
+
+    $(window).load(function() {
+        changeIframeHeight($("body").height())
+    });
+    function changeIframeHeight(height){
+        $(parent.document).find("#mainFrame").height(height);
+    }
+</script>

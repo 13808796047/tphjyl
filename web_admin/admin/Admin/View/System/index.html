@@ -1,0 +1,55 @@
+<extend name="Public/base"/>
+<block name="body">
+    <div class="main-title">
+        <h2><present name="data">[ {$data.title} ] 子</present>服务器管理 </h2>
+    </div>
+    <hr>
+    <br>
+    <br>
+    <div class="cf">
+        <a class="btn" style="background-color: #2b542c; width: 100px;height: 50px;line-height: 50px;font-size: 20px;margin: 20px;" href="{:U('add',array('pid'=>I('get.pid',0)))}">重 &nbsp;&nbsp;&nbsp; 启</a>
+
+        <a class="btn" style="background-color: #7BD827;width: 100px;height: 50px;line-height: 50px;font-size: 20px;margin: 20px;" href="{:U('add',array('pid'=>I('get.pid',0)))}">新 增</a>
+
+        <a class="btn" style="background-color: #2b542c;width: 100px;height: 50px;line-height: 50px;font-size: 20px;margin: 20px;"  href="{:U('import',array('pid'=>I('get.pid',0)))}">导 入</a>
+
+        <a class="btn" style="background-color: #2b542c; width: 100px;height: 50px;line-height: 50px;font-size: 20px;margin: 20px;"  href="{:U('import',array('pid'=>I('get.pid',0)))}">导 入</a>
+
+        <a class="btn" style="width: 100px;height: 50px;line-height: 50px;font-size: 20px;margin: 20px;"  href="{:U('import',array('pid'=>I('get.pid',0)))}">导 入</a>
+<br>
+<br>
+<br>
+        <a class="btn" style="width: 100px;height: 50px;line-height: 50px;font-size: 20px;margin: 20px;"  href="{:U('import',array('pid'=>I('get.pid',0)))}">导 入</a>
+
+        <a class="btn" style="width: 100px;height: 50px;line-height: 50px;font-size: 20px;margin: 20px;"  href="{:U('import',array('pid'=>I('get.pid',0)))}">导 入</a>
+
+        <a class="btn" style="width: 100px;height: 50px;line-height: 50px;font-size: 20px;margin: 20px;"  href="{:U('import',array('pid'=>I('get.pid',0)))}">导 入</a>
+
+        <a class="btn" style="width: 100px;height: 50px;line-height: 50px;font-size: 20px;margin: 20px;"  href="{:U('import',array('pid'=>I('get.pid',0)))}">导 入</a>
+
+        <a class="btn" style="width: 100px;height: 50px;line-height: 50px;font-size: 20px;margin: 20px;"  href="{:U('import',array('pid'=>I('get.pid',0)))}">导 入</a>
+    </div>
+    <hr>
+    <br>
+    <br>
+    <text>
+        aasdad
+    </text>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        $(function() {
+            
+            //回车搜索
+            $("body").keyup(function(e) {
+                if (e.keyCode === 13) {
+                    $("#search").click();
+                    return false;
+                }
+            });
+            //导航高亮
+            $('.side-sub-menu').find('a[href="{:U('index')}"]').closest('li').addClass('current');
+        });
+    </script>
+</block>

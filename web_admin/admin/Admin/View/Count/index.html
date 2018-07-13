@@ -1,0 +1,176 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <!-- 标题栏 -->
+
+    <div class="module">
+        <div class="search-form fr cf">
+            <div class="sleft">
+                时间：<input style="width:100px" type="text" name="fromTime" id="fromTime" class="search-input" value="<?=$this->iff(I('fromTime'),I('fromTime'),date('Y-m-d',time())) ?>" placeholder="开始时间">
+                -
+                <input style="width:100px" type="text" name="toTime" id="toTime" class="search-input" value="<?=$this->iff(I('fromTime'),I('fromTime'),date('Y-m-d',time())) ?>" placeholder="结束时间">
+            </div>
+            <div class="sbtn">
+                <button type="submit" class="btn" id="search">查 找</button>
+            </div>
+        </div>
+        <header><h2 class="tabs_involved" style="padding-left: 20px">统计概况</h2></header>
+        <table class="table" style="width: 100%;margin-top: 80px;margin-bottom: 40px;">
+            <caption></caption>
+            <thead>
+            <tr style="height: 40px;">
+                <th style="width: 5%"></th>
+                <th style="width: 14%">投注总额</th>
+                <th style="width: 14%">返奖总额</th>
+                <th style="width: 14%">返点总额</th>
+                <th style="width: 14%">领取活动总额</th>
+                <th style="width: 14%">盈亏总额</th>
+                <th style="width: 14%">充值总额</th>
+                <th style="width: 16%">提现总额</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="height: 50px;">
+                <th>统计：</th>
+                <th style="font-size: 18px;font-weight: bold;color: #333;" id="ztTCount">{$todayData['betAmount']?number_format($todayData['betAmount'],2):0}</th>
+                <th style="font-size: 18px;font-weight: bold;color: #333;" id="zjAmount">{$todayData['zjAmount']?number_format($todayData['zjAmount'],2):0}</th>
+                <th style="font-size: 18px;font-weight: bold;color: #333;" id="fanDianAmount">{$todayData['fanDianAmount']?number_format($todayData['fanDianAmount'],2):0}</th>
+                <th style="font-size: 18px;font-weight: bold;color: #333;"><span id="brokerageAmount">{$todayData['brokerageAmount']?number_format($todayData['brokerageAmount'],2):0}</span>
+                    <!--/<span id="brokerageAmount1">{$todayData['betAmount']?number_format($todayData['betAmount']/10000*200,2):0}</span>-->
+                </th>
+                <th style="font-size: 18px;font-weight: bold;color: #333;" id="ztYKCount">{$todayData['zyk']?number_format($todayData['zyk'],2):0}</th>
+                <th style="font-size: 18px;font-weight: bold;color: #333;" id="rechargeAmount">{$todayData['rechargeAmount']?number_format($todayData['rechargeAmount'],2):0}</th>
+                <th style="font-size: 18px;font-weight: bold;color: #333;" id="cashAmount">{$todayData['cashAmount']?number_format($todayData['cashAmount'],2):0}</th>
+            </tr>
+            </tbody>
+        </table>
+        <p style="margin-bottom: 30px; font-size: 14px;font-weight: bold;color:#333;text-align: center">
+            <span style="margin-right: 40px;">用户总数：{$userTotal}(会员：{$userTotalNotTest})</span>
+            <span style="margin-right: 40px;">今日注册：{$todayUserTotal}(会员：{$todayUserTotalNotTest})</span>
+            <span>在线用户：{$onlineUserTotal}(会员：{$onlineUserTotalNotTest})</span>
+        </p>
+    </div>
+</block>
+
+<block name="script">
+    <link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"
+            charset="UTF-8"></script>
+    <script>
+        $(function () {
+            $('#fromTime,#toTime').datetimepicker({
+                format: 'yyyy-mm-dd',
+                language: "zh-CN",
+                minView: 2,
+                autoclose: true,
+            });
+            //showTab();
+        });
+    </script>
+    <script>
+        //使用json方式
+        $("#search").click(function(){
+            var fromTime = $("#fromTime").val();
+            var toTime = $("#toTime").val();
+            $.ajax({
+                url:"{:U('count/everyd')}",
+                dataType:'json',
+                data: { "fromTime": fromTime,'toTime': toTime}, //参数值
+                type: "GET", //请求方式 get 或者post
+                success:function(data){
+                    //console.log(data[0].betAmount);
+                    var ztTCount = data.betAmount?(parseFloat(data.betAmount) ).toFixed(2):0;
+                    var zjAmount = data.zjAmount?(parseFloat(data.zjAmount) ).toFixed(2):0;
+                    var fanDianAmount = (parseFloat(data.fanDianAmount) ).toFixed(2);
+                    var rechargeAmount = (parseFloat(data.rechargeAmount) ).toFixed(2);
+                    var brokerageAmount = (parseFloat(data.brokerageAmount) ).toFixed(2);
+//                    var brokerageAmount1 = (parseFloat(data.betAmount/10000*200) ).toFixed(2);
+                   // var withdrawAmount = (parseFloat(data.withdrawAmount) ).toFixed(2);
+                   var cashAmount = (parseFloat(data.cashAmount) ).toFixed(2);
+                    var ztYKCount = (parseFloat(ztTCount-zjAmount-fanDianAmount-brokerageAmount) ).toFixed(2);
+                    $("#ztTCount").html(ztTCount);
+                    $("#zjAmount").html(zjAmount);
+                    $("#fanDianAmount").html(fanDianAmount);
+                    $("#ztYKCount").html(ztYKCount);
+                    $("#rechargeAmount").html(rechargeAmount);
+                    $("#cashAmount").html(cashAmount);
+                    $("#brokerageAmount").html(brokerageAmount);
+//                    $("#brokerageAmount1").html(brokerageAmount1);
+                   // $("#withdrawAmount").html(withdrawAmount);
+                }
+            });
+        });
+    </script>
+</block>
+
+<block name="style">
+    <style>
+        .module {
+            border: 1px solid #9BA0AF;
+            margin: 20px 3% 0 3%;
+            margin-top: 20px;
+            background: #fff;
+            border-radius: 5px;
+            display: block;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .tabs_involved {
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            float: left;
+            line-height: 32px;
+            color: #1F1F20;
+            font-size: 13px;
+            margin: 0px 0px;
+            width: 100%;
+            background: #eee;
+        }
+
+        .stats_overview {
+
+            float: right;
+            width: 60%;
+
+        }
+
+        .overview_today, .overview_previous {
+            width: 25%;
+            float: left;
+            display: block;
+        }
+
+        .stats_overview p.overview_count {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;;
+            margin-bottom: 50px;
+        }
+
+        .module .module_content {
+            text-transform: none;
+            text-shadow: 0 1px 0 #fff;
+            margin: 38px 20px;
+            display: block;
+        }
+
+        .module .module_content .cztz {
+            width: 23%;
+            height: 32px;
+            line-height: 30px;
+            float: left;
+            display: block;
+        }
+
+        .tablesorter {
+            width: 95%;
+            margin: 0px 0 0 0;
+            text-align: center;
+        }
+    </style>
+</block>

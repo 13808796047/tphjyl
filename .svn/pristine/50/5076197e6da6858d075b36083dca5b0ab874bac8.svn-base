@@ -1,0 +1,769 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no, email=no, adress=no">
+    <script src="__JS__/jquery-1.9.1.js"></script>
+</head>
+<body id="lan">
+<style>
+    .t-add input[type="text"] {
+        width: 165px;
+        height: 27px;
+        border: 1px solid #c3c1c1;
+        text-align: left;
+        line-height: 20px;
+        margin: 0 10px;
+        outline: 0;
+    }
+
+</style>
+
+
+<link rel="stylesheet" type="text/css" href="__CSS__/default_content.min.css" />
+<link rel="stylesheet" type="text/css" href="__CSS__/owl.carousel.min.css" />
+<link rel="stylesheet" type="text/css" href="__CSS__/owl.theme.min.css" />
+<!-- 工具类 -->
+<script type="text/javascript" src="__JS__/sy/owl.carousel.min.js"></script>
+<div class="ys-content">
+    <div class="tab-container">
+        <!-- 支付寶轉帳會依 js 判斷是否存在綁定姓名；來顯示不同欄位 -->
+        <div id="owl-slider" class="owl-carousel">
+            <div class="owl-wrapper-outer">
+                <div class="owl-wrapper" style="" id="owl-wrapper">
+                <div class="owl-item" style="width: 775px;">
+                <div class="set alipay_bank">
+                <span class="tab-drawer-heading">支付宝转账</span>
+                <div class="tab-content">
+                    <div class="new-recharge">
+                        <form>
+                            <input type="hidden" name="now_time" value="20170910165027">
+                            <input type="hidden" name="token" value="99995654cdeae4d343f27884680e14b4">
+                            <div class="t-add">
+                        <span class="card-block">
+                            <span id="inputUserNameSpan" style="display: none;">绑定付款名称：
+                            <input type="text" id="alipay-bank-pay-name" maxlength="20" size="20" style="display: none;">（支付宝绑定姓名）
+                            </span>
+                            <span id="showUserNameSpan">付款姓名：撒**</span>
+                        </span>
+                                <br>
+                        <span class="card-block" id="span-amount">
+                            <span>充值金额</span>
+                            <input type="text" id="alipay-bank-money">
+                            <span>元</span>
+                        </span>
+                            </div>
+                            <div class="b-add" style="margin:50px 0 0 0" id="div-amount-note">
+                                <span class="ct-notice">（最低单笔存款：<b id="alipay-bank-min" style="color: red;">100</b>元；最高单笔存款                            <b style="color: red;" id="alipay-bank-max">50000</b>元）</span>
+                            </div>
+                            <br>
+                            <br>
+                            <input type="button" id="send-alipay-bank-username" value="确定" class="formNext btn" style="display: none;">
+                            <input type="button" id="send-alipay-bank" value="下一步" class="formNext btn">
+                            <a id="alipay-bank-msg" target="_blank"></a>
+                            <!-- 此處是填寫提示區塊 -->
+                            <div class="new-information">
+                                <ul class="tx-list">
+                                    <li class="bkrcg clearfix field">
+                                        <label style="position: relative; top: -10px; display: none; margin-top: 30px; font-weight: bold;" id="inputUserNameLabel">注意事项</label>
+                                        <label style="position:relative; top: -10px; display: block; margin-top: 30px; font-weight: bold;" id="showUserNameLabel">使用须知</label>
+                                <span class="ct">
+                                <dl style="display:inline-block">
+                                    <dd id="dd1">每天的充值处理时间为 09：00～23：00 (所有时间均为24小时制时间)</dd>
+                                    <dd id="dd2">请输入充值金额，点击“下一步”会跳转到支付页面。</dd>
+                                    <dd id="dd3"><font size="3" color="red">请依照充值金额范围充值，若支付宝实际转帐金额低于最低额度，平台将不会立即到帐，必须分次支付凑足最低额度。如有任何问题请联系客服，将有专人为您服务。</font></dd>
+                                    <dd id="dd4"></dd>
+                                </dl>
+                                </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- new-information結束 -->
+                        </form>
+                    </div>
+                    <!-- new-recharge結束 -->
+                </div>
+                <!-- tab-content結束 -->
+            </div>
+                </div>
+                <div class="owl-item" style="width: 775px;">
+                <div class="set bank">
+                <span class="tab-drawer-heading">银行充值</span>
+                <div class="tab-content ">
+                    <div class="new-recharge">
+                        <form>
+                            <div class="Bank-card">
+                                <div class="new-cards" id="bank_div">
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="ICBC" name="bk">
+                                    <img src="__IMG__/bank/ICBC.gif">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="ABC" name="bk">
+                                    <img src="__IMG__/bank/ABC.gif">
+                                </label>
+                             </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="CCB" name="bk">
+                                    <img src="__IMG__/bank/CCB.gif">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="BOC" name="bk">
+                                    <img src="__IMG__/bank/BOC.gif">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="CMB" name="bk">
+                                    <img src="__IMG__/bank/CMB.gif">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="CIB" name="bk">
+                                    <img src="__IMG__/bank/CIB.gif">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="CMBC" name="bk">
+                                    <img src="__IMG__/bank/CMBC.gif">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="CEB" name="bk">
+                                    <img src="__IMG__/bank/CEB.gif">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="CITIC" name="bk">
+                                    <img src="__IMG__/bank/CITIC.gif">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="PSBC" name="bk">
+                                    <img src="__IMG__/bank/PSBC.gif">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="SPDB" name="bk">
+                                    <img src="__IMG__/bank/12.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="HXB" name="bk">
+                                    <img src="__IMG__/bank/19.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="GDB" name="bk">
+                                    <img src="__IMG__/bank/13.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="PAB" name="bk">
+                                    <img src="__IMG__/bank/15.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="SHB" name="bk">
+                                    <img src="__IMG__/bank/24.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="">
+                                <label>
+                                    <input type="radio" value="BOB" name="bk">
+                                    <img src="__IMG__/bank/14.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="CUP" name="bk">
+                                    <img src="__IMG__/bank/25.jpg">
+                                </label>
+                              </span>
+
+
+                                    <!-- 越南銀行 -->
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="ACB" name="bk">
+                                    <img src="__IMG__/bank/26.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="DAB" name="bk">
+                                    <img src="__IMG__/bank/27.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="SACOM" name="bk">
+                                    <img src="__IMG__/bank/28.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="TCB" name="bk">
+                                    <img src="__IMG__/bank/29.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="VCB" name="bk">
+                                    <img src="__IMG__/bank/30.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="VTB" name="bk">
+                                    <img src="__IMG__/bank/31.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="EXIM" name="bk">
+                                    <img src="__IMG__/bank/32.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="BIDV" name="bk">
+                                    <img src="__IMG__/bank/33.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="AGRI" name="bk">
+                                    <img src="__IMG__/bank/34.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="TPB" name="bk">
+                                    <img src="__IMG__/bank/35.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="VIB" name="bk">
+                                    <img src="__IMG__/bank/36.jpg">
+                                </label>
+                              </span>
+
+                                    <span class="hidden">
+                                <label>
+                                    <input type="radio" value="VPB" name="bk">
+                                    <img src="__IMG__/bank/37.jpg">
+                                </label>
+                              </span>
+
+
+                                </div>
+
+
+                            </div>
+                            <!-- Bank-card結束 -->
+                            <div>
+                                <div class="t-add">
+                                    <span class="card-block">
+                            <span>充值金额</span>
+                                    <input type="text" value="请先选择银行" id="bank-money" disabled="">
+                                    <span>元</span>
+                                    </span>
+                                </div>
+                                <div class="b-add">
+                                    <span class="ct-notice">（最低单笔存款：<b style="color: red;" id="bank-min">--</b>元；最高单笔存款<b id="bank-max" style="color: red;">--</b>元）</span>
+                                </div>
+                            </div>
+                            <input type="button" id="send-bank" value="下一步" class="formNext btn" onclick="checkBank()">
+                            <a id="bank-msg" target="_blank"></a>
+                            <!-- 此處是填寫提示區塊 -->
+                            <div class="new-information">
+                                <ul class="tx-list">
+                                    <li class="bkrcg clearfix field">
+                                        <label style="position:relative; top: -10px;display: block; margin-top: 30px; font-weight: bold;">使用须知</label>
+                                        <span class="ct">
+                              <dl style="display:inline-block">
+                                  <dd>每天的充值处理时间为： 07:00 至次日 05:00 (所有时间均为24小时制时间)</dd>
+                                  <dd>请输入充值金额，点击“下一步”会跳转到支付页面。</dd>
+                                  <br>
+                                  <dd><font size="3" color="red">如有任何问题请联系客服，将有专人为您服务。</font></dd>
+                              </dl>
+                            </span>
+                                    </li>
+                                </ul>
+                                <br>
+                                <span id="bank-notice" style="color:red;font-size:18px;"></span>
+                            </div>
+                            <!-- new-information結束 -->
+
+                        </form>
+                        <!-- form結束 -->
+
+                    </div>
+                    <!-- new-recharge結束 -->
+                </div>
+                <!-- tab-content結束 -->
+            </div></div>
+                    <div class="owl-item" style="width: 775px;">
+                        <div class="set qqpay">
+                <span class="tab-drawer-heading">QQ支付</span>
+                <div class="tab-content">
+                    <div class="new-recharge">
+                        <form>
+                            <div class="Bank-card">
+                                <div class="new-cards">
+                                    <span>
+                                        <label>
+                                            <input type="radio" value="qqpay" name="bk" checked="">
+                                            <img src="__IMG__/bank/qqpay.gif">
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Bank-card結束 -->
+                            <div class="t-add">
+                                <span class="card-block">
+                                    <span>充值金额</span>
+                                    <input id="qqpay-money" type="text" name="">
+                                    <span>元</span>
+                                </span>
+                            </div>
+
+                            <div class="b-add">
+                                <span class="ct-notice">（最低单笔存款：<b id="qqpay-min" style="color: red;">20</b>元；
+                              最高单笔存款<b id="qqpay-max" style="color: red;">5000</b>元）</span>
+                            </div>
+                            <br><br>
+                            <input type="button" id="send-qqpay" value="下一步" class="formNext btn">
+                            <a id="qqpay-msg" target="_blank"></a>
+                            <!-- 此處是填寫提示區塊 -->
+                            <div class="new-information">
+                                <ul class="tx-list">
+                                    <li class="bkrcg clearfix field">
+                                        <label style="position:relative; top: -10px; display: block; margin-top: 30px; font-weight: bold;">使用须知</label>
+                                        <span class="ct">
+                                            <dl style="display:inline-block">
+                                                <dd>每天的充值处理时间为： 07:00 至次日 05:00 (所有时间均为24小时制时间)</dd>
+                                                <dd>请输入充值金额，点击“下一步”会跳转到支付页面。</dd>
+                                                <br>
+                                                <dd><font size="3" color="red">如有任何问题请联系客服，将有专人为您服务。</font></dd>
+                                            </dl>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- new-information結束 -->
+
+                        </form>
+                        <!-- form結束 -->
+
+                    </div>
+                    <!-- new-recharge結束 -->
+
+                </div>
+                <!-- tab-content結束 -->
+
+            </div>
+                    </div>
+                    <div class="owl-item" style="width: 775px;">
+                        <div class="set wechat">
+                <span class="tab-drawer-heading">微信</span>
+                <div class="tab-content">
+                    <div class="new-recharge">
+                        <form>
+                            <div class="Bank-card">
+                                <div class="new-cards">
+                                    <span>
+                  <label>
+                      <input type="radio" value="wechat" name="bk" checked="">
+                      <img src="__IMG__/bank/WeChat.gif">
+                  </label>
+                      </span>
+                                </div>
+                            </div>
+                            <!-- Bank-card結束 -->
+                            <div class="t-add">
+                                <span class="card-block">
+                <span>充值金额</span>
+                                <input id="wechat-money" type="text" name="">
+                                <span>元</span>
+                                </span>
+                            </div>
+
+                            <div class="b-add">
+                                <span class="ct-notice">（最低单笔存款：<b id="wechat-min" style="color: red;">20</b>元；                              最高单笔存款<b id="wechat-max" style="color: red;">7000</b>元）</span>
+                            </div>
+                            <input type="button" id="send-wechat" value="下一步" class="formNext btn">
+                            <a id="wechat-msg" target="_blank"></a>
+                            <!-- 此處是填寫提示區塊 -->
+                            <div class="new-information">
+                                <ul class="tx-list">
+                                    <li class="bkrcg clearfix field">
+                                        <label style="position:relative; top: -10px; display: block; margin-top: 30px; font-weight: bold;">使用须知</label>
+                                        <span class="ct">
+                          <dl style="display:inline-block">
+                              <dd>每天的充值处理时间为： 07:00 至次日 05:00 (所有时间均为24小时制时间)</dd>
+                              <dd>请输入充值金额，点击“下一步”会跳转到支付页面。</dd>
+                              <br>
+                              <dd><font size="3" color="red">如有任何问题请联系客服，将有专人为您服务。</font></dd>
+                          </dl>
+                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- new-information結束 -->
+
+                        </form>
+                        <!-- form結束 -->
+
+                    </div>
+                    <!-- new-recharge結束 -->
+
+                </div>
+                <!-- tab-content結束 -->
+
+            </div></div></div></div>
+            <!-- set結束 -->
+
+
+
+
+            <!-- set結束 -->
+
+
+            <!-- set結束 -->
+
+
+            <!-- set結束 -->
+
+
+
+            <!-- set結束 -->
+
+
+            <!-- set結束 -->
+
+
+            <!-- set結束 -->
+            <div class="owl-alipay_bank" id="owl-alipay_bank"> 支付宝转账</div><div class="owl-bank" id="owl-bank">银行充值</div><div class="owl-qqpay" id="owl-qqpay">QQ支付</div><div class="owl-wechat" id="">微信</div>
+
+    </div>
+    <!-- content_mid結束 -->
+
+    <script>
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        function checkBank() {
+            var v = $("#bank_div :radio").is(":checked");
+            if (v === false) {
+                $("#bank-msg").html("请先选择银行");
+            }
+        }
+
+        $("#alipay-money").on('keyup', function(r) {
+
+            $(this).val(formatFloat($(this).val()));
+
+            var oldMoney = new Number($("#alipay-money").val());
+
+            if (isNaN(oldMoney)) {
+                oldMoney =0;
+            }
+
+            var newMoney = 0;
+
+            if (oldMoney==0) {
+                newMoney = 0;
+            }
+            else if (oldMoney < 21) {
+                var ra = (getRandom(1, 50) / 100);
+                newMoney = (oldMoney) + ra;
+            }
+            else if (oldMoney >= 21 && oldMoney < 100) {
+                newMoney = oldMoney + (getRandom(1, 100) / 100);
+            }
+            else {
+                newMoney = oldMoney - (getRandom(1, 100) / 100);
+            }
+            newMoney = Math.floor(newMoney*100)/100;
+            $("#alipay-money-ture").html(newMoney);
+        });
+
+        $(function () {
+            $('#wechat-money, #bank-money, #alipay-bank-money, #baokim-money, #bankatm-amount, #atm-money, #unionpay_nocard-money, #qqpay-money').keyup(function() {
+                $(this).val(formatFloat($(this).val()));
+            });
+            $("#owl-slider").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                singleItem: true,
+                lazyLoad: true,
+                navigationText: ['<div class="arrow"><div class="arrow_left"></div><div>', '<div class="arrow"><div class="arrow_right"></div></div>']
+            });
+
+
+            //隱藏全部银行
+            $('div.set.bank .new-cards > span').addClass('hidden');
+
+            //        if ($('.set.bank').is(':hidden') & $('.set.wechat').is(':hidden') & $('.set.alipay').is(':hidden')) {
+            //            $('.set.nope').removeClass('hidden');
+            //            $('.set.nope #title').html("您没有操作权限");
+            //        }
+
+            /**
+             * 銀行付款
+             */
+            $("#send-bank").on('click', function(r) {
+                var maintain_flag = 0;
+                var not_maintain = true;
+                if ($("#bank-money").val()) {
+                    if ($("#bank-money").val() < Number($("#bank-min").html())) {
+                        $("#bank-msg").html("金额低于最低限制")
+                        $('#bank-notice').html('');
+                        return false;
+
+                    } else if ($("#bank-money").val() > Number($("#bank-max").html())) {
+                        $("#bank-msg").html("金额高于最高限制")
+                        $('#bank-notice').html('');
+                        return false;
+
+                    } else {
+
+                    }
+                    if (maintain_flag) {
+                        var temp = new Array();
+                        temp = $("input[name='bk']:checked").val();
+                        var bank_maintain = null;
+
+                        $.each(bank_maintain, function(i, val) {
+                            var alert_txt = val.begindate + ' - ' + val.enddate + ' ' + val.title + '，请选择其他银行发起充值',
+                                    span_txt = '<font class="maintain_date"> ' + val.begindate + ' - ' + val.enddate + '</font> ' + val.title + '，请选择其他银行发起充值';
+
+                            if (temp == i) {
+                                $("#bank-msg").html('');
+                                $('#bank-notice').html(span_txt);
+                                not_maintain = false;
+                                return false;
+                            }
+                        }); //end $.each
+                    } //end if(maintain_flag)
+                    if (not_maintain) {
+                    }
+                } else {
+                    $("#bank-msg").html("请输入金额")
+                    $('#bank-notice').html('');
+                }
+            });
+
+            $("#send-wechat").on('click', function(r) {
+                if ($("#wechat-money").val()) {
+                    if ($("#wechat-money").val() < Number($("#wechat-min").html())) {
+                        $("#wechat-msg").html("金额低于最低限制")
+                    } else if ($("#wechat-money").val() > Number($("#wechat-max").html())) {
+                        $("#wechat-msg").html("金额高于最高限制")
+                    } else {
+                    }
+                } else {
+                    $("#wechat-msg").html("请输入金额")
+                }
+            });
+            $("#send-alipay").on('click', function(r) {
+                if ($("#alipay-money").val()) {
+                    if ($("#alipay-money").val() < Number($("#alipay-min").html())) {
+                        $("#alipay-msg").html("金额低于最低限制")
+                    } else if ($("#alipay-money").val() > Number($("#alipay-max").html())) {
+                        $("#alipay-msg").html("金额高于最高限制")
+                    } else {
+                    }
+                } else {
+                    $("#alipay-msg").html("请输入金额")
+                }
+            });
+            $("#send-baokim").on('click', function(r) {
+                if ($("#baokim-money").val()) {
+                } else {
+                    $("#baokim-msg").html("请输入金额")
+                }
+            });
+
+            $("#send-alipay-bank").on('click', function(r) {
+                if ($("#alipay-bank-money").val() == '') {
+                    $("#alipay-bank-msg").html("请输入金额")
+                } else if (isNaN($("#alipay-bank-money").val())) {
+                    $("#alipay-bank-msg").html("金额输入错误")
+                } else if ($("#alipay-bank-money").val()) {
+                    if ($("#alipay-bank-money").val() < Number($("#alipay-bank-min").html())) {
+                        $("#alipay-bank-msg").html("金额低于最低限制")
+                    } else if ($("#alipay-bank-money").val() > Number($("#alipay-bank-max").html())) {
+                        $("#alipay-bank-msg").html("金额高于最高限制")
+                    } else {
+                        var money = $("#alipay-bank-money").val();
+                        var now_time = $('input[name="now_time"]').val();
+                        var token = $('input[name="token"]').val();
+                        $(this).attr('disabled',true);
+                    }
+                }
+            });
+
+            $("#send-alipay-bank-username").on('click', function(r) {
+                if ($("#alipay-bank-pay-name").val() == '') {
+                    $("#alipay-bank-msg").html("请填写付款名称")
+                } else {
+                }
+            });
+
+            $("#send-unionpay_nocard").on('click', function(r) {
+                if ($("#unionpay_nocard-money").val()) {
+                    if ($("#unionpay_nocard-money").val() < Number($("#unionpay_nocard-min").html())) {
+                        $("#unionpay_nocard-msg").html("金额低于最低限制")
+                    } else if ($("#unionpay_nocard-money").val() > Number($("#unionpay_nocard-max").html())) {
+                        $("#unionpay_nocard-msg").html("金额高于最高限制")
+                    } else {
+                    }
+                } else {
+                    $("#unionpay_nocard-msg").html("请输入金额")
+                }
+            });
+
+            $("#send-qqpay").on('click', function(r) {
+                if ($("#qqpay-money").val()) {
+                    if ($("#qqpay-money").val() < Number($("#qqpay-min").html())) {
+                        $("#qqpay-msg").html("金额低于最低限制")
+                    } else if ($("#qqpay-money").val() > Number($("#qqpay-max").html())) {
+                        $("#qqpay-msg").html("金额高于最高限制")
+                    } else {
+                    }
+                } else {
+                    $("#qqpay-msg").html("请输入金额")
+                }
+            });
+        });
+        //自动转换数字金额为大小写中文字符,返回大小写中文字符串，最大处理到999兆
+        function changeMoneyToChinese(money) {
+            var cnNums = new Array("零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"); //汉字的数字
+            var cnIntRadice = new Array("", "拾", "佰", "仟"); //基本单位
+            var cnIntUnits = new Array("", "万", "亿", "兆"); //对应整数部分扩展单位
+            var cnDecUnits = new Array("角", "分", "毫", "厘"); //对应小数部分单位
+            var cnInteger = "整"; //整数金额时后面跟的字符
+            var cnIntLast = "元"; //整型完以后的单位
+            var maxNum = 999999999999999.9999; //最大处理的数字
+
+            var IntegerNum; //金额整数部分
+            var DecimalNum; //金额小数部分
+            var ChineseStr = ""; //输出的中文金额字符串
+            var parts; //分离金额后用的数组，预定义
+
+            if (money == "") {
+                return "";
+            }
+
+            money = parseFloat(money);
+            //alert(money);
+            if (money >= maxNum) {
+                new_alert('超出最大处理数字');
+                return "";
+            }
+            if (money == 0) {
+                ChineseStr = cnNums[0] + cnIntLast + cnInteger;
+                //document.getElementById("show").value=ChineseStr;
+                return ChineseStr;
+            }
+            money = money.toString(); //转换为字符串
+            if (money.indexOf(".") == -1) {
+                IntegerNum = money;
+                DecimalNum = '';
+            } else {
+                parts = money.split(".");
+                IntegerNum = parts[0];
+                DecimalNum = parts[1].substr(0, 4);
+            }
+            if (parseInt(IntegerNum, 10) > 0) { //获取整型部分转换
+                zeroCount = 0;
+                IntLen = IntegerNum.length;
+                for (i = 0; i < IntLen; i++) {
+                    n = IntegerNum.substr(i, 1);
+                    p = IntLen - i - 1;
+                    q = p / 4;
+                    m = p % 4;
+                    if (n == "0") {
+                        zeroCount++;
+                    } else {
+                        if (zeroCount > 0) {
+                            ChineseStr += cnNums[0];
+                        }
+                        zeroCount = 0; //归零
+                        ChineseStr += cnNums[parseInt(n)] + cnIntRadice[m];
+                    }
+                    if (m == 0 && zeroCount < 4) {
+                        ChineseStr += cnIntUnits[q];
+                    }
+                }
+                ChineseStr += cnIntLast;
+                //整型部分处理完毕
+            }
+            if (DecimalNum != '') { //小数部分
+                decLen = DecimalNum.length;
+                for (i = 0; i < decLen; i++) {
+                    n = DecimalNum.substr(i, 1);
+                    if (n != '0') {
+                        ChineseStr += cnNums[Number(n)] + cnDecUnits[i];
+                    }
+                }
+            }
+            if (ChineseStr == '') {
+                ChineseStr += cnNums[0] + cnIntLast + cnInteger;
+            } else if (DecimalNum == '') {
+                ChineseStr += cnInteger;
+            }
+            return ChineseStr;
+
+        }
+    </script>
+    <!--消息框代码开始-->
+    <!-- content_mid結束 -->

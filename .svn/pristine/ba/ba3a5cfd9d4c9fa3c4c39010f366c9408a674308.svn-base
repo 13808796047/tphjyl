@@ -1,0 +1,188 @@
+<extend name="Public/base" />
+<block name="body">
+    <div class="main-title">
+        <h2>控制参数</h2>
+    </div>
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <article class="module width_full">
+        <form action="{:U('contrParam')}" method="post" class="form-horizontal">
+            <div class="data-table table-striped">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>秒秒彩</td>
+                            <td>
+                                <input type="text" value="<?=$settings['mmc_wufencai']?>" name="mmc_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['mmc_goCs']?>" name="mmc_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['mmc_MaxPL']?>" name="mmc_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['mmc_MaxYL']?>" name="mmc_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['mmc_MaxTzJE']?>" name="mmc_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['mmc_MaxTzBs']?>" name="mmc_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['mmc_xyWin']?>" name="mmc_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>分分彩</td>
+                            <td>
+                                <input type="text" value="<?=$settings['ffc_wufencai']?>" name="ffc_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['ffc_goCs']?>" name="ffc_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['ffc_MaxPL']?>" name="ffc_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['ffc_MaxYL']?>" name="ffc_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['ffc_MaxTzJE']?>" name="ffc_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['ffc_MaxTzBs']?>" name="ffc_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['ffc_xyWin']?>" name="ffc_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>二分彩</td>
+                            <td>
+                                <input type="text" value="<?=$settings['efc_wufencai']?>" name="efc_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['efc_goCs']?>" name="efc_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['efc_MaxPL']?>" name="efc_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['efc_MaxYL']?>" name="efc_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['efc_MaxTzJE']?>" name="efc_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['efc_MaxTzBs']?>" name="efc_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['efc_xyWin']?>" name="efc_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>五分彩</td>
+                            <td>
+                                <input type="text" value="<?=$settings['wfc_wufencai']?>" name="wfc_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['wfc_goCs']?>" name="wfc_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['wfc_MaxPL']?>" name="wfc_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['wfc_MaxYL']?>" name="wfc_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['wfc_MaxTzJE']?>" name="wfc_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['wfc_MaxTzBs']?>" name="wfc_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['wfc_xyWin']?>" name="wfc_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>腾讯分分彩</td>
+                            <td>
+                                <input type="text" value="<?=$settings['txffc_wufencai']?>" name="txffc_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['txffc_goCs']?>" name="txffc_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['txffc_MaxPL']?>" name="txffc_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['txffc_MaxYL']?>" name="txffc_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['txffc_MaxTzJE']?>" name="txffc_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['txffc_MaxTzBs']?>" name="txffc_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['txffc_xyWin']?>" name="txffc_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>30秒11选5</td>
+                            <td>
+                                <input type="text" value="<?=$settings['ssmsyxw_wufencai']?>" name="ssmsyxw_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['ssmsyxw_goCs']?>" name="ssmsyxw_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['ssmsyxw_MaxPL']?>" name="ssmsyxw_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['ssmsyxw_MaxYL']?>" name="ssmsyxw_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['ssmsyxw_MaxTzJE']?>" name="ssmsyxw_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['ssmsyxw_MaxTzBs']?>" name="ssmsyxw_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['ssmsyxw_xyWin']?>" name="ssmsyxw_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>一分钟11选5</td>
+                            <td>
+                                <input type="text" value="<?=$settings['yfzsyxw_wufencai']?>" name="yfzsyxw_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['yfzsyxw_goCs']?>" name="yfzsyxw_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['yfzsyxw_MaxPL']?>" name="yfzsyxw_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['yfzsyxw_MaxYL']?>" name="yfzsyxw_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['yfzsyxw_MaxTzJE']?>" name="yfzsyxw_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['yfzsyxw_MaxTzBs']?>" name="yfzsyxw_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['yfzsyxw_xyWin']?>" name="yfzsyxw_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>台湾5分彩</td>
+                            <td>
+                                <input type="text" value="<?=$settings['tywfc_wufencai']?>" name="tywfc_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['tywfc_goCs']?>" name="tywfc_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['tywfc_MaxPL']?>" name="tywfc_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['tywfc_MaxYL']?>" name="tywfc_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['tywfc_MaxTzJE']?>" name="tywfc_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['tywfc_MaxTzBs']?>" name="tywfc_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['tywfc_xyWin']?>" name="tywfc_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>韩国1.5分彩</td>
+                            <td>
+                                <input type="text" value="<?=$settings['hgydwfc_wufencai']?>" name="hgydwfc_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['hgydwfc_goCs']?>" name="hgydwfc_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['hgydwfc_MaxPL']?>" name="hgydwfc_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['hgydwfc_MaxYL']?>" name="hgydwfc_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['hgydwfc_MaxTzJE']?>" name="hgydwfc_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['hgydwfc_MaxTzBs']?>" name="hgydwfc_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['hgydwfc_xyWin']?>" name="hgydwfc_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>东京1.5分彩</td>
+                            <td>
+                                <input type="text" value="<?=$settings['djydwfc_wufencai']?>" name="djydwfc_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['djydwfc_goCs']?>" name="djydwfc_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['djydwfc_MaxPL']?>" name="djydwfc_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['djydwfc_MaxYL']?>" name="djydwfc_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['djydwfc_MaxTzJE']?>" name="djydwfc_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['djydwfc_MaxTzBs']?>" name="djydwfc_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['djydwfc_xyWin']?>" name="djydwfc_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>新德里1.5分彩</td>
+                            <td>
+                                <input type="text" value="<?=$settings['xdlydwfc_wufencai']?>" name="xdlydwfc_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['xdlydwfc_goCs']?>" name="xdlydwfc_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['xdlydwfc_MaxPL']?>" name="xdlydwfc_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['xdlydwfc_MaxYL']?>" name="xdlydwfc_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['xdlydwfc_MaxTzJE']?>" name="xdlydwfc_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['xdlydwfc_MaxTzBs']?>" name="xdlydwfc_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['xdlydwfc_xyWin']?>" name="xdlydwfc_xyWin" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>加拿大3.5分彩</td>
+                            <td>
+                                <input type="text" value="<?=$settings['jndsdwfc_wufencai']?>" name="jndsdwfc_wufencai" /><br>
+                                最大循环次数<input style="width: 50px" type="text" value="<?=$settings['jndsdwfc_goCs']?>" name="jndsdwfc_goCs" />
+                                &nbsp;最大赔率<input style="width: 50px" type="text" value="<?=$settings['jndsdwfc_MaxPL']?>" name="jndsdwfc_MaxPL" />
+                                &nbsp;最大盈利比率<input style="width: 50px" type="text" value="<?=$settings['jndsdwfc_MaxYL']?>" name="jndsdwfc_MaxYL" />
+                                &nbsp;最大监控金额<input style="width: 50px" type="text" value="<?=$settings['jndsdwfc_MaxTzJE']?>" name="jndsdwfc_MaxTzJE" />
+                                &nbsp;最大监控倍数<input style="width: 50px" type="text" value="<?=$settings['jndsdwfc_MaxTzBs']?>" name="jndsdwfc_MaxTzBs" />
+                                &nbsp;返奖小于n直接开号<input style="width: 50px" type="text" value="<?=$settings['jndsdwfc_xyWin']?>" name="jndsdwfc_xyWin" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <footer>
+                <div class="form-item">
+                    <label class="item-label"></label>
+                    <div class="controls">
+                        <button type="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">确 定</button>
+                        <!--<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>-->
+                    </div>
+                </div>
+            </footer>
+        </form>
+    </article>
+</block>
+<block name="script">
+    <link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    <script>
+    $(function() {
+        $('.time').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: "zh-CN",
+            minView: 2,
+            autoclose: true
+        });
+        showTab();
+    });
+    </script>
+</block>

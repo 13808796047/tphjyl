@@ -1,0 +1,58 @@
+
+<div class="w-goods w-goods-l w-goods-ing m-user-goods" style="background: #5e6171!important;color: white">
+	<div class="w-goods-info">
+		<table id="mainTable" class="fixmargin bottom attached ui small unstackable very compact celled table" style="border: 0px;">
+			<thead>
+				<tr class="colortr">
+					<th style="background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">账号</th>
+					<th style="width:12%;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">所属组</th>
+					<!-- <th style="width: 12%;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">充值总额</th>
+					<th style="width: 12%;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">提现总额</th> -->
+					<th style="width: 15%;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">投注</th>
+					<th style="width: 15%;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">中奖</th>
+					<th style="width: 15%;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">返点</th>
+					<th style="width: 15%;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">活动</th>
+					<th style="width: 15%; text-align: right; padding-right: 1.2em;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">盈亏</th>
+				</tr>
+			</thead>
+			<tbody style="background:#617177;color:#fff;">
+			<php>if (!empty($data)){</php>
+				<tr>
+					<td>团队合计</td>
+					<td> &nbsp;&nbsp;</td>
+					<!-- <td><?=$this->ifs($all['rechargeAmount'], '0')?></td>
+					<td><?=$this->ifs($all['cashAmount'], '0')?></td> -->
+					<td><?=$this->ifs($all['betAmount'], '0')?></td>
+					<td><?=$this->ifs($all['zjAmount'], '0')?></td>
+					<td><?=$this->ifs($all['fanDianAmount'], '0')?></td>
+					<td><?=$this->ifs($all['brokerageAmount'], '0')?></td>
+					<td><?=$this->ifs($all['zyk'], '0')?></td>
+				</tr>
+				<php>foreach ($data as $vo){</php>
+				<tr class="colortr">
+					<td>
+						{$vo.username}
+					<td><?=$this->ifs($vo['type'], '-')?></td>
+					<!-- <td><?=$this->ifs($vo['rechargeAmount'], '0')?></td>
+					<td><?=$this->ifs($vo['cashAmount'], '0')?></td> -->
+					<td><?=$this->ifs($vo['betAmount'], '0')?></td>
+					<td><?=$this->ifs($vo['zjAmount'], '0')?></td>
+					<td><?=$this->ifs($vo['fanDianAmount'], '0')?></td>
+					<td><?=$this->ifs($vo['brokerageAmount'], '0')?></td>
+					<td><?=$this->ifs($vo['zyk'], '0')?></td>
+				</tr>
+				<php>}</php>	
+			<php>} else {</php>
+                <tr>
+                    <td colspan="4" align="center">
+                        当前条件下没有记录，请更改条件后搜索
+                    </td>
+                </tr>
+            <php>}</php>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="page">
+	{$_page}
+</div>

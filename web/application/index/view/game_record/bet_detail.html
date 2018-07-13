@@ -1,0 +1,160 @@
+<link rel="stylesheet" type="text/css" href="__CSS__/default_content.min.css"/>
+<style>
+    .intro_content .last .first {
+        border-radius: 0 0 0 5px;
+        -moz-border-radius: 0 0 0 5px;
+        -webkit-border-radius: 0 0 0 5px;
+        -o-border-radius: 0 0 0 5px;
+    }
+    .intro_content .last .last {
+        border-radius: 0 0 5px 0;
+        -moz-border-radius: 0 0 5px 0;
+        -webkit-border-radius: 0 0 5px 0;
+        -o-border-radius: 0 0 5px 0;
+    }
+    .table-border {margin: 0 0 20px;}
+    .tr-field td {padding: 10px 0;}
+</style>
+<script type="text/javascript" src="__JS__/jquery-1.9.1.js" ></script>
+<script src="__JS__/main.min.js"></script>
+<script>
+var localpath='';
+
+function intval (mixed_var, base) {
+	var tmp;
+	var type = typeof(mixed_var);
+	if (type === 'boolean') {
+	return +mixed_var;
+	} else if (type === 'string') {
+	tmp = parseInt(mixed_var, base || 10);
+	return (isNaN(tmp) || !isFinite(tmp)) ? 0 : tmp;    } else if (type === 'number' && isFinite(mixed_var)) {
+	return mixed_var | 0;
+	} else {
+	return 0;
+	}
+}
+function loadcount(){
+var total = 0;
+var ups =0;
+var evens =0;
+var downs= 0;
+var odds= 0;
+var atmp = 0;
+aTmp="75451".split(" ");
+for(var ci=0;ci<aTmp.length;ci++){
+	total += intval(aTmp[ci]);
+
+	if( intval(aTmp[ci]) < 41 ){
+		ups += 1;
+	}else{
+		downs += 1;
+	}
+	if( intval(aTmp[ci]) % 2 == 0 ){
+		evens += 1;
+	}else{
+		odds += 1;
+	}
+
+		cheziStr = '和值：'+total+'(';
+		if(total > 810)	{
+			cheziStr += '大';
+		}else if(total < 810){
+			cheziStr += '小';
+		}else{
+			cheziStr += '和';
+		}
+		cheziStr += ','+(total%2==0 ? '双' : '单')+')';
+		var cpanStr = '盘面：(';
+		if( ups > downs ){
+			cpanStr += '上';
+		}else if( ups == downs ){
+			cpanStr += '中';
+		}else{
+			cpanStr += '下';
+		}
+		cpanStr += ',';
+		if( odds > evens ){
+			cpanStr += '奇';
+		}else if( odds == evens ){
+			cpanStr += '和';
+		}else{
+			cpanStr += '偶';
+		}
+		cpanStr += ')';
+	$("#show").html(cheziStr);
+	$("#panmian").html(cpanStr);
+}
+
+}
+$(function (){
+	        $(parent.document).find("#mainFrame").height($(".ys-content").outerHeight(true) + $(".content_mid").outerHeight(true));
+})
+</script>
+<div class="ys-content">
+	<div class="header">投注详情</div>
+</div>
+<div class="list-div intro_content saveup_table content_mid msg-table">
+{empty name="bet"}
+<div align="center">投注信息不存在</div>
+</div>
+{else /}
+<table style="table-layout:fixed;" class="table-border" align="center" width="100%">
+        <tr class="tr-field">
+                <td class="cell-1 narrow-label" width="150">注单编号:</td>
+                <td class="cell-2">{$bet.id}</td>
+                <td class="cell-1 narrow-label" width="150">投单时间:</td>
+                <td class="cell-2"><?=date('Y-m-d H:i:s',$bet['actionTime'])?></td>
+        </tr>
+        <tr class="tr-field">
+                <td class="cell-1 narrow-label">彩种:</td>
+                <td class="cell-2">{$bet.type_name}</td>
+                <td class="cell-1 narrow-label">游戏用户:</td>
+                <td class="cell-2">{$bet.username}</td>
+        </tr>
+        <tr class="tr-field">
+                <td class="cell-1 narrow-label">玩法:</td>
+                <td class="cell-2">{$bet.played_name}&nbsp;<!-- (&nbsp;<a href="./gameinfo_taskdetail.shtml?id=TVKLMNOPQRS" style="color:red;">追号单记录</a>&nbsp;) --></td>
+                <td class="cell-1 narrow-label">期号:</td>
+                <td class="cell-2">{$bet.actionNo}</td>
+        </tr>
+        <tr class="tr-field">
+                <td class="narrow-label" style="vertical-align: middle;" valign="top">投注内容:</td>
+                <td colspan="3" style="word-wrap: break-word;word-break:normal;width:85%;">{$bet.actionData}</td>
+        </tr>
+        <tr class="tr-field">
+                <td class="cell-1 narrow-label">倍数:</td>
+                <td class="cell-2">{$bet.beiShu}倍</td>
+                <td class="cell-1 narrow-label">模式:</td>
+                <td class="cell-2">
+                    <span style="line-break:break-all;">                        
+                        {switch name="$bet.mode"}
+                            {case value="2"}元{/case}
+                            {case value="0.2"}角{/case}
+                            {case value="0.02"}分{/case}
+                            {case value="0.002"}厘{/case}
+                            {default /} 
+                        {/switch}
+                    </span>
+                </td>
+        </tr>
+        <tr class="tr-field">
+                <td class="cell-1 narrow-label">投注总金额:</td>
+                <td class="cell-2">{$bet.mode*$bet.beiShu*$bet.actionNum*($bet.fpEnable+1)}</td>
+                <td class="cell-1 narrow-label">奖金:</td>
+                <td class="cell-2">{$bet.bonus}</td>
+        </tr>
+        <tr class="tr-field last">
+                <td class="cell-1 narrow-label first">中奖号码:</td>
+                <td class="cell-2" style="word-wrap: break-word;word-break:normal;">
+                    {$bet.lotteryNo}                    &nbsp;<span id="show" class="green1"></span>
+                    &nbsp;<span class="green1" id="panmian"></span>
+                </td>
+                <td class="cell-1 narrow-label">状态:</td>
+                <td class="cell-2 last">{$bet.status_name}</td>
+        </tr>
+</table>
+{/empty}
+<div align="center">
+		        <input type="button" onclick="history.back()" class="btn" value="返回" name="">
+        </div>
+</div>

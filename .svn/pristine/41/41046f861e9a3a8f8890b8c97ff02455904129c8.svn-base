@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="__CSS__/themes/base/jquery.ui.all.css">
+<link rel="stylesheet" href="__CSS__/default_content.css">
+<link rel="stylesheet" href="__CSS__/gift.css">
+<style>
+    ul li,ol li {
+        color: #212121;
+    }
+    p {
+        color:#212121;
+        margin: 0 0 10px 30px;
+    }
+    .step {
+        padding: 0 30px;
+    }
+    .ui-tabs .ui-tabs-nav {
+        margin: 30px;
+    }
+</style>
+<!--[if lt IE 9]>
+<style>
+    body {
+        height:100%;
+        background-color: #3e4459;
+    }
+</style>
+<![endif]-->
+<script type="text/javascript" src="__JS__/util/jquery-1.9.1.min.js"></script>
+<div class="ys-content">
+    <div class="header">如何清理缓存</div>
+    <div class="main">
+        <div class="section">
+            <p>除了用Ctrl+F5重新整理,还有手动清除浏览器缓存,以下版本不同针对自己浏览器版本操作</p>
+            <div class="Menubox content_mid" id="tabs">
+                <ul>
+                    <li><a href="#con_clearcache_menu_1">I8,IE9浏览器</a></li>
+                    <li><a href="#con_clearcache_menu_2">火狐浏览器</a></li>
+                    <li><a href="#con_clearcache_menu_3">谷哥浏览器</a></li>
+                </ul>
+                <!--内容代码开始-->
+                <div id="con_clearcache_menu_1" style="margin-bottom:20px; margin-top:15px;">
+                    <p>步骤一：在IE菜单点击 “internet属性”</p>
+
+                    <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/clearcache/u1.png"></div>
+                    <p>步骤二：
+                    <ol>
+                        <li>点击“删除”按键</li>
+                        <li>取消保留</li>
+                        <li>选择删除的项目</li>
+                        <li>点击“删除“</li>
+                    </ol>
+                    </p>
+                    <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/clearcache/u2.png" style="width: 100%;"></div>
+                </div>
+                <div id="con_clearcache_menu_2" style="margin-bottom:20px; margin-top:15px;">
+                    <p>步骤一：菜单栏 工具 选择 清空最近历史记录</p>
+                    <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/clearcache/u3.jpg"></div>
+                    <p>步骤二：单击“详细信息”</p>
+                    <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/clearcache/u4.png"></div>
+                    <p>步骤三：选择要删除的内容，选择历史记录的时间，单击“立即清除”即可。”</p>
+                    <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/clearcache/u5.png"></div>
+                </div>
+                <div id="con_clearcache_menu_3" style="margin-bottom:20px; margin-top:15px;">
+                    <p>步骤一：
+                    <ul>
+                        <li>右侧板手图标</li>
+                        <li>选择 工具（tool）</li>
+                        <li>清空最近历史记录</li>
+                    </ul>
+                    <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/clearcache/u6.jpg"></div>
+                    <p>步骤二：选择清除内容和时间，单击“清除浏览数据”即可。</p>
+                    <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/clearcache/u7.png"></div>
+                </div>
+            </div>
+            <!--内容代码结束-->
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__JS__/jquery-1.9.1.js"></script>
+<script src="__JS__/ui/jquery.ui.core.js"></script>
+<script src="__JS__/ui/jquery.ui.widget.js"></script>
+<script src="__JS__/ui/jquery.ui.tabs.js"></script>
+<script>
+    function changeIframeHeight(height) {
+        $(parent.document).find("#mainFrame").height(height);
+    }
+    $(function () {
+        $('#tabs li a').click(function (e) {
+            e.preventDefault();
+        });
+        $("#tabs").tabs({
+            show: function (event, ui) {
+                changeIframeHeight($('.header').height() + $("#tabs").height() + 200);
+            }
+        });
+        changeIframeHeight($('.header').height() + $("#tabs").height() + 200);
+    });
+
+</script>

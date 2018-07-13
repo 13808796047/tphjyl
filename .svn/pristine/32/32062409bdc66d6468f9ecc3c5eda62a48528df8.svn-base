@@ -1,0 +1,309 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font: 12px/24px  Microsoft YaHei,"\5b8b\4f53";
+	color:#000;
+	background:none;
+}
+.page {text-align:right; padding:5px 10px; color:#000;}
+.newsPages {text-align:center; padding:10px 0; color:#000;}
+
+.st {font-family:"\5b8b\4f53";}
+a { color:#000; }
+a:hover { text-decoration:underline; }
+.white { color:#fff; }
+.red {color:red;}
+.green {color:#28847C;}
+.underline {text-decoration:underline;}
+.floatR {float:right;}
+.floatL {float:left;}
+
+.displayNone {display:none;}
+.overflowHidden {overflow:hidden;}
+.marginb10px {margin-bottom:10px;}
+.marginb5px {margin-bottom:5px;}
+.lineheight46px {line-height:46px;}
+
+.line10px {  width:100%; height:10px; clear:both; overflow:hidden;}
+.bt_cancel {
+	background:url(../../sy/images/aaa-2.png) center bottom no-repeat;
+	width:104px;
+	height:37px;
+	margin:0 5px;
+	border:0;
+	color:#FFFFFF;
+	cursor:pointer;
+        font-size: 15px;
+        font-weight: bold;
+}
+.bt_cedan {
+	background:url(../images/sy/bt_cancel.gif) no-repeat;
+	width:91px;
+	height:28px;
+	margin:0 5px;
+	border:0;
+	color:#EEF1F2;
+	cursor:pointer;
+	font-size: 0px;/*IE hack*/
+	display:inline-block;/*IE hack*/
+	line-height: 0px;/*IE hack*/
+	overflow:hidden;
+	text-indent:-9999px;
+	_text-indent:0;
+}
+#point {
+	line-height:27px;
+	margin-bottom:12px;
+}
+.dotTitle { font-size:12px;margin:10px 0; font-size:14px;}
+
+/* =content -----------------------------------------------------------------------------*/
+
+
+.formTable {
+	border:1px solid #A7ADBB;
+	margin-bottom:10px;
+}
+.formTable th ,
+.formTable td {
+	border-top:1px solid #fff;
+	border-bottom:1px solid #ddd;
+	border-right:1px solid #ddd;
+	padding:5px;
+	vertical-align:middle;
+}
+.formTable th {
+	text-align:right;
+}
+
+
+.grayTable {
+	border:1px solid #cccccc;
+}
+.grayTable th {
+	background-color:#414c52;
+	border:1px solid #cccccc;
+	text-align:center;
+	padding:2px;
+	border-left:0;
+        color:#fff;
+}
+.grayTable .left {text-align:left; text-indent:20px;}
+.grayTable .left_noindent {text-align:left;}
+
+
+.formCheck ,
+.formNext ,
+.formBack ,
+.formSubmit ,
+.formReset ,
+.formChange ,
+.formLibd ,
+.formZjbd ,
+.formSame ,
+.formCancel {
+	background: #28847C;
+	border-radius: 3px;
+	width:104px;
+	height:37px;
+	margin-top: 10px;
+	color:#FFFFFF;
+	border:0;
+	cursor:pointer;
+        font-size: 15px;
+        font-weight: bold;
+}
+.formWord {background:url(../../images/sy/aaa-1.png) no-repeat;
+	width:76px;
+	height:31px;
+	color:#FFFFFF;
+	border:0;
+	cursor:pointer;
+	margin:15px 20px;
+        font-size: 12px;
+        font-weight: bold;}
+.formOk {
+	float:right;
+	background:url(../../images/sy/xhl.gif) no-repeat;
+	width:139px;
+	height:36px;
+	margin:0 5px;
+	border:0;
+	color:#EEF1F2;
+	cursor:pointer;
+	font-size: 0px;/*IE hack*/
+	display:inline-block;/*IE hack*/
+	line-height: 0px;/*IE hack*/
+	overflow:hidden;
+	text-indent:-9999px;
+	_text-indent:0;
+}
+
+#success {
+	color:#000;
+	background:url(../../images/sy/success.gif) no-repeat 0 0;
+	_height:64px;
+	min-height:64px;
+	width:400px;
+	margin:0 auto;
+	line-height:22px;
+	padding:16px 0 0 94px;
+}
+
+#error {
+	color:#000;
+	background:url(../../images/sy/attention.gif) no-repeat 0 0;
+	_height:64px;
+	min-height:64px;
+	line-height:22px;
+	padding:16px 0 0 94px;
+        margin-left: 20px;
+        width: 700px;
+}
+#error .title {
+	color:#E45E00;
+	margin-bottom:20px;
+}
+#newsList {color:#000;}
+#newsList li {
+	line-height:28px;
+	height:28px;
+	padding:0 20px;
+	width:670px;
+	float:left;
+}
+#newsList .even {
+	background-color:#EFEFEF;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #ddd;
+}
+#newsList .odd {
+	background-color:#F6F6F6;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #ddd;
+}
+#newsList a {float:left; color:#000;}
+#newsList .date {float:right; color:#666;font-family:"\5b8b\4f53";}
+
+
+
+#newsDetail .title{
+	border-top:1px solid #fff;
+	background-color:#EFEFEF;
+	text-align:center;
+	padding:8px 0 0;
+	line-height:20px;
+}
+#newsDetail .date{
+	border-bottom:1px solid #fff;
+	background-color:#EFEFEF;
+	text-align:center;
+	color:#666;
+	padding:0 0 8px 0;
+	line-height:20px;
+	font-family:"\5b8b\4f53";
+}
+#newsDetail .detail {
+	padding:10px ;
+	border-bottom:1px solid #fff;
+	line-height:30px;
+}
+#newsDetail .back ,
+.yhlb_back {
+	text-align:right;
+	padding:10px;
+}
+#newsDetail .back a ,
+.yhlb_back a{
+	display:inline-block;
+	background:url(../../images/sy/back.gif) no-repeat;
+	width:46px;
+	height:15px;
+	line-height:5000px;
+	overflow:hidden;	
+}
+
+
+
+#gameMethod  {color:#000;}
+#gameMethod .Menubox {
+	color:#fff;
+	margin-bottom:5px;
+}
+#gameMethod .Menubox li {color: #000000;font-size:14px;margin-right: 5px;background:url(../../sy/images/change.png) no-repeat;height: 29px;width: 112px;text-align: center; line-height: 29px;margin-bottom: 5px;}
+#gameMethod .Menubox .hover{background:url(../../sy/images/change_hover.png) no-repeat; color:#FFF; font-size:14px;margin-right: 5px;height: 29px;width: 112px;text-align: center; line-height: 29px;margin-bottom: 5px;}
+#gameMethod .Contentbox {clear:both; text-align:left;}
+#one1 {width:102px;}
+#one2 {width:104px;}
+#one3 {width:104px;}
+#one4 {width:103px;}
+
+#one1.hover ,
+#one2.hover ,
+#one3.hover ,
+#one5.hover ,
+#one4.hover { background:url(../../images/sy/gameMethod02.gif) no-repeat;}
+#one1.hover {background-position:0 0;}
+#one2.hover {background-position:-102px 0;}
+#one3.hover {background-position:-206px 0;}
+#one4.hover {background-position:-310px 0;}
+#one5.hover {background-position:-414px 0;}
+
+
+
+#playinfo_menu0 {width:102px;}
+#playinfo_menu1 {width:104px;}
+#playinfo_menu2 {width:104px;}
+#playinfo_menu3 {width:103px;}
+#playinfo_menu0.hover ,
+#playinfo_menu1.hover ,
+#playinfo_menu2.hover ,
+#playinfo_menu4.hover ,
+#playinfo_menu3.hover {background:url(../../images/sy/gameMethod02.gif) no-repeat;}
+#playinfo_menu0.hover {background-position:0 0;}
+#playinfo_menu1.hover {background-position:-102px 0;}
+#playinfo_menu2.hover {background-position:-206px 0;}
+#playinfo_menu3.hover {background-position:-310px 0;}
+#playinfo_menu4.hover {background-position:-414px 0;}
+
+
+.gameMethod ,
+.gameMethod th ,
+.gameMethod td {
+	border:1px solid #fff;
+	border-collapse:collapse;
+	padding:5px;
+}
+
+
+
+
+#appraise {text-align:left; color:#000;}
+#appraise .question {
+	background:url(../../images/sy/dot12.gif) no-repeat 15px 4px;
+	padding-left:50px;
+	padding:5px 0 0 50px;
+	margin-bottom:5px;
+	font-weight:bold;
+}
+#appraise .answer {
+	background:url(../../images/sy/dot13.gif) no-repeat;
+	padding:5px 0 0;
+	margin-bottom:10px;
+	line-height:18px;
+}
+#appraise .answer .border {padding:8px 15px;border:1px solid #FF6A00;border-top:0; background-color:#fff;}
+
+#cyhd{background: url(../../images/sy/cyhd.gif) no-repeat;width:101px;height:35px;margin:15px 20px;    line-height: 0;   overflow: hidden;    border: 0 none;
+    color: #F09610;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;}
+
+.sdyhk{background: url(../../images/sy/sdbank.jpg) no-repeat;width:91px;height:28px;margin:15px 20px;    line-height: 0;   overflow: hidden;    border: 0 none;
+    color: #F09610;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;}
+

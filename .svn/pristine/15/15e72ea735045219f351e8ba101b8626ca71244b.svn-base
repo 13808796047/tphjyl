@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+    <link rel="stylesheet" href="http://upccry1.3smao.net/sy2/css/themes/base/jquery.ui.all.min.css">
+    <link rel="stylesheet" href="http://upccry1.3smao.net/sy2/css/default_content.min.css">
+    <!--消息框代码开始-->
+    <script type="text/javascript" src="http://upccry1.3smao.net/sy2/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="http://upccry1.3smao.net/sy2/js/jquery-migrate-1.4.1.js"></script>
+    <!-- <script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/common/model/details.js" ></script> -->
+    <script src="http://upccry1.3smao.net/sy2/js/ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://upccry1.3smao.net/sy2/js/vimeoPlayer.js" ></script>
+    <script type="text/javascript" src="http://upccry1.3smao.net/sy2/js/vimeoPlayer.js" ></script>
+    <style>
+        table {font-size:14px;}
+        .video-wrapper {
+            background: rgba(220, 220, 220, .3);
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, .15) inset,
+            -1px -1px 0 #fff inset,
+            -2px -2px 0 rgba(0, 0, 0, .1) inset,
+            0 0 10px #999 inset,
+            2px 2px 0 rgba(255, 255, 255, .8) inset;
+            margin: 35px auto 25px;
+            padding: 20px;
+            width: 640px;
+        }
+    </style>
+    <!--消息框代码结束-->
+
+</head>
+<body id="lan">
+<div id="gameMethod" class="ys-content">
+    <div class="header">
+        操作指南	</div>
+    <div class="main">
+        <div class="Menubox section" id="tabs">
+            <ul>
+                <li id="guide_menu0"   class="hover" style="float:left; cursor:pointer">
+                    <a href="#con_guide_menu_0">
+                        PC客戶端				</a></li>
+                <li id="guide_menu1"   class="hover" style="float:left; cursor:pointer">
+                    <a href="#con_guide_menu_1">
+                        手机端				</a></li>
+                <li id="guide_menu2"   class="hover" style="float:left; cursor:pointer">
+                    <a href="#con_guide_menu_2">
+                        网页版				</a></li>
+            </ul>
+            <!--内容代码开始-->
+            <div id="con_guide_menu_0" class="tabs">
+                <ul>
+                    <li id="video_menu0"   class="hover" style="float:left; cursor:pointer">
+                        <a href="#video_0">
+                            客户端加强版安装								</a>
+                    </li>
+                    <li id="video_menu1"   style="float:left; cursor:pointer">
+                        <a href="#video_1">
+                            客户端加强版自动投注软件操作教学								</a>
+                    </li>
+                </ul>
+                <div id="video_0" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/226855443" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_1" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/227577887" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+            </div>
+            <div id="con_guide_menu_1" class="tabs">
+                <ul>
+                    <li id="video_menu2"   style="float:left; cursor:pointer">
+                        <a href="#video_2">
+                            WAP手机客户端								</a>
+                    </li>
+                    <li id="video_menu3"   style="float:left; cursor:pointer">
+                        <a href="#video_3">
+                            WAP手机端开户教学								</a>
+                    </li>
+                    <li id="video_menu4"   style="float:left; cursor:pointer">
+                        <a href="#video_4">
+                            WAP手机端投注教学								</a>
+                    </li>
+                    <li id="video_menu5"   style="float:left; cursor:pointer">
+                        <a href="#video_5">
+                            WAP手机端提现教学								</a>
+                    </li>
+                    <li id="video_menu6"   style="float:left; cursor:pointer">
+                        <a href="#video_6">
+                            WAP手机端充值教学								</a>
+                    </li>
+                    <li id="video_menu7"   style="float:left; cursor:pointer">
+                        <a href="#video_7">
+                            安卓手机客户端								</a>
+                    </li>
+                    <li id="video_menu8"   style="float:left; cursor:pointer">
+                        <a href="#video_8">
+                            安卓手机端开户教学								</a>
+                    </li>
+                    <li id="video_menu9"   style="float:left; cursor:pointer">
+                        <a href="#video_9">
+                            安卓手机端投注教学								</a>
+                    </li>
+                    <li id="video_menu10"   style="float:left; cursor:pointer">
+                        <a href="#video_10">
+                            安卓手机端提現教学								</a>
+                    </li>
+                    <li id="video_menu11"   style="float:left; cursor:pointer">
+                        <a href="#video_11">
+                            安卓手机端微信充值教学								</a>
+                    </li>
+                    <li id="video_menu12"   style="float:left; cursor:pointer">
+                        <a href="#video_12">
+                            安卓手机端支付宝充值教學								</a>
+                    </li>
+                    <li id="video_menu13"   style="float:left; cursor:pointer">
+                        <a href="#video_13">
+                            安卓手机端银联支付教学								</a>
+                    </li>
+                </ul>
+                <div id="video_2" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/216644757" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_3" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/217781256" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_4" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/221570965" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_5" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/217781304" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_6" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/217781268" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_7" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/216607842" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_8" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/226847937" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_9" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/226855428" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_10" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/227012314" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_11" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/227516172" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_12" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/227524625" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_13" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/227842465" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+            </div>
+            <div id="con_guide_menu_2" class="tabs">
+                <ul>
+                    <li id="video_menu14"   style="float:left; cursor:pointer">
+                        <a href="#video_14">
+                            开户流程								</a>
+                    </li>
+                    <li id="video_menu15"   style="float:left; cursor:pointer">
+                        <a href="#video_15">
+                            投注指南								</a>
+                    </li>
+                    <li id="video_menu16"   style="float:left; cursor:pointer">
+                        <a href="#video_16">
+                            投注查询								</a>
+                    </li>
+                    <li id="video_menu17"   style="float:left; cursor:pointer">
+                        <a href="#video_17">
+                            提现流程								</a>
+                    </li>
+                    <li id="video_menu18"   style="float:left; cursor:pointer">
+                        <a href="#video_18">
+                            银行充值								</a>
+                    </li>
+                    <li id="video_menu19"   style="float:left; cursor:pointer">
+                        <a href="#video_19">
+                            大额支付宝充值								</a>
+                    </li>
+                    <li id="video_menu20"   style="float:left; cursor:pointer">
+                        <a href="#video_20">
+                            微信充值								</a>
+                    </li>
+                    <li id="video_menu21"   style="float:left; cursor:pointer">
+                        <a href="#video_21">
+                            QQ支付								</a>
+                    </li>
+                </ul>
+                <div id="video_14" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/203386636" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_15" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/197260028" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_16" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/195234071" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_17" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/203059783" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_18" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/196377592" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_19" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/211628872" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_20" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/194914339" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+                <div id="video_21" class="intro_content">
+                    <div class="video-wrapper">
+                        <iframe src="https://player.vimeo.com/video/226403500" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>						</div>
+                </div>
+            </div>
+            <!--内容代码结束-->
+        </div>
+    </div>
+</div>
+<script>
+    // 操作指南视频
+    var iframes = [];
+    var players = [];
+
+    $(function () {
+        //定義頁面上所有操作指南視頻的撥放器元素
+        $('div[id^="video_"]').each(function () {
+            var k = $(this).prop('id').match(/\d+/g)[0];
+            iframes[k] = $('#video_' + k + ' iframe');
+            players[k] = new Vimeo.Player(iframes[k]);
+        });
+    });
+
+    function changeIframeHeight(height){
+        $(parent.document).find("#mainFrame").height(height);
+    }
+    function changeRowspan(selector){
+        var rowspan = 1;
+        $(selector).each(function(index){
+            if($.trim($(this).text()).length == 0){
+                $(this).remove();
+                rowspan ++;
+            }
+            else{
+                if(rowspan!=1){
+                    $(selector)
+                        .eq(index-rowspan)
+                        .attr("rowspan", rowspan)
+                        .css("border-right", "1px solid #595959")
+                        .next()
+                        .css("border-left", "none");
+                }
+                rowspan = 1;
+            }
+        });
+    }
+    $(function() {
+        changeRowspan("table td:first-child + td");
+        changeRowspan("table td:first-child");
+
+        $( "#tabs" ).tabs({
+            show: 500,
+            activate: function (event, ui) {
+                event.preventDefault();
+                changeIframeHeight($("body").height())
+                for(i in players) {
+                    players[i].pause();
+                }
+            }
+        });
+        $( ".tabs" ).tabs({
+            show: function (event, ui) {
+                changeIframeHeight($("#gameMethod").outerHeight(true));
+                for(i in players) {
+                    players[i].pause();
+                }
+            }
+        });
+    });
+    $(window).load(function() {
+        changeIframeHeight($("body").height())
+    });
+</script>
+
+</body>
+</html>

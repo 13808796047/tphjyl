@@ -1,0 +1,78 @@
+{
+  "_from": "mysql-queues",
+  "_id": "mysql-queues@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-tmQb5CTSxuZH5l6bsxAPRRx+Rjo=",
+  "_location": "/mysql-queues",
+  "_phantomChildren": {
+    "bignumber.js": "4.0.4",
+    "readable-stream": "2.3.3",
+    "safe-buffer": "5.1.1",
+    "sqlstring": "2.3.0"
+  },
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "mysql-queues",
+    "name": "mysql-queues",
+    "escapedName": "mysql-queues",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/mysql-queues/download/mysql-queues-1.0.0.tgz",
+  "_shasum": "b6641be424d2c6e647e65e9bb3100f451c7e463a",
+  "_spec": "mysql-queues",
+  "_where": "/Users/sky/Desktop/code/yhyl/kjq/腾讯彩-tx-ssc",
+  "author": {
+    "name": "Blake Miner",
+    "email": "miner.blake@gmail.com",
+    "url": "http://www.blakeminer.com"
+  },
+  "bugs": {
+    "url": "https://github.com/bminer/node-mysql-queues/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Tom Atkinson",
+      "email": "atkinson.tommy@neosoft.ba"
+    },
+    {
+      "name": "Kris Reeves",
+      "email": "krisreeves@searchfanatics.com"
+    }
+  ],
+  "dependencies": {
+    "mysql": ">=0.9.5"
+  },
+  "deprecated": "This library is no longer needed because node-mysql supports transactions",
+  "description": "Wraps 'mysql' to provide mulitple query queues, allowing support for multiple statements and transactions.",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "homepage": "https://github.com/bminer/node-mysql-queues",
+  "keywords": [
+    "mysql",
+    "transaction",
+    "multiple statements",
+    "queue",
+    "query",
+    "database"
+  ],
+  "main": "index.js",
+  "name": "mysql-queues",
+  "optionalDependencies": {
+    "mysql": ">=0.9.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bminer/node-mysql-queues.git"
+  },
+  "version": "1.0.0"
+}

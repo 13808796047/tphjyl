@@ -1,0 +1,99 @@
+<extend name="Base/common"/>
+
+<block name="title"><title>用户注册－{:S('WEB_NAME')}</title></block>
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__CSS__/login.css">
+</block>
+<block name="script">
+
+</block>
+
+<block name="header"></block>
+<block name="body">
+    <div class="m-simpleHeader" id="dvHeader">
+        <a href="javascript:history.back(-1);" data-pro="back" data-back="true" class="m-simpleHeader-back"><i
+                class="ico ico-back"></i></a>
+
+        <h1>用户注册</h1>
+    </div>
+    <div class="m-login">
+        <input type="hidden" id="regPath" name="regPath" value="<?='http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>">
+        <input type="hidden" id="lid" name="lid" value="{:I('lid')}">
+        <input type="hidden" id="uid" name="uid" value="{:I('uid')}">
+        <div class="m-login-tips" id="tips"></div>
+        <div class="m-login-form w-form">
+            <div class="w-form-item m-login-form-account w-inputBar w-bar" id="dvAccount">
+                <div class="w-bar-label">账号：</div>
+                <a data-pro="clear" href="javascript:void(0);" class="w-bar-input-clear">×</a>
+                <div class="w-bar-control"><input id="account" placeholder="请输入账号" autocapitalize="off" data-pro="input"
+                                                  class="w-bar-input" name="username" type="text"></div>
+            </div>
+            <div class="w-form-item m-login-form-account w-inputBar w-bar" id="dvPassword">
+                <div class="w-bar-label">密码：</div>
+                <a data-pro="clear" href="javascript:void(0);" class="w-bar-input-clear">×</a>
+                <div class="w-bar-control"><input id="password" placeholder="请输入密码" autocapitalize="off" data-pro="input"
+                                                  class="w-bar-input" name="password" value="" type="password"></div>
+            </div>
+            <div class="w-form-item m-login-form-password w-inputBar w-bar" id="dvPassword2">
+                <div class="w-bar-label">密码：</div>
+                <a data-pro="clear" href="javascript:void(0);" class="w-bar-input-clear">×</a>
+                <div class="w-bar-control"><input id="repassword"  placeholder="请再次输入密码" autocapitalize="off" data-pro="input"
+                                                  class="w-bar-input" name="repassword" value="" type="password"></div>
+            </div>
+            <div class="m-login-menu" id="autoCmpl" style="display:none;"></div>
+        </div>
+        <div class="m-login-tips-bottom" id="tipsBottom"></div>
+        <div class="m-login-submit">
+            <button class="w-button w-button-main" data-action="{:U('user/register')}" id="btnLogin"
+                    onclick="return fukuan(this);">注 册
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function fukuan(me) {
+            var account = $('#account').val();
+            if (account.length > 15 || account.length < 6) {
+                showDialog('账号只能是大于6位小于15位的数字或字母');
+                return false;
+            }
+
+            var  password = $('#password').val();
+            var  repassword = $('#repassword').val();
+            if (password.length < 6){
+                showDialog('账号密码只能是大于6位小于15位的数字或字母');
+                return false;
+            }
+            if (password != repassword){
+                showDialog('两次输入密码不一致');
+                return false;
+            }
+            var action = $('#btnLogin').attr('data-action');
+            var regPath = $('#regPath').val();
+            var lid = $('#lid').val();
+            var uid = $('#uid').val();
+            $.ajax({
+                url: action,
+                type: 'POST',
+                dataType: 'JSON',
+                data: {'username':account,'password':password,'repassword':repassword,'lid':lid,'uid':uid},
+                success: function(result){
+                    if (result.status){
+                        location.href = result.url;
+                    }else{
+                        showDialog(result.info);
+                        return false;
+                    }
+                },
+                error: function () {
+                    showDialog('注册失败。');
+                    return false;
+                }
+            });
+        }
+    </script>
+</block>
+<block name="script">
+
+</block>
+<block name="footer"></block>

@@ -1,0 +1,183 @@
+<script src="__JS__/sy/subPage.js"></script>
+<script src="__JS__/sy/dialogUI/jquery-1.7.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__CSS__/default_content.min.css"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/select2.min.css"/>
+<link rel="stylesheet" href="__CSS__/page.css" />
+
+<div class="ys-content">
+    <div class="header">
+        帐变记录					</div>
+    <div class="main">
+        <div class="form section">
+            <form action="" method="GET" >
+                <input type="hidden" name="isquery" value="1">
+                <input type="hidden" name="controller" value="report">
+                <input type="hidden" name="action" value="orders">
+                <input type="hidden" name="isgetdata" value="1">
+                <input type="hidden" name="new" value="1">
+                <div class="field">
+                    <label>时间</label>
+                    <select name="days" id="days" class="dept_select selection">
+                        {volist name="days" id="vo"}
+                        <option  value="{$vo}" {if $vo == @$_GET['days']} selected {/if}>{$vo}</option>
+                        {/volist}
+                    </select>
+                </div>
+                <div class="inline-fields">
+                    <div class="field">
+                        <label>选择彩种</label>
+                        <select  name="lotteryid" id="lotteryid" class="dept_select selection">
+                            <option value="0">所有游戏</option>
+                            {volist name="types_data" id="vo"}
+                            <option  value="{$vo.id}"  {if $vo.id == @$_GET['lotteryid']} selected {/if}>{$vo.title}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>投注模式</label>
+                        <select name="modes" id="modes" class="selection">
+                            <option value="0">所有模式</option>
+                            <option value="1" {if 1 == @$_GET['modes']} selected {/if}>元</option>
+                            <option value="2" {if 2 == @$_GET['modes']} selected {/if}>角</option>
+                            <option value="3" {if 3 == @$_GET['modes']} selected {/if}>分</option>
+                            <option value="4" {if 4 == @$_GET['modes']} selected {/if}>厘</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>帐变类型</label>
+                        <select name="ordertype" id="ordertype" class="selection">
+                            <option  value="0">所有类型</option>
+                            <option {if 1 == @$_GET['ordertype']} selected {/if} value="1">账户充值</option>
+                            <option {if 7 == @$_GET['ordertype']} selected {/if} value="7">撤单返款</option>
+                            <option {if 106 == @$_GET['ordertype']} selected {/if} value="106">账户提现</option>
+                            <option {if 8 == @$_GET['ordertype']} selected {/if} value="8">提现失败</option>
+                            <option {if 107 == @$_GET['ordertype']} selected {/if} value="107">提现成功</option>
+                            <option {if 9 == @$_GET['ordertype']} selected {/if} value="9">系统充值</option>
+                            <option {if 51 == @$_GET['ordertype']} selected {/if} value="51">活动礼金</option>
+                            <option {if 52 == @$_GET['ordertype']} selected {/if} value="52">充值佣金</option>
+                            <option {if 53 == @$_GET['ordertype']} selected {/if} value="53">消费活动</option>
+                            <option {if 101 == @$_GET['ordertype']} selected {/if} value="101">投注扣款</option>
+                            <option {if 6 == @$_GET['ordertype']} selected {/if} value="6">中奖奖金</option>
+                            <option {if 2 == @$_GET['ordertype']} selected {/if} value="2">游戏返点</option>
+                            <option {if 102 == @$_GET['ordertype']} selected {/if} value="102">追号扣款</option>
+                            <option {if 12 == @$_GET['ordertype']} selected {/if} value="12">下级转账</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label style="width: 140px;margin-left: 0;margin-right: 3px">用户名</label>
+                        <select name="user_select" id="user_select" class="selection">
+                            <option value="1" selected="selected">仅自己</option>
+                            <option value="2" {if 2 == @$_GET['user_select']} selected {/if}  >直接下级</option>
+                            <option value="3" {if 3 == @$_GET['user_select']} selected {/if}  >所有下级</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>下级用户名</label>
+                        <input name="username" id="username" class="selection" value="{$_GET['username'] ? $_GET['username'] : ''}" placeholder="用户名" style="height: 28px"/>
+                    </div>
+                </div>
+                <input type="hidden" name="num" value="25">
+                <input id="gameInfoBtn" type="submit" class="btn" value="搜索" />
+            </form>
+        </div>
+        <div class="list">
+            <table>
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>时间</th>
+                    <th>帐变类型</th>
+                    <th>彩种</th>
+                    <th>玩法</th>
+                    <th>期号</th>
+                    <th>模式</th>
+                    <th>余额变动</th>
+                    <th>余额</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php  $coinTotal=0;$userCoinTotal=0;?>
+                {volist name="data" id="vo"}
+                <tr>
+                    <?php
+                    $coinTotal+=$vo['coin'];
+                    $userCoinTotal+=$vo['userCoin'];
+                    ?>
+                    <td>{$vo.username}</td>
+                    <td><?=date("Y-m-d",$vo['actionTime'])?></td>
+                    <td>{:_array_get($liqTypeName,$vo['liqType'])}</td>
+                    <td>{$vo.type_cn}</td>
+                    <td>{$vo.played_name}</td>
+                    <td>{$vo.actionNo}</td>
+                    <td>{:_array_get($modeConfig,$vo['mode'])}</td>
+                    <td>{$vo.coin}</td>
+                    <td>{$vo.userCoin}</td>
+                </tr>
+                {/volist}
+                {empty name="data"}
+                <tr>
+                    <td height="37" colspan="9" align="center">请选择查询条件之后进行查询</td>
+                </tr>
+                {/empty}
+                <!-- <tr>
+                    <td colspan="7">帐变总额： <font color="lightyellow"><b>{$coinTotal}</b></font></td>
+                    <td colspan="2"><font color="lightyellow">{$userCoinTotal}</font></td>
+                </tr> -->
+                </tbody>
+            </table>
+        </div>
+        <div class="page" style="margin:0 15px">总计{$total}个记录, 分为{$totalPage}页, 当前第 {$currentPage}页
+            <SPAN ID="tPages"> &nbsp;
+                <div style="display: inline-flex" class="page_right">
+			  {$page}
+		  </div>
+&nbsp;</SPAN>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="__TODO__/js/common/model/details.js" ></script>
+<script type="text/javascript" src="__JS__/select2.min.js" ></script>
+<script type="text/javascript">
+    $(function () {
+        if($("#today").lenght > 0){
+            $("#today").select2();
+            $("#today").on('select2:select', function () {
+                var number = $(this).val();
+                if (number == 1) {
+                    $("#time").show();
+                } else {
+                    $("#time").hide();
+                }
+            });
+        }
+        if($("select[name='pages']").length > 0) {
+            $("select[name='pages']").select2({
+                minimumResultsForSearch: Infinity
+            });
+        }
+
+        $("#user_select").select2()
+        $("#user_select").on('select2:select', function () {
+            var number = $(this).val();
+            if (number == 0 || number == 2) {
+                $("#useridfield").hide();
+            } else {
+                $("#useridfield").show();
+            }
+        });
+        $("#lotteryid, #modes, #ordertype, #userid").select2();
+        $("select[name='days']").select2({
+            minimumResultsForSearch: Infinity
+        });
+
+        /*$('#gameInfoBtn').click(function(){
+            if( $("#user_select").val() == 1 && (!($("#userid").val())||0 == $("#userid").val().length )){
+                alert("请输入直接下级的用户名");
+                return false;
+            }
+        });*/
+    });
+
+</script>

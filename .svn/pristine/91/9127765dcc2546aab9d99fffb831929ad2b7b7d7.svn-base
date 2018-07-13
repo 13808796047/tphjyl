@@ -1,0 +1,643 @@
+a,body {
+    color: #fff
+}
+
+#notice-mask,#settings,#showcase,#showcase li {
+    position: absolute
+}
+
+.logo,.pop,.slogan,h1 {
+    text-align: center
+}
+
+#validate,.pop .close,input[type=submit] {
+    cursor: pointer;
+    float: right
+}
+
+a,body,div,form,h1,html,input,label,p,span,textarea {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    font-style: normal;
+    vertical-align: baseline
+}
+
+#login,.logo {
+    margin: 0 auto
+}
+
+html {
+    line-height: 1
+}
+
+body,html {
+    font: 12px 'Microsoft Yahei','Microsoft JhengHei',tahoma,Srial,helvetica,sans-serif;
+    height: 100%
+}
+
+body {
+    background: #00161a
+}
+
+input {
+    background: 0 0;
+    border: none;
+    font: 14px 'Microsoft Yahei','Microsoft JhengHei',tahoma,Srial,helvetica,sans-serif
+}
+
+a {
+    text-decoration: none
+}
+
+#wrap {
+    background: url(../images/royal88/bg-login.jpg) center top no-repeat #00161a;
+    background-size: cover;
+    height: 100%;
+    min-height: 780px;
+    padding: 0
+}
+
+#settings {
+    right: 25px;
+    z-index: 20
+}
+
+#settings>div {
+    background: #001a1d;
+    border: 1px solid #51877d;
+    line-height: 30px;
+    height: 30px;
+    transition: all .5s ease
+}
+
+#settings:hover>div {
+    background: #001618;
+    border: 1px solid #60ffe3
+}
+
+#settings>div:first-of-type>a {
+    color: #51877d;
+    transition: all .5s ease
+}
+
+#settings:hover>div:first-of-type>a {
+    color: #60ffe3
+}
+
+.header-dropdown::before {
+    top: 36px
+}
+
+#settings #language .dropdown-box-inner a {
+    color: #333
+}
+
+#settings #language .dropdown-box-inner a:hover {
+    background: #E28822;
+    color: #fff;
+    filter: none
+}
+
+#language .dropdown-box {
+    top: 31px
+}
+
+#login {
+    padding: 3% 0 0;
+    position: relative;
+    width: 582px
+}
+
+.logo {
+    background: url(../images/royal88/logo-small.png) center center no-repeat;
+    font-size: 0;
+    height: 70px;
+    line-height: 0;
+    width: 100px
+}
+
+.logo a {
+    display: block;
+    height: 100%
+}
+
+#menu-container,#showcase,.register h1 span {
+    display: none
+}
+
+.slogan {
+    font-size: 16px;
+    margin: 8px 0 12px
+}
+
+#login-area {
+    background: #001618;
+    background: rgba(0,0,0,.32);
+    border: 2px solid #00442f;
+    border: 2px solid rgba(0,96,54,.32);
+    font-size: 14px;
+    margin: 0 auto;
+    min-height: 360px;
+    position: relative;
+    padding: 20px 0;
+    width: 548px
+}
+
+h1 {
+    font-size: 25px;
+    margin: 20px auto 30px
+}
+
+form {
+    margin: 0 auto;
+    width: 377px
+}
+
+form:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden
+}
+
+form div {
+    margin: 0 0 10px
+}
+
+form label {
+    float: left;
+    line-height: 36px;
+    margin-right: 5px;
+    width: 82px
+}
+
+.country>select,input[type=password],input[type=text] {
+    background: #334648;
+    background: rgba(255,255,255,.15);
+    border: 1px solid #9ca6a6;
+    border: 1px solid rgba(255,255,255,.5);
+    color: #fff;
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    width: 268px
+}
+
+.country>select>option {
+    background-color: #27403F
+}
+
+.err input[type=password],.err input[type=text] {
+    background: #ffeeda;
+    color: #555
+}
+
+#validate {
+    height: 35.7px
+}
+
+.pin input {
+    margin-right: 10px;
+    width: 152px
+}
+
+input[type=submit] {
+    background: #00883d;
+    color: #fff;
+    font-size: 22px;
+    height: 45px;
+    margin: 0;
+    text-shadow: 2px 2px 0 rgba(0,0,0,.23);
+    vertical-align: middle;
+    width: 290px
+}
+
+input[type=submit]:hover {
+    background: #09967A;
+    background: -moz-linear-gradient(45deg,rgba(0,136,61,1) 0,rgba(9,150,122,1) 50%,rgba(43,173,143,1) 51%,rgba(255,111,11,1) 100%);
+    background: -webkit-linear-gradient(45deg,rgba(0,136,61,1) 0,rgba(9,150,122,1) 50%,rgba(43,173,143,1) 51%,rgba(255,111,11,1) 100%);
+    background: linear-gradient(45deg,rgba(0,136,61,1) 0,rgba(9,150,122,1) 50%,rgba(43,173,143,1) 51%,rgba(255,111,11,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00883d', endColorstr='#ff6f0b', GradientType=1 )
+}
+
+form a {
+    color: #fff799;
+    display: block;
+    line-height: 45px;
+    margin-top: 25px;
+    text-decoration: underline
+}
+
+form a:hover {
+    color: #fc6
+}
+
+.selection {
+    width: 145px
+}
+
+.select2-container {
+    height: 30px;
+    color: #444
+}
+
+.select2-container .select2-selection--single {
+    height: 30px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px
+}
+
+#select2-keeppoint-container {
+    padding-left: 12px;
+    padding-right: 30px
+}
+
+.select2-selection__arrow {
+    width: 30px;
+    height: 28px;
+    border-left: 1px solid #ccc
+}
+
+.select2-selection__arrow b {
+    border-width: 6px 5px 0 4px;
+    border-color: #656974 transparent transparent
+}
+
+.img-flag {
+    height: 24px;
+    vertical-align: middle
+}
+
+#showcase,#showcase img {
+    width: 320px;
+    height: 320px
+}
+
+.login-status {
+    margin-left: 105px
+}
+
+#lan_en .login-status,#lan_vm .login-status {
+    margin-left: 137px
+}
+
+#showcase {
+    float: right;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto
+}
+
+#showcase li {
+    list-style-type: none
+}
+
+#notice-mask {
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: url(../images/log/mask.png);
+    background: rgba(0,0,0,.7);
+    top: 0;
+    left: 0
+}
+
+.pop {
+    width: 488px;
+    padding: 10px;
+    border: 1px solid #CACACA;
+    background-color: #f7f7f7;
+    word-wrap: break-word;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.5)
+}
+
+.pop .hd {
+    height: 28px;
+    line-height: 18px;
+    border-bottom: 1px solid #EFEFEF;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    color: #555
+}
+
+.pop .hd-info {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 100
+}
+
+.pop .radio-list,.pop .text-title,.pop-text,.pop-title {
+    font-size: 14px
+}
+
+.pop-text,.pop-text strong {
+    font-weight: 700
+}
+
+.pop .close {
+    width: 15px;
+    height: 14px;
+    background-position: -240px -20px
+}
+
+.pop .close:hover {
+    height: 15px;
+    background-position: -240px 0
+}
+
+.pop .bd {
+    padding: 10px;
+    text-align: left;
+    color: #6e6e6e
+}
+
+.pop-btn,.pop-error,.pop-success,.pop-title {
+    text-align: center
+}
+
+.pop-title {
+    padding: 5px
+}
+
+.pop-btn {
+    padding-top: 20px
+}
+
+.pop .input {
+    width: 160px
+}
+
+.pop .ui-select {
+    width: 170px
+}
+
+.pop-text {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 24px;
+    overflow: hidden;
+    max-width: 300px
+}
+
+.pop .bd .ico-success {
+    background-position: 0 -80px
+}
+
+.pop .bd .ico-error {
+    background-position: -40px -80px
+}
+
+.pop .ico-error,.pop .ico-success,.pop .ico-waring {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px
+}
+
+.pop .ico-success {
+    background-position: 0 -80px
+}
+
+.pop .ico-error {
+    background-position: -40px -80px
+}
+
+.pop .ico-waring {
+    background-position: -80px -80px
+}
+
+.pop .text-title {
+    padding: 0 10px 10px
+}
+
+.pop .radio-list .label {
+    padding: 0 10px
+}
+
+.pop .text-note {
+    padding-top: 5px;
+    color: #888;
+    text-align: center
+}
+
+.pop .lottery-list {
+    border-top: 1px solid #EFEFEF
+}
+
+.pop .lottery-list dt {
+    padding: 10px;
+    text-align: left
+}
+
+.pop .lottery-list dd {
+    display: inline-block;
+    width: 128px;
+    padding: 0 20px;
+    vertical-align: middle
+}
+
+.pop .lottery-list dd .pic {
+    display: inline-block;
+    width: 128px;
+    height: 80px;
+    background-position: center center;
+    background-repeat: no-repeat
+}
+
+.pop .lottery-numbers {
+    padding: 0 30px 20px;
+    font-size: 14px
+}
+
+.pop .lottery-numbers .content {
+    overflow: hidden;
+    padding-top: 20px;
+    text-align: right
+}
+
+.pop .lottery-numbers .content em {
+    float: left;
+    width: 35px;
+    height: 35px;
+    line-height: 34px;
+    text-align: center;
+    margin-right: 10px;
+    background-color: #03A284;
+    font-size: 18px;
+    color: #FFF;
+    border-radius: 50%
+}
+
+.pop .lottery-numbers .content a {
+    line-height: 34px
+}
+
+.pop .ui-form {
+    font-size: 14px
+}
+
+.pop .ui-form li {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.pop .ui-form .textarea {
+    width: 320px;
+    height: 84px;
+    overflow-y: auto
+}
+
+.pop .ui-label {
+    width: auto
+}
+
+.pop .title {
+    color: #555
+}
+
+.color-red {
+    color: #d45656!important
+}
+
+.btn {
+    font-family: 'Microsoft Yahei','Microsoft JhengHei',tahoma,Srial,helvetica,sans-serif
+}
+
+.btn:hover {
+    border-color: #113a37;
+    color: #113a37;
+    text-decoration: none
+}
+
+.alert i,.alert-mini i,.notice .close,.notice .ico-warning,.pop .close,.pop i,.prompt dt i,.ui-check i {
+    background-image: url(../todo/images/common/ui-alert.png);
+    background-repeat: no-repeat
+}
+
+.pop .bd .ico-waring {
+    background-position: -80px -80px
+}
+
+.pop .bd .ico-error,.pop .bd .ico-success,.pop .bd .ico-waring {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px
+}
+
+.text-center {
+    text-align: center!important
+}
+
+.client .container>.plugin,.tip {
+    text-align: center
+}
+
+.pop h4 {
+    margin: 0
+}
+
+#J-login-form .country,#J-login-form .email,#J-login-form .mobile,#J-login-form .password,#J-login-form .surename,#J-login-form .user-name {
+    position: relative
+}
+
+.tip {
+    position: absolute;
+    top: -1px;
+    left: 101%;
+    width: 462px;
+    line-height: 36px;
+    display: none;
+    background: #fff;
+    height: 36px;
+    color: #333;
+    border: 1px solid #333
+}
+
+.err .tip {
+    color: #d41414
+}
+
+.client {
+    bottom: 68px
+}
+
+.footer,.footer .container div {
+    height: 48px;
+    line-height: 48px
+}
+
+#lan_en #login-area,#lan_vm #login-area {
+    width: 568px
+}
+
+#lan_en form,#lan_vm form {
+    width: 439px
+}
+
+#lan_en form label,#lan_vm form label {
+    width: 142px
+}
+
+#lan_en .register form,#lan_vm .register form {
+    width: 454px
+}
+
+#lan_en .register form label,#lan_vm .register form label {
+    font-size: 13px;
+    width: 157px
+}
+
+#lan_vm form a {
+    font-size: 13px
+}
+
+body#lan_en div.reg-wrapper>a,body#lan_vm div.reg-wrapper>a {
+    width: 137px;
+    float: left;
+    margin-right: 5px
+}
+
+body#lan_en div.reg-wrapper>input#J-form-submit,body#lan_vm div.reg-wrapper>input#J-form-submit {
+    float: left;
+    width: auto;
+    padding: 0 10px
+}
+
+@media screen and (max-width:1366px) {
+    #login-area {
+        bottom: 43%
+    }
+}
+
+@media screen and (max-width:1366px) and (max-height:784px) {
+    #login-area,.client,.footer {
+        position: relative;
+        bottom: auto
+    }
+
+    #wrap {
+        padding: 0
+    }
+
+    #login-area {
+        margin: 0 auto 30px
+    }
+
+    #login,.register #login {
+        padding: 30px 0 0
+    }
+}

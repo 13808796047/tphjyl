@@ -1,0 +1,65 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>编辑银行卡信息</h2>
+    </div>
+    <form action="__SELF__" method="post" class="form-horizontal">
+		<input type="hidden" name="id" value="{$cardInfo.id}">
+		<div class="form-item">
+            <label class="item-label">会员UID</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="uid" value="{$cardInfo.uid}" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">会员用户名</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="user_name" value="{$user.username}" disabled="disabled">
+            </div>
+        </div>
+		<div class="form-item">
+            <label class="item-label">银行名称</label>
+            <div class="controls">
+                <select id="bankId" name="bankId" class="input-large" style="height: 42px;" >
+                    <?php foreach($banks as $bank){
+                        if($bank['id'] == $cardInfo['bankId']){
+                            echo '<option value="'.$bank['id'].'" selected="selected">'.$bank['name'].'</option>';
+                        }else{
+                            echo '<option value="'.$bank['id'].'">'.$bank['name'].'</option>';
+                        }
+                    }?>
+                </select>
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">支行/分理处</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="bankDetail" value="{$cardInfo.bankDetail}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">开户姓名</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="username" value="{$cardInfo.username}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">银行账号</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="account" value="{$cardInfo.account}">
+            </div>
+        </div>
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        $('.side-sub-menu').find('a[href="{:U('User/bank')}"]').closest('li').addClass('current');
+    </script>
+</block>

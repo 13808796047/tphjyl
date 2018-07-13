@@ -1,0 +1,88 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>返奖设置</h2>
+	</div>
+
+	<ul class="tab-nav nav">
+		<?php foreach($chiTypes as $key=>$var){ ?>
+		<li <?=$this->iff($type==$key, 'class="current"','')?>><a href="{:U('?type='.$key)}"><?=$var?></a></li>
+		<?php } ?>
+	</ul>
+
+
+	<div class="data-table table-striped">
+		<?php foreach($groups as $group) {
+				$url = U('config/switchPlayedGroupStatus');
+		?>
+		<table>
+			<thead>
+			<tr>
+				<th colspan="6"><?=$group['groupName']?>
+					<input name='id' value='<?=$group['id']?>' type='hidden'>
+					<input name='enable' value='<?=$group['enable']?>' type='hidden'>
+					<input name='type' value='<?=$group['type']?>' type='hidden'>
+				</th>
+				<th><?php if($group['enable'])
+									echo "<a target='ajax' method='post' href='".U('config/switchPlayedGroupStatus')."'><font color='#ffffff'>关闭</font></a>";
+					else
+					echo "<a target='ajax' method='post' href='".U('config/switchPlayedGroupStatus')."'><font color='#ffffff'>开启</font></a>"; ?></th>
+			</tr>
+			</thead>
+			<tbody>
+			<?php foreach($playeds as $played){
+						if($played['groupId']==$group['id']){
+				?>
+			<tr>
+				<td width="15%"><?=$played['name']?>
+					<input name='id' value='<?=$played['id']?>' type='hidden'>
+					<input name='type' value='<?=$group['type']?>' type='hidden'>
+				</td>
+				<td>最高奖金：<input type="text" class="textWid1" name="bonusProp" value="<?=$played['bonusProp']?>"></td>
+				<td>最低奖金：<input type="text" class="textWid1" name="bonusPropBase" value="<?=$played['bonusPropBase']?>"></td>
+				<td>官彩最高奖金：<input type="text" class="textWid1" name="guo_prop" value="<?=$played['guo_prop']?>"></td>
+				<td>官彩最低奖金：<input type="text" class="textWid1" name="guo_prop_base" value="<?=$played['guo_prop_base']?>"></td>
+				<td>最高注数：<input type="text" class="textWid1" name="maxCount" value="<?=$played['maxCount']?>"></td>
+				<td>官彩最高注数：<input type="text" class="textWid1" name="gmaxCount" value="<?=$played['gmaxCount']?>"></td>
+				<?php
+						if($played['id']== 37){
+						?>
+				<td>万位注数：<input type="text" class="textWid1" name="wcount" value="<?=$played['wcount']?>"></td>
+				<td>千位注数：<input type="text" class="textWid1" name="qcount" value="<?=$played['qcount']?>"></td>
+				<td>百位注数：<input type="text" class="textWid1" name="bcount" value="<?=$played['bcount']?>"></td>
+				<td>十位注数：<input type="text" class="textWid1" name="scount" value="<?=$played['scount']?>"></td>
+				<td>个位注数：<input type="text" class="textWid1" name="gcount" value="<?=$played['gcount']?>"></td>
+				<?php }?>
+				<?php
+						if($played['id']== 96 ||$played['id']== 265 ){
+						?>
+				<td>冠金位注数：<input type="text" class="textWid1" name="dy" value="<?=$played['dy']?>"></td>
+				<td>亚军位注数：<input type="text" class="textWid1" name="de" value="<?=$played['de']?>"></td>
+				<td>第三位注数：<input type="text" class="textWid1" name="ds" value="<?=$played['ds']?>"></td>
+				<td>第四位注数：<input type="text" class="textWid1" name="dx" value="<?=$played['dx']?>"></td>
+				<td>第五位注数：<input type="text" class="textWid1" name="dw" value="<?=$played['dw']?>"></td>
+				<td>第六位注数：<input type="text" class="textWid1" name="dl" value="<?=$played['dl']?>"></td>
+				<td>第七位注数：<input type="text" class="textWid1" name="dq" value="<?=$played['dq']?>"></td>
+				<td>第八位注数：<input type="text" class="textWid1" name="db" value="<?=$played['db']?>"></td>
+				<td>第九位注数：<input type="text" class="textWid1" name="dj" value="<?=$played['dj']?>"></td>
+				<td>第十位注数：<input type="text" class="textWid1" name="dsh" value="<?=$played['dsh']?>"></td>
+				<?php }?>
+				<td>排序：<input type="text" class="textWid1" name="sort" value="<?=$played['sort']?>"></td>
+				<td>私彩开/关：<input type="checkbox" name="enable" {$this->iff($played['enable'],'checked','')} ></td>
+				<td>官彩开/关：<input type="checkbox" name="is_official_open" {$this->iff($played['is_official_open'],'checked','')} ></td>
+				<td width="10%"><a href="{:U('config/switchPlayedStatus')}" target="ajax" method="post">保存</a> </td>
+			</tr>
+			<?php }} ?>
+			</tbody>
+		</table>
+		<?php }?>
+	</div>
+</block>
+
+<block name="script">
+	<script type="text/javascript">
+        //导航高亮
+        $('.side-sub-menu').find('a[href="{:U('Config/playList')}"]').closest('li').addClass('current');
+	</script>
+</block>

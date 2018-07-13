@@ -1,0 +1,141 @@
+<extend name="Base/common"/>
+<block name="title"><title>代理中心－{:S('WEB_NAME')}</title></block>
+<block name="style">
+<link rel="stylesheet" type="text/css" href="__CSS__/user.css">
+</block>
+<block name="header"></block>
+<block name="body">
+<div class="m-user" id="dvWrapper">
+	<div class="m-simpleHeader" id="dvHeader">
+		<a href="javascript:history.back(-1);" data-pro="back" data-back="true" class="m-simpleHeader-back"><i class="ico ico-back"></i></a>
+		<a href="{:U('index/index')}" data-pro="ok" class="m-simpleHeader-ok" id="aHome"><i class="ico ico-home"></i></a>
+		<h1>代理中心</h1>
+	</div>
+	<div class="m-user-index">
+		<div class="m-user-summary">
+			<img class="bg" src="__IMG__/summary_bg.png" width="100%">
+			<div class="info">
+				<div class="m-user-avatar">
+					<img onerror="this.src='__IMG__/main/tx.jpg'" src="__IMG__/main/tx.jpg" height="50" width="50">
+				</div>
+				<div class="txt">
+					<div class="name">
+						{$user.username}
+					</div>
+					<div class="money">
+						余额：<span class="num">{$user.coin}</span>元&nbsp;&nbsp;&nbsp;返点:{$user.fanDian}<a href="{:U('user/recharge')}" style="display:none" class="w-button w-button-s m-user-summary-btn-normal">充值</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="m-user-bar">
+			<a href="{:U('team/member')}" class="w-bar" style="background: #04564f!important;color: white">会员管理<span class="w-bar-ext"><b class="ico-next"></b></span></a>
+			<php>if($user['type'] == 1) {</php>
+			<a href="javascrip:;" class="w-bar queryMask" style="background: #04564f!important;color: white">注册会员<span class="w-bar-ext"><b class="ico-next"></b></span></a>
+			<php>}</php>
+			<a href="{:U('team/report')}" class="w-bar" style="background: #04564f!important;color: white">盈亏报表<span class="w-bar-ext"><b class="ico-next"></b></span></a>
+			<a href="{:U('team/record')}" class="w-bar" style="background: #04564f!important;color: white">投注记录<span class="w-bar-ext"><b class="ico-next"></b></span></a>
+			<a href="{:U('team/coin')}" class="w-bar" style="background: #04564f!important;color: white">账变明细<span class="w-bar-ext"><b class="ico-next"></b></span></a>
+			<a href="{:U('team/rechargeRecord')}" class="w-bar" style="background: #04564f!important;color: white">充值记录<span class="w-bar-ext"><b class="ico-next"></b></span></a>
+			<a href="{:U('team/cashrecord')}" class="w-bar" style="background: #04564f!important;color: white">提现记录<span class="w-bar-ext"><b class="ico-next"></b></span></a>
+			<a href="{:U('user/logout')}" class="w-bar m-user-bar-margin m-user-bar-border" style="text-align:center;background: #04564f!important;color: white" id="btnLogout">退出登录</a>
+		</div>
+		<div class="mask" id="queryMask" style="bottom: 0px; display: none;">
+			<div class="maskbox">
+				<div class="win">
+					<div class="winhead">
+						添 加
+					</div>
+					<div class="winmain" style="background: #007c71!important;color: white">
+						<ul class="writebox">
+
+							<li>
+								<div>
+									类型
+								</div>
+								<p>
+									<select name="type" class="form-control" id="type">
+										<option value="1">代理</option>
+										<option value="0">会员</option>
+									</select>
+								</p>
+							</li>
+							<li>
+								<div>
+									用户名
+								</div>
+								<p>
+									<input name="username" minlength="6" maxlength="11" class="form-control"
+										   id="username" type="text" placeholder="用户名" value="">
+								</p>
+							</li>
+
+							<li id="pwd-span">
+								<div>
+									密码
+								</div>
+								<p>
+									<input name="password" class="form-control" id="password" type="text"
+										   placeholder="用户名" value="123456">
+								</p>
+							</li>
+
+							<li>
+								<div>
+									自留返点
+								</div>
+								<p>
+									<input name="fanDian" class="form-control" id="fanDian" type="text"
+										   placeholder="0-{:number_format($user['fanDian']-0.1,1)}" value="">
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div class="winfoot" style="background: #007c71!important;color: white">
+						<p>
+							<input class="btn btnblock" type="submit" data-pro="add"
+								   data-action="{:U('team/insertMember')}" id="btn-ok" value="提交">
+						</p>
+						<p>
+							<input class="btn btnblock btnblue" onclick="$('#queryMask').css('display', 'none');"
+								   type="button" value="取消">
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-user-bar">
+		</div>
+	</div>
+</div>
+</block>
+<block name="script">
+	<script type="text/javascript">
+        var lid=0;
+        $(function(){
+            $('.queryMask').live('click', function () {
+                $('#type').val(1);
+                $("#username").attr("disabled", false);
+                $('#username').val('');
+                $('#pwd-span').css('display','table');
+                $('#password').val('123456');
+                $('#fanDian').val('');
+                $('#btn-ok').attr('data-action',"{:U('team/insertMember')}");
+
+                $('#queryMask').css('display', 'block');
+            });
+            $('.updateMember').live('click', function () {
+                $('#type').val($(this).attr('usertype'));
+                $('#username').val($(this).attr('title'));
+                $("#username").attr("disabled", true);
+                $('#pwd-span').css('display','none');
+                $('#fanDian').val($(this).attr('min'));
+                $('#btn-ok').attr('data-action',"{:U('team/userUpdateed')}");
+
+                $('#queryMask').css('display', 'block');
+            });
+        });
+	</script>
+</block>
+<block name="footer"></block>

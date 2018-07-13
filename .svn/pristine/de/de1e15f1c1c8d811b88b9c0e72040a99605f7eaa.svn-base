@@ -1,0 +1,314 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no, email=no, adress=no">
+			<title>444  </title>
+<link href="__CSS__/base.css" rel="stylesheet" type="text/css" media="all" />
+<link href="__CSS__/subpage.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" media="all" href="__CSS__/calendar/calendar-green.css"  />
+<link href="__CSS__/houtai.css" type="text/css" rel="stylesheet"/>
+<link href="__CSS__/common.css" type="text/css" rel="stylesheet"/>
+	<link rel="stylesheet" href="__CSS__/page.css" />
+<script src="__JS__/sy/subPage.js"></script>
+<script src="__JS__/sy/tab.js"></script>
+<script src="__JS__/sy/dialogUI/jquery-1.7.min.js"></script>
+<script src="__JS__/main.min.js"></script>
+<script src="__JS__/calendar/jquery.dyndatetime.js"></script>
+<script src="__JS__/calendar/calendar-utf8.js"></script>
+<script src="__JS__/sy/iframe.js"></script>
+<script src="__JS__/sy/main.js"></script>
+<script language="javascript">
+var localpath='';
+function firadio_cookie_set(name,value,expire,path){
+	//expire=expire||30*24*60*60*1000;
+	var curdate=new Date();
+	var cookie=name+"="+encodeURIComponent(value)+"; ";
+	if(expire!=undefined||expire==0){
+		if(expire==-1){
+			expire=366*(86400*1000);//保存一年
+		}else{
+			expire=parseInt(expire);
+		}
+		curdate.setTime(curdate.getTime()+expire);
+		cookie+="expires="+curdate.toUTCString()+"; ";
+	}
+	path=path||"/";
+	cookie+="path="+path;
+	document.cookie=cookie;
+}
+function firadio_cookie_get(name){
+	var re = "(?:; )?" + encodeURIComponent(name) + "=([^;]*);?";
+	re = new RegExp(re);
+	if (re.test(document.cookie)) {
+		return decodeURIComponent(RegExp.$1);
+	}
+	return '';
+}
+</script>
+</head>
+<!--<body id="lan"><link rel="stylesheet" type="text/css" href="http://upccry1.3smao.net/sy2/css/default_content.min.css"/>-->
+<!--<link rel="stylesheet" type="text/css" href="http://upccry1.3smao.net/sy2/css/select2.min.css"/>-->
+
+<div class="ys-content">
+  <div class="header">
+	  投注查询  </div>
+	<div class="main">
+		<form id="gameinfoTable" action="" method="GET" class="form section">
+      <input type="hidden" name="controller" value="gameinfo">
+      <input type="hidden" name="action" value="gamelist">
+      <input type="hidden" name="isgetdata" value="1">
+      <input type="hidden" name="new" value="1">
+      <div class="field">
+        <label>投注时间</label>
+        <select name="days" id="days" class="dept_select selection">
+					{volist name="days" id="vo"}
+                      <option  value="{$vo}">{$vo}</option>
+					{/volist}
+		</select>
+      </div>
+      <div class="inline-fields">
+        <div class="field">
+          <label>彩种名称</label>
+          <select  name="lotteryid" id="lotteryid" class="dept_select selection">
+            <option value="0">所有游戏</option>
+			  {volist name="types_data" id="vo"}
+			  <option  value="{$vo.id}">{$vo.title}</option>
+			  {/volist}
+                          <!--<option value="1">重庆时时彩</option>
+                          <option value="5">山东11选5</option>
+                          <option value="7">江西11选5</option>
+                          <option value="8">广东11选5</option>
+                          <option value="11">福彩3D</option>
+                          <option value="12">体彩P3</option>
+                          <option value="18">两分时时彩</option>
+                          <option value="19">一分时时彩</option>
+                          <option value="20">两分11选5</option>
+                          <option value="52">极速3D</option>
+                          <option value="54">一分11选5</option>
+                          <option value="56">秒秒时时彩</option>
+                          <option value="57">秒秒11选5</option>
+                          <option value="60">越南一分彩</option>
+                          <option value="62">五分时时彩</option>
+                          <option value="63">五分11选5</option>
+                          <option value="106">北京PK10</option>-->
+
+            </select>
+        </div>
+        <div class="field">
+          <label>游戏玩法</label>
+          <select name="methodid" id="methodid" class="dept_select selection">
+              <option value="0">所有玩法</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>彩种奖期</label>
+          <select name="issue" id="issue" class="dept_select selection">
+            <option value="0">所有奖期</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>用户名</label>
+        <input type="text" name="username" id="username" class="custom_input" value="{$cur_username}" />
+        <label class="user_type_checkbox">
+          <input type="checkbox" name="include" id="include" value="1"  class="v-am ml10"> 包含下级        </label>
+      </div>
+      <input type="submit" value="搜索" class="btn">
+    </form>
+    <div class="list" id="touzhu_record">
+      <table>
+        <thead>
+          <tr>
+            <th>用户</th>
+            <th>彩种</th>
+            <th>玩法</th>
+            <th>期号</th>
+            <th>时间</th>
+            <th>倍数模式</th>
+            <th>投注金额</th>
+            <th>中奖号码</th>
+            <th>中奖金额</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+		{volist name="bets" id="vo"}
+			<tr>
+				<th>{$vo.username}</th>
+				<th>{$vo.type}</th>
+				<th>{$vo.playedId}</th>
+				<th>{$vo.actionNo}</th>
+				<th>{$vo.actionTime|date="Y-m-d h:i:s",###}</th>
+				<th>{$vo.beiShu}倍{$vo.mode}</th>
+				<th>{$vo.mode*$vo.beiShu*$vo.actionNum*($vo.fpEnable+1)}</th>
+				<th>{$vo.lotteryNo}</th>
+				<th>{$vo.zj_money}</th>
+				<th>{$vo.status_name}</th>
+			</tr>
+		{/volist}
+          <!--<tr>-->
+            <!--<td height="37" colspan="10" align="center">请选择查询条件之后进行查询</td>-->
+          <!--</tr>-->
+		</tbody>
+       <!-- <tfoot>
+          <tr align="center">
+            <th>小结</th>
+            <th colspan="4"></th>
+            <th>0.00</th>
+            <th>0.00</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </tfoot>-->
+      </table>
+    </div>
+    <div>
+      <span class="page" style="padding:0 15px">总计{$total}个记录, 分为{$totalPage} 页, 当前第 {$currentPage}页<SPAN ID="tPages"> &nbsp;
+		  <!--<A  HREF="/?controller=gameinfo&action=gamelist&username={$cur_username}&p=1&pn=25">1</A>-->
+&nbsp;</SPAN>
+		  <div style="display: inline-flex" class="page_right">
+			  {$page}
+		  </div>
+</span>
+    </div>
+  </div>
+</div>
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/js/select2.min.js"></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/common/base.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/common/select.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/common/model/details.js" ></script>-->
+<script type="text/javascript">
+	function show_no(id)
+	{
+		$("#code_"+id).show("slow");
+	}
+	function close_no(id)
+	{
+		$("#code_"+id).hide("slow");
+	}
+
+	
+	//將所有篩選項目(投注時間、彩種名稱.etc)返回SUBMIT之前的值
+	function prevPost()
+	{
+		var $_get_lotteryid = ''.length > 0 ? '' : '0';
+		var $_get_methodid = ''.length > 0 ? '' : '0';
+		var $_get_issue = ''.length > 0 ? '' : '0';
+		if($_get_lotteryid)
+		{
+			Selected($('select[name="lotteryid"]'), $_get_lotteryid);
+		}
+		
+		if($_get_methodid)
+		{
+			Selected($('select[name="methodid"]'), $_get_methodid);
+		}
+		
+		if($_get_issue)
+		{
+			Selected($('select[name="issue"]'), $_get_issue);
+		}
+
+		//console.log(decodeURIComponent(''));
+		$('input[name="username"]').val(decodeURIComponent('{$cur_username}'));
+		
+		if('')
+		{
+			$('input[name="include"]')[0].checked = true;	
+		}	
+		
+		function Selected($obj, value)
+		{
+			$obj.children('option').each(function(){
+				//console.log($(this).val() == value);
+				if($(this).val() == value)
+				{
+					this.selected = true;
+					$obj.trigger('change');
+					return;
+				}	
+			});
+			
+		}
+	}	
+	
+	$(function(){
+	var data_method = {$data_method};
+	var data_issue = {$data_issue};
+	
+	$("#lotteryid, #methodid, #issue, #days").select2();
+	
+	jQuery("#lotteryid").change(function(){
+		var i =  $("#lotteryid").val();
+		if(i>0)
+		{
+			html_method = "<option value='0'>所有玩法</option>";
+			if(data_method[i]){
+			$.each(data_method[i],function(j,k){
+
+			html_method = html_method +"<option value='"+k.methodid+"'>"+k.methodname+"</option>";
+
+
+			});}
+			html_issue = "<option value='0'>所有奖期</option>";
+			if(data_issue[i]){
+			$.each(data_issue[i],function(j,k){
+
+			html_issue = html_issue +"<option value='"+k.issue+"'>"+k.issue+"</option>";
+
+
+			});}
+		}
+		else
+		{
+			html_method = "<option value='0'>所有玩法</option>";
+			//html = html + "&nbsp;&nbsp;";
+			html_issue = "<option value='0'>所有奖期</option>";
+		}
+		$("#methodid").html(html_method).trigger("change.select2");
+		$("#issue").html(html_issue).trigger("change.select2");
+		
+		
+	});
+	
+	//if(window.console){console.log('xxxx');}
+	prevPost();
+
+/*    //所有游戏按钮
+    var allGameInputDom = new window.Select({realDom:'#lotteryid'});
+    //所有玩法按钮
+    var gameTypeInputDom = new window.Select({realDom:'#methodid'});
+    //彩种奖期按钮
+    var allGameInputDom = new window.Select({realDom:'#issue'});
+*/
+	
+	});
+function show_no(id)
+{
+	$("#code_"+id).show("slow");
+}
+function show_nocode(id)
+{
+	$("#ncode_"+id).show("slow");
+}
+function close_no(id)
+{
+	$("#code_"+id).hide("slow");
+}
+function nclose_no(id)
+{
+	$("#ncode_"+id).hide("slow");
+}
+	function show_no(id)
+	{
+		$("#code_"+id).show("slow");
+	}
+	function close_no(id)
+	{
+		$("#code_"+id).hide("slow");
+	}
+	</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>手机登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no, maximum-scale=1">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+   <!-- <link rel="shortcut icon" href="" type="image/x-icon"/>-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="__CSS__/bootstrap.min.css">
+    <link rel="stylesheet" href="__CSS__/semantic.min.css">
+    <link rel="stylesheet" href="__CSS__/index.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="__CSS__/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="__CSS__/util.css">
+
+    <script type="text/javascript">
+        function refreshimg(){
+            $("#validate").attr('src',"./?useValid="+Math.random());
+        }
+    </script>
+
+</head>
+<body class="ui basic loading segment" style="margin:0; background: #000 url(__IMG__/bg-login.jpg) no-repeat center center; background-size: cover;">
+<div class="container pan">
+    <form id="J-form-login" class="form-signin" role="form" data-action="{:U('user/login')}" >
+        <br/>
+        <br/>
+        <h2 style="text-align: center;color:#fff;font-weight: 900;"><img style="width: 85px;" src="__IMG__/tx.png" alt=""></h2>
+        <!--<h2 class="heading"  style="text-align: center;color:#fff;font-weight: 900;">
+            皇家娱乐
+        </h2>-->
+        <div class="login-block">
+            <h3 style="color: white;">会员登入</h3>
+
+            <div class="input-block user-icon">
+                <label for="inputPassword" class="sr-only">登录名</label>
+                <input type="text" name="username"  id="username"  class="form-control new-form-control" onkeyup="value=value.replace(/[\W]/g,'')
+     "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" placeholder="登录名" required="" autofocus="" disabled>
+            </div>
+
+            <div class="input-block lock-icon">
+                <label for="inputPassword" class="sr-only">密码</label>
+                <input type="password"  id="pwd" name="password" class="form-control new-form-control" placeholder="密码" required="" disabled>
+            </div>
+
+
+         <!--   <div class="var-area">
+                <input type="number"  id="validatecode"  name="varcode" class="form-control new-form-control" placeholder="验证码 " required="" disabled>
+                <img onclick="refreshimg()" id="validate" title="点击刷新"  class='input-box code_2' src="?useValid=1" />
+            </div>-->
+
+            <button class="btn btn-lg btn-warning btn-block disabled" type="submit">登 陆</button>
+        </div>
+
+
+    </form>
+    <div id="footer"></div>
+</div>
+</body>
+<!--<script type="text/javascript">
+    function onLogin(){
+        showDialog('登录');
+        return false;
+    }
+</script>-->
+<script src="__JS__/tools.js"></script>
+<script src="__JS__/index.js"></script>
+<!--<script src="__JS__/comm.js"></script>-->
+</html>

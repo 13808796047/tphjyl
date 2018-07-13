@@ -1,0 +1,128 @@
+<script type="text/javascript" src="__JS__/jquery-1.9.1.js"></script>
+<link href="__CSS__/chongzhi.css" rel="stylesheet">
+<body>
+    <script>
+        function local_submitForm_scanPay(pType){
+            var key = "{$orderKey}";
+            var pay_id = "{$pay_id}";
+            var wx_pay_id = "{$wx_pay_id}";
+            var wx_pay_code = "{$wx_pay_code}";
+            var zfb_pay_id = "{$zfb_pay_id}";
+            var zfb_pay_code = "{$zfb_pay_code}";
+            var bankCode = '';
+            var payChannelId = '';
+            if(pType=='bank_scanpay' || pType=='bank_qqScan'){
+                bankCode = wx_pay_code;
+                payChannelId = wx_pay_id;
+            }else{
+                bankCode = zfb_pay_code;
+                payChannelId = zfb_pay_id;
+            }
+            $.post("/recharge/qcode", {orderKey:key,type:pType,payChannelId:payChannelId,bankCode:bankCode,pay_id:pay_id},function(data,status){
+                if(status=='success'){
+                    $("#loc_scan_window").show();
+                    $("#scan2d").show();
+                    sQrcode(data.qrcode);
+                }else{
+                    alert('支付信息错误');
+                }
+            },'json');
+        }
+
+        function sQrcode(qdata){
+            $("#qrcode222").empty().qrcode({		// 调用qQcode生成二维码
+                render : "canvas",    			// 设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
+                text : qdata,    				// 扫描了二维码后的内容显示,在这里也可以直接填一个网址或支付链接
+                width : "200",              	// 二维码的宽度
+                height : "200",             	// 二维码的高度
+                background : "#ffffff",     	// 二维码的后景色
+                foreground : "#000000",     	// 二维码的前景色
+                src: ""    						// 二维码中间的图片
+            });
+        }
+    </script>
+    {$output}
+
+    <style>
+        .errorcontent{
+            border:1px solid #ecf7fd;
+            width:80%;
+            margin:0 auto;
+            height: 200px;
+        }
+        #scan_window_excption{
+            background-color:#ecf7fd;
+            text-align: center;
+        }
+        .errorcontent .right{
+            width:100%;
+            height:200px;
+        }
+        .errorcontent .returninfo{
+            text-align:left;
+            height:145px;
+            margin:0 auto;
+            display: inline-block;
+        }
+        .errorcontent .right h1{
+            margin:-20px auto 20px  auto;
+            color:#333333;
+            font:bold 25px/180% "微软雅黑"}
+        .errorcontent .right p{
+            color:#666;
+            font:bold 14px/120% '宋体';
+            margin-top:10px;
+            text-align: left;
+
+        }
+        .errorcontent .right p span{
+            color:#F00;
+            font-weight:normal;
+            margin:0 0 0 80px;
+            display: inline-block;
+
+        }
+        .errorcontent .right p em{
+            position:absolute;
+            font-style:normal;
+            font-weight:normal;
+            flaot:left;
+            display:inlien-block;
+        }
+    </style>
+    <script type="text/javascript" src="__STATIC__/zfjs/jquery.qrcode.js"></script>
+    <script type="text/javascript" src="__STATIC__/zfjs/utf.js"></script>
+    <div id="loc_scan_window" class="white_content" style="display: none;">
+        <div class="scan_main">
+            <h4><span onclick="closeyem()">关闭</span></h4>
+            <script>
+                function closeyem(){
+                    $("#loc_scan_window").hide();
+                }
+            </script>
+        </div>
+        <div style="width: 520px;height: 250px; border-bottom: 1px solid #ddd; text-align:center;padding:10px 0;margin: 0 auto;position:relative; ">
+            <div id="qrcode222" style="width:200px;height:200px;margin:0 auto;overflow:hidden; text-align: center; border:1px solid #ddd;z-index:1; " title="">
+                <canvas width="200" height="200" style="display: none;">
+                </canvas>
+                <img alt="Scan me!" src="" style="display: block;">
+            </div>
+            <!-- <img id="dinpayLogo" src="https://cdnpay.dd4.com/pay/images/dinpay.png" style="z-index:2;position:absolute;left:50%;top:50%;margin: -56px 0 0 -32px;display: none"/> -->
+            <!--<div><img id="subImg_scanPay" src="https://cdnpay.dd4.com/pay/images/scanning.png" align="middle" style="margin:10px auto;width:100px;height: 30px;"></div>
+            <input type="hidden" id="scan2d" value="weixin://wxpay/bizpayurl?pr=4OMgAxs">
+            <input type="hidden" id="scan2d_alipay">-->
+        </div>
+        <div class="tisp_main_bottom tisp_main">
+            <ul>
+                <li><span>付款成功&nbsp;&nbsp; </span>|&nbsp;&nbsp;您可以：<a onclick="showPro_scanPay('/PaymentCom','scan_window')" href="javascript:void(0)">返回商家网站</a></li>
+                <li><span class="span1">付款失败&nbsp;&nbsp;</span>|&nbsp;&nbsp;您可以：<a onclick="checkPay_scanPay('/PaymentCom')" href="javascript:void(0)">选择其他支付方式</a><em><a href="http://www.dinpay.com/faq_list.html?=#19F" target="_blank">常见问题小贴士</a>
+                    <img src="https://cdnpay.dd4.com/pay/images/tips_icon1_11.jpg">
+                    <div>
+                        <p>①&nbsp;如果银行卡已经扣款成功，多得宝在收到银行订单反馈后会立即通知商户。</p>
+                        <p>②&nbsp;请勿重复提交订单，或多次支付同一笔订单，防止产生重复订单。</p>
+                    </div>
+                </em></li>
+            </ul>
+        </div>
+    </div>
+</body>

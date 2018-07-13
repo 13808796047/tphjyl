@@ -1,0 +1,201 @@
+<extend name="Base/common"/>
+<block name="title"><title>会员管理－{:S('WEB_NAME')}</title></block>
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__CSS__/user.css">
+    <link href="__CSS__/bootstrap.min.css" rel="stylesheet">
+    <link href="__CSS__/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="__CSS__/semantic.min.css" rel="stylesheet">
+</block>
+<block name="header"></block>
+<block name="body">
+    <div class="m-user">
+        <div class="m-simpleHeader" id="dvHeader">
+            <a href="javascript:history.back(-1);" data-pro="back" data-back="true" class="m-simpleHeader-back"><i
+                    class="ico ico-back"></i></a>
+            <a href="#" data-pro="ok" class="m-simpleHeader-ok queryMask" id="aHome"><!--<i class="ico ico-add"></i>--></a>
+            <h1 style="height: 38px;line-height: 38px;margin-top: 0px;">会员管理</h1>
+        </div>
+
+        <div class="m-user-duobaoRecord" id="duobaoRcd_dvWrapper">
+
+            <div id="pro-view-6">
+                <div data-pro="loading">
+                </div>
+                <span id="record-span">	
+					<ul class="w-goodsList w-goodsList-l m-user-goodsList" data-pro="list">
+						<li id="pro-view-8" class="w-goodsList-item">
+						<div class="w-goods w-goods-l w-goods-ing m-user-goods" style="background: #12454a!important;color: white">
+							<div class="w-goods-info">
+								<p>
+									用户名：{$data.username}
+								</p>
+								<p>
+									用户类型：<?=$this->iff($data['type'],'代理','会员')?>
+								</p>
+								<p>
+									返点：{$data.fanDian}
+								</p>
+								<p>
+									余额：{$data.coin}
+								</p>
+								<p>
+									注册时间：<?=date('Y/m/d H:i',$data['regTime'])?>
+								</p>
+								<p>
+									状态：<?=$this->iff($data['enable'],'正常','冻结')?>
+								</p>
+								
+								<?php if($user['uid'] != $data['uid'] && $data['parentId'] == $user['uid'] && $data['type'] == 1){ ?>
+								<p>
+									<a class="text-primary updateMember queryMask" href="javascrip:;" usertype="{$data.type}" title="{$data.username}" min="{$data.fanDian}" max="{$user.fanDian}" style="font-weight: bold;font-size: 14px">返点设定</a>&nbsp;&nbsp;
+								</p>
+								<?php } ?>
+								<?php if($user['uid']!=$data['uid'] && $user['type'] == 1){ ?>
+								<p>
+									<a class="text-primary queryMask2" href="javascrip:;" style="font-weight: bold;font-size: 14px">充值</a>&nbsp;&nbsp;
+								</p>
+								<?php } ?>
+							</div>
+						</div>
+						</li>
+					</ul>
+				</span>
+            </div>
+            <div class="mask" id="queryMask" style="bottom: 0px;display: none;">
+				<div class="maskbox">
+					<div class="win">
+						<div class="winhead">
+							返点设定
+						</div>
+						<div class="winmain" style="background: #007c71!important;color: white">
+							<ul class="writebox">
+								<li>
+									<div>
+										自留返点
+									</div>
+									<p>
+										<input type="hidden" name="username" value="{$data.username}">
+										<input name="fanDian" class="form-control" id="fanDian" type="text"
+											   placeholder="0-{:number_format($user['fanDian']-0.1,1)}" value="" min="0.1" max="{:number_format($user['fanDian']-0.1,1)}">
+									</p>
+								</li>
+							</ul>
+						</div>
+						<div class="winfoot" style="background: #007c71!important;color: white">
+							<p>
+								<input class="btn btnblock" type="submit" data-pro="add"
+									   data-action="{:U('team/userUpdateed')}" id="btn-ok" value="提交">
+							</p>
+							<p>
+								<input class="btn btnblock btnblue" onclick="$('#queryMask').css('display', 'none');"
+									   type="button" value="取消">
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mask" id="queryMask2" style="bottom: 0px; display: none;">
+				<div class="maskbox">
+					<div class="win">
+						<div class="winhead">
+							充值
+						</div>
+						<div class="winmain" style="background: #007c71!important;color: white">
+							<ul class="writebox">
+								<input type="hidden" value="{$data['uid']}" name="uid">
+								<li>
+									<div>
+										用户名
+									</div>
+									<p>
+										<input name="username" minlength="6" maxlength="11" class="form-control"
+											   id="username" type="text" placeholder="用户名" value="{$data.username}" disabled="true">
+									</p>
+								</li>
+								<li>
+									<div>
+										充值金额
+									</div>
+									<p>
+										<input name="money" class="form-control" id="money" type="text" placeholder="充值金额">
+									</p>
+								</li>
+
+								<li id="pwd-span">
+									<div>
+										资金密码
+									</div>
+									<p>
+										<input name="password" class="form-control" id="password" type="password" placeholder="资金密码" value="">
+									</p>
+								</li>
+								<li id="pwd-span"   <?php  if($user['is_test'] == 1) { ?> style="display: none" <?php } ?> >
+									<div>
+										验证银行卡号
+									</div>
+									<p>
+										<input name="bankno"  class="form-control" id="bankno" type="text" placeholder="绑定银行卡号" value="">
+									</p>
+								</li>
+								<!--<li>
+									<div>
+										账户余额
+									</div>
+									<p>
+										{$user.coin}
+									</p>
+								</li>-->
+							</ul>
+						</div>
+						<div class="winfoot" style="background: #007c71!important;color: white">
+							<p>
+								<input class="btn btnblock" type="submit" data-pro="add"
+									   data-action="{:U('team/chongzhi')}" id="btn-ok2" value="提交">
+							</p>
+							<p>
+								<input class="btn btnblock btnblue" onclick="$('#queryMask2').css('display', 'none');"
+									   type="button" value="取消">
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        </div>
+    </div>
+</block>
+<block name="script">
+	<script type="text/javascript">
+        var lid=0;
+        $(function(){
+            /*$('.queryMask').live('click', function () {
+                $('#type').val(1);
+                $("#username").attr("disabled", false);
+                $('#username').val('');
+                $('#pwd-span').css('display','table');
+                $('#password').val('123456');
+                $('#fanDian').val('');
+                $('#btn-ok').attr('data-action',"{:U('team/insertMember')}");
+
+                $('#queryMask').css('display', 'block');
+            });*/
+            $('.updateMember').live('click', function () {
+                $('#type').val($(this).attr('usertype'));
+                $('#username').val($(this).attr('title'));
+                $("#username").attr("disabled", true);
+                $('#fanDian').val($(this).attr('min'));
+                $('#btn-ok').attr('data-action',"{:U('team/userUpdateed')}");
+
+                $('#queryMask').css('display', 'block');
+            });
+        });
+        $(function(){
+			$('.queryMask2').live('click', function () {
+				$('#btn-ok2').attr('data-action',"{:U('team/chongzhi')}");
+				$('#queryMask2').css('display', 'block');
+			});
+        });
+	</script>
+</block>
+<block name="footer"></block>

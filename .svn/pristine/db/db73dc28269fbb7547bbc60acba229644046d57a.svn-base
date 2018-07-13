@@ -1,0 +1,7 @@
+.pagination{
+    display: inline-flex;
+}
+.pagination li{
+    display: block;
+    width: 20px;
+}

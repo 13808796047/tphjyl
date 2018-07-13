@@ -1,0 +1,60 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <div class="main-title">
+        <h2>{$content?'编辑':'新增'}支付配置</h2>
+    </div>
+    <form action="__SELF__" method="post" class="form-horizontal">
+        <input type="hidden" class="text input-large" name="id" value="{$content.id}">
+        <div class="form-item">
+            <label class="item-label">商户ID<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="business_id" value="{$content.business_id}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">商户名称<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="business_name" value="{$content.business_name}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">商户别名<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="business_alias" value="{$content.business_alias}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">秘钥<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="business_key" value="{$content.business_key}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">提交地址<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="tj_url" value="{$content.tj_url}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">是否显示<span class="check-tips"></span></label>
+            <div class="controls">
+                <label><input  autocomplete="off" name="enable" value="0" <php>if($content){if($content['enable']==0) echo 'checked';} else {echo 'checked';}</php> type="radio">显示</label>
+                <label><input autocomplete="off" name="enable" value="1" <php>if($content){if($content['enable']==1) echo 'checked';}</php> type="radio">隐藏</label>
+            </div>
+        </div>
+        <div class="form-item">
+            <input type="hidden" name="id" value="{$content.id|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        $('.side-sub-menu').find('a[href="{:U('
+            payConfig / index ')}"]').closest('li').addClass('current');
+    </script>
+</block>

@@ -1,0 +1,74 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>统计：日期·彩种/期数</h2>
+	</div>
+	<!--彩种选择-->
+	<ul class="tab-nav nav">
+		<?php foreach($types as $data){ ?>
+			<li <?=$this->iff($type==$data['id'], 'class="current"','')?>><a href="{:U( '?type='.$data['id'].'&date='.$date )}"><?=$data['shortName']?></a></li>
+		<?php } ?>
+	</ul>
+	<!--日期选择-->
+	<form action="{:U('date_type_i_no')}" method="post">
+		<div class="search-form fr cf">
+			<div class="sleft">
+				日期：<input style="width:85px" type="text" name="date" id="date" class="search-input" value="{$date}" placeholder="日期">
+			</div>
+			<div class="sbtn">
+				<button type="submit" class="btn" id="search">查 找</button>
+			</div>	
+			<input type='hidden' id='type' name='type' value='{$type}'/>
+		</div>
+	</form>	
+
+	<div class="data-table table-striped">
+		<table>
+			<thead>
+				<tr>
+					<th>期数</th>
+					<th style="text-align: center">投注总额</th>
+					<th style="text-align: center">返奖总额</th>
+					<th style="text-align: center">返点总额</th>
+					<th style="text-align: center">盈亏</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="_list" id="item" empty="暂时没有数据" >
+					<tr>
+						<td>{$item.qs}</td>
+						<td style="text-align: right">{$item.tz|number_format=2}</td>
+						<td style="text-align: right">{$item.fj|number_format=2}</td>
+						<td style="text-align: right">{$item.fd|number_format=2}</td>
+						<td style="text-align: right">{$item.yk|number_format=2}</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+		<!-- 分页 -->
+	    <div class="page">
+	        {$_page}
+	    </div>
+	</div>
+</block>
+<block name="script">
+	<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>	
+	<script type="text/javascript">
+	$(function(){
+			var dateCfg={
+				format: 'yyyy-mm-dd',
+				language:"zh-CN",
+				minView:2,
+				autoclose:true
+			};
+			$('#date').datetimepicker(dateCfg);
+		//导航高亮
+		$('.side-sub-menu').find('a[href="{:U('Count/date_type_i_no')}"]').closest('li').addClass('current');
+	});
+	</script>
+</block>

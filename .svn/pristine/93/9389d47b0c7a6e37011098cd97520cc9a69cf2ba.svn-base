@@ -1,0 +1,170 @@
+{
+  "gameMethods": [
+    {
+      "title": "前一",
+      "name": "qianyi",
+      "childs": [
+        {
+          "title": "前一",
+          "name": "qianyis",
+          "parent": "qianyi",
+          "childs": [
+            {
+              "name": "qianyifushi",
+              "parent": "qianyis",
+              "title": "前一",
+              "mode": "qianyi",
+              "methodId": "93-6-5834",
+              "faceparamter": {
+                "methoddesc": "从冠军中至少选择1个号码组成一注。",
+                "methodhelp": "从冠军中至少选择1个号码组成一注。",
+                "methodexample": "投注方案：1 开奖号码：1 2 3 4 5 6 7 8 9 10 即可中前一直选。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "前二",
+      "name": "qianer",
+      "childs": [
+        {
+          "title": "前二",
+          "name": "qianers",
+          "parent": "qianer",
+          "childs": [
+            {
+              "name": "qianerfushi",
+              "parent": "qianers",
+              "title": "前二复式",
+              "mode": "qianer",
+              "methodId": "94-6-5834",
+              "faceparamter": {
+                "methoddesc": "从冠军、亚军中至少选择1个号码组成一注。",
+                "methodhelp": "从冠军、亚军中至少选择1个号码组成一注。",
+                "methodexample": "投注方案：冠军 1,亚军 2 开奖号码：1 2 3 4 5 6 7 8 9 10 即可中前二直选。"
+              }
+            },
+            {
+              "name": "qianerdanshi",
+              "parent": "qianers",
+              "title": "前二单式",
+              "mode": "qianer",
+              "methodId": "94-6-5834",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，至少选择2个二位数号码组成一注。",
+                "methodhelp": "手动输入号码，至少选择2个二位数号码组成一注。",
+                "methodexample": "投注方案：01 02 开奖号码：1 2 3 4 5 6 7 8 9 10 即可中前二直选。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "前三",
+      "name": "qiansanzu",
+      "childs": [
+        {
+          "title": "前三",
+          "name": "qiansanzus",
+          "parent": "qiansanzu",
+          "childs": [
+            {
+              "name": "qiansanzufushi",
+              "parent": "qiansanzus",
+              "title": "前三复式",
+              "mode": "qiansanzu",
+              "methodId": "95-6-5834",
+              "faceparamter": {
+                "methoddesc": "从冠军、亚军、第三名中至少各选择1个号码。",
+                "methodhelp": "从冠军、亚军、第三名中至少各选择1个号码。",
+                "methodexample": "投注方案：冠军 1,亚军 2,第三名 3 开奖号码：1 2 3 4 5 6 7 8 9 10 即可中前三直选。"
+              }
+            },
+            {
+              "name": "qiansanzudanshi",
+              "parent": "qiansanzus",
+              "title": "前三单式",
+              "mode": "qiansanzu",
+              "methodId": "95-6-5834",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，至少选择3个二位数号码组成一注。",
+                "methodhelp": "手动输入号码，至少选择3个二位数号码组成一注。",
+                "methodexample": "投注方案：01 02 03 开奖号码：1 2 3 4 5 6 7 8 9 10 即可中前三直选。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "定位胆",
+      "name": "dingweidan",
+      "childs": [
+        {
+          "title": "定位胆",
+          "name": "dingweidans",
+          "parent": "dingweidan",
+          "childs": [
+            {
+              "name": "dingweidanyidaowu",
+              "parent": "dingweidans",
+              "title": "冠军~第5名",
+              "mode": "dingweidan",
+              "methodId": "96-6-5834",
+              "faceparamter": {
+                "methoddesc": "从冠军到第五名任意位置上选择1个或1个以上号码。",
+                "methodhelp": "从冠军到第五名任意位置上选择1个或1个以上号码。",
+                "methodexample": "投注方案：冠军 1 开奖号码：1 2 3 4 5 6 7 8 9 10 即可中定位胆。"
+              }
+            },
+            {
+              "name": "dingweidanliudaoshi",
+              "parent": "dingweidans",
+              "title": "第6~10名",
+              "mode": "dingweidan",
+              "methodId": "96-6-5834",
+              "faceparamter": {
+                "methoddesc": "从第六名到第十名任意位置上选择1个或1个以上号码。",
+                "methodhelp": "从第六名到第十名任意位置上选择1个或1个以上号码。",
+                "methodexample": "投注方案：第六名 6 开奖号码：1 2 3 4 5 6 7 8 9 10 即可中定位胆。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "大小单双",
+      "name": "daxiaodanshuang",
+      "childs": [
+        {
+          "title": "大小单双",
+          "name": "daxiaodanshuangs",
+          "parent": "daxiaodanshuang",
+          "childs": [
+            {
+              "name": "daxiaodanshuangzu",
+              "parent": "daxiaodanshuangs",
+              "title": "大小单双",
+              "mode": "daxiaodanshuang",
+              "methodId": "4837-107-5834",
+              "faceparamter": {
+                "methoddesc": "选择冠军到第十名任意车号大小单双为一注。",
+                "methodhelp": "选择冠军到第十名任意车号大小单双为一注。",
+                "methodexample": "如冠军购买号码为大，开奖号码冠军为大（6,7,8,9,10）即为中奖。（1,2,3,4,5）即为不中奖。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "defaultMethod": "qianyi.qianyis.qianyifushi",
+  "gameType": "ssc",
+  "gameTypeCn": "极速PK10",
+  "dynamicConfigUrl": "./newgame_play.html?flag=dynamicConifg&curmid=5834",
+  "uploadPath": "/game/upload"
+}

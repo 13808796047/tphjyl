@@ -1,0 +1,200 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="__CSS__/themes/base/jquery.ui.all.css">
+<link href="__CSS__/dialogUI.css" media="all" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="__CSS__/default_content.min.css">
+<script type="text/javascript" src="__JS__/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="__JS__/jquery-migrate-1.4.1.js"></script>
+<script src="__JS__/jquery.ui.core.js"></script>
+<script src="__JS__/jquery.ui.widget.js"></script>
+<script src="__JS__/jquery.ui.tabs.js"></script>
+<script type="text/javascript" src="__JS__/jquery.dialogUI.js"></script>
+<script type="text/javascript" src="__JS__/jquery.dragdrop.js"></script>
+<script type="text/javascript" src="__JS__/jquery.md5.js"></script>
+<script type="text/javascript" src="__JS__/main.min.js"></script>
+<link href="__CSS__/dialogUI/dialogUI.css" media="all" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="__CSS__/default_content.min.css">
+
+</head>
+<body id="lan">
+<div class="content_mid">
+  <div class="section">
+    <div id="tabs">
+    	<ul>
+    		<li><a href="#tabs-1" >修改登录密码</a></li>
+    		<li><a href="#tabs-2" onclick="check_is()">修改资金密码</a></li>
+    	</ul>
+    	<div id="tabs-1">
+    		<form action="" method="post" name="changepass" onSubmit="return checkform(this,0)" class="form section" style="margin-top:0">
+                            <table class="not-table">
+                                                                        <tr class="field">
+                                            <td><label>输入旧登录密码</label></td>
+                                            <td><input name="oldpass" id="oldpass" type="password" class="custom_input" />
+                                            <font color="red" style="margin-left: 0;font-size:16px">初始资金密码为初始登陆密码</font></td>
+                                    </tr>
+                                                                        <tr class="field">
+                                            <td><label>输入新登录密码</label></td>
+                                            <td><input name="newpass" id="newpass" type="password" class="custom_input" /><span class="green1">（由字母和数字组成6-16个字符） </span></td>
+                                    </tr>
+                                    <tr class="field">
+                                            <td><label>确认新登录密码</label></td>
+                                            <td><input name="confirm_newpass" id="confirm_newpass" type="password" class="custom_input" /></td>
+                                    </tr>
+                            </table>
+                            <input type="submit"  value="保存" class="formCheck btn" />
+                            <input style="margin:0!important\9;" type="reset" value="重置" class="formCheck alert_btn" />
+                            <input type="hidden" name="controller" value="user" />
+                            <input type="hidden" name="action" value="changeloginpass" />
+                            <input type="hidden" name="check" value="" />
+                            <input type="hidden" name="flag" value="changepass" />
+                            <input type="hidden" name="changetype" value="loginpass" />
+                                                </form>
+    	</div>
+    	<div id="tabs-2">
+                                        <form action="" method="post" name="changepass" onSubmit="return checkform(this,1)" class="form section" style="margin-top:0">
+                        <table class="not-table">
+                                                <tr class="field">
+                        <td><label>输入旧资金密码</label></td>
+                        <td><input type="password" name="oldpass" class="custom_input" /></td>
+                        </tr>
+                                                <tr class="field">
+                        <td><label>输入新资金密码</label></td>
+                        <td><input type="password" name="newpass" class="custom_input" /><span class="green1">（由字母和数字组成6-16个字符,资金密码不能与登录密码相同） </span></td>
+                        </tr>
+                        <tr class="field">
+                        <td><label>确认新资金密码</label></td>
+                        <td><input type="password" name="confirm_newpass" class="custom_input" /></td>
+                        </tr>
+                        </table>
+                        <input type="submit" value="保存"  class="formCheck btn"/>
+                        <input style="margin:0!important\9;" type="reset" value="重置" class="formCheck alert_btn" />
+                        <input type="hidden" name="controller" value="user" />
+                        <input type="hidden" name="action" value="changeloginpass" />
+                        <input type="hidden" name="check" value="" />
+                        <input type="hidden" name="flag" value="changepass" />
+                        <input type="hidden" name="changetype" value="secpass" />
+                    </form>
+                                </div>
+    </div>
+  </div>
+</div>
+</div>
+
+	 <script>
+  $(function() {
+    $('#tabs li a').click(function(e){
+      e.preventDefault();
+  });
+    $("#tabs").tabs({
+      show:function(){
+        changeIframeHeight($(".content_mid").outerHeight(true) + 200);
+      }
+    });
+    //changeIframeHeight($(".content_mid").outerHeight(true) + 200);
+    //   $('#tabs-1').show();
+    //   $('#tabs-2').hide();
+    // $( ".tab-title" ).click(function(){
+    //     var index = $(this).attr('data-id');
+    //     var parent = $(this).parent();
+    //     $('#tabs-1, #tabs-2').hide();
+    //     $('#tabs-'+ index).show();
+    //     $("li").not(parent).removeClass("ui-tabs-selected ui-state-active");
+    //     parent.addClass("ui-tabs-selected ui-state-active");
+    // });
+  });
+function changeIframeHeight(height){
+  var parentDOM = $(parent.document);
+  var grandparentDOM = $(top.document);
+  parentDOM.find("#mainFrame").height(height);
+  //grandparentDOM.find("#mainFrame").height($(parent.document).find(".ys-content").outerHeight(true));
+}
+function checkform(obj,form_obj)
+{
+  //form_obj:0 為修改用戶密碼頁面
+　//form_obj:1 為修改資金密碼頁面
+    if(form_obj==0) {
+        if (!validateUserPss(obj.newpass.value)) {
+            window.top.sAlert("密码不符合规则，需要包含英数 6-16 位，且不能连续三位相同，请重新输入");
+            //obj.newpass.focus();
+            return false;
+        }
+    }else{
+        if (!validateMoneyPss(obj.newpass.value)) {
+            window.top.sAlert("密码不符合规则，需要包含英数 6-16 位，且不能连续三位相同，请重新输入");
+            //bj.newpass.focus();
+            return false;
+        }
+    }
+  if( obj.newpass.value != obj.confirm_newpass.value )
+  {
+  	 window.top.sAlert("两次输入密码不相同");
+	   //obj.newpass.focus();
+	return false;
+  }
+  if( obj.oldpass == "" ){
+  	 window.top.sAlert("请输入原始密码");
+	   //obj.oldpass.focus();
+	return false;
+  }
+//  obj.newpass.value=$.md5(obj.newpass.value);
+//  obj.confirm_newpass.value=$.md5(obj.confirm_newpass.value);
+//  obj.oldpass.value=$.md5(obj.oldpass.value);
+  return true;
+}
+  function validateUserPss( str )
+  {
+      // 8－16位数字和字母，區分大小寫
+      var patrn = /^[0-9a-zA-Z]{6,16}$/g;
+      if( !patrn.exec(str) ){
+          return false;
+      }
+      // 不能只是數字
+      patrn = /^\d+$/g;
+      if( patrn.exec(str) ){
+          return false;
+      }
+      // 不能只是英文
+      patrn = /^[a-zA-Z]+$/g;
+      if( patrn.exec(str) ){
+          return false;
+      }
+      // 不能連續三位相同
+      /*patrn = /(.)\1{2,}/g;
+       if( patrn.exec(str) ){
+       return false;
+       }*/
+      return true;
+  }
+function check_is(){
+    var s=0; stimes="0";
+    if (s==1){
+       window.top.sAlert("尊敬的用户，您于["+stimes+"]已设置过密保!");
+    }
+}
+  //密码验证(6－16位数字和字母，不能只是数字，或者只是字母，不能连续三位相同)
+  function validateMoneyPss( str )
+  {
+      var patrn = /^[0-9a-zA-Z]{6,16}$/;
+      if( !patrn.exec(str) ){
+          return false;
+      }
+      patrn = /^\d+$/;
+      if( patrn.exec(str) ){
+          return false;
+      }
+      patrn = /^[a-zA-Z]+$/;
+      if( patrn.exec(str) ){
+          return false;
+      }
+      patrn = /(.)\1{2,}/;
+      if( patrn.exec(str) ){
+          return false;
+      }
+      return true;
+  }
+  </script>
+</body>
+</html>

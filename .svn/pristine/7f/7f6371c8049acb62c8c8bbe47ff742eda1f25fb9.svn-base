@@ -1,0 +1,224 @@
+{
+  "gameMethods": [
+    {
+      "title": "三星",
+      "name": "sanxing",
+      "childs": [
+        {
+          "title": "直选",
+          "name": "zhixuan",
+          "parent": "sanxing",
+          "childs": [
+            {
+              "name": "fushi",
+              "parent": "zhixuan",
+              "title": "复式",
+              "mode": "sanxing",
+              "methodId": "57-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从百位、十位、个位中至少各选1个号码。",
+                "methodhelp": "从百位、十位、个位中选择一个3位数号码组成一注，所选号码与开奖号码的百位、十位、个位相同，顺序一致，即为中奖。",
+                "methodexample": "投注方案：3,4,5；开奖号码：345；顺序一致，即中三星直选一等奖。"
+              }
+            }
+          ]
+        },
+        {
+          "title": "组选",
+          "name": "zuxuan",
+          "parent": "sanxing",
+          "childs": [
+            {
+              "name": "zusan",
+              "parent": "zuxuan",
+              "title": "组三",
+              "mode": "sanxing",
+              "methodId": "59-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从0-9中任意选择2个或2个以上的号码。",
+                "methodhelp": "从0-9中选择2个数字组成两注，所选号码与开奖号码的百位、十位、个位相同，顺序不限，即为中奖。",
+                "methodexample": "投注方案：5,8;开奖号码：588或558(顺序不限);即中三星组选三一等奖。"
+              }
+            },
+            {
+              "name": "zuliu",
+              "parent": "zuxuan",
+              "title": "组六",
+              "mode": "sanxing",
+              "methodId": "60-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从0-9中任意选择3个或3个以上的号码。",
+                "methodhelp": "从0-9中任意选择3个号码组成一注，所选号码与开奖号码的百位、十位、个位相同，顺序不限，即为中奖。",
+                "methodexample": "投注方案：2,5,8；开奖号码：258(顺序不限)；即中三星组选六一等奖。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "二星",
+      "name": "erxing",
+      "childs": [
+        {
+          "title": "二星",
+          "name": "erxingzu",
+          "parent": "erxing",
+          "childs": [
+            {
+              "name": "houerzhixuan",
+              "parent": "erxingzu",
+              "title": "后二直选复式",
+              "mode": "erxing",
+              "methodId": "67-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从十位和个位上至少各选1个号码。",
+                "methodhelp": "从十位、个位中选择一个2位数号码组成一注，所选号码与开奖号码的十位、个位相同，顺序一致，即为中奖。",
+                "methodexample": "投注方案：5,8；开奖号码后二位：58；顺序一致，即中后二直选一等奖。"
+              }
+            },
+            {
+              "name": "houerzhixuandanshi",
+              "parent": "erxingzu",
+              "title": "后二直选单式",
+              "mode": "erxing",
+              "methodId": "66-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，至少输入1个两位数号码。",
+                "methodhelp": "手动输入一个2位数号码组成一注，所投注的号码与开奖号码的十位、个位相同，顺序一致，即为中奖。",
+                "methodexample": "投注方案：5,8；开奖号码后二位：58；顺序一致，即中后二直选一等奖。"
+              }
+            },
+            {
+              "name": "houerzuxuan",
+              "parent": "erxingzu",
+              "title": "后二组选复式",
+              "mode": "erxing",
+              "methodId": "63-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从0-9中任意选择2个或2个以上号码。",
+                "methodhelp": "从0-9中任选2个号码组成一注(不含对子号)，所选号码与开奖号码的十位、个位相同，顺序不限，即中奖。",
+                "methodexample": "投注方案：5,8；开奖号码后二位：58(顺序不限)；即中后二组选一等奖。"
+              }
+            },
+            {
+              "name": "houerzuxuandanshi",
+              "parent": "erxingzu",
+              "title": "后二组选单式",
+              "mode": "erxing",
+              "methodId": "62-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，至少输入1个两位数号码。",
+                "methodhelp": "手动输入一个2位数号码组成一注(不含对子号)，所投注的号码与开奖号码的十位、个位相同，顺序不限，即为中奖。",
+                "methodexample": "投注方案：5,8；开奖号码后二位：58(顺序不限)；即中后二组选一等奖。"
+              }
+            },
+            {
+              "name": "qianerzhixuan",
+              "parent": "erxingzu",
+              "title": "前二直选复式",
+              "mode": "erxing",
+              "methodId": "69-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从百位和十位上至少各选1个号码。",
+                "methodhelp": "从百位、十位中选择一个2位数号码组成一注，所选号码与开奖号码的百位、十位相同，顺序一致，即为中奖。",
+                "methodexample": "投注方案：2,5；开奖号码前二位：25；顺序一致，即中前二直选一等奖。"
+              }
+            },
+            {
+              "name": "qianerzhixuandanshi",
+              "parent": "erxingzu",
+              "title": "前二直选单式",
+              "mode": "erxing",
+              "methodId": "68-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，至少输入1个两位数号码。",
+                "methodhelp": "手动输入一个2位数号码组成一注，所投注的号码与开奖号码的百位、十位相同，顺序一致，即为中奖。",
+                "methodexample": "投注方案：2,5；开奖号码前二位：25；顺序一致，即中前二直选一等奖。"
+              }
+            },
+            {
+              "name": "qianerzuxuan",
+              "parent": "erxingzu",
+              "title": "前二组选复式",
+              "mode": "erxing",
+              "methodId": "65-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从0-9中任意选择2个或2个以上号码。",
+                "methodhelp": "从0-9中任选2个号码组成一注(不含对子号)，所选号码与开奖号码的百位、十位相同，顺序不限，即中奖。",
+                "methodexample": "投注方案：2,5；开奖号码前二位：25(顺序不限)；即中前二组选一等奖。"
+              }
+            },
+            {
+              "name": "qianerzuxuandanshi",
+              "parent": "erxingzu",
+              "title": "前二组选单式",
+              "mode": "erxing",
+              "methodId": "64-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，至少输入1个两位数号码。",
+                "methodhelp": "手动输入一个2位数号码组成一注(不含对子号)，所投注的号码与开奖号码的百位、十位相同，顺序不限，即为中奖。",
+                "methodexample": "投注方案：2,5；开奖号码前二位：25(顺序不限)；即中前二组选一等奖。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "定位胆",
+      "name": "dingweidan",
+      "childs": [
+        {
+          "title": "定位胆",
+          "name": "dingweidanzu",
+          "parent": "dingweidan",
+          "childs": [
+            {
+              "name": "dingweidan",
+              "parent": "dingweidanzu",
+              "title": "定位胆",
+              "mode": "dingweidan",
+              "methodId": "70-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "在百位，十位，个位任意位置上任意选择1个或1个以上号码。",
+                "methodhelp": "从百位、十位、个位任意位置上至少选择1个以上号码，所选号码与相同位置上的开奖号码一致，即为中奖。",
+                "methodexample": "投注方案：百位1；开奖号码百位：1；即中定位胆百位一等奖。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "不定位",
+      "name": "budingwei",
+      "childs": [
+        {
+          "title": "不定位",
+          "name": "budingweizu",
+          "parent": "budingwei",
+          "childs": [
+            {
+              "name": "budingwei",
+              "parent": "budingweizu",
+              "title": "一码不定位",
+              "mode": "budingwei",
+              "methodId": "71-3-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从0-9中任意选择1个或1个以上的号码。",
+                "methodhelp": "从0-9中选择1个号码，每注由1个号码组成，只要开奖号码的百位、十位、个位中包含所选号码，即为中奖。",
+                "methodexample": "投注方案：1；开奖号码：至少出现1个1；即中一码不定位一等奖。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "defaultMethod": "sanxing.zhixuan.fushi",
+  "gameType": "fc3d",
+  "gameTypeCn": "极速3D",
+  "dynamicConfigUrl": "./newgame_play.html?flag=dynamicConifg&curmid=RPMETHODID",
+  "uploadPath": "/game/upload"
+}

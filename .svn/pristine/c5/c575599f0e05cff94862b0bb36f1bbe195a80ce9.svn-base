@@ -1,0 +1,888 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="__JS__/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="__JS__/common/model/details.js" ></script>
+	<link rel="stylesheet" type="text/css" href="__CSS__/default_content.min.css"/>
+	<style type="text/css">
+		.dotTitle{
+			font-size:14px;
+		}
+		.content_mid .gg_list li{border-bottom: 1px dashed #c0c0c0;margin: 15px 0;padding-bottom: 15px;overflow: hidden;color: #32312e;}
+		.content_mid .gg_list li span.date {float: right;}
+		.content_mid .grayTable{border-collapse: collapse;color:#0000;border-width: 1px;border-color: #666666;}
+		.content_mid .grayTable tr,.content_mid .grayTable td,.content_mid .grayTable th{border: 1px solid #cccccc;  padding:5px;font-weight:100;text-align:center;}
+		.content_mid .grayTable th{text-align:center; height: 40px; line-height: 40px;}
+		.content_mid  a{color:#000; text-decoration: none;}
+		.content_mid .notice_title{color:#759a26; border-bottom: 1px solid #cdcdcd; margin-bottom: 10px;}
+		.content_mid .lottery_menu{font-size:14px;background:url(../images/change.png) no-repeat;height: 29px;width: 114px;text-align: center; line-height: 29px;margin-bottom: 5px;}
+		.content_mid .lottery_menu_hover{background:url(../images/change_hover.png) no-repeat; color:#FFF; font-size:14px;height: 29px;width: 112px;text-align: center; line-height: 29px;margin-bottom: 5px;}
+
+		table {
+			font-size: 12px;
+		}
+		.intro_content td {
+			text-align: center !important;
+			width: auto !important;
+		}
+		.saveup_table td {
+			text-align:left !important;
+		}
+		.alert_btn {
+			padding: 0 !important;
+		}
+		#allbackset{
+			margin-top:20px;
+		}
+		.left_checkbox{
+			float:left;
+		}
+		.btn {
+			font-size: 14px;
+			margin-left: 10px !important;
+		}
+	</style>
+
+</head>
+<body id="lan">
+<form action="./user_edituserpoint.html" method="post" name="lotteriesform" id="lotteriesform" onSubmit='return;'>
+	<input type="hidden" name="onekey" id="onekey" value="onekey" />
+	<div class="ys-content">
+		<div class="header">
+			快速返点设置			</div>
+		<div class="main">
+			<div class="section form">
+				<table class="not-table">
+					<tr class="field">
+						<td><label>用户信息</label></td>
+						<td><span style="padding-left:30px;">名称：fxh333</span><span style="padding-left:30px;">昵称：fxh333</span><span style="padding-left:30px;">奖金限额：500000</span></td>
+					</tr>
+					<tr class="field">
+						<td><label>快速返点设置</label></td>
+						<td>
+								<span class="self-rebate">自身保留返点：
+									<input type="text" class="fandianinput custom_input" size="4" value="0.1" name="keeppoint" id="keeppoint">
+									[自身最低保留0.1]
+								</span>
+							<input type="submit"  class="margin0 btn" value="一键设置" id="" onclick="return(onekey_keeppoint());" />
+							<input name="" value="详细设置" id="setDetail" type="button"  class="margin0 btn">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<input type="hidden" name="flag" id="flag" value="rapid" />
+			<input type="hidden" name="uid" id="uid" value="77853" />
+			<div id="allbackset" class="list" style="display:none;">
+				<table>
+					<tr>
+						<td>彩种</td>
+						<td>赔率</td>
+						<td><input type="text" class="fandianinput custom_input" size="4" value="0" name="accord_lottery_point" id="accord_lottery_point">%
+							<input type="button" name="accordbutton" id="accord_lottery_button" class="formSubmit btn" value="统一设置">
+						</td>
+						<td><input type="text" class="fandianinput custom_input" value="0" size="4" name="accord_indefinite_point" id="accord_indefinite_point">%
+							<input type="button" name="accordbutton" class="formSubmit btn" id="accord_indefinite_button"  value="统一设置">
+						</td>
+					</tr>
+					<script language="javascript">
+						var lotteryinfo = [];
+					</script>
+					<tr>
+						<td  height="37"  style="padding:3px; font-size: 14px;font-weight:bold;">时时彩</td>
+						<td   style="padding:3px;">&nbsp;</td>
+						<td    align="left"  style="padding:3px; font-size: 14px;font-weight:bold;">
+							所有玩法返点			</td>
+						<td align="left"  style="padding:3px; font-size: 14px;font-weight:bold;">
+							不定位返点						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_1" value="1" class="left_checkbox">重庆时时彩</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_1" value="477">
+							1800							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_1" id="min_point_1" value="0">
+							<input type="hidden" name="max_point_1" id="max_point_1" value="7.7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_1" name="point_1" value="0">%
+							<span id="range_477">(范围：0～7.7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+							<input type="hidden" name="min_indefinite_point_1" id="min_indefinite_point_1" value="0">
+							<input type="hidden" name="max_indefinite_point_1" id="max_indefinite_point_1" value="7.7">
+							<input  type="text" size="20" class="fandianinput custom_input" id="indefinite_point_1" name="indefinite_point_1" value="0">%
+							(范围：0～7.7%)<br />
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_18" value="18" class="left_checkbox">两分时时彩</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_18" value="476">
+							1800							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_18" id="min_point_18" value="0">
+							<input type="hidden" name="max_point_18" id="max_point_18" value="7.7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_18" name="point_18" value="0">%
+							<span id="range_476">(范围：0～7.7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+							<input type="hidden" name="min_indefinite_point_18" id="min_indefinite_point_18" value="0">
+							<input type="hidden" name="max_indefinite_point_18" id="max_indefinite_point_18" value="7.7">
+							<input  type="text" size="20" class="fandianinput custom_input" id="indefinite_point_18" name="indefinite_point_18" value="0">%
+							(范围：0～7.7%)<br />
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_19" value="19" class="left_checkbox">一分时时彩</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_19" value="474">
+							1800							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_19" id="min_point_19" value="0">
+							<input type="hidden" name="max_point_19" id="max_point_19" value="7.7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_19" name="point_19" value="0">%
+							<span id="range_474">(范围：0～7.7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+							<input type="hidden" name="min_indefinite_point_19" id="min_indefinite_point_19" value="0">
+							<input type="hidden" name="max_indefinite_point_19" id="max_indefinite_point_19" value="7.7">
+							<input  type="text" size="20" class="fandianinput custom_input" id="indefinite_point_19" name="indefinite_point_19" value="0">%
+							(范围：0～7.7%)<br />
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_56" value="56" class="left_checkbox">秒秒时时彩</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_56" value="473">
+							1800							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_56" id="min_point_56" value="0">
+							<input type="hidden" name="max_point_56" id="max_point_56" value="7.7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_56" name="point_56" value="0">%
+							<span id="range_473">(范围：0～7.7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+							<input type="hidden" name="min_indefinite_point_56" id="min_indefinite_point_56" value="0">
+							<input type="hidden" name="max_indefinite_point_56" id="max_indefinite_point_56" value="7.7">
+							<input  type="text" size="20" class="fandianinput custom_input" id="indefinite_point_56" name="indefinite_point_56" value="0">%
+							(范围：0～7.7%)<br />
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_62" value="62" class="left_checkbox">五分时时彩</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_62" value="743">
+							1800							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_62" id="min_point_62" value="0">
+							<input type="hidden" name="max_point_62" id="max_point_62" value="7.7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_62" name="point_62" value="0">%
+							<span id="range_743">(范围：0～7.7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+							<input type="hidden" name="min_indefinite_point_62" id="min_indefinite_point_62" value="0">
+							<input type="hidden" name="max_indefinite_point_62" id="max_indefinite_point_62" value="0">
+							<input  type="text" size="20" class="fandianinput custom_input" id="indefinite_point_62" name="indefinite_point_62" value="0">%
+							(范围：0～0%)<br />
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_106" value="106" class="left_checkbox">北京PK10</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_106" value="1439">
+							1800							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_106" id="min_point_106" value="0">
+							<input type="hidden" name="max_point_106" id="max_point_106" value="7.7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_106" name="point_106" value="0">%
+							<span id="range_1439">(范围：0～7.7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+							<input type="hidden" name="min_indefinite_point_106" id="min_indefinite_point_106" value="0">
+							<input type="hidden" name="max_indefinite_point_106" id="max_indefinite_point_106" value="7.7">
+							<input  type="text" size="20" class="fandianinput custom_input" id="indefinite_point_106" name="indefinite_point_106" value="0">%
+							(范围：0～7.7%)<br />
+						</td>
+					</tr>
+					<tr>
+						<td  height="37"  style="padding:3px; font-size: 14px;font-weight:bold;">11选5</td>
+						<td   style="padding:3px;">&nbsp;</td>
+						<td    align="left"  style="padding:3px; font-size: 14px;font-weight:bold;">
+							所有玩法返点			</td>
+						<td align="left"  style="padding:3px; font-size: 14px;font-weight:bold;">
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_5" value="5" class="left_checkbox">山东11选5</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_5" value="485">
+							1782							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_5" id="min_point_5" value="0">
+							<input type="hidden" name="max_point_5" id="max_point_5" value="7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_5" name="point_5" value="0">%
+							<span id="range_485">(范围：0～7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_7" value="7" class="left_checkbox">江西11选5</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_7" value="486">
+							1782							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_7" id="min_point_7" value="0">
+							<input type="hidden" name="max_point_7" id="max_point_7" value="7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_7" name="point_7" value="0">%
+							<span id="range_486">(范围：0～7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_8" value="8" class="left_checkbox">广东11选5</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_8" value="487">
+							1782							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_8" id="min_point_8" value="0">
+							<input type="hidden" name="max_point_8" id="max_point_8" value="7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_8" name="point_8" value="0">%
+							<span id="range_487">(范围：0～7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_20" value="20" class="left_checkbox">两分11选5</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_20" value="484">
+							1782							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_20" id="min_point_20" value="0">
+							<input type="hidden" name="max_point_20" id="max_point_20" value="7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_20" name="point_20" value="0">%
+							<span id="range_484">(范围：0～7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_54" value="54" class="left_checkbox">一分11选5</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_54" value="483">
+							1782							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_54" id="min_point_54" value="0">
+							<input type="hidden" name="max_point_54" id="max_point_54" value="7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_54" name="point_54" value="0">%
+							<span id="range_483">(范围：0～7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_57" value="57" class="left_checkbox">秒秒11选5</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_57" value="482">
+							1782							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_57" id="min_point_57" value="0">
+							<input type="hidden" name="max_point_57" id="max_point_57" value="7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_57" name="point_57" value="0">%
+							<span id="range_482">(范围：0～7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_63" value="63" class="left_checkbox">五分11选5</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_63" value="757">
+							1782							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_63" id="min_point_63" value="0">
+							<input type="hidden" name="max_point_63" id="max_point_63" value="7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_63" name="point_63" value="0">%
+							<span id="range_757">(范围：0～7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+
+						</td>
+					</tr>
+					<tr>
+						<td  height="37"  style="padding:3px; font-size: 14px;font-weight:bold;">3D/P3</td>
+						<td   style="padding:3px;">&nbsp;</td>
+						<td    align="left"  style="padding:3px; font-size: 14px;font-weight:bold;">
+							所有玩法返点			</td>
+						<td align="left"  style="padding:3px; font-size: 14px;font-weight:bold;">
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_11" value="11" class="left_checkbox">福彩3D</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_11" value="480">
+							1800							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_11" id="min_point_11" value="0">
+							<input type="hidden" name="max_point_11" id="max_point_11" value="6.1">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_11" name="point_11" value="0">%
+							<span id="range_480">(范围：0～6.1%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+							<input type="hidden" name="min_indefinite_point_11" id="min_indefinite_point_11" value="0">
+							<input type="hidden" name="max_indefinite_point_11" id="max_indefinite_point_11" value="6.1">
+							<input  type="text" size="20" class="fandianinput custom_input" id="indefinite_point_11" name="indefinite_point_11" value="0">%
+							(范围：0～6.1%)<br />
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_12" value="12" class="left_checkbox">体彩P3</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_12" value="481">
+							1800							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_12" id="min_point_12" value="0">
+							<input type="hidden" name="max_point_12" id="max_point_12" value="6.1">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_12" name="point_12" value="0">%
+							<span id="range_481">(范围：0～6.1%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+							<input type="hidden" name="min_indefinite_point_12" id="min_indefinite_point_12" value="0">
+							<input type="hidden" name="max_indefinite_point_12" id="max_indefinite_point_12" value="6.1">
+							<input  type="text" size="20" class="fandianinput custom_input" id="indefinite_point_12" name="indefinite_point_12" value="0">%
+							(范围：0～6.1%)<br />
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_52" value="52" class="left_checkbox">极速3D</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_52" value="475">
+							1800							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_52" id="min_point_52" value="0">
+							<input type="hidden" name="max_point_52" id="max_point_52" value="7.7">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_52" name="point_52" value="0">%
+							<span id="range_475">(范围：0～7.7%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+							<input type="hidden" name="min_indefinite_point_52" id="min_indefinite_point_52" value="0">
+							<input type="hidden" name="max_indefinite_point_52" id="max_indefinite_point_52" value="7.7">
+							<input  type="text" size="20" class="fandianinput custom_input" id="indefinite_point_52" name="indefinite_point_52" value="0">%
+							(范围：0～7.7%)<br />
+						</td>
+					</tr>
+					<tr>
+						<td  height="37"  style="padding:3px; font-size: 14px;font-weight:bold;">越南彩</td>
+						<td   style="padding:3px;">&nbsp;</td>
+						<td    align="left"  style="padding:3px; font-size: 14px;font-weight:bold;">
+							所有玩法返点			</td>
+						<td align="left"  style="padding:3px; font-size: 14px;font-weight:bold;">
+						</td>
+					</tr>
+					<tr>
+						<td class='left_noindent'><label class="checkbox_label"><input size="4" type="checkbox" name='lottery[]' id="lottery_60" value="60" class="left_checkbox">越南一分彩</label></td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="pg_60" value="892">
+							1956							</td>
+						<td class='left_noindent' >&nbsp;
+							<input type="hidden" name="min_point_60" id="min_point_60" value="2.3">
+							<input type="hidden" name="max_point_60" id="max_point_60" value="10">
+							<input type="text" size="20" class="fandianinput custom_input" id="point_60" name="point_60" value="2.3">%
+							<span id="range_892">(范围：2.3～10%)</span>
+						</td>
+						<td  class='left_noindent'   style="padding:3px;">&nbsp;
+							<input type="hidden" name="min_indefinite_point_60" id="min_indefinite_point_60" value="2.3">
+							<input type="hidden" name="max_indefinite_point_60" id="max_indefinite_point_60" value="10">
+							<input type="hidden" size="20" class="fandianinput custom_input" id="indefinite_point_60" name="indefinite_point_60" value="2.3">
+						</td>
+					</tr>
+
+					<tr ><td colspan=4><label class="checkbox_label"><input type="checkbox" onclick="selectAllLottery(this)" id="selectalllottery"> 全选</label>
+						<input  id="lotteriesform" type="submit" class="btn"  onclick="" value="提交" name=""></td></tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</form>
+<script type="text/javascript">
+	//   jQuery.noConflict();
+	(function($){
+		var prizegroup 	= [];
+		var usermethod	= [];
+		var childmethod = [];
+		var lotteryinfo = [];
+		var issave		= true;
+		var usertype	= parseInt(2,10);
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(1,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(5,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(7,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(8,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(11,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(12,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(18,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(19,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(20,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(52,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(54,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(56,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(57,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(60,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(62,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(63,10)});
+		lotteryinfo.push({minpoint:Number(0.001)*100,lotteryid:parseInt(106,10)});
+		//返点输入框输入过滤
+		/*************************************/
+		$(document).ready(function(){
+			/*******************提交数据*******************/
+			$("#subform").click(function(){
+				$("span[class='merror']").hide();
+				$.blockUI({message:"<h3>正在提交数据.....<br><img src='http://upccry1.3smao.net/highgame/images/default/loading.gif'></h3>"});
+				if( $("#lotteryid").val() == "" || Number($("#lotteryid").val()) == 0 || isNaN(Number($("#lotteryid").val())) ){
+					$.alert("数据错误，请刷新页面");
+					return false;
+				}
+				if( $("#uid").val() == "" || Number($("#uid").val()) == 0 || isNaN(Number($("#uid").val())) ){
+					$.alert("数据错误，请刷新页面");
+					return false;
+				}
+				isverfer = true;
+				$("input[type='checkbox'][id^='method_']").each(function(){
+					if( $(this).attr("checked") ==  true ){
+						var id   = parseInt($(this).val(),10);
+						var maxp = Number($("input[name='maxpoint_"+id+"']").val());
+						var minp = Number($("input[name='minpoint_"+id+"']").val());
+						var point= Number($("input[name='point_"+id+"']").val());
+						if( point >= maxp || point <= minp ){
+							$("input[name='point_"+id+"']").nextAll("span").html('&nbsp;<img src="http://upccry1.3smao.net/highgame/images/default/no.gif" align="absmiddle">').show();
+							isverfer = false;
+						}
+					}
+				});
+				if( isverfer == false ){
+					$.alert("返点设置错误，请检查");
+					return false;
+				}
+				var form = $("#adjustform");
+				$.ajax({
+					type	: 'POST',
+					url  	: './user_edituserpoint.html',
+					timeout : 20000,
+					data	: $(form).serialize(),
+					global	: false,
+					success	: function(data){
+						var partn = /<script.*>.*<\/script>/;
+						if( data.toLowerCase() == "true" ){
+							$.alert('操作成功','温馨提示');
+							$("#prizegroupselect").attr("disabled",true);
+							issave = true;
+						}else if( partn.test(data) ){
+							$.alert("登陆超时，或者帐户在其他地方登陆，请重新登陆");
+							top.location.href="../default_index.html";
+							return false;
+						}else{
+							$.alert(data);
+						}
+					},
+					error	: function(){
+						$.alert("提交数据失败，请重试");
+						return false;
+					}
+				});
+			});
+			function getPrizeSelect(selID){
+				if( selID ){
+					selID = parseInt(selID,10);
+				}else{
+					selID = 0;
+				}
+				var html = "";
+				if( usertype == 1 && selID == 0 ){
+					html += '<select name="prizegroupselect" id="prizegroupselect">';
+					$.each(prizegroup,function(i,n){
+						if( selID == parseInt(n.pgid,10) ){
+							selhtml = 'selected="selected"';
+						}else{
+							selhtml = '';
+						}
+						html += '<option value="'+n.pgid+'" '+selhtml+'>'+replaceHTML(n.title)+'</option>';
+					});
+					html += '</select>';
+					html += '<input type="hidden" name="prizegroup" id="prizegroup" value="'+prizegroup[0].pgid+'">';
+				}else if( usertype !== 1 && selID == 0 ){
+					html = '<input type="hidden" name="prizegroup" id="prizegroup" value="'+prizegroup[0].pgid+'">'+replaceHTML(prizegroup[0].title);
+				}else{
+					$.each(prizegroup,function(i,n){
+						if( selID == parseInt(n.pgid,10) ){
+							html = '<input type="hidden" name="prizegroup" id="prizegroup" value="'+n.pgid+'">'+replaceHTML(n.title);
+						}
+					});
+					if( html == "" ){
+						$.alert("加载数据出错");
+						window.history.back(-1);
+					}
+				}
+				return html;
+			}
+			$.fn.cratePrizeHtml = function(id){
+				if( id ){
+					id = parseInt(id,10);
+				}else{
+					if( prizegroup[0] ){
+						id = parseInt(prizegroup[0].pgid,10);
+					}else{
+						return false;
+					}
+				}
+				var isright = false;
+				var pid = 0;
+				for( i=0; i<prizegroup.length; i++ ){
+					if( id == parseInt(prizegroup[i].pgid,10) ){
+						isright = true;
+						pid = i;
+						break;
+					}
+				}
+				if( isright == false ){
+					return false;
+				}
+				var html = "";
+				var specialhtml = "";
+				var	ischeck    = "";
+				var	upoint	   = "";
+				var	prizehtml  = "";
+				var	methodname = "";
+				var	userpoint  = 0;
+				var	lotteryid  = 0;
+				$.each(prizegroup[pid].method,function(i,n){
+					ischeck    = "";
+					upoint	   = "";
+					prizehtml  = "<div style='text-align:left;width:150px;'>";
+					methodname = "";
+					userpoint  = 0;
+					lotteryid  = 0;
+					//如果有设置值
+					if( usermethod.length > 0 ){
+						$.each(usermethod[0].method,function(j,m){
+							if( i == m.methodid ){
+								ischeck = 'checked="checked"';
+								upoint	= m.userpoint;
+							}
+						});
+					}
+					$.each(n,function(k,v){
+						methodname = v.methodname;
+						userpoint  = v.userpoint;
+						lotteryid  = v.lotteryid;
+						switch( parseInt(v.level) ){
+							case 1 : prizehtml  += replaceHTML(v.nocount[1].name)+"："+Number(v.prize)+"元"; break;
+							default:
+								prizehtml  += "<br />"+replaceHTML(v.nocount[parseInt(v.level)].name)+"："+Number(v.prize)+"元";
+								break;
+						}
+					});
+					prizehtml  += "</div>";
+					pointrange = getMinMaxPoint( lotteryid, i, userpoint );
+					if( i == 17 || i == 31 || i == 93 || i == 141 || i == 196 || i == 280 ){
+						specialhtml += '<tr><td bgcolor="#cccccc"  height="37px"><span class="james_left"><input type="checkbox" name="method[]" id="method_'+i+'" value="'+i+'" '+ischeck+'> '+replaceHTML(methodname)+'</span></td><td bgcolor="#cccccc" height="37px">'+prizehtml+'</td><td bgcolor="#cccccc" height="37px">返点 <input type="text" class="fandianinput" value="'+upoint+'" name="point_'+i+'"><input type="hidden" name="minpoint_'+i+'" value="'+pointrange.minpoint+'"><input type="hidden" name="maxpoint_'+i+'" value="'+pointrange.maxpoint+'">% (范围：'+pointrange.minpoint+'~'+pointrange.maxpoint+'%)<span class="merror"></span></td></tr>';
+					}else if( i == 5 || i == 32 ){
+						html = '<tr><td bgcolor="#cccccc" height="37px"><span class="james_left"><input type="checkbox" name="method[]" id="method_'+i+'" value="'+i+'" '+ischeck+'> '+replaceHTML(methodname)+'</span></td><td bgcolor="#cccccc" height="37px">'+prizehtml+'</td><td bgcolor="#cccccc">返点 <input type="text" class="fandianinput" value="'+upoint+'" name="point_'+i+'"><input type="hidden" name="minpoint_'+i+'" value="'+pointrange.minpoint+'"><input type="hidden" name="maxpoint_'+i+'" value="'+pointrange.maxpoint+'">% (范围：'+pointrange.minpoint+'~'+pointrange.maxpoint+'%)<span class="merror"></span></td></tr>'+html;
+					}else{
+						html += '<tr><td bgcolor="#cccccc" height="37px"><span class="james_left"><input type="checkbox" name="method[]" id="method_'+i+'" value="'+i+'" '+ischeck+'> '+replaceHTML(methodname)+'</span></td><td bgcolor="#cccccc" height="37px">'+prizehtml+'</td><td bgcolor="#cccccc" height="37px">返点 <input type="text" class="fandianinput" value="'+upoint+'" name="point_'+i+'"><input type="hidden" name="minpoint_'+i+'" value="'+pointrange.minpoint+'"><input type="hidden" name="maxpoint_'+i+'" value="'+pointrange.maxpoint+'">% (范围：'+pointrange.minpoint+'~'+pointrange.maxpoint+'%)<span class="merror"></span></td></tr>';
+					}
+				});
+				html = specialhtml+html;
+				$html = $(html);
+				$(this).closest("tr").nextAll().remove();
+				$html.insertAfter($(this).closest("tr"));
+				$("input[type='text'][name^='point_']",$html).keyup(function(){
+					$(this).val( filterPercent($(this).val()) );
+					$(this).closest("tr").find("input[type='checkbox']").attr("checked",true);
+				});
+			}
+			$("span",$("#tabbar-div")).click(function(){
+				if( $(this).attr("class") == "tab-front" ){
+					return false;
+				}
+				if( $("#tabloading").css("display") != "none" ){
+					return false;
+				}
+				if( issave == false ){
+					if( false == confirm("内容未保存，继续将丢失已做的改动，你确定继续吗？") ){
+						return false;
+					}
+				}
+				$("span",$("#tabbar-div")).attr("class","tab-back");
+				$(this).attr("class","tab-front");
+				$("#tabloading").ajaxStart(function(){
+					$(this).show();
+					$("#tabloading").nextAll().remove();
+				}).ajaxStop(function(){
+					$(this).hide();
+				}).ajaxError(function(){
+					$(this).hide();
+					$('<tr><td align="center" colspan="10">加载数据出错</td></tr>').appendTo("#detail-table");
+				});
+				var lotteryid = $(this).attr("id");
+				$("#lotteryid").val(lotteryid);
+				$.ajax({
+					type : 'POST',
+					url  : './user_edituserpoint.html',
+					data : "flag=method&uid=77853&lotteryid="+lotteryid,
+					timeout : 20000,
+					cache	: true,
+					success : function(data){
+						if( data == "error" ){
+							$('<tr><td align="center" colspan="10">加载数据出错</td></tr>').appendTo("#detail-table");
+						}else if( data == "empty" ){
+							$('<tr><td align="center" colspan="10">无数据</td></tr>').appendTo("#detail-table");
+						}else{
+							var partn = /<(.*)>.*<\/\1>/;
+							if( partn.exec(data) ){
+								window.top.location.href="/default_index.html";
+								return false;
+							}
+							data = data.replace(/<script>/g,"");
+							data = data.replace(/<\/script>/g,"");
+							data = data.replace(/<\\\/script>/g,"");
+							data = eval(data);
+							if( typeof(data) != 'object' ){
+								window.top.location.href="/default_index.html";
+								return false;
+							}
+							prizegroup  = data[0].prizes;
+							usermethod  = data[0].userset;
+							childmethod = data[0].childset;
+							var html = '<tr><td height="43px" align="center">统一奖金与返点值设置</td><td align="center" class="line_03">'+getPrizeSelect(usermethod.length>0 ? usermethod[0].pgid : 0)+'</td><td align="center" class="line_03">返点 <input type="text" class="fandianinput" value="0" name="accord_point" id="accord_point">% <input type="button" name="accordbutton" id="accordbutton" class="buttonnormal" value="统一设置"></td></tr>';
+							$html = $(html);
+							$html.insertAfter("#tabloading");
+							if( usermethod.length > 0 ){
+								$("#prizegroup").cratePrizeHtml(usermethod[0].pgid);
+							}else{
+								$("#prizegroup").cratePrizeHtml(0);
+							}
+							$("#prizegroupselect").change(function(){
+								$(this).cratePrizeHtml($("option:selected",this).val());
+								$("#prizegroup").val($("option:selected",this).val());
+							});
+							$("#accordbutton").click(function(){
+								$("input[type='text'][name^='point_'][name!='point_17'][name!='point_31'][name!='point_93'][name!='point_141'][name!='point_196'][name!='point_280']",$('#adjustform')).val(Number($("#accord_point").val()));
+								$("input[type='checkbox'][id^='method_'][id!='method_17'][id!='method_31']").attr("checked",true);
+								//$("#selectall").attr("checked",true);
+							});
+							$("#accord_point").keyup(function(){
+								$(this).val( filterPercent($(this).val()) );
+							});
+							$("#selectall").attr("checked",false);
+							issave = false;
+							return true;
+						}
+					},
+					error : function(r,t,e){
+						$('<tr><td align="center" colspan="3">加载数据出错</td></tr>').appendTo("#detail-table");
+					}
+				});
+			});
+			var defaultId = Number(0);
+			if( defaultId == 0 ){
+				$("span:first",$("#tabbar-div")).click();
+			}else{
+				var isfind = false;
+				$.each($("span",$("#tabbar-div")),function(i,n){
+					if( Number($(n).attr("id")) == defaultId ){
+						isfind = true;
+						$(n).click();
+					}
+				});
+				if( isfind == false ){
+					$("span:first",$("#tabbar-div")).click();
+				}
+			}
+			$("#accord_lottery_point,#accord_indefinite_point,input[type='text'][id^='point_'],input[type='text'][id^='indefinite_point_']").keyup(function(){
+				$(this).val( filterPercent($(this).val()) );
+			});
+			$("#accord_lottery_button").click(function(){
+
+				var point = Number($("#accord_lottery_point").val());
+				$("input[type='text'][id^='point_']").val(point);
+
+				$("input[type='checkbox'][id^='lottery_']").attr("checked",true);
+
+			});
+			$("#accord_indefinite_button").click(function(){
+				$("input[type='text'][id^='indefinite_point_']").val(Number($("#accord_indefinite_point").val()));
+				$("input[type='checkbox'][id^='lottery_']").attr("checked",true);
+			});
+			$("select[id^='pg_select_']").each(function(){
+				$(this).change(function(){
+					var lid = $(this).attr('id').replace('pg_select_','');
+					$("span[id^=range_"+lid+'_]').hide();
+					var pgid = $("option:selected",this).val();
+					$("#range_"+lid+"_"+pgid).show();
+					tmp = $('#range_'+lid+'_'+pgid).text().split('：');
+					tmp = tmp[1].split('%');
+					range = tmp[0].split('～');
+					$('#min_point_'+lid).val(range[0]);
+					$('#max_point_'+lid).val(range[1]);
+					if($('#min_indefinite_point_'+lid).length)
+					{
+						$("span[id^=range_i_"+lid+'_]').hide();
+						var pgid = $("option:selected",this).val();
+						$("#range_i_"+lid+"_"+pgid).show();
+						tmp = $('#range_i_'+lid+'_'+pgid).text().split('：');
+						tmp = tmp[1].split('%');
+						range = tmp[0].split('～');
+						$('#min_indefinite_point_'+lid).val(range[0]);
+						$('#max_indefinite_point_'+lid).val(range[1]);
+					}
+				});
+			});
+		});
+	})(jQuery);
+	function onekey_keeppoint(){
+//一键自动设置
+		$("#onekey").val("onekey");
+		var keeppoint=$('#keeppoint').val();
+		var keeppoint_min=floatval($("#keeppoint_min").html());
+		var keeppoint_max=floatval($("#keeppoint_max").html());
+		if(keeppoint<keeppoint_min){
+			keeppoint=keeppoint_min;
+
+		}else if(keeppoint>keeppoint_max){
+			keeppoint=keeppoint_max;
+		}
+		$('#keeppoint').val(keeppoint);
+		if(!confirm("您确定将【自身保留返点】设置为【"+keeppoint+"%】？")){
+			return(false);
+		}
+		var form = jQuery('#lotteriesform');
+		var boxes = jQuery(":checkbox[id!='selectalllottery']",form);
+		var total = boxes.length;
+		for(var i=0;i<total;i++){
+			if(!jQuery(boxes[i]).attr('checked')){
+				jQuery(boxes[i]).attr("checked",true);
+			}
+			var id = jQuery(boxes[i]).attr('id').replace('lottery_','');
+			var maxp = Number(jQuery("#max_point_"+id).val());//最大允许
+			var minp = Number(jQuery("#min_point_"+id).val());//最小一般是0
+			var maxip = Number(jQuery("#max_indefinite_point_"+id).val());//不定位最大
+			var minip = Number(jQuery("#min_indefinite_point_"+id).val());//不定位最小一般是0
+			var point=maxp+fandianjiange-keeppoint;
+			var ipoint=maxip+fandianjiange-keeppoint;
+			if(point < 0 ){point=0;}
+			if(ipoint < 0 ){ipoint=0;}
+			jQuery("#point_"+id).val(floatval(point));
+			jQuery("#indefinite_point_"+id).val(floatval(ipoint));
+		}
+
+	}
+	function floatval(num){
+		return(parseFloat(parseFloat(num).toFixed(14)));
+	}
+	var fandianjiange=0;
+	function onekey_init(){
+		var form = jQuery('#lotteriesform');
+		var boxes = jQuery(":checkbox[id!='selectalllottery']",form);
+		var total = boxes.length;
+		var _min=0;
+		var _max=0;
+		for(var i=0;i<total;i++){
+			var id = jQuery(boxes[i]).attr('id').replace('lottery_','');
+			var minp = Number(jQuery("#min_point_"+id).val());
+			var minip = Number(jQuery("#min_indefinite_point_"+id).val());
+			var min=(minp>minip)?minip:minp;
+			var maxp = Number(jQuery("#max_point_"+id).val());
+			var maxip = Number(jQuery("#max_indefinite_point_"+id).val());
+			var max=(maxp<maxip)?maxip:maxp;//
+
+			_min=(min>_min)?min:_min;
+			_max=(max>_max)?max:_max;
+		}
+		//$("#keeppointlevel").html(_max+fandianjiange);
+		$("#keeppoint_min").html(floatval(fandianjiange));
+		$("#keeppoint_max").html(floatval(_max+fandianjiange));
+	}
+	function selectAllLottery(obj)
+	{
+
+		var objs = jQuery(jQuery("input[type='text']"),jQuery('#lotteriesform'));
+		objs.each(function(){
+			if(jQuery(this).val() == '')
+			{
+				jQuery(this).val('0');
+			}
+		});
+		jQuery("input[id^='lottery_']").prop('checked', obj.checked);
+	}
+	function filterPercent(num){
+		num = num.replace(/^[^\d]/g,'');
+		num = num.replace(/[^\d.]/g,'');
+		num = num.replace(/\.{2,}/g,'.');
+		num = num.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+		if( num.indexOf(".") != -1 ){
+			var data = num.split('.');
+			num = (data[0].substr(0,3))+'.'+(data[1].substr(0,1));
+		}else{
+			num = num.substr(0,3);
+		}
+		return num;
+		num = num > 100 ? 100 : num;
+		return num;
+	}
+	onekey_init();
+	$("#setDetail").click(function(){
+		if($(this).val()=='详细设置'){
+			$(this).val("收起详细");
+		}else{
+			$(this).val("详细设置");
+		}
+		$("#allbackset").slideToggle(0);
+	});
+	function slideToggleOK(){
+		if(typeof top.SetIframeHeight === 'function')
+		{
+			top.SetIframeHeight();
+		}
+
+	}
+	var tyAll = false;
+	$("#tyAll1").click(function(){
+		$('input[type=checkbox][name=tyAll]').attr("checked", true );
+		var value = $("#tyText1").val();
+		$('input[type=text][name=tyText1]').val(value);
+		tyAll = true;
+	});
+	$("#tyAll2").click(function(){
+		$('input[type=checkbox][name=tyAll]').attr("checked", true );
+		var value = $("#tyText2").val();
+		$('input[type=text][name=tyText2]').val(value);
+		tyAll = true;
+	});
+	$("#tyText1").keyup(function () {
+		if(tyAll) {
+			var value = $(this).val();
+			$('input[type=text][name=tyText1]').val(value);
+		}
+
+	}).keyup();
+	$("#tyText2").keyup(function () {
+		if(tyAll) {
+			var value = $(this).val();
+			$('input[type=text][name=tyText2]').val(value);
+		}
+	}).keyup();
+</script>
+<style>
+	.fandianinput{width:50px;}
+</style>
+</body>
+</html>

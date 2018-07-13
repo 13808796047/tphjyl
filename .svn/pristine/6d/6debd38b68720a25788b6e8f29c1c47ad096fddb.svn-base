@@ -1,0 +1,56 @@
+<div class="cash-modal">
+	<div class="data-table table-striped">
+		<php>$stateName=array('','待处理','已处理');</php>
+		<table class="">
+			<thead>
+			<tr>
+				<th class="">编号</th>
+				<th class="">用户UID</th>
+				<th class="">用户名</th>
+				<th class="">提现金额</th>
+				<th class="">银行类型</th>
+				<th class="">开户姓名</th>
+				<th class="">银行账号</th>
+				<th class="">时间</th>
+				<th class="">状态</th>
+				<th class="">操作</th>
+			</tr>
+			</thead>
+			<tbody>
+			<if condition="$_list">
+				<volist name="_list" id="vo">
+					<tr>
+						<td>{$i}</td>
+						<td>{$vo.uid} </td>
+						<td><a href="{:U('cash?username='.$vo['uName'])}">{$vo.uName}</a></td>
+						<td>{$vo.amount}</td>
+						<td>{$vo.name}</td>
+						<td>{$vo.username}</td>
+						<td>{$vo.account}</td>
+						<td>{:date('Y-m-d H:i:s',$vo['actionTime'])}</td>
+						<td id="split{$vo.id}">
+							<php>
+								echo $stateName[$vo['state']];
+							</php>
+						</td>
+						<td id="split_button{$vo.id}">
+							<php>
+								if($vo['state']==1){
+								$splitId = $vo['id'];
+								echo '<a title="分账提款处理" onclick="split_cash('.$splitId.')" split_id="'.$splitId.'" class="confirm">处理</a>';
+								}else{
+								echo '<span>无</span>';
+								}
+							</php>
+						</td>
+					</tr>
+				</volist>
+				<else />
+				<tr>
+					<td colspan="9" align="center">暂时没有提现记录。</td>
+				</tr>
+			</if>
+			</tbody>
+		</table>
+	</div>
+</div>

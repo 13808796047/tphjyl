@@ -1,0 +1,739 @@
+﻿var mysql=require('mysql');
+var parse=require('./kj-data/parse-calc-count_new.js');
+var played={};
+
+// 提前多少秒开奖 建议不值为1-3秒 不得小于等于0
+exports.openBeforTime=1; //提前2秒
+// 出错时等待 15
+exports.errorSleepTime=30;
+
+// 重启时间间隔，以小时为单位，0为不重启
+//exports.restartTime=0.4;
+//exports.restartTime={0};
+exports.restartTime = {
+	0: 300, //采集互联网进程5分钟重启一次
+	1: 60, //采集本机进程1分钟重启一次
+};
+
+exports.submit={
+
+	host:'192.168.21.10',
+	path:'/wjadmin.php/dataSource/kj'
+}
+
+
+exports.dbinfo={
+	host:'36.42.72.117',
+	user:'hj_root',
+	password:'Hj256root',
+	database:'hjyl'
+
+}
+
+/*
+exports.dbinfo={
+	host:'127.0.0.1',
+	user:'root',
+	password:'root',
+	database:'hjyl'
+
+}
+*/
+// 彩票开奖配置
+exports.cp=[
+	{
+		title:'重庆时时彩',
+		source:'开彩网',
+		name:'cqssc',
+		enable:false,
+		timer:'cqssc', 
+         //cp.360.cn/ssccq/
+		option:{
+			host:"a.apiplus.net",
+			timeout:50000,
+			path: '/201c49189b18b3fc/cqssc.json',
+			headers:{
+				"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)"
+			}
+		},
+		parse:function(str){
+			//console.log(str);
+			try{
+				var json = JSON.parse(str);
+				var r = json.data[0];
+				var data={
+					type:1,//重彩ID
+					time:r['opentime'],
+					number:r['expect'].replace(/(\d{8})(\d{3})/,'$1-$2'),
+					data:r['opencode']
+				};
+				//console.log(data);
+				return data;
+			}catch(err){
+				throw('重庆时时彩解析数据不正确');
+			}
+		}
+      },////////////	
+	  
+	 {
+		title:'天津时时彩',  
+		source:'开彩网',
+		name:'tjssc',
+		enable:false,
+		timer:'tjssc',
+
+		option:{  //f.apiplus.cn/tjssc.json
+			host:'a.apiplus.net',//'http://a.apiplus.net/201c49189b18b3fc',//http://a.apiplus.net/201c49189b18b3fc/tjssc.json
+			timeout:50000,
+			path: '/201c49189b18b3fc/tjssc.json',       //{"rows":5,"code":"tjssc","remain":"2190hrs","data":[{"expect":"20170426084","opencode":"4,6,2,2,4","opentime":"2017-04-26 23:02:49","opentimestamp":1493218969},{"expect":"20170426083","opencode":"0,3,4,7,1","opentime":"2017-04-26 22:53:02","opentimestamp":1493218382},{"expect":"20170426082","opencode":"8,1,9,3,3","opentime":"2017-04-26 22:42:45","opentimestamp":1493217765},{"expect":"20170426081","opencode":"4,5,4,4,2","opentime":"2017-04-26 22:32:45","opentimestamp":1493217165},{"expect":"20170426080","opencode":"1,9,2,3,6","opentime":"2017-04-26 22:22:46","opentimestamp":1493216566}]}
+			headers:{
+				"User-Agent": ""
+			}
+		},
+		parse:function(str){
+			//console.log(str);
+			try{
+				var json = JSON.parse(str);
+				var r = json.data[0];
+				var data={
+					type:3,//天津时时彩ID
+					time:r['opentime'],
+					number:r['expect'].replace(/(\d{8})(\d{3})/,'$1-$2'),
+					data:r['opencode']
+				};
+				//console.log(data);
+				return data;
+			}catch(err){
+				throw('天津时时彩解析数据不正确');
+			}
+		}
+	},////////////
+
+	
+	//{{{
+	{
+		title:'新疆时时彩',
+		source:'开彩网',
+		name:'xjssc',
+		enable:false,
+		timer:'xjssc',
+
+		option:{
+			host:"a.apiplus.net", //http://a.apiplus.net/201c49189b18b3fc/xjssc.json
+			timeout:50000,
+			path: '/201c49189b18b3fc/xjssc.json',  //f.apiplus.cn/xjssc.json
+			headers:{
+				"User-Agent": ""
+			}                    //{"rows":5,"code":"xjssc","remain":"2189hrs","data":[{"expect":"20170426084","opencode":"8,7,9,0,4","opentime":"2017-04-27 00:00:35","opentimestamp":1493222435},{"expect":"20170426083","opencode":"3,1,4,3,5","opentime":"2017-04-26 23:50:21","opentimestamp":1493221821},{"expect":"20170426082","opencode":"0,0,0,9,6","opentime":"2017-04-26 23:40:39","opentimestamp":1493221239},{"expect":"20170426081","opencode":"1,3,3,5,8","opentime":"2017-04-26 23:30:22","opentimestamp":1493220622},{"expect":"20170426080","opencode":"7,1,7,6,4","opentime":"2017-04-26 23:20:36","opentimestamp":1493220036}]}
+		},
+		parse:function(str){
+			try{
+				var json = JSON.parse(str);
+				var r = json.data[0];
+				var data={
+					type:12,//新疆时时彩ID
+					time:r['opentime'],
+					number:r['expect'].replace(/(\d{8})(\d{3})/,'$1-$2'),//期号长度：11
+					data:r['opencode']
+				};
+				//console.log(data);
+				return data;
+			}catch(err){
+				throw('新疆时时彩解析数据不正确');
+			}
+		}
+	},
+	{
+		title:'广东11选5',
+		source:'开彩网',
+		name:'gd11x5',
+		enable:true,
+		timer:'gd11x5',
+
+		option:{
+			host:"a.apiplus.net",
+			timeout:50000,
+			path: '/201c49189b18b3fc/gd11x5.json', 
+			headers:{
+				"User-Agent": ""
+			}
+		},
+		parse:function(str){
+			try{
+				var json = JSON.parse(str);
+				var r = json.data[0];
+				var data={
+					type:6,//ID
+					time:r['opentime'],
+					number:r['expect'].replace(/(\d{8})(\d{2})/,'$1-0$2'),//期号长度：10
+					data:r['opencode']
+				};
+				//console.log(data);
+				return data;
+			}catch(err){
+				throw('广东11选5解析数据不正确');
+			}
+		}
+	},////http://a.apiplus.net/201c49189b18b3fc/jx11x5.json
+	
+		{
+		title:'江西11选5',
+		source:'开彩网',
+		name:'jx11x5',
+		enable:true,
+		timer:'jx11x5',
+
+		option:{
+			host:"a.apiplus.net",
+			timeout:50000,
+			path: '/201c49189b18b3fc/jx11x5.json', 
+			headers:{
+				"User-Agent": ""
+			}
+		},
+		parse:function(str){
+			try{
+				var json = JSON.parse(str);
+				var r = json.data[0];
+				var data={
+					type:16,//ID
+					time:r['opentime'],//期号长度：10
+					number:r['expect'].replace(/(\d{8})(\d{2})/,'$1-0$2'),//.replace(/(\d{8})(\d+)/,'$1-$2'),//replace(/(\d{8})\d(\d+)/,'$1-$2')
+					data:r['opencode']
+				};
+				//console.log(data);
+				return data;
+			}catch(err){
+				throw('江西11选5解析数据不正确');
+			}
+		}
+	},////
+	
+	{
+		title:'北京PK10',
+		source:'开彩网',
+		name:'bjpk10',
+		enable:true,
+		timer:'bjpk10',
+
+		option:{
+
+			host:"a.apiplus.net",
+			timeout:50000,
+			path: '/201c49189b18b3fc/bjpk10.json',
+			headers:{
+				"User-Agent": ""
+			}
+		},
+		
+		parse:function(str){
+			try{
+				var json = JSON.parse(str);
+				var r = json.data[0];
+				var data={
+					type:20,//北京PK10 ID
+					time:r['opentime'],
+					number:r['expect'].replace(/(\d{8})\d(\d{2})/,'$1-$2'),
+					data:r['opencode']
+				};
+				//console.log(data);
+				return data;
+			}catch(err){
+				throw('北京PK10解析数据不正确');
+			}
+		}
+	},
+	{
+		title:'山东11选5',
+		source:'开彩网',
+		name:'sd11x5',
+		enable:true,
+		timer:'sd11x5',
+
+		option:{
+			host:"d.apiplus.net",
+			timeout:50000,
+			path: '/newly.do?token=201c49189b18b3fc&code=sd11x5&format=json', 
+			headers:{
+				"User-Agent": ""
+			}
+		},
+		parse:function(str){
+			try{
+				var json = JSON.parse(str);
+				var r = json.data[0];
+				var data={
+					type:44,//ID
+					time:r['opentime'],
+					number:r['expect'].replace(/(\d{8})(\d{2})/,'$1-0$2'),//期号长度：10
+					data:r['opencode']
+				};
+				//console.log(data);
+				return data;
+			}catch(err){
+				throw('山东11选5解析数据不正确');
+			}
+		}
+	},
+	{
+		title:'福彩3D',
+		source:'开彩网',
+		name:'fc3d',
+		enable:true,
+		timer:'fc3d',
+
+		option:{
+			host:"d.apiplus.net",
+			timeout:50000,
+			path: '/newly.do?token=201c49189b18b3fc&code=fc3d&format=json', 
+			headers:{
+				"User-Agent": ""
+			}
+		},
+		parse:function(str){
+			try{
+				var json = JSON.parse(str);
+				var r = json.data[0];
+				var data={
+					type:9,//ID
+					time:r['opentime'],
+					number:r['expect'],//期号长度：10
+					data:r['opencode']
+				};
+				//console.log(data);
+				return data;
+			}catch(err){
+				console.log('福彩3D:'+JSON.stringify(err));
+				throw('福彩3D解析数据不正确');
+			}
+		}
+	},
+	{
+		title:'排列3',
+		source:'开彩网',
+		name:'pl3',
+		enable:true,
+		timer:'pl3',
+
+		option:{
+			host:"d.apiplus.net",
+			timeout:50000,
+			path: '/newly.do?token=201c49189b18b3fc&code=pl3&format=json', 
+			headers:{
+				"User-Agent": ""
+			}
+		},
+		parse:function(str){
+			try{
+				var json = JSON.parse(str);
+				var r = json.data[0];
+				var data={
+					type:10,//ID
+					time:r['opentime'],
+					number:r['expect'],//期号长度：10
+					data:r['opencode']
+				};
+				//console.log(data);
+				return data;
+			}catch(err){
+				console.log('3P:'+JSON.stringify(err));
+				throw('排列3解析数据不正确');
+			}
+		}
+	},
+	{
+		title:'北京快乐8',
+		source:'官网',
+		name:'bjk8',
+		enable:false,
+		timer:'bjk8',
+
+		option:{
+
+			host:"a.apiplus.net",
+			timeout:50000,
+			path: '/201c49189b18b3fc/bjkl8.json',
+			headers:{
+				"User-Agent": ""
+			}
+		},
+		parse:function(str){
+			try{
+				var json = JSON.parse(str);
+				var r = json.data[0];
+				var data={
+					type:24,//北京快乐8 ID
+					time:r['opentime'],
+					number:r['expect'].replace(/(\d{8})\d(\d{2})/,'$1-$2'),
+					data:r['opencode'].substring(0,59)
+				};
+				//console.log(data);
+				return data;
+			}catch(err){
+				throw('北京快乐8解析数据不正确');
+			}
+		}
+	}
+	
+];
+
+
+
+global.log=function(log){
+	var date=new Date();
+	console.log('['+date.toDateString() +' '+ date.toLocaleTimeString()+'] '+log)
+}
+function getFromXJFLCPWeb(str, type){
+	str=str.substr(str.indexOf('<strong>时时彩</strong>'), 300).replace(/[\r\n]+/g,''); 
+	
+	if(!str) throw new Error('数据不正确');
+	var number = str.substr(str.indexOf('第')+1,10);
+	
+	var myDate = new Date();
+	var year = myDate.getFullYear();       //年   
+    var month = myDate.getMonth() + 1;     //月   
+    var day = myDate.getDate();            //日
+	if(month < 10) month="0"+month;
+	if(day < 10) day="0"+day;
+	var mytime=year + "-" + month + "-" + day + " " +myDate.toLocaleTimeString();
+	
+	str=str.substr(str.indexOf('ballWrap')+10, 200).replace(/[^0-9]/ig,"");
+	//console.log(str);    
+	var data= str.split('').join(',');
+	//console.log('期号：%s，开奖时间：%s，开奖数据：%s', number, mytime, data);
+	
+	try{
+		var data={
+			type:type,
+			time:mytime,
+			number:number.replace(/^(\d{8})(\d{2})$/, '$1-$2'),
+			data:data
+		};
+		//console.log(data);
+		return data;
+	}catch(err){
+		throw('解析数据失败');
+	}
+}
+
+
+function getFromCaileleWeb(str, type, slen){
+	if(!slen) slen=580;
+	str=str.substr(str.indexOf('<p class="cz_name_period">')+26,slen);
+	var mynumber = str.substr(0,10);
+	mynumber = mynumber.substr(0,8) + "-0" + mynumber.substr(8);
+	var mytime = str.substr(str.indexOf('<span>')+6,16);
+	
+	var text = str.substr(str.indexOf('red_ball')+10,200);
+	text = text.replace(/[^0-9]/ig,""); 
+	//console.log(text);
+	
+	//var mynumber = str
+	var reg=/<td.*?>(\d+)<\/td>[\s\S]*?<td.*?>([\d\- \:]+)<\/td>[\s\S]*?<td.*?>((?:[\s\S]*?<span class="red_ball">\d+<\/span>){3,5})\s*<\/td>/,
+	match=str.match(reg);
+	
+	
+		
+	try{
+		var data={
+			type:type,
+			time:mytime,
+			number:mynumber,
+			data:text.substr(0,2) + ","+text.substr(2,2) + ","+text.substr(4,2) + ","+text.substr(6,2) + ","+text.substr(8,2)
+		}
+		
+		
+		
+		//console.log(data);
+		return data;
+	}catch(err){
+		throw('解析数据失败');
+	}
+}
+
+function getFrom360CP(str, type){
+
+	str=str.substr(str.indexOf('<em class="red" id="open_issue">'),380);
+	//console.log(str);
+	var reg=/[\s\S]*?(\d+)<\/em>[\s\S].*?<ul id="open_code_list">((?:[\s\S]*?<li class=".*?">\d+<\/li>){3,5})[\s\S]*?<\/ul>/,
+	match=str.match(reg);
+	var myDate = new Date();
+	var year = myDate.getFullYear();       //年   
+    var month = myDate.getMonth() + 1;     //月   
+    var day = myDate.getDate();            //日
+	if(month < 10) month="0"+month;
+	if(day < 10) day="0"+day;
+	var mytime=year + "-" + month + "-" + day + " " +myDate.toLocaleTimeString();
+	//console.log(match);
+	if(match.length>1){
+		if(match[1].length==6) match[1]=year+match[1].replace(/(\d{4})(\d{2})/,'$1-0$2');
+		if(match[1].length==7) match[1]=year+match[1].replace(/(\d{4})(\d{3})/,'$1-$2');
+		if(match[1].length==8) match[1]='20'+match[1].replace(/(\d{6})(\d{2})/,'$1-0$2');
+		if(match[1].length==9) match[1]='20'+match[1].replace(/(\d{6})(\d{2})/,'$1-$2');
+		if(match[1].length==10) match[1]=match[1].replace(/(\d{8})(\d{2})/,'$1-0$2');
+		var mynumber=match[1].replace(/(\d{8})(\d{3})/,'$1-$2');
+		
+		try{
+			var data={
+				type:type,
+				time:mytime,
+				number:mynumber
+			}
+			
+			reg=/<li class=".*?">(\d+)<\/li>/g;
+			data.data=match[2].match(reg).map(function(v){
+				var reg=/<li class=".*?">(\d+)<\/li>/;
+				return v.match(reg)[1];
+			}).join(',');
+			
+			//console.log(data);
+			return data;
+		}catch(err){
+			throw('解析数据失败');
+		}
+	}
+}
+
+function getFromPK10(str, type){
+
+	str=str.substr(str.indexOf('<div class="lott_cont">'),350).replace(/[\r\n]+/g,'');
+    //console.log(str);
+	var reg=/<tr class=".*?">[\s\S]*?<td>(\d+)<\/td>[\s\S]*?<td>(.*)<\/td>[\s\S]*?<td>([\d\:\- ]+?)<\/td>[\s\S]*?<\/tr>/,
+	match=str.match(reg);
+	if(!match) throw new Error('数据不正确');
+	//console.log(match);
+	try{
+		var data={
+			type:type,
+			time:match[3],
+			number:match[1],
+			data:match[2]
+		};
+		//console.log(data);
+		return data;
+	}catch(err){
+		throw('解析数据失败');
+	}
+	
+}
+
+function getFromK8(str, type){
+
+	str=str.substr(str.indexOf('<div class="lott_cont">'),450).replace(/[\r\n]+/g,'');
+    //console.log(str);
+	var reg=/<tr class=".*?">[\s\S]*?<td>(\d+)<\/td>[\s\S]*?<td>(.*)<\/td>[\s\S]*?<td>(.*)<\/td>[\s\S]*?<td>([\d\:\- ]+?)<\/td>[\s\S]*?<\/tr>/,
+	match=str.match(reg);
+	if(!match) throw new Error('数据不正确');
+	//console.log(match);
+	try{
+		var data={
+			type:type,
+			time:match[4],
+			number:match[1],
+			data:match[2]+'|'+match[3]
+		};
+		//console.log(data);
+		return data;
+	}catch(err){
+		throw('解析数据失败');
+	}
+	
+}
+
+function getFrom360CPK3(str, type){
+
+	str=str.substr(str.indexOf('<em class="red" id="open_issue">'),380);
+	//console.log(str);
+	var reg=/[\s\S]*?(\d+)<\/em>[\s\S].*?<ul id="open_code_list">((?:[\s\S]*?<li class=".*?">\d+<\/li>){3,5})[\s\S]*?<\/ul>/,
+	match=str.match(reg);
+	var myDate = new Date();
+	var year = myDate.getFullYear();       //年   
+    var month = myDate.getMonth() + 1;     //月   
+    var day = myDate.getDate();            //日
+	if(month < 10) month="0"+month;
+	if(day < 10) day="0"+day;
+	var mytime=year + "-" + month + "-" + day + " " +myDate.toLocaleTimeString();
+	//console.log(match);
+	match[1]=match[1].replace(/(\d{4})(\d{2})/,'$1-0$2');
+		
+		try{
+			var data={
+				type:type,
+				time:mytime,
+				number:year+match[1]
+			}
+			
+			reg=/<li class=".*?">(\d+)<\/li>/g;
+			data.data=match[2].match(reg).map(function(v){
+				var reg=/<li class=".*?">(\d+)<\/li>/;
+				return v.match(reg)[1];
+			}).join(',');
+			
+			//console.log(data);
+			return data;
+		}catch(err){
+			throw('解析数据失败');
+		}
+}
+
+function getFromCJCPWeb(str, type){
+
+	//console.log(str);
+	str=str.substr(str.indexOf('<table class="qgkj_table">'),1200);
+	
+	//console.log(str);
+	
+	var reg=/<tr>[\s\S]*?<td class=".*">(\d+).*?<\/td>[\s\S]*?<td class=".*">([\d\- \:]+)<\/td>[\s\S]*?<td class=".*">((?:[\s\S]*?<input type="button" value="\d+" class=".*?" \/>){3,5})[\s\S]*?<\/td>/,
+	match=str.match(reg);
+	
+	//console.log(match);
+	
+	if(!match) throw new Error('数据不正确');
+	try{
+		var data={
+			type:type,
+			time:match[2],
+			number:match[1].replace(/(\d{8})(\d{2})/,'$1-0$2')
+		}
+		
+		reg=/<input type="button" value="(\d+)" class=".*?" \/>/g;
+		data.data=match[3].match(reg).map(function(v){
+			var reg=/<input type="button" value="(\d+)" class=".*?" \/>/;
+			return v.match(reg)[1];
+		}).join(',');
+		
+		//console.log(data);
+		return data;
+	}catch(err){
+		throw('解析数据失败');
+	}
+	
+}
+
+var wfFullData;
+var efFullData;
+var wfGaiLv=100;
+var wfNo='0';
+var efNo='0';
+//万金娱乐自主研发五分彩开奖
+function getFromWANJINYULE(str, type){
+	
+	try{
+		var client=mysql.createClient(exports.dbinfo);
+	}catch(err){
+		throw('连接数据库失败');
+	}			
+
+	var jd = JSON.parse(str);
+	
+	var match = [];
+	match[1] = jd.actionNo;
+	match[2] = jd.wufencai;
+	match[3] = jd.actionTime;
+	match[4] = 1;
+
+	wfGaiLv=match[2];
+
+	console.log("读取盈亏率成功："+wfGaiLv);
+	if( wfNo!=match[1] && efNo!=match[1]){
+		sql="select * from gygy_bets where type=? and actionNo=? and isDelete=0 and lotteryNo=''";
+		client.query(sql, [type, match[1]], function(err, bets){
+			if(err){
+				log("读取投注出错："+err);
+			}else{					
+				var myDate = new Date();
+				var year = myDate.getFullYear();       //年   
+				var month = myDate.getMonth() + 1;     //月   
+				var day = myDate.getDate();            //日
+				if(month < 10) month="0"+month;
+				if(day < 10) day="0"+day;
+				var mytime=year + "-" + month + "-" + day + " " +myDate.toLocaleTimeString(); 
+				var mydata=GetRandomNum(0,9)+','+GetRandomNum(0,9)+','+GetRandomNum(0,9)+','+GetRandomNum(0,9)+','+GetRandomNum(0,9);
+				var yingLv = GetRandomNum(0,100);
+				
+				//控制盈亏													
+				for(var go=0;go<1000000;go++){
+					if(yingLv>wfGaiLv){
+						go=1000000;
+						console.log("概率超出必赢范围，随机开奖");
+					}else{
+						go=go+1;							
+						var all=0;
+						var win=0;
+						bets.forEach(function(bet){
+							var fun;
+									
+							try{
+								fun=parse[global.played[bet.playedId]];
+								if(typeof fun!='function') throw new Error('算法不是可用的函数');
+							}catch(err){
+								log('计算玩法[%f]中奖号码算法不可用：%s'.format(bet.playedId, err.message));
+								return;
+							}
+									
+							try{
+								var zjCount=fun(bet.actionData, mydata, bet.weiShu)||0;
+							}catch(err){
+								log('计算中奖号码时出错：'+err);
+								return;
+							}
+							win+=bet.bonusProp * zjCount * bet.beiShu * bet.mode/2;
+							all+=bet.mode*bet.beiShu*bet.actionNum; 
+						});
+						console.log("投注总额：盈亏总额----"+all + "：" +win);
+						if(all>win || bets.length==0){
+							go=1000000;											
+						}
+						else
+							mydata=GetRandomNum(0,9)+','+GetRandomNum(0,9)+','+GetRandomNum(0,9)+','+GetRandomNum(0,9)+','+GetRandomNum(0,9);
+					}
+					
+					if(!match) throw new Error('数据不正确');
+					if(parseInt(match[4])==1){
+						try{
+								var data={
+									type:type,
+									time:mytime,
+									number:match[1],
+									data:mydata
+								}
+								
+								if(type==14)
+								{
+									wfFullData=data;
+									wfNo=match[1];
+								}
+								else
+								{
+									efFullData=data;
+									efNo=match[1];
+								}
+							}
+							catch(err){
+								throw('解析数据失败');
+						}
+				   }
+				}		
+			} 				
+		});
+	}
+	
+	client.end();
+	if(type==14)
+	{
+		return wfFullData;
+	}
+	else
+	{
+		return efFullData;
+	}
+	
+}
+
+//随机数 GetRandomNum(0,9);   
+function GetRandomNum(Min,Max)
+{   
+	var Range = Max - Min;   
+	var Rand = Math.random();   
+	return(Min + Math.round(Rand * Range));   
+}    

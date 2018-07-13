@@ -1,0 +1,244 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="format-detection" content="telephone=no, email=no, adress=no">
+
+  <title>皇家娱乐平台  - 账户提现  </title>
+
+  <script type="text/javascript" src="__JS__/jquery-1.9.1.js"></script>
+  <script language="javascript">
+    var localpath='';
+    function firadio_cookie_set(name,value,expire,path){
+      //expire=expire||30*24*60*60*1000;
+      var curdate=new Date();
+      var cookie=name+"="+encodeURIComponent(value)+"; ";
+      if(expire!=undefined||expire==0){
+        if(expire==-1){
+          expire=366*(86400*1000);//保存一年
+        }else{
+          expire=parseInt(expire);
+        }
+        curdate.setTime(curdate.getTime()+expire);
+        cookie+="expires="+curdate.toUTCString()+"; ";
+      }
+      path=path||"/";
+      cookie+="path="+path;
+      document.cookie=cookie;
+    }
+    function firadio_cookie_get(name){
+      var re = "(?:; )?" + encodeURIComponent(name) + "=([^;]*);?";
+      re = new RegExp(re);
+      if (re.test(document.cookie)) {
+        return decodeURIComponent(RegExp.$1);
+      }
+      return '';
+    }
+  </script>
+</head>
+<body id="lan"><style>
+  .maintain_date {font-size:16px; color:#FF3300; font-weight:bold;}
+</style>
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/common/model/details.js" ></script>-->
+<!--<link rel="stylesheet" type="text/css" href="http://upccry1.3smao.net/sy2/css/select2.min.css"/>-->
+<!--<link rel="stylesheet" type="text/css" href="http://upccry1.3smao.net/sy2/css/default_content.min.css"/>-->
+
+<!--&lt;!&ndash; 工具类 &ndash;&gt;-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/jquery.tmpl.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/jquery.ratate.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.base.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Class.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Event.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.util.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Tab.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Hover.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Select.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Countdown.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Timer.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Mask.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.MiniWindow.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Tip.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/phoenix.GameMessage.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/js/select2.min.js" ></script>-->
+<!--<script type="text/javascript" src="http://upccry1.3smao.net/sy2/js/main.js"></script>-->
+
+<script type="text/javascript">
+  var maintain_flag = 0,
+          withdrawel_flag = 0, //提現門檻flag
+          isok = true;
+  function checkForm(obj)
+  {
+    $('#maintain').hide();
+
+    if( obj.bankinfo.value <= 0 )
+    {
+      jQuery("#bankinfo").siblings("span").html("※您忘记了选择银行卡信息");
+      isok = false;
+    } else if (maintain_flag) {
+      var bank_maintain = null;
+      temp = new Array();
+      temp = $("#bankinfo").val().split("#");
+      $.each(bank_maintain, function(i, val){
+        var alert_txt = val.begindate + ' - ' + val.enddate + ' ' + val.title + '，请选择其他银行发起提现',
+                span_txt = '<font class="maintain_date"> ' + val.begindate + ' - ' + val.enddate + '</font> ' + val.title + '，请选择其他银行发起提现';
+        if (temp[2] == i) {
+          $('#maintain_text').html(span_txt);
+          $('#maintain').show();
+          alert(alert_txt);
+          isok = false;
+          return false;
+        } else {
+          $('#maintain_text').html('');
+          $('#maintain').hide();
+        }
+      });
+    } else if (withdrawel_flag) {
+      var threshold_money = 0, //門檻金額
+              betting_money = 0; //已投注金額
+      var alert_txt = '由于您参加了“注册送现金”活动，您的投注额目前还差'+(threshold_money - betting_money)+'元才能发起提现。';
+      if (betting_money < threshold_money) {
+        alert(alert_txt);
+        isok = false;
+        return false;
+      }
+    } else {jQuery("#bankinfo").siblings("span").html("");}
+    if(obj.money.value<100){
+      alert("提现金额不能小于100");
+      return false;
+    }
+    if(obj.money.value>{$user.coin}){
+      alert("提现金额不能超过'可以提现金额'");
+      return false;
+    }
+    return isok;
+  }
+  $(document).ready(function(){
+    chagefunc();
+    $("#bankinfo").select2().change(function (){
+      chagefunc();
+    });
+  });
+
+  var chagefunc=function(){
+
+    if ($("#bankinfo").val() == ""){
+      isok = false;
+    } else {
+      isok = true;
+    }
+    aTemp = new Array();
+    aTemp = $("#bankinfo").val().split("#");
+    var LimitArr = new Array();
+    LimitArr = {"6":[100,50000],"7":[100,45000],"23":[100,2000],"8":[100,50000],"1":[100,50000],"VN_ID":["100","100000"]};
+    var tempmin = 0,
+            tempmax = 0;
+    if (LimitArr[aTemp[1]] == '' || LimitArr[aTemp[1]] === undefined){
+      tempmin = 100;
+      tempmax = 100000;
+      bindKeyUp(100000, 358.06, 1);
+    } else {
+      tempmin = LimitArr[aTemp[1]][0];
+      tempmax = LimitArr[aTemp[1]][1];
+      bindKeyUp(LimitArr[aTemp[1]][1], 358.06, 2);
+    }
+    min = tempmin;
+    $("#minmoney").html(number_format(tempmin, 2 , '.' ,','));
+    $("#maxmoneys").html(number_format(tempmax, 2 , '.' ,','));
+  }
+  function bindKeyUp(iMax, available, i){
+    $("#money").removeAttr("onkeyup");
+    $("#money").unbind();
+    $("#money").keyup(function(){
+      checkWithdraw2(this,'chineseMoney',iMax,available);
+    });
+  }
+  function checkWithdraw2( obj,chineseid,maxnum, available ){
+    obj.value = formatFloat(obj.value);
+    var temp = 0.00;
+    if (parseFloat(available) > parseFloat(maxnum)){
+      temp = maxnum;
+    } else {
+      temp = available;
+    }
+    if( parseFloat(obj.value) > parseFloat(maxnum) &&  parseFloat(maxnum) < parseFloat(available)){
+      new_alert("提现金额不能超过系统设定值");
+      obj.value = temp;
+    }
+    if( parseFloat(obj.value) > parseFloat(available) ){
+      new_alert("提现金额超出了可提现限额");
+      obj.value = temp;
+    }
+    jQuery("#"+chineseid).html( changeMoneyToChinese(obj.value) );
+  }
+  function number_format (number, decimals, dec_point, thousands_sep) {
+    number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+    var n = !isFinite(+number) ? 0 : +number,
+            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+            sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+            dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+            s = '',
+            toFixedFix = function (n, prec) {
+              var k = Math.pow(10, prec);
+              return '' + Math.round(n * k) / k;
+            };
+    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    if (s[0].length > 3) {
+      s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || '').length < prec) {
+      s[1] = s[1] || '';
+      s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+  }
+</script>
+<div class="ys-content section form">
+  <div class="header">我要提现</div>
+  <div class="main">
+    <form action="qr_security_platwithdraw" method="get" name="drawform" onsubmit="return checkForm(this)" class="form section">
+      <input type="hidden" name="controller" value="security" />
+      <input type="hidden" name="action" value="platwithdraw" />
+      <input type="hidden" name="flag" value="withdraw" />
+      <input type="hidden" name="check" value="585" />
+      <ul class="tx-list">
+        <li class="field">
+          <label>注意</label>
+					<span class="ct">
+						<span>每天限制提现<font style="font-size:16px;color:#FF3300;font-weight:bold;">3</font> 次，您已成功提现 <font style="font-size:16px;color:#FF3300;font-weight:bold;">0</font> 次</span>
+					</span>
+        </li>
+        <li class="field">
+          <label>收款银行卡</label>
+					<span class="ct">
+						<select name="bankinfo" id="bankinfo" class="selection">
+                          {volist name="bank" id="vo"}
+                          <option  selected="selected" value="{$vo.id}" >{$vo.bankDetail}--{$vo.account}</option>
+                          {/volist}
+                        </select>&nbsp;&nbsp;<span style="color:red;"></span>
+					</span>
+        </li>
+        <li class="field">
+          <label>用户名</label>
+          <span class="ct">{$user.username}</span>
+        </li>
+        <li class="field">
+          <label>可提现金额</label>
+          <span class="ct">{$user.coin}元</span>
+        </li>
+        <li class="field">
+          <label>提现金额</label>
+					<span class="ct">
+						<!--<input type="text" name="money" id="money" size="20" onkeyup="checkWithdraw(this,'chineseMoney',50000,358.06);" />-->
+						<input type="text" name="money" id="money" size="20" autocomplete='off' onkeyup="checkWithdraw2(this,'chineseMoney',50000,358.06);" class="custom_input"  />
+						(单笔最低提现金额：<font style="color:red;" id="minmoney">100</font>元，最高：<font id="maxmoneys" style="color:red;">50000</font>元)
+					</span>
+        </li>
+      </ul>
+      <input  type="submit" name="submit" value="下一步" class="formSubmit btn" />
+    </form>
+  </div>
+</div>

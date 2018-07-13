@@ -1,0 +1,113 @@
+<script type="text/javascript" src="__JS__/util/jquery-1.9.1.min.js"></script>
+
+<script type="text/javascript" src="__JS__/common/model/details.js" ></script>
+<script>
+    function hrefother(url){
+        window.location.href=url;
+    }
+    function checkrechargetime(recharge_start,recharge_end,current){
+        window.open("user_userbankinfo.html",'_self');
+    }
+</script>
+<link rel="stylesheet" href="__CSS__/default_content.min.css">
+<link rel="stylesheet" href="__CSS__/gift.min.css">
+<link rel="stylesheet" href="/static/todo/images/game/game-touzhu.css">
+<link rel="stylesheet" href="__CSS__/page.css" />
+<div class="ys-content">
+    <h4>&nbsp;</h4>
+    <h4>领取时间为：每日09：00 AM至 18：00 PM</h4>
+    <h4>计算时间为：每日00：00 AM至23：59 :59PM</h4>
+    <h5>工资执行备注：<span style="color: red">到达标准是根据总有效人数和总投注额综合核算得出，工资总额是根据达到标准和达标总额计算得出后扣除下级领取的剩余值</span></h5>
+    <div class="list">
+            <table id="userlist" class="table-stylea-table">
+
+                <thead>
+                <tr>
+                    <th>所属周期</th>
+                    <th>总有效人数</th>
+                    <th>总投注额</th>
+                    <th>工资标准</th>
+                    <th>达标总额</th>
+                    <th>到达标准</th>
+                    <th>统计时间</th>
+                    <th>工资总额</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="data" id="vo"}
+                <tr>
+                    <td>{$vo.zhouqi}</td>
+                    <td>{$vo.yx_touzhu_ren}</td>
+                    <td>{$vo.touzhu_ze}</td>
+                    <td>{$vo.biaozhun}</td>
+                    <td>{$vo.yxtze}</td>
+                    <td>{$vo.zx_biaozhun}</td>
+
+                    <td>{$vo.tz_at}</td>
+
+                    <td>{$vo.zonger}</td>
+                    <td>  {$vo.zt}</td>
+                    <td>
+                        <font color="red">{$vo.gq_zt}</font>
+                    </td>
+                </tr>
+                {/volist}
+                {empty name="data"}
+                    <tr>
+                        <td height="37" colspan="9" align="center">暂无记录</td>
+                    </tr>
+                {/empty}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th colspan="9" height="20">
+                        <!--
+                        <div style="float: left">共有  3  会员 共 1/1 页 每页20会员</div>
+                        -->
+                        <div style="float: right;display: inline-flex" class="page_right">
+                            {$page}
+                        </div>
+                    </th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+</div>
+
+</body>
+</html>
+
+<script>
+
+    function onclickgift(){
+        $('#btngift').attr('disabled', 'disabled');
+        hrefother('./gift_activitypoints.html?getmoney=1');
+    }
+   function lingqu(id) {
+        var v_t=$(this).attr("data-type");
+        if (confirm("是否确定领取？"))
+        {
+            $.ajax({
+                type: "POST",
+                url: "/activity/lingqu.html",
+                data: { id: id },
+                dataType: "json",
+                global: false,
+                success: function (data) {
+                    if (data.code==1) {
+                        alert(data.msg);
+                        document.location.reload();
+                    }
+                    else {
+                        alert(data.msg);
+                    }
+                },
+                error: null,
+                cache: false
+            });
+        }
+    };
+
+</script>

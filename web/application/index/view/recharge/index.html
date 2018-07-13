@@ -1,0 +1,176 @@
+﻿<!-- header -->
+{include file="header"/}
+<!--header-->
+<script>
+
+    function setIframeHeight(iframe) {
+        if (iframe) {
+            var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+            if (iframeWin.document.body) {
+                iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+            }
+        }
+    };
+    window.onload = function () {
+        setIframeHeight(document.getElementById('mainFrame'));
+    };
+</script>
+<body id="lan">
+<div id="wrap">
+
+    <script type="text/javascript">
+        //新手教學
+        //__LAN__=="" && $("#menu > ul.right li").first().before('<li><a herf="javascript:void(0);" class="popup" onclick="openintro()">新手教学</a></li>');
+
+        function openintro() {
+            var sHtml = '';
+            sHtml += '<div class="lightbox">';
+            sHtml += '    ';
+            sHtml += '</div>';
+            sHtml += '<div class="lightbox_mask"></div>';
+            $alert = $(sHtml);
+            $(parent.document).find("body").append($alert);
+            $(parent.document).find(".closeTip, .closeBtn").click(function () {
+                $(parent.document).find($alert).remove();
+            })
+            $('body').css('overflow', 'hidden');
+            $('body').attr('scroll', 'no');
+            $(".lightbox_close").click(function () {
+                $('body').css('overflow', 'auto');
+                $('body').attr('scroll', 'yes');
+            });
+            $(".tab_content").hide();
+            $(".tab_content:first").show();
+
+            $("ul.tabs li").click(function () {
+                $(".tab_content").hide();
+                var activeTab = $(this).attr("rel");
+                $("#" + activeTab).show();
+                $("ul.tabs li").removeClass("active");
+                $(this).addClass("active");
+            });
+            $(".step_title").click(function () {
+                if ($(this).next(".step_content").css("display") != "block") {
+                    $(".step_content").slideUp();
+                    $(this).next(".step_content").slideToggle();
+                    $(".step_title").removeClass("step_active");
+                    $(this).addClass("step_active");
+                    $(".step_title i").addClass("arrow_close").removeClass("arrow_open");
+                    $(this).find("i").removeClass("arrow_close").addClass("arrow_open");
+                } else {
+                    $(".step_title").removeClass("step_active");
+                    $(this).next(".step_content").slideToggle();
+                    $(this).find("i").removeClass("arrow_close");
+                    $(this).find("i").removeClass("arrow_open").addClass("arrow_close");
+                }
+            });
+        }
+
+
+        var defaultDiceTop;
+        $(function () {
+            defaultDiceTop = $('#dice').offset().top;
+            autoDiceTop();
+            $(window).resize(function (e) {
+                autoDiceTop();
+            });
+
+            $('.scrollAnchor').click(function (e) {
+                e.preventDefault();
+                var moveAnchor = $(this).attr('href');
+                $('body').animate({
+                    scrollTop: $(moveAnchor).offset().top
+                }, 1500);
+            });
+        });
+
+        function autoDiceTop() {
+            var dTop = 0;
+            if ($(window).height() - defaultDiceTop < $('#dice-window').height()) {
+                dTop = $(window).height() - $('#dice-window').height();
+            } else {
+                dTop = defaultDiceTop;
+            }
+            $('#dice').css({'top': dTop + 'px'});
+        }
+
+    </script>
+
+
+    <div class="main-header">
+    <div class="main-title">平台管理</div>
+    </div>
+    <div class="main-section">
+        <div class="left-aside">
+            <div class="header">
+                <!-- 帐户充提 -->
+                <span>帐户充提</span>
+            </div>
+            <div class="content">
+                <!-- menu title = 充值-->
+                <div class="row <?=$tag=='cz'?'active':''?>">
+                    <a href="recharge.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>充值 </a>
+                </div>
+                <!-- menu title = 招行跨行充值-->
+                <!--<div class="row ">
+        <a href="emaildeposit_chongzhi.html?tag=cccb" target="mainFrame">
+
+            <i class="arrow-right"></i>招行跨行充值					</a>
+    </div>-->
+                <!-- menu title = 我要提现-->
+                <div class="row <?=$tag!='cz'?'active':''?>">
+                    <a href="security_platwithdraw.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>我要提现 </a>
+                </div>
+                <!-- menu title = 我的提现-->
+                <div class="row ">
+                    <a href="emaildeposit_getmoneylist.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>我的提现 </a>
+                </div>
+            </div>
+        </div><!--menu-->
+
+        <div class="right-aside">
+            <!--<div class="navigation">-->
+            <!--<a href="/">首页</a>-->
+            <!--<span>&gt;</span>-->
+            <!--&lt;!&ndash; 帐户充值 &ndash;&gt;-->
+            <!--<a href="#">帐户充值</a>-->
+            <!--<span>&gt;</span>-->
+            <!--&lt;!&ndash; 我要提现 &ndash;&gt;-->
+            <!--<a href="#" class="navgiate1">我要提现</a>-->
+
+            <!--</div>&lt;!&ndash;navigation&ndash;&gt;-->
+            <iframe onload="setIframeHeight(this)" width="100%"
+                    src="/recharge/{$page_url}" allowtransparency="true" name="mainFrame" scrolling="no"
+                    frameborder="0" id="mainFrame" border="0" noresize="noresize" framespacing="0"></iframe>
+        </div>
+    </div>
+
+
+
+
+
+</div><!-- wrap -->
+</body>
+<!--&lt;!&ndash; Google Analytics &ndash;&gt;-->
+<!--<script>-->
+    <!--// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+    <!--// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+    <!--// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+    <!--// })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');-->
+    <!--//-->
+    <!--// ga('create', 'UA-86467011-1', 'auto');-->
+    <!--// ga('send', 'pageview');-->
+
+<!--</script>-->
+
+<!--</html>-->
+
+<!--//foot//-->
+{include file="footer"/}
+<!-- footer -->

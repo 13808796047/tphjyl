@@ -1,0 +1,69 @@
+{include file="header"/}
+
+    <div class="main-header">
+        <div class="main-title">平台管理</div>
+    </div>
+    <div class="main-section">
+        <div class="left-aside">
+            <div class="header">
+                <!-- 报表管理 -->
+                <span>报表管理</span>
+            </div>
+            <div class="content">
+                <!-- menu title = 盈亏查询-->
+                <div class="row ">
+                    <a href="./reportlist.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>盈亏查询                 </a>
+                </div>
+                <!-- menu title = 帐变记录-->
+                <div class="row ">
+                    <a href="./orderslist.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>帐变记录					</a>
+                </div>
+                <!-- menu title = 充值记录-->
+                <div class="row ">
+                    <a href="./rechargelist.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>充值记录					</a>
+                </div>
+                <!-- menu title = 提现记录-->
+                <div class="row ">
+                    <a href="./cashlist.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>提现记录					</a>
+                </div>
+            </div>
+        </div><!--menu-->
+
+        <div class="right-aside">
+            <div class="navigation">
+                <a href="/">首页</a>
+                <span>&gt;</span>
+                <!-- 报表管理 -->
+                <a href="#">报表管理</a>
+                <span>&gt;</span>
+                <!-- 帐变记录 -->
+                <a href="#" class="navgiate1">{if condition="(session('userData.type') == 1)"}盈亏查询{else/}帐变记录{/if}</a>
+
+            </div><!--navigation-->
+            <iframe onload="window.autoResizeHeight()" src="{if condition="(session('userData.type') == 1)"}./reportlist.html{else/}./orderslist.html{/if}" allowtransparency="true"  name="mainFrame" width="100%" scrolling="no" frameborder="0" id="mainFrame" border="0" noresize="noresize" framespacing="0"  ></iframe>
+        </div>
+    </div>
+
+<!--//foot//-->
+
+{include file="footer"/}
+<!-- footer -->
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86467011-1', 'auto');
+    ga('send', 'pageview');
+
+</script>

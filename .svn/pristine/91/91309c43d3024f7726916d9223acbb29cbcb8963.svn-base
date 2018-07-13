@@ -1,0 +1,91 @@
+﻿<script type="text/javascript" src="__JS__/jquery-1.9.1.js"></script><style type="text/css">
+  .submit_btnA{
+    display: block;
+    float: left;
+    width: 122px;
+    height: 40px;
+    background: url(http://upccry1.3smao.net/sy2/images/bg-buttom.png) no-repeat;
+    color: #fff;
+    font-size: 16px;
+    line-height: 36px;
+    margin: 0 22px;
+    border: none;
+  }
+</style>
+<script type="text/javascript">
+  $(function(){
+
+    $("#chineseMoney").html(changeMoneyToChinese(100));
+
+  })
+
+</script>
+
+<form action="" method="get" name="drawform" onsubmit="this.submit.disabled=true;">
+  <input type="hidden" name="controller" value="security" />
+  <input type="hidden" name="controller" value="security" />
+  <input type="hidden" name="action" value="platwithdraw" />
+  <input type="hidden" name="flag" value="confirm" />
+  <input type="hidden" name="check" value="585" />
+  <input type="hidden" name="money" id="money" value="{$money}" />
+  <input type="hidden" name="bankinfo" id="bankinfo" value="{$bankInfo.id}" />
+  <div class="ys-content section form">
+    <div class="ys-ytx">
+      <div class="header">确认提现信息</div>
+      <div class="field">
+        <label>用户名:</label>{$user.username}		</div>
+      <div class="field">
+        <label>可提现金额:</label>{$user.coin}		</div>
+      <div class="field">
+        <label>提现金额:</label>{$money}		</div>
+      <div class="field">
+        <label>开户行名称:</label>{$bankInfo.bankDetail}		</div>
+    <!--  <div class="field">
+        <label>开户行所在省份:</label>云南		</div>
+      <div class="field">
+        <label>开户行所在城市:</label>昆明		</div>-->
+      <div class="field">
+        <label>开户名:</label>{$bankInfo.username}		</div>
+      <div class="field">
+        <label>银行帐号:</label>{$bankInfo.account}		</div>
+      <div class="ys-nxt-btn clearfix">
+        <input name="" type="button" value="确认提现" onclick="thixian()"/>
+        <!--&nbsp;&nbsp;<input type="button" value="返回" class="alert_btn" value="" name=""  onclick="history.back()" >-->
+
+      </div>
+      <div style="height:5px;">
+        <div class="right_02_24"></div>
+        <div class="right_02_25"></div>
+      </div>
+
+    </div>
+  </div>
+</form>
+</body>
+</html>
+<script>
+  function thixian(){
+    var money = document.getElementById ("money").value;
+    var bankinfo = document.getElementById ("bankinfo").value;
+    if (confirm("是否确认提现？")){
+      $.ajax({
+        type: "GET",
+        url: "/recharge/Qr_security_platwithdraw.html",
+        data: {money:money,bankinfo:bankinfo,flag:"confirm" },
+        dataType: "json",
+        global: false,
+        success: function (data) {
+          if (data.code==1) {
+            alert(data.msg);
+            //document.location.reload();
+          }
+          else {
+            alert(data.msg);
+          }
+        },
+        error: null,
+        cache: false
+      });
+    }
+  }
+</script>

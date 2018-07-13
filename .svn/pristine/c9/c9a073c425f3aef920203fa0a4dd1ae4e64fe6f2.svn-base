@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+{include file="header"/}
+<head>
+    <script>
+        function setIframeHeight(iframe) {
+            if (iframe) {
+                var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+                if (iframeWin.document.body) {
+                    iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+                }
+            }
+        };
+        window.onload = function () {
+            setIframeHeight(document.getElementById('mainFrame'));
+        };
+    </script>
+</head>
+<body id="lan">
+    <div id="wrap">
+
+<div class="main-header">
+	<div class="main-title">平台管理</div>
+</div>
+<div class="main-section">
+	<div class="left-aside">
+		<div class="header">
+                <!-- 账户中心 -->
+      		<span>账户中心</span>
+    	</div>
+		<div class="content">
+				                        <!-- menu title = 用户列表-->
+							<div class="row  <?=$tag!='messages'?'active':''?>">
+					<a href="user_list.html" target="mainFrame">
+						<i class="arrow-right"></i>用户列表
+					</a>
+				</div>
+					                        <!-- menu title = 添加用户-->
+			{if $user_type==1}
+				<div class="row ">
+					<a href="user_adduser.html" target="mainFrame">
+						<i class="arrow-right"></i>添加用户
+					</a>
+				</div>
+			{/if}
+					                        <!-- menu title = 自助开户-->
+						<!--	<div class="row ">
+					<a href="user_otheradduser.html" target="mainFrame">
+                                               
+						<i class="arrow-right"></i>自助开户					</a>
+				</div>-->
+					                        <!-- menu title = 彩种信息-->
+							<!--<div class="row ">
+					<a href="user_userset.html" target="mainFrame">
+                                               
+						<i class="arrow-right"></i>彩种信息					</a>
+				</div>-->
+					                        <!-- menu title = 安全中心-->
+							<div class="row ">
+					<a href="user_setmenu.html" target="mainFrame">
+                                               
+						<i class="arrow-right"></i>安全中心					</a>
+				</div>
+					                        <!-- menu title = 消息管理-->
+							<div class="row <?=$tag=='messages'?'active':''?>">
+					<a href="user_messages.html" target="mainFrame">
+                                               
+						<i class="arrow-right"></i>消息管理					</a>
+				</div>
+					                        <!-- menu title = 团队统计-->
+							<div class="row ">
+					<a href="user_team.html" target="mainFrame">
+                                               
+						<i class="arrow-right"></i>团队统计					</a>
+				</div>
+			{if $user_rigongzi==true && $settings['RiGongZiKaiGuan']== 1}
+				<div class="row ">
+					<a href="user_rigongzi.html" target="mainFrame">
+					<i class="arrow-right"></i>日工资管理</a>
+				</div>
+			{/if}
+			</div>
+	</div><!--menu-->
+
+	<div class="right-aside">
+		<div class="navigation">
+			<a href="/">首页</a>
+			<span>&gt;</span>
+                        <!-- 账户中心 -->
+			<a href="#">账户中心</a>
+			<span>&gt;</span>
+                        <!-- 用户列表 -->
+                        <a href="#" class="navgiate1">用户列表</a>
+			
+		</div><!--navigation-->
+				<iframe onload="setIframeHeight(this)" src="{$page_url}" allowtransparency="true"  name="mainFrame" width="100%" scrolling="no" frameborder="0" id="mainFrame" border="0" noresize="noresize" framespacing="0"  ></iframe>
+			</div>
+</div>
+<!--//foot//-->
+        {include file="footer"/}
+	</div><!-- wrap -->
+</body>
+<!-- Google Analytics -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-86467011-1', 'auto');
+	ga('send', 'pageview');
+</script>
+</html>

@@ -1,0 +1,165 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>充值记录</h2>
+	</div>
+	<form action="{:U('recharge')}" method="post">
+		<div class="cf">
+			<a class="btn" target="modal" width="470" title="新增充值" modal="true" href="{:U('Business/to_recharge')}" button="确定:dataAddCode|取消:defaultCloseModal" >新增充值</a>
+			<!-- 高级搜索 -->
+			<div class="search-form fr cf">
+				<div class="sleft">
+					用户名：<input style="width:100px" type="text" name="username" class="search-input" value="{:I('username')}" placeholder="用户名">
+				</div>
+				<div class="sleft">
+					充值编号：<input style="width:70px" type="text" name="rechargeId" class="search-input" value="{:I('rechargeId')}" placeholder="充值编号">
+				</div>
+				<div class="sleft">
+					<select style="width:100px" name="type">
+						<option value="9999" <if condition="($type eq '9999')"> selected="selected"</if> >所有类型</option>
+						<option value="0" <if condition="($type eq 0)"> selected="selected"</if> >正在申请</option>
+						<option value="1" <if condition="($type eq 1)"> selected="selected"</if> >手动到账</option>
+						<option value="2" <if condition="($type eq 2)"> selected="selected"</if> >自动到账</option>
+						<option value="9" <if condition="($type eq 9)"> selected="selected"</if> >管理员充值</option>
+					</select>
+				</div>
+				<div class="sleft">
+					时间从：<input type="text" name="fromTime" id="first" class="search-input" value="<?=$this->iff(I('fromTime'),I('fromTime'),date('Y-m-d',time())) ?>" placeholder="请输入开始时间">
+				</div>
+				<div class="sleft">
+					到：<input type="text" name="toTime" id="end" class="search-input" value="<?=$this->iff(I('toTime'),I('toTime'),date('Y-m-d',time())) ?>" placeholder="请输入结束时间">
+					<!-- <a class="sch-btn" href="javascript:;" id="search" url="{:U('cash')}"><i class="btn-search"></i></a> -->
+				</div>
+				<div class="sbtn">
+					<button type="submit" class="btn" id="search">查 找</button>
+				</div>	
+			</div>		
+		</div>
+	</form>
+
+	
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+	<table class="">
+    <thead>
+        <tr>
+		<th>UserID</th>
+        <th>用户名</th>
+        <th>上级关系</th>
+        <th>充值金额</th>
+        <th>实际到账</th>
+        <th>充值前资金</th>       
+        <th>充值编号</th>
+        <th>充值银行</th>        
+        <th>状态</th>
+        <th>备注</th>
+        <th>时间</th>
+        <th>操作</th>
+		</tr>
+    </thead>
+    <tbody>
+	<tr>
+		<th>合计</th>
+		<th>-</th>
+		<th>-</th>
+		<th>-</th>
+		<th>{$total_recharge}</th>
+		<th>-</th>
+		<th>-</th>
+		<th>-</th>
+		<th>-</th>
+		<th>-</th>
+		<th>-</th>
+		<th>-</th>
+	</tr>
+		<if condition="$_list">
+		<volist name="_list" id="vo">
+		<tr>
+			<td>{$vo.uid} </td>
+			<td><a href="{:U('recharge?username='.$vo['username'])}">{$vo.username}</a></td>
+			<?php
+				$sjgx = "";
+					$path = explode(',' , $vo['parents']);
+					foreach($path as $p){
+						$sjgx .= $members_list[$p].'>';
+					}
+			$show_title = "";
+			if(mb_strlen($sjgx)>15){
+				$show_title = substr($sjgx,0,15).'...';
+			}else{
+				$show_title = $sjgx;
+			}
+			?>
+			<td style="display: block;overflow: hidden;" title="{$sjgx}">
+				{$show_title}
+			</td>
+			<td>{$vo.amount}</td>
+			<td>{$vo.rechargeAmount}</td>
+			<td>{$vo.coin}</td>
+			<td>{$vo.rechargeId}</td>
+			<td><a href="<?='http://'.$vo['home']?>" target="_blank">{$vo.name}</a></td>
+			<td><?=$this->iff($vo['state'], '充值成功', '正在充值')?></td>
+			<?php
+				$note = "";
+				if(mb_strlen($vo['info'])>10){
+					$note = substr($vo['info'],0,10).'..';
+				}else{
+					$note = $vo['info'];
+				}
+			?>
+			<td title="{$vo.info}">
+				{$note}
+			</td>
+			<td>{:date('Y-m-d H:i:s',$vo['actionTime'])}</td>
+			<td>
+				<php>if(!$vo['state']){</php>
+				<a target="modal" width="360" title="到账处理" modal="true" button="确定:dataAddCode|取消:defaultCloseModal" href="{:U('Business/toOn_recharge?id='.$vo['id'].'&username='.$vo['username'].'&amount='.$vo['amount'])}">到账处理</a>
+				<php>}</php>
+				<a href="{:U('business/del_recharge?id='.$vo['id'])}" class="confirm ajax-get">删除</a>
+            </td>
+		</tr>
+		</volist>
+		<else />
+			<tr>
+				<td colspan="11" align="center">暂时没有充值记录。</td>
+			</tr>
+		</if>
+	</tbody>
+    </table> 
+	</div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+    <link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+	<script>
+	$(function(){
+		$('#first,#end').datetimepicker({
+			format: 'yyyy-mm-dd',
+			language:"zh-CN",
+			minView:2,
+			autoclose:true
+		});
+		//showTab();
+	});
+	</script>
+	<script type="text/javascript">
+		//回车搜索
+		$("body").keyup(function(e){
+			if(e.keyCode === 13){
+				$("#search").click();
+				return false;
+			}
+		});
+		$('.side-sub-menu').find('a[href="{:U('business/recharge')}"]').closest('li').addClass('current');
+	</script>
+</block>

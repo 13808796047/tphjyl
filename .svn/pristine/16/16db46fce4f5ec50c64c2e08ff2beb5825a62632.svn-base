@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no, email=no, adress=no">
+
+
+    <title>皇家娱乐平台</title>
+
+    <link rel="stylesheet" href="__CSS__/themes/base/jquery-ui.min.min.css" />
+    <script src="__JS__/util/jquery-1.9.1.min.js"></script>
+    <script src="__JS__/ui/jquery-ui.min.js"></script>
+    <script src="__JS__/game/util/localstorage.js"></script>
+    <script src="__JS__/module/main.js"></script>
+    <script src="__JS__/module/header.js"></script>
+    <link rel="stylesheet" href="__CSS__/util.min.css" />
+    <link rel="stylesheet" href="__CSS__/logreg.min.css" />
+
+    <link rel="stylesheet" href="__CSS__/iconfont/font-awesome.css" />
+    <!--[if IE 7] -->
+    <link rel="stylesheet" href="__CSS__/iconfont/font-awesome-ie7.css" />
+    <!--[endif]   -->
+
+    <script>
+        window.$pcinfoid = "0";
+        if($pcinfoid > 0) {
+            window.appData = {
+                clientVersion: "",
+                SetupLocationPath: ""
+            };
+        }
+        document.cookie = "state=show;"
+        // function openKefu() {
+        // 	$zopim.livechat.window.openPopout();
+        // }
+    </script>
+
+</head>
+<body id="lan">
+<div id="wrap">
+    <div id="login">
+        <!--<h1 class="no-display">
+            如果您不能正常浏览此页面，请点击链接下载安装平台客户端 <a href="http://pan.baidu.com/s/1eQRiBlg">客户端下载</a>
+        </h1>-->
+        <div class="logo"><a href="./">LOGO</a></div>
+        <div class="slogan">我们专注的是您的需求</div>
+        <div id="login-area">
+            <h1>用户登录</h1>
+            <form id="J-login-form" action="" method="post">
+                <div class="user-name clear"><label>用户名：</label><input id="J-user-name" type="text" /></div>
+                <div class="password clear"><label>密码：</label><input id="J-user-password" type="password" /></div>
+                <div class="pin clear"><label>验证码：</label><input style="width:135px;" id="J-verification" type="text" /><img  style="width:120px;" id="validate" title="点击刷新" onclick="this.src=this.src+'?'+Math.random()" class='input-box code_2' src="{:captcha_src()}" /></div>
+                <div class="login-status"></div>
+                <input id="J-form-submit" type="submit" value="登录">
+            </form>
+        </div><!-- login-area -->
+    </div><!-- login -->
+    <script type="text/javascript" src="__JS__/util/jquery.md5.js"></script>
+    <script type="text/javascript" src="__JS__/module/index.js"></script>
+    <!--Start of Zendesk Chat Script-->
+    <!--<script type="text/javascript">
+        window.$zopim||(function(d,s){var z=$zopim=function(c){
+            z._.push(c)},$=z.s=
+            d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+        _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+            $.src='https://v2.zopim.com/?4h2KEGfpbotuyDuFFuPKHrEJJcZay335';z.t=+new Date;$.
+                type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+    </script>-->
+    <!--End of Zendesk Chat Script-->
+    <!--//foot//-->
+    {include file="footer" /}

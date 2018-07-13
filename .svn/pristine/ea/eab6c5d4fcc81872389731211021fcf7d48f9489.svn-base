@@ -1,0 +1,64 @@
+﻿
+<link rel="stylesheet" type="text/css" href="__CSS__/default_content.min.css"/>
+<div>
+  <div class="content_mid">
+    <form action="" method="get" class="list">
+        <div class="intro_content"><b style="font-size:13px;padding:0 0 0 5px;">注意事项:</b>
+            <br>
+            <span style="padding:0 5px 0 90px;">
+                1.每个账号最多绑定5张银行卡            </span>
+			<br>
+             <span style="padding:0 5px 0 90px;">
+               2.新绑定的提现银行卡需要绑定时间超过8小时才能正常提现            </span>
+        </div>
+        <div style="margin-top:10px;">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th>用户名</th>
+                    <th>绑定银行</th>
+                    <th>卡号</th>
+                    <th>绑定时间</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {volist name="list" id="vo"}
+  			      <tr>
+                    <td>{$vo.username}</td>
+                    <td>{$vo.bankDetail}</td>
+                    <td>{$vo.account}</td>
+                    <td>{$vo.actionTime|date='Y-m-d H:i:m',###}</td>
+                    <td></td>
+                  </tr>
+                {/volist}
+  			      </tbody>
+              <tfoot>
+              {if $is_test==0}
+                <tr>
+                  <th colspan="6">
+                    <input onClick="window.location.href='security_adduserbank.html'" type="button" value="增加绑定" class="btn" />
+                  </th>
+                </tr>
+              {/if}
+              </tfoot>
+            </table>
+        </div>
+
+          </form>
+  </div>
+</div>
+<script type="text/javascript" src="__JS__/jquery-1.9.1.js"></script>
+<script>
+  function changeIframeHeight(height){
+    var parentDOM = $(parent.document);
+    var grandparentDOM = $(parent.parent.document);
+    parentDOM.find("#mainFrame_menu").height(height);
+    grandparentDOM.find("#mainFrame").height($(parent.document).find(".ys-content").outerHeight(true));
+  }
+  $(function(){
+    changeIframeHeight($(".content_mid").outerHeight(true) + 200);
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<extend name="Public/base"/>
+<block name="body">
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>统计：日期/彩种</h2>
+	</div>
+	<!-- 高级搜索 -->
+	<form action="{:U('date_i_type')}" method="post">
+		<div class="search-form fr cf">
+			<div class="sleft">
+				<select style="width:100px;" name="isTest">
+					<option value="1">全部号</option>
+					<?php
+						if($isTest == 2){
+							echo '<option value="2" selected="selected">会员号</option>';
+					}else{
+					echo '<option value="2">会员号</option>';
+					}
+					?>
+					<?php
+						if($isTest == 3){
+							echo '<option value="3" selected="selected">测试号</option>';
+					}else{
+					echo '<option value="3">测试号</option>';
+					}
+					?>
+				</select>
+			</div>
+			<div class="sleft">
+				时间：<input style="width:85px" type="text" name="searchTime" class="search-input" value="<?=$this->iff(I('searchTime'),I('searchTime'),date('Y-m-d',time())) ?>" placeholder="查询时间">
+			</div>
+			<!--<div class="sleft">
+				时间从：<input style="width:85px" type="text" name="fromTime" id="first" class="search-input" value="<?=$this->iff(I('fromTime'),I('fromTime'),date('Y-m-d',time())) ?>" placeholder="开始时间">
+			</div>
+			<div class="sleft">
+				到：<input style="width:85px" type="text" name="toTime" id="end" class="search-input" value="<?=$this->iff(I('toTime'),I('toTime'),date('Y-m-d',time())) ?>" placeholder="结束时间">			
+			</div>-->
+			<div class="sbtn">
+				<button type="submit" class="btn" id="search">查 找</button>
+			</div>	
+		</div>
+	</form>
+    <div class="data-table table-striped" id="data-table">
+	    <table class="">
+        <thead>
+            <tr>
+			    <th>彩种</th>
+			    <th style="text-align: center">投注总额</th>
+			    <th style="text-align: center">返奖总额</th>
+			    <th style="text-align: center">返点总额</th>
+			    <th style="text-align: center">盈亏</th>
+		    </tr>
+        </thead>
+        <tbody>
+			<?php
+			$tz=0; $fj=0; $fd=0; $yk=0; 
+			foreach($rs as $item){ 
+				$tz+=$item['tz']; $fj+=$item['fj']; $fd+=$item['fd']; $yk+=$item['yk'];
+				?>
+				<tr>
+					<td><?= $item['cz'] ?></td>
+					<td style="text-align: right"><?= number_format($item['tz'],2) ?></td>
+					<td style="text-align: right"><?= number_format($item['fj'],2) ?></td>
+					<td style="text-align: right"><?= number_format($item['fd'],2) ?></td>
+					<td style="text-align: right"><?= number_format($item['tz']-$item['fj']-$item['fd'],2) ?></td>
+				</tr>
+			<?php } ?>
+				<tr>
+					<td>合计：</td>
+					<td style="text-align: right"><?=number_format($tz,2) ?></td>
+					<td style="text-align: right"><?=number_format($fj,2) ?></td>
+					<td style="text-align: right"><?=number_format($fd,2) ?></td>
+					<td style="text-align: right"><?=number_format($tz-$fj-$fd,2) ?></td>
+				</tr>	
+        </tbody>
+        </table>
+    </div>
+</block>
+
+<block name="script">
+    <link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+	<script>
+	$(function(){
+		var dateCfg={
+			format: 'yyyy-mm-dd',
+			language:"zh-CN",
+			minView:2,
+			autoclose:true
+		};
+		$('#first,#end').datetimepicker(dateCfg);
+		//showTab();
+	});
+	</script>
+	<script type="text/javascript">
+		//回车搜索
+		$("body").keyup(function(e){
+			if(e.keyCode === 13){
+				$("#search").click();
+				return false;
+			}
+		});
+		//$('.side-sub-menu').find('a[href="{:U('Count/datelist')}"]').closest('li').addClass('current');
+	</script>
+</block>

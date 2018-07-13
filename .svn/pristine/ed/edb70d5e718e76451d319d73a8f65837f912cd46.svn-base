@@ -1,0 +1,1491 @@
+ @charset "utf-8";
+div{@charset "utf-8";}
+ul{
+	list-style-type: none;
+}
+img {
+	vertical-align:middle;
+}
+input, textarea, select {
+  font: 12px "courier new";
+  vertical-align:middle;
+}
+body {
+	background-color: #585858;
+	margin: 0px;
+	font-family: "微软雅黑" , Arial , "Microsoft Sans Serif" ,  "宋体";
+	font-size: 12px;
+}
+.right_01_01 a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.right_01_01 a:hover{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+.input_01{
+	text-align: center;
+	font-weight:bold;
+	color:#FF0000;
+	height:16px;
+}
+#right_01 {
+	height: 28px;
+	line-height: 28px;
+	text-indent: 10px;
+	color: #FFFFFF;
+	text-align: left;
+	font-size: 14px;
+	background-color: #045750;
+	width:100%;
+}
+.right_02 {
+	width:98%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+.line_01 {
+	background-image: url(../images/new_higame/center_14.jpg);
+	background-repeat:no-repeat;
+	height: 55px;
+	width: 6px;
+	float: left;
+}
+.menu_01 {
+	background-image: url(../images/new_higame/menu_01.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 29px;
+	width: 4px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 2px;
+}
+.menu_02 {
+	background-image: url(../images/new_higame/menu_01.png);
+	float: left;
+	height: 29px;
+	line-height: 29px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-position: 0px -29px;
+	background-color: #CCCCCC;
+}
+.menu_03 {
+	background-image: url(../images/new_higame/menu_01.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 29px;
+	width: 4px;
+	margin-top: 0px;
+	margin-right: 2px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	background-position: -5px 0px;
+}
+.menu_01a {
+	background-image: url(../images/new_higame/menu_01.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 29px;
+	width: 4px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 2px;
+	background-position: -10px 0px;
+}
+.menu_02a {
+	background-image: url(../images/new_higame/menu_01.png);
+	float: left;
+	height: 34px;
+	line-height: 29px;
+	padding-right: 5px;
+	padding-left: 5px;
+	color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: center -58px;
+	background-color: #333333;
+}
+.menu_03a {
+	background-image: url(../images/new_higame/menu_01.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 29px;
+	width: 4px;
+	margin-top: 0px;
+	margin-right: 2px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	background-position: -15px 0px;
+}
+#right_03 {
+	background-color: #8f98a3;
+	height: 10px;
+	margin-top: 10px;
+	margin-left: 20px;
+	width: 712px;
+	overflow:hidden;
+}
+#right_04 {
+	background-color: #8f98a3;
+	height: 10px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	width: 712px;
+	clear: both;
+	overflow:hidden;
+}
+#right_05 {
+	background-color: #8f98a3;
+	margin-left: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	width: 712px;
+	color:#000000;
+}
+#right_05 table td{
+    line_height:50px;
+    height:50px;
+	vertical-align:middle;
+}
+
+#right_05_input {
+	margin:10px 0 0 10px;
+	text-align: center;
+	width: 742px;
+	color:#000000;
+}
+#right_05_input table td{
+    line_height:50px;
+    height:50px;
+	vertical-align:middle;
+}
+#lt_write_box{
+	width:575px;
+	height:78px;
+	overflow-y:scroll;
+	max-width:575px;
+}
+.inputdesc{
+	 color:#000000;
+	 margin-left:20px;
+	 line-height: 27px;
+	 height: 27px;
+	 display:inline;
+	 float:left;
+}
+.right_06 {
+	text-align: right;
+	width: 700px;
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	height: 31px;
+}
+.right_07 {
+	text-align: right;
+	float: right;
+	margin:0px;
+	margin-top:5px;
+}
+.right_08 {
+	width: 752px;
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: bottom;
+	height: 44px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 44px;
+	color: #000000;
+	background-color: #CCCCCC;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.right_09{
+	height: 84px;
+	width: 710px;
+	border: 1px solid #999999;
+	text-align: left;
+	vertical-align: top;
+	overflow:scroll;
+	overflow-x:hidden;
+}
+.right_10{
+	background-color: #FFFFFF;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #8f98a3;
+	border-left-color: #8f98a3;
+	margin-right: 20px;
+	margin-left: 20px;
+	padding-right: 8px;
+	padding-left: 8px;
+	padding-top: 5px;
+}
+.ball_blue{
+	background-image: url(../images/new_higame/ball_blue.png)!important;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-image:none;
+	float: left;
+	height: 50px;
+	width: 34px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #001851;
+	line-height: 50px;
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+ *.ball_blue {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="../images/new_higame/ball_blue.png")
+}
+.ball_pink{
+	background-image: url(../images/new_higame/ball_pink.png)!important;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-image:none;
+	float: left;
+	height: 55px;
+	width: 34px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #81001e;
+	line-height: 53px;
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+  *.ball_pink {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="../images/new_higame/ball_pink.png")
+}
+.ball_yellow{
+	background-image: url(../images/new_higame/ball_yellow.png)!important;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-image:none;
+	float: left;
+	height: 50px;
+	width: 34px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #743800;
+	line-height: 50px;
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+ *.ball_yellow {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="../images/new_higame/ball_yellow.png")
+}
+.ball_gray{
+	background-image: url(../images/new_higame/ball_gray.png)!important;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-image:none;
+	float: left;
+	height: 50px;
+	width: 34px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #333333;
+	line-height: 50px;
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+ *.ball_gray {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="../images/new_higame/ball_gray.png")
+}
+.ball_green{
+	background-image: url(../images/new_higame/ball_green.png)!important;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-image:none;
+	float: left;
+	height: 50px;
+	width: 34px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #003300;
+	line-height: 50px;
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+ *.ball_green {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="../images/new_higame/ball_green.png")
+}
+.button3{
+	height: 41px;
+	width: 40px;
+	margin-right: 2px;
+	margin-left: 2px;
+	float: left;
+	background-image: url(../images/new_higame/botton.png);
+	font-size: 18px;
+	line-height: 41px;
+	color: #FFFFFF;
+	background-color: #666666;
+	cursor:pointer;
+}
+.button1{
+	height: 41px;
+	width: 30px;
+	margin-right: 1px;
+	margin-left: 1px;
+	float: left;
+	background-image: url(../images/new_higame/botton.png);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 41px;
+	color: #000000;
+	font-weight: bold;
+	background-position: -41px 0px;
+	background-color: #CCCCCC;
+	cursor:pointer;
+}
+.button2{
+	height: 41px;
+	width: 68px;
+	background-image: url(../images/new_higame/botton.png);
+	font-size: 16px;
+	line-height: 41px;
+	color: #FFFFFF;
+	font-weight: bold;
+	margin-top: 0px;
+
+	margin-bottom: 0px;
+	margin-left: 10px;
+	background-position: -82px 0px;
+	font-family: "微软雅黑" , Arial , "Microsoft Sans Serif" ,  "宋体";
+	background-color: #666666;
+	text-align: center;
+	cursor:pointer;
+	overflow:hidden;
+}
+/*趣味型定单霜按钮选中后样式*/
+.selddsbox .selected{
+	    height: 41px;
+        width: 68px;
+        margin:10px;
+        float: left;
+        background-image: url(../images/new_higame/botton.png);
+        font-family: "微软雅黑" , Arial , "Microsoft Sans Serif" ,  "宋体";
+        font-size: 16px;
+        line-height: 41px;
+        color: #FFFFFF;
+        font-weight: bold;
+        background-position: -277px 0px;
+        background-color: #ff3300;
+        cursor:pointer;
+}
+.selddsbox .button1{
+	height: 41px;
+	width: 68px;
+	background-image: url(../images/new_higame/botton.png);
+	font-size: 16px;
+	font-family: "微软雅黑" , Arial , "Microsoft Sans Serif" ,  "宋体";
+	line-height: 41px;
+	color: #FFFFFF;
+	font-weight: bold;
+	margin:10px;
+	background-position: -82px 0px;
+	background-color: #666666;
+	text-align: center;
+}
+.margin_2px{
+	height: 30px;
+	margin-right: 2px;
+	margin-left: 2px;
+	float: left;
+	line-height: 25px;
+}
+.margin_15px{
+	height: 44px;
+	margin-right: 12px;
+	margin-left: 12px;
+	float: left;
+	line-height: 44px;
+	text-align: center;
+	padding-top: 0px;
+	padding-right: 6px;
+	padding-bottom: 0px;
+	padding-left: 6px;
+}
+.input_02{
+	font-family: "微软雅黑", Arial, "Microsoft Sans Serif", "宋体";
+	color: #666666;
+}
+.line_02{
+	float: left;
+	width: 2px;
+	margin-right: 5px;
+	margin-left: 5px;
+	height: 44px;
+	background-image: url(../images/new_higame/center_39.jpg);
+}
+#right_top_01{
+	margin-right:10px;
+	float: left;
+	width:328px;
+	height: 75px;
+	background-image: url(../images/new_higame/right_01_repeat.png);
+	background-color: #990000;
+}
+.right_top_01_01{
+	float: left;
+	width:8px;
+	height: 75px;
+	background-image: url(../images/new_higame/right_01.png);
+}
+#right_top_01_02{
+	float: left;
+	width:185px;
+	height: 75px;
+	background-image: url(../images/new_higame/logo_high.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+#right_top_01_03{
+	float: right;
+	width:135px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 20px;
+	margin-top: 10px;
+}
+#right_top_01_04{
+	background-image: url(../images/new_higame/right_01.png);
+	background-repeat: no-repeat;
+	background-position: -9px 0px;
+	float: left;
+	height: 75px;
+	width: 2px;
+}
+#right_top_01_05{
+	float: left;
+	height: 75px;
+	width: 125px;
+}
+.right_top_01_06{
+	background-image: url(../images/new_higame/right_01.png);
+	float: left;
+	height: 75px;
+	width: 8px;
+	background-position: -12px 0px;
+}
+#right_top_01_07{
+	color: #FFFFFF;
+	text-align: center;
+	width: 115px;
+	margin-top: 10px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+#right_top_01_08{
+	height: 32px;
+	width: 115px;
+	margin: 5px;
+	background-image: url(../images/new_higame/right_01_repeat.png);
+	background-position: 0px -205px;
+}
+#right_top_01_09{
+	float: left;
+	background-image: url(../images/new_higame/right_01.png);
+	background-position: 0px -205px;
+	height: 32px;
+	width: 9px;
+}#right_top_01_10{
+	float: left;
+	height: 32px;
+	width: 97px;
+	line-height: 32px;
+	font-size: 18px;
+	color: #00FF00;
+	text-align: center;
+	font-weight: bolder;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}#right_top_01_11{
+	float: left;
+	background-image: url(../images/new_higame/right_01.png);
+	background-position: -10px -205px;
+	height: 32px;
+	width: 9px;
+}
+#right_top_02{
+	height: 75px;
+	width: 414px;
+	background-image: url(../images/new_higame/right_01_repeat.png);
+	float: left;
+	background-color: #990000;
+}
+#right_top_02_01{
+	float: left;
+	line-height: 20px;
+	width: 78px;
+	text-align: center;
+	color: #FFFFFF;
+	margin-top: 10px;
+}
+#right_top_02_02{
+	float: left;
+	height: 55px;
+	width: 320px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-image: url(../images/new_higame/right_01_repeat.png);
+	background-position: 0px -75px;
+}
+.right_top_02_02{
+	float: left;
+	height: 55px;
+	width: 320px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-image: url(../images/new_higame/right_01_repeat.png);
+	background-position: 0px -75px;
+}
+#right_top_02_03{
+	float: left;
+	height: 55px;
+	width: 5px;
+	background-image: url(../images/new_higame/right_01.png);
+	background-position: 0px -75px;
+}
+#right_top_02_04{
+	float: right;
+	height: 55px;
+	width: 5px;
+	background-image: url(../images/new_higame/right_01.png);
+	background-position: -6px -75px;
+}
+
+.right_top_02_05{
+	float: left;
+	height: 55px;
+	width: 55px;
+}
+.right_top_02_06{
+	margin-top:5px;
+	width:12px;
+	overflow:hidden;
+}
+.right_top_02_062{
+    margin-top:18px;
+	width:12px;
+	overflow:hidden;
+}
+#right_top_03{
+	float: left;
+	height: 75px;
+	background-image: url(../images/new_higame/right_01_repeat.png);
+	background-position: 0px -130px;
+	width: 198px;
+	background-color: #999999;
+}
+#right_top_03_01{
+	background-image: url(../images/new_higame/right_01.png);
+	background-position: 0px -130px;
+	float: left;
+	height: 75px;
+	width: 17px;
+}
+#right_top_03_02{
+	float: left;
+	height: 75px;
+	width: 149px;
+}
+#right_top_03_03{
+	float: left;
+	background-image: url(../images/new_higame/right_01.png);
+	background-position: -18px -130px;
+	height: 75px;
+	width: 32px;
+}
+#right_top_03_04{
+	color: #FFFFFF;
+	margin-top: 8px;
+	line-height: 20px;
+}
+.right_top_03_05{
+	line-height: 20px;
+}
+.height75{
+	height: 75px;
+}
+.height5{
+	height: 5px;
+	clear: both;
+	overflow:hidden;
+}
+.neiye01 {
+	clear: both;
+	height: 30px;
+	margin-top: 5px;
+	margin-right: 20px;
+	margin-bottom: 5px;
+	margin-left: 20px;
+}
+
+.d5d8de{
+	background-color:#d5d8de;
+}
+#right_02_01{
+
+	width:100%;
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: 0px -44px;
+	background-repeat: repeat-x;
+}
+
+.right_02_02{
+	width:6px;
+	float:left;
+	height: 44px;
+	background-image: url(../images/new_higame/right_02.png);
+}
+.right_02_03{
+	float: left;
+	height:36px;
+	margin-top:8px;
+	width: 720px;
+}
+.right_02_04{
+	width:6px;
+	float:right;
+	height: 44px;
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -7px 0px;
+}
+.margin10{
+	margin:10px;
+}
+#lt_samll_label{
+    clear:both;
+    display:inline;
+    float:left;
+}
+.floatleft{float: left;}
+.floatright{float: right;}
+.right_02_05{
+	background-image: url(../images/new_higame/right_02.png);
+	float: left;
+	height: 10px;
+	width: 10px;
+	background-position: -38px 0px;
+}
+.right_02_06{
+	background-image: url(../images/new_higame/right_02.png);
+	float: right;
+	height: 10px;
+	width: 10px;
+	background-position: -49px 0px;
+}
+.right_02_07{
+	background-image: url(../images/new_higame/right_02.png);
+	float: left;
+	height: 10px;
+	width: 10px;
+	background-position: -38px -11px;
+	clear: both;
+}
+.right_02_08{
+	background-image: url(../images/new_higame/right_02.png);
+	float: right;
+	height: 10px;
+	width: 10px;
+	background-position: -49px -11px;
+}
+.right_02_09{
+	background-image: url(../images/new_higame/right_02.png);
+	float: right;
+	height: 10px;
+	width: 10px;
+	background-position: -49px -11px;
+	clear: both;
+}
+#button04{
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -103px -76px;
+	height: 30px;
+	width: 101px;
+	float: right;
+	font-size: 16px;
+	line-height: 31px;
+	color: #FFFFFF;
+	margin-left: 10px;
+	text-indent: 45px;
+	text-align: left;
+	background-color: #000000;
+}
+.button04{
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -103px -76px;
+	height: 30px;
+	width: 101px;
+	float: right;
+	font-size: 16px;
+	line-height: 31px;
+	color: #FFFFFF;
+	margin-left: 10px;
+	text-indent: 45px;
+	text-align: left;
+	background-color: #000000;
+}
+.button05{
+	font-size: 14px;
+	color: #333333;
+	margin: 10px;
+	height: 33px;
+	width: 79px;
+	float: left;
+	background-image: url(../images/new_higame/botton.png);
+	background-position: 0px -42px;
+	line-height: 33px;
+	text-align: center;
+	background-color: #CCCCCC;
+}
+#button06{
+	float: right;
+	margin-right: 10px;
+	margin-top:6px;
+	height: 20px;
+	width: 50px;
+	background-image: url(../images/new_higame/clear.png);
+	line-height: 20px;
+	text-align: center;
+	background-color: #CCCCCC;
+	cursor:pointer;
+	letter-spacing:2px;
+}
+.button07{
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -205px -76px;
+	height: 30px;
+	width: 101px;
+	float: right;
+	font-size: 16px;
+	line-height: 31px;
+	color: #FFFFFF;
+	margin-left: 10px;
+	text-indent: 45px;
+	text-align: left;
+	background-color: #990000;
+}
+#button08{
+	background-image: url(../images/new_higame/botton.png);
+	background-position: 0px -76px;
+	height: 30px;
+	width: 101px;
+	float: left;
+	font-size: 16px;
+	line-height: 31px;
+	color: #333333;
+	margin-left: 10px;
+	text-align: left;
+	text-indent: 45px;
+	background-color: #CCCCCC;
+    cursor:pointer;
+}
+#button09{
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -155px -43px;
+	height: 31px;
+	width: 74px;
+	float: left;
+	font-size: 12px;
+	line-height: 31px;
+	color: #FFFFFF;
+	text-align: center;
+	margin: 5px;
+	background-color: #990000;
+}
+.button09{
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -155px -43px;
+	height: 31px;
+	width: 74px;
+	float: left;
+	font-size: 12px;
+	line-height: 31px;
+	color: #FFFFFF;
+	text-align: center;
+	margin: 5px;
+	background-color: #990000;
+}
+#button10{
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -80px -43px;
+	height: 31px;
+	width: 74px;
+	float: left;
+	font-size: 12px;
+	line-height: 31px;
+	color: #FFFFFF;
+	text-align: center;
+	margin-top: 7px;
+	margin-left: 25px;
+	background-color: #990000;
+}
+.right_03_01{
+	background-image: url(../images/new_higame/right_01_repeat.png);
+	background-position: 0px -237px;
+	height: 41px;
+	width: 712px;
+	margin-top: 0px;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	background-color: #666666;
+}
+.right_03_02{
+	float: left;
+	width: 6px;
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -60px top;
+	height: 41px;
+}
+#button11{
+	background-color: #333333;
+	background-image: url(../images/new_higame/botton.png);
+	background-position: 0px -107px;
+	float: left;
+	height: 46px;
+	width: 92px;
+	font-size: 14px;
+	line-height: 32px;
+	color: #FFFFFF;
+	text-align: center;
+	cursor:pointer;
+}
+#button111{
+	background-color: #ff0000;
+	background-image: url(../images/new_higame/botton.png);
+	background-position: 0px -154px;
+	float: left;
+	height: 46px;
+	width: 92px;
+	font-size: 14px;
+	line-height: 32px;
+	color: #FFFFFF;
+	text-align: center;
+	cursor:pointer;
+}
+#button12{
+	background-color: #333333;
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -93px -107px;
+	float: left;
+	height: 46px;
+	width: 75px;
+	font-size: 14px;
+	line-height: 32px;
+	color: #FFFFFF;
+	text-align: center;
+	cursor:pointer;
+}
+#button121{
+	background-color: #ff0000;
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -93px -154px;
+	float: left;
+	height: 46px;
+	width: 75px;
+	font-size: 14px;
+	line-height: 32px;
+	color: #FFFFFF;
+	text-align: center;
+	cursor:pointer;
+}
+#button13{
+	font-size: 14px;
+	line-height: 32px;
+	color: #FFFFFF;
+	background-color: #333333;
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -169px -107px;
+	text-align: center;
+	float: left;
+	height: 46px;
+	width: 81px;
+	cursor:pointer;
+}
+#button131{
+	font-size: 14px;
+	line-height: 32px;
+	color: #FFFFFF;
+	background-color: #ff0000;
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -169px -154px;
+	text-align: center;
+	float: left;
+	height: 46px;
+	width: 81px;
+	cursor:pointer;
+}
+.right_04_01{
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -26px 0px;
+	float: left;
+	height: 44px;
+	width: 5px;
+}
+.right_04_02{
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -32px 0px;
+	float: right;
+	height: 44px;
+	width: 5px;
+}
+.right_04_03{
+	text-align: center;
+	float: left;
+	width: 742px;
+}
+.right_01_01{
+	float: left;
+	width: 500px;
+}
+.right_02_10{
+	float: left;
+	height: 143px;
+	text-align: center;
+}
+.right_02_11{
+	height: 41px;
+
+
+	text-align: center;
+}
+.right_02_12{
+	
+	height: 110px;
+	width: 712px;
+	margin-left: 20px;
+}
+.right_02_13{
+	background-image: url(../images/new_higame/edit.gif);
+	background-color:#B3BDC6;
+	height: 30px;
+}
+.right_02_14{
+	line-height: 22px;
+	font-weight: bold;
+	float: left;
+	margin-left: 20px;
+	margin-top:5px;
+}
+.right_02_15{
+	margin: 0px;
+	float: left;
+	height: 110px;
+	width: 200px;
+}
+.right_02_16{
+	float: left;
+	width: 79px;
+	margin-top: 15px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+.right_02_17{
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -67px top;
+	float: right;
+	height: 41px;
+	width: 6px;
+}
+.right_02_18{
+	float: left;
+	height: 41px;
+	width: 700px;
+}
+.right_02_19{
+	margin-top:10px;
+	color: #FFFFFF;
+	float: left;
+
+}
+.right_02_20{
+	margin-left:20px;
+	margin-bottom:10px;
+	margin-right:20px;
+	height:8px;
+	background-color: #FFFFFF;
+	width: 712px;
+	overflow:hidden;
+}
+.right_02_21{
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -74px top;
+	float: left;
+	height: 8px;
+	width: 8px;
+}
+.right_02_22{
+	float: left;
+	height: 7px;
+	width: 696px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #8f98a3;
+	overflow:hidden;
+}
+.right_02_23{
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -83px top;
+	float: right;
+	height: 8px;
+	width: 8px;
+}
+.right_02_24{
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -74px -9px;
+	float: left;
+	height: 5px;
+	width: 5px;
+	overflow:hidden;
+}
+.right_02_25{
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -80px -9px;
+	float: right;
+	height: 5px;
+	width: 5px;
+	overflow:hidden;
+}
+.right_02_26{
+overflow:hidden;
+height:5px;
+}
+.right_02_27{height:110px;}
+.right_02_28{
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -74px -15px;
+	float: left;
+	height: 5px;
+	width: 5px;
+	overflow:hidden;
+}
+.right_02_29{
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: -80px -15px;
+	float: right;
+	height: 5px;
+	width: 5px;
+	overflow:hidden;
+}
+.red{
+	color: #FF0000;
+}
+.select3{
+	height: 23px;
+}
+#select4{
+	height: 23px;
+	width:79px;
+}
+.input02{
+	width: 24px;
+	text-align:center;
+}
+.input022{
+	width: 42px;
+}
+.button06{
+	background-image: url(../images/new_higame/botton.png);
+	height: 27px;
+	width: 56px;
+	background-position: -230px -45px;
+	color: #FFFFFF;
+	line-height: 27px;
+	text-indent: 25px;
+	margin-top:5px;
+}
+.neiye02{
+	line-height: 30px;
+	height: 30px;
+	margin: 1px;
+	float: left;
+	text-align: right;
+	width: 300px;
+	padding-right: 10px;
+	float:left;
+}
+.neiye03{
+	height: 32px;
+	margin-top: 0px;
+	margin-right: 6px;
+	margin-bottom: 0px;
+	margin-left: 6px;
+	clear: both;
+}
+.neiye03:hover{
+	line-height: 30px;
+	color: #FFFFFF;
+	background-color: #67686b;
+}
+.neiye04{
+	line-height: 30px;
+	margin: 1px;
+	float: left;
+	height: 30px;
+	width: 70%;
+	padding-left: 10px;
+}
+.green{
+	color:#00FF00;
+	background-color: #330000;
+	padding: 2px;
+}
+.title01{
+	background-image: url(../images/new_higame/right_02.png);
+	background-position: 0px -44px;
+	background-repeat: repeat-x;
+	width:98%;
+	font-size: 14px;
+	float: left;
+	line-height: 44px;
+	height:44px;
+}
+.notice01{
+	font-size: 14px;
+	line-height: 36px;
+	text-align: center;
+}
+.notice02{
+	line-height: 24px;
+	color: #999999;
+	text-align: center;
+	height: 24px;
+}
+.notice03{
+	background-color: #999999;
+	height: 1px;
+	margin:0 20px;
+	overflow:hidden;
+}
+.notice04{
+	line-height: 24px;
+	padding: 20px 100px;
+	overflow:hidden;
+}
+.tr01:hover{
+        color: #FFFFFF;
+        background-color: #67686b;
+}
+/*数字号码被选中后的样式*/
+.selected{
+        height: 41px;
+        width: 30px;
+        margin-right: 1px;
+        margin-left: 1px;
+        float: left;
+        background-image: url(../images/new_higame/botton.png);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        line-height: 41px;
+        color: #ffffff;
+        font-weight: bold;
+        background-position: -242px 0px;
+        background-color: #ff3300;
+        cursor:pointer;
+}
+.selcleanbutton{
+	height: 41px;
+	width: 40px;
+	margin-right: 2px;
+	margin-left: 2px;
+	float: left;
+	background-image: url(../images/new_higame/botton.png);
+	font-size: 18px;
+	line-height: 41px;
+	color: #FFFFFF;
+	background-color: #666666;
+	cursor:pointer;
+}
+/*鼠标移动上的样式
+.temp {
+        background-color: #858585;
+}*/
+/*查看注单样式*/
+.list-div .narrow-label{
+	font-weight:bold;
+	color:#FFD21E;
+}
+
+.tab-front {
+	margin-top:20PX;
+	margin-left:15px;
+	color: #000;
+	line-height: 20px;
+	padding: 4px 18px 4px 18px;
+	cursor: hand;
+	cursor: pointer;
+}
+
+.tab-back {
+  margin-top:20PX;
+  margin-left:15px;
+  color: #FFF;
+  line-height: 20px;
+  padding: 4px 18px 4px 18px;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.tab-hover {
+	MARGIN-TOP:20PX;
+	color: #000000;
+	line-height: 20px;
+	padding: 4px 18px 4px 18px;
+	border-right: 1px solid #000;
+	cursor: hand;
+	cursor: pointer;
+}
+
+#lt_help_div{
+    font-size:12px!important;
+	line-height: 18px!important;
+	margin:0;
+	padding:0!important;
+	width:302px;
+	height:50px;
+	color:#FFFFFF;
+	background:#000000;
+	position:absolute;
+	text-align:left;
+	display:none;
+	overflow:hidden;
+	border:1px #CCCCCC solid;
+}
+
+.blue{
+	color: #0000FF;
+}
+.blue:hover{
+	color: #0066FF;
+	text-decoration: underline;
+}
+/*追号列表滚动条样式*/
+.tbclist{
+	height:300px;
+	overflow:scroll;
+	overflow-x:hidden;
+	width:692px;
+	}
+	
+	
+.center{
+	text-align: center;
+	line-height: 18px;
+	margin: 5px;
+}	
+.line_03
+{
+	background-image: url(../images/new_higame/center_39.jpg);
+	background-repeat: no-repeat;
+}
+.botton14{
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -335px -102px;
+	line-height: 27px;
+	text-align: center;
+	height: 27px;
+	width: 105px;
+	color: #FFFFFF;
+	margin: 2px;
+}
+.botton15{
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -335px -135px;
+	line-height: 27px;
+	text-align: center;
+	height: 27px;
+	width: 105px;
+	color: #000000;
+	margin:0 2px 4px 2px;
+	cursor: pointer;
+}
+.botton16{
+	background-image: url(../images/new_higame/botton.png);
+	background-position: -287px -45px;
+	line-height: 27px;
+	text-align: center;
+	height: 27px;
+	width: 78px;
+	color: #FFFFFF;
+	margin: 2px;
+}
+
+
+/*提示框的样式*/
+.table_top_left {
+	background-image: url(../images/new_higame/notic_09.png);
+	background-repeat: no-repeat;
+}
+.table_top_right {
+	background-image: url(../images/new_higame/notic_09.png);
+	background-position: -12px 0px;
+}
+.table_top_center {
+	background-image: url(../images/new_higame/alertback.png);
+	background-repeat: repeat-x;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.table_buttom_left {
+	background-image: url(../images/new_higame/notic_09.png);
+	background-position: 0px -51px;
+	height: 11px;
+	width: 11px;
+	overflow:hidden;
+}
+.table_buttom_right {
+	background-image: url(../images/new_higame/notic_09.png);
+	background-position: -12px -51px;
+	height: 11px;
+	width: 11px;
+	overflow:hidden;
+}
+.table_buttom_center {
+	background-image: url(../images/new_higame/notic_09.png);
+	background-repeat: repeat-x;
+	background-position: 0px -114px;
+	overflow:hidden;
+}
+.floatarea{
+	border:0;
+	border-bottom:1px #999999 solid;
+	border-top:1px #999999 solid;
+	width:100%;
+	overflow:auto;
+	overflow-x:hidden;
+	margin:0;
+	line-height:20px;
+	}
+	
+form{margin:0; padding:0;}
+/*按钮的样式*/
+.search_button{
+	width: 60px;
+	border: 1px solid #d5d8de;
+	background-color:#d5d8de;
+	margin-top:0px;
+	cursor:pointer;
+	background-image: url(../images/new_higame/botton_33.jpg);
+	background-repeat:no-repeat;
+	height: 33px;
+}
+.buttonnormal{
+	margin: 3px 5px 3px 0;
+	height: 27px;
+	width: 79px;
+	color:#FFF;
+	font-weight:bold;
+	text-align: center;
+	background-image: url(../images/new_higame/botton_normal.png);
+	background-position: -287px -45px;
+	background-repeat:no-repeat;
+	line-height: 27px;
+	background-color:#D5D8DE;
+	border:0px solid #D5D8DE;
+	cursor:pointer;
+}
+.buttonnormal_01{
+	margin: 3px 5px 3px 0;
+	height: 27px;
+	width: 105px;
+	color:#FFF;
+	font-weight:bold;
+	text-align: center;
+	background-image: url(../images/new_higame/button_normal_01.gif);
+	background-repeat:no-repeat;
+	line-height: 27px;
+	background-color:#D5D8DE;
+	border:0px solid #D5D8DE;
+	cursor:pointer;
+}
+ /*confirm*/
+
+
+.right_09 table td,th{
+	height:20px;
+	line-height:20px;
+	
+	border-bottom:1px #999999 solid;
+	border-top:1px #FFFFFF solid;
+	}
+.right_09 table td.selected,th.selected{
+	background-color:#FF6600;
+	}
+.right_09 table th{
+	text-align:left;
+	padding-left:5px;
+	font-weight:normal;
+	width:70%;
+	}
+.right_09 table td.del{/*删除样式*/
+	width:20px;
+	}
+.right_09 .open{/*详情样式*/
+	cursor:pointer;
+	}
+.right_09 .close{/*关闭样式*/
+	cursor:pointer;
+	}
+.right_09 .more{/*详情显示外框样式*/
+	width:275px;
+	background-image: url(../images/new_higame/alertback.png);
+	background-color:#131E31;
+
+	position:absolute;
+	z-index:100;
+	border:1px #999999 double;
+	padding:0px;
+	color:#000000;
+	}
+.right_09 .more span{
+	height:20px;
+	line-height:20px;
+	color:#000000;
+	margin-left:5px;
+	}
+.right_09 .code{/*详情显示外框样式*/
+	width:274px;
+	height:80px;
+	line-height:20px;
+	color:#000000;
+	background:#ffffff;	
+	text-align:left;
+	border:1px #999999 double;
+	}
+	
+#tPages a{
+	color:#0000FF;
+}
+.codelist a {
+	color:#0000FF;
+	text-decoration: none;
+}

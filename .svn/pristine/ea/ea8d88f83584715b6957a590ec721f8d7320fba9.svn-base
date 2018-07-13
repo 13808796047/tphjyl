@@ -1,0 +1,522 @@
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="__CSS__/themes/base/jquery.ui.all.min.css">
+<link rel="stylesheet" href="__CSS__/default_content.min.css">
+<link rel="stylesheet" href="__CSS__/gift.min.css">
+
+<div class="ys-content">
+    <div class="header">如何充值</div>
+    <div class="main">
+        <div id="gameMethod" class="section">
+            <div class="Menubox content_mid" id="tabs">
+                <ul>
+                    <li id="playinfo_menu0"><a href="#con_playinfo_menu_0">网页版</a></li>
+                    <li id="playinfo_menu1"><a href="#con_playinfo_menu_1">手机端</a></li>
+                </ul>
+                <!--内容代码开始-->
+                <div id="con_playinfo_menu_0" class="tabs">
+                    <ul>
+                        <li id="post_menu0">
+                            <a href="#post_0">
+                                银行充值                                        </a>
+                        </li>
+                        <li id="post_menu1">
+                            <a href="#post_1">
+                                工行充值流程                                        </a>
+                        </li>
+                        <li id="post_menu2">
+                            <a href="#post_2">
+                                招行汇款示意图                                        </a>
+                        </li>
+                        <li id="post_menu3">
+                            <a href="#post_3">
+                                农行充值流程                                        </a>
+                        </li>
+                        <li id="post_menu4">
+                            <a href="#post_4">
+                                建行跨行存款流程                                        </a>
+                        </li>
+                        <li id="post_menu5">
+                            <a href="#post_5">
+                                财付通充值                                        </a>
+                        </li>
+                        <li id="post_menu6">
+                            <a href="#post_6">
+                                微信支付流程                                        </a>
+                        </li>
+                        <li id="post_menu7">
+                            <a href="#post_7">
+                                支付宝转帐                                        </a>
+                        </li>
+                    </ul>
+                    <div id="post_0" class="intro_content">
+                        <div class="post-wrapper">
+                            <h3>一、点击平台页面右上方【充值】按钮，输入充值金额</h3>
+                            <div class="step">
+                                <div class="formTable"><img src="http://ucaary1.bjewx.com/sy2/images/royal88/images-step-0.png" style="" alt="" width="633" /></div>
+                            </div>
+                            <h3>二、请在此页面选择银行进行充值</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/thirdpayimg/3.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <h3>例如：工商银行</h3>
+                            <div class="step">1-1. 在工行网银页面，在此页面输入网银卡号、验证码然后点下&ldquo;下一步&rdquo;。
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/gonghang_1.jpg" /></div>
+                            </div>
+                            <div class="step">1-2. 您在银行设置的验证预留信息需要您确认。
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/gonghang_2.jpg" /></div>
+                            </div>
+                            <div class="step">1-3. 输入U盾密码，点击&ldquo;确定&rdquo;然后在U盾上点击两次&ldquo;OK&rdquo;键确认支付。
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/gonghang_3.jpg" /></div>
+                            </div>
+                            <div class="step">1-4. 支付成功页面分为两件。
+                                <div class="formTable">图1<br />
+                                    <img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/gonghang_4-1.jpg" /><br />
+                                    图2<br />
+                                    <img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/gonghang_4-2.jpg" /></div>
+                            </div>
+                            <div class="step">1-5. 汇款成功后在平台查看金额到账情况。</div>
+                            <h3>例如：光大银行</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/guanda_1.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/guanda_2.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/guanda_3.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/guanda_4.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <h3>例如：建设银行</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/jeanhang_1.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/jeanhang_1-2.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/jeanhang_2.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/jeanhang_3-1.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/jeanhang_3-2.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/jeanhang_4.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <h3>例如：交通银行</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/jaohang_1.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/jaohang_2.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/jaohang_3.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/jaohang_4.jpg" style="width: 633px;" /></div>
+                            </div>
+                            <h3>例如：民生银行</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/minshen_1.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/minshen_2.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/minshen_3.jpg" /></div>
+                            </div>
+                            <h3>例如：农业银行</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/longhang_1.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/longhang_2.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/longhang_3.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/longhang_4.jpg" /></div>
+                            </div>
+                            <h3>例如：平安银行</h3>
+                            <div class="step">1. 进入&ldquo;平安银行网上支付平台&rdquo;页面，选择&ldquo;借记卡/活期存折/一账通卡存款账户&rdquo;，输入您的网银信息后点击&ldquo;继续&rdquo;；
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pinann_1.jpg" /></div>
+                            </div>
+                            <div class="step">2. 跳转至&ldquo;订单支付&rdquo;页面输入&ldquo;取款密码&rdquo;点击&ldquo;确认&rdquo;；
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pinann_2.jpg" /></div>
+                            </div>
+                            <div class="step">3.输入您的&ldquo;U盾密码&rdquo;点击&ldquo;确认&rdquo;；</div>
+                            <div class="step">4. 跳转至支付成功页面；（图一、二均为支付成功页面）
+                                <div class="formTable">图一<br />
+                                    <img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pinann_4-1.jpg" /><br />
+                                    图二<br />
+                                    <img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pinann_4-2.jpg" /></div>
+                            </div>
+                            <div class="step">5. 汇款成功后在平台查看金额到账情况。</div>
+                            <h3>例如：浦发银行</h3>
+                            <div class="step">1. 跳转至浦发银行网银页面，默认 情况显示的是&ldquo;快捷支付&rdquo;页面，需要您选择&ldquo;网银支付&rdquo;，输入您的网银信息，点击&ldquo;立即支付&rdquo;；（如图一，图二）
+                                <div class="formTable">如图一(跳转后默认页面)：<br />
+                                    <img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pufa_1-1.jpg" /><br />
+                                    如图二（需要您选择&ldquo;网银支付&rdquo;）<br />
+                                    <img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pufa_1-1.jpg" /></div>
+                            </div>
+                            <div class="step">2. 跳转至&ldquo;确认证书&rdquo;页面，点击&ldquo;确认&rdquo;；
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pufa_2.jpg" /></div>
+                            </div>
+                            <div class="step">3. 跳转至&ldquo;个人网上银行信息&rdquo;页面，需要您输入您的&ldquo;查询密码&rdquo;点击&ldquo;登陆&rdquo;。
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pufa_3.jpg" /></div>
+                            </div>
+                            <div class="step">4. 跳转至&ldquo;网上支付&rdquo;页面，核实信息后点击&ldquo;确认&rdquo;
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pufa_4.jpg" /></div>
+                            </div>
+                            <div class="step">5. 跳转至&ldquo;网上支付确认&rdquo;页面，输入您的&ldquo;交易密码&rdquo;点击&ldquo;确定&rdquo;；
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pufa_5.jpg" /></div>
+                            </div>
+                            <div class="step">6. 跳转至&ldquo;支付成功&rdquo;页面；
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/pufa_6.jpg" /></div>
+                            </div>
+                            <div class="step">7. 汇款成功后在平台查看金额到账情况。</div>
+                            <h3>例如：兴业银行</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/xinye_1.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/xinye_2.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/xinye_3.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/xinye_4.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/xinye_5.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/xinye_6-1.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/xinye_6-2.jpg" /></div>
+                            </div>
+                            <h3>例如：招商银行</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/zhauhang_1.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/zhauhang_2.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/zhauhang_3.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/zhauhang_4.jpg" /></div>
+                            </div>
+                            <h3>例如：中国银行</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/zhonkuo_1.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/zhonkuo_2.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/zhonkuo_3.jpg" /></div>
+                            </div>
+                            <h3>例如：中信银行</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/zhonxin_1.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/zhonxin_2.jpg" /></div>
+                            </div>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://upstaticcache.b0.upaiyun.com/images/bank/zhonxin_3.jpg" /></div>
+                            </div>                                </div>
+                    </div>
+                    <div id="post_1" class="intro_content">
+                        <div class="post-wrapper">
+                            <h3>一、点击平台充值按钮，选择“中国工商银行”，输入充值金额，然后点击下一步。</h3>
+                            <h3>二、获取到平台最新的工行“收款账户名”，“收款账号(E-mail)”，“附言”等信息。</h3>
+                            <h3>三、登录中国工商银行官方网站 <a href="http://www.icbc.com.cn/icbc/" target="_blank"><span>http://www.icbc.com.cn/icbc/</span></a></h3>
+                            <div class="step">
+                                <div class="formTable">安全提示：平台会不定期更换收款银行卡，客户在充值前有义务确认本平台收款银行账户，如因客户向平台汇款时，汇入错误银行卡或者非最新收款卡而导致的损失，本公司将不承担任何责任。</div>
+                            </div>
+                            <h3>四、点击<img src="https://dn-staticpics.qbox.me/zhuangzhang_png.jpg" alt="">，在转账汇款页面的左侧菜单栏选择[E-mail 汇款]</h3>
+                            <div class="step">
+                                <div class="formTable"><img src="https://dn-staticpics.qbox.me/icbc1.png" alt=""></div>
+                            </div>
+                            <h3>五、请按以下图解填入相关信息：</h3>
+                            <div class="step">
+                                <div class="formTable"><img src="https://dn-staticpics.qbox.me/icbc2.png" alt=""></div>
+                            </div>
+                            <h3>六、然后提交并确认信息，输入U盾密码等步骤完成工行汇款。</h3>
+                            <h3>说明：</h3>
+                            <div class="step">
+                                <div class="formTable">1. 汇款完成后回到平台查看到账情况，自动充值一般1分钟内到账。<br>
+                                    2. 按以上正确流程进行充值后，请等待一至两分钟后查看充值是否到账。<br>
+                                    3. 如果5分钟内未到账，请到转账汇款查询中提供您的电子回单截图给在线客服进行核实处理。</div>
+                            </div>                                </div>
+                    </div>
+                    <div id="post_2" class="intro_content">
+                        <div class="post-wrapper">
+                            <h3>一、点击平台充值按钮，选择“中国招商银行”，输入充值金额，然后点击下一步。</h3>
+                            <h3>二、获取到平台最新的招商银行“收款账户名”，“收款账号”，“账户所属银行”“附言”等信息。</h3>
+                            <div class="step">
+                                <div class="formTable">安全提示：平台会不定期更换收款银行卡，客户在充值前有义务确认本平台收款银行账户，如因客户向平台汇款时，汇入错误银行卡或者非最新收款卡而导致的损失，本公司将不承担任何责任。</div>
+                            </div>
+                            <h3>三、登录中国招商银行网上银行官方网站 <a href="http://www.cmbchina.com/" target="_blank"><span>http://www.cmbchina.com/</span></a></h3>
+                            <h3>四、点击【转账汇款】，在转账汇款页面菜单栏选择“招行同城转账”或者"招行异地汇款"。</h3>
+                            <div class="step">
+                                <div class="formTable"><img src="https://dn-staticpics.qbox.me/cmb0.png" alt=""></div>
+                            </div>
+                            <h3>五、请按以下图解填入相关信息：</h3>
+                            <div class="step">招行异地汇款
+                                <div class="formTable"><img src="https://dn-staticpics.qbox.me/cmb1.jpg" alt=""></div>
+                                <div class="formTable"><img src="https://dn-staticpics.qbox.me/cmb2.jpg" alt=""></div>
+                            </div>
+                            <h3>六、输入您的取款密码，以及效验码后，点击“确定”完成招行汇款。</h3>
+                            <h3>说明：</h3>
+                            <div class="step">
+                                <div class="formTable">1. 汇款完成后到平台查看到账情况，自动充值一般1分钟内到账。<br>
+                                    2. 按以上正确流程进行充值后，请等待一至两分钟后查看充值是否到账。<br>
+                                    3. 如果5分钟内未到账，请到转账汇款查询中提供您的电子回单截图给在线客服进行核实处理。</div>
+                            </div>                                </div>
+                    </div>
+                    <div id="post_3" class="intro_content">
+                        <div class="post-wrapper">
+                            <h3>一、点击平台充值按钮，选择“招商银行”，输入充值金额，然后点击下一步。</h3>
+                            <h3>二、获取到平台最新的招行“收款账户名”，“收款账号”，“账户所属银行”和“附言”等信息。</h3>
+                            <div class="step">
+                                <div class="formTable">安全提示：平台会不定期更换收款银行卡，客户在充值前有义务确认本平台收款银行账户，如因客户向平台汇款时，汇入错误银行卡或者非最新收款卡而导致的损失，本公司将不承担任何责任。</div>
+                            </div>
+                            <h3>三、登录中国农业银行官方网站 <a href="http://www.abchina.com/cn/default.htm" target="_blank"><span>http://www.abchina.com/cn/default.htm</span></a></h3>
+                            <h3>四、点击<img src="https://dn-staticpics.qbox.me/zhuanzhang2.png" alt="">，然后选择[单笔转账]，在“增加收款方”中选择[账户开户行行别]，选择“招商银行”</h3>
+                            <h3>五、请按以下图解填入相关信息：</h3>
+                            <div class="step">
+                                <div class="formTable"><img src="https://dn-staticpics.qbox.me/abc1.jpg" alt="" style="width: 633px;"></div>
+                            </div>
+                            <h3>六、点击“提交”，进入转账确认页面确认，请务必在“加急标志”－栏勾选“加急”，<br>
+                                然后输入[支付密码],点击[提交]</h3>
+                            <div class="step">
+                                <div class="formTable"><img src="https://dn-staticpics.qbox.me/abc2.jpg" alt="" style="width: 633px;"></div>
+                            </div>
+                            <h3>七、输入K保密码等步骤完成农行汇款。</h3>
+                            <h3>说明：</h3>
+                            <div class="step">
+                                <div class="formTable">1. 汇款完成后回到平台查看到账情况，自动充值一般1分钟内到账。<br>
+                                    2. 按以上正确流程进行充值后，请等待一至两分钟后查看充值是否到账。<br>
+                                    3. 如果5分钟内未到账，请到转账汇款查询中提供您的电子回单截图给在线客服进行核实处理。</div>
+                            </div>                                </div>
+                    </div>
+                    <div id="post_4" class="intro_content">
+                        <div class="post-wrapper">
+                            <h3>一、点击平台充值按钮，选择“中国招商银行”，输入充值金额，然后点击下一步。</h3>
+                            <h3>二、获取到平台最新的招行“收款账户名”，“收款账号”，“开户地区”，“账户所属银行”和“附言”等信息。</h3>
+                            <div class="step">
+                                <div class="formTable">安全提示：平台会不定期更换收款银行卡，客户在充值前有义务确认本平台收款银行账户，如因客户向平台汇款时，汇入错误银行卡或者非最新收款卡而导致的损失，本公司将不承担任何责任。</div>
+                            </div>
+                            <h3>三、登录中国建设银行官方网站 <a href="http://www.ccb.com/cn/home/index.html" target="_blank"><span>http://www.ccb.com/cn/home/index.html</span></a></h3>
+                            <h3>四、点击<img src="https://dn-staticpics.qbox.me/zhuanzhang3.png" alt="">，在转账汇款页面的下侧菜单栏选择 [ 跨行转账] 中的 [ 建行转他行] （加急）</h3>
+                            <div class="step">
+                                <div class="formTable"><img src="https://dn-staticpics.qbox.me/abc1.jpg" alt="" style="width: 633px;"></div>
+                            </div>
+                            <h3>五、请按以下图解填入相关信息：</h3>
+                            <div class="step">
+                                <div class="formTable"><img src="https://dn-staticpics.qbox.me/abc2.jpg" alt="" style="width: 633px;"></div>
+                            </div>
+                            <h3>六、然后点击“下一步”并确认信息，输入U盾密码等步骤完成建行汇款。</h3>
+                            <h3>说明：</h3>
+                            <div class="step">
+                                <div class="formTable">1. 汇款完成后回到平台查看到账情况，自动充值一般1分钟内到账。<br>
+                                    2. 按以上正确流程进行充值后，请等待一至两分钟后查看充值是否到账。<br>
+                                    3. 如果5分钟内未到账，请到转账汇款查询中提供您的电子回单截图给在线客服进行核实处理。</div>
+                            </div>                                </div>
+                    </div>
+                    <div id="post_5" class="intro_content">
+                        <div class="post-wrapper">
+                            <h3>一、点击平台充值按钮，选择“财付通”，输入充值金额，然后点击下一步。</h3>
+                            <h3>二、获取到平台最新的招行“收款账户名”，“收款账号”，“开户地区”，“账户所属银行”和“附言”等信息。</h3>
+                            <div class="step">
+                                <div class="formTable">安全提示：平台会不定期更换收款银行卡，客户在充值前有义务确认本平台收款银行账户，如因客户向平台汇款时，汇入错误银行卡或者非最新收款卡而导致的损失，本公司将不承担任何责任。</div>
+                            </div>
+                            <h3>三、登录财付通官方网站 <a href="https://www.tenpay.com/v2/" target="_blank"><span>https://www.tenpay.com/v2/</span></a></h3>
+                            <h3>四、点击<img src="http://upstaticcache.b0.upaiyun.com/dy/bak/2.png" alt="">，点击转账到<img src="http://upstaticcache.b0.upaiyun.com/dy/bak/3.png" alt=""></h3>
+                            <h3>五、请按以下图解填入相关信息：</h3>
+                            <div class="step">
+                                <div class="formTable"><img src="http://upstaticcache.b0.upaiyun.com/dy/bak/4.jpg" alt=""></div>
+                            </div>
+                            <h3>六、然后提交并确认信息，输入支付密码等步骤完成工行汇款。</h3>
+                            <h3>说明：</h3>
+                            <div class="step">
+                                <div class="formTable">1. 汇款完成后回到平台查看到账情况，自动充值一般1分钟内到账。<br>
+                                    2. 按以上正确流程进行充值后，请等待一至两分钟后查看充值是否到账。<br>
+                                    3. 如果5分钟内未到账，请到转账汇款查询中提供您的电子回单截图给在线客服进行核实处理。</div>
+                            </div>                                </div>
+                    </div>
+                    <div id="post_6" class="intro_content">
+                        <div class="post-wrapper">
+                            <h3>一、点击平台页面右上方【充值】按钮。</h3>
+                            <h3>二、上方点击微信，然后输入需要充值的金额，点击下一步。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-A01.jpg" /></div>
+                            </div>
+                            <h3>三、点击到银行付款图示。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-A02.jpg" /></div>
+                            </div>
+                            <h3>四、确认金额正确无误后，点击提交。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-A03.jpg" /></div>
+                            </div>
+                            <h3>五、进入微信支付页面，请扫描二维码进行支付。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-A04.jpg" /></div>
+                            </div>                                </div>
+                    </div>
+                    <div id="post_7" class="intro_content">
+                        <div class="post-wrapper">
+                            <p><style type="text/css">
+                                img{width:100%}
+                            </style></p>
+                            <h3>一、首先，先点击首页右上方的【充值】按钮。</h3>
+                            <h3>二、上方选择支付宝转帐充值，绑定付款姓名后，点击下一步。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-B01.jpg" /></div>
+                            </div>
+                            <h3>三、输入您要充值的金额，点击下一步。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-B02.jpg" /></div>
+                            </div>
+                            <h3>四、系统会自动帮您分配一组平台收款帐户，每次充值的收款帐户都不同，请您每次充值时使用新的收款人哦。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-B03.jpg" /></div>
+                            </div>
+                            <h3>【电脑版】</h3>
+                            <h3>1.登录您的支付宝帐户后，点击页面上方的『应用中心』，左边选择『转帐到银行卡』。</h3>
+                            <h3>2.输入平台收款帐户，以及转帐金额后，即可完成充值。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-03.jpg" /></div>
+                            </div>
+                            <h3>【手机版】</h3>
+                            <h3>1.登入手机版支付宝，点击『转帐』。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-04.jpg" /></div>
+                            </div>
+                            <h3>2.点击『转到银行卡』。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-05.jpg" /></div>
+                            </div>
+                            <h3>3.输入平台收款帐户，以及转帐金额后，点击下一步。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-06.jpg" /></div>
+                            </div>
+                            <h3>4.确认您的金额无误后，点击付款，即可完成充值。</h3>
+                            <div class="step">
+                                <div class="formTable"><img alt="" src="http://ucaary1.bjewx.com/images/bank/R8-07.jpg" /></div>
+                            </div>
+                            <h3>注意事项：</h3>
+                            <div class="step">
+                                <div class="formTable">1.支付宝绑定姓名与平台银行卡绑定户名须一致才能自动到账。<br />
+                                    2.支付宝转账存在一定时间的延迟，请您稍安勿躁喔，超过三分钟请联系客服处理。<br />
+                                    3.如果您是使用好友代充或者绑定姓名不一致，建议您使用【支付宝线下充值】并提交复制详情。<br />
+                                    4.如您有任何问题疑问，可咨询在线客服。<br />
+                                    5.转账时间限制为9:00～23:00 （除此范围之外的所有充值审核概不受理）。</div>
+                            </div>                                </div>
+                    </div>
+                </div>
+                <div id="con_playinfo_menu_1" class="tabs">
+                    <ul>
+                        <li id="post_menu8">
+                            <a href="#post_8">
+                                手机端支付宝充值教学                                        </a>
+                        </li>
+                        <li id="post_menu9">
+                            <a href="#post_9">
+                                手机端银联充值教学                                        </a>
+                        </li>
+                        <li id="post_menu10">
+                            <a href="#post_10">
+                                手机端微信充值教学                                        </a>
+                        </li>
+                    </ul>
+                    <div id="post_8" class="intro_content">
+                        <div class="post-wrapper">
+                            <p>一、首先开启左上方功能选单，点击充值</p>
+                            <p>&nbsp;<img src="http://upccry1.3smao.net/images/deposit/wechat_1_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/wechat_1_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>二、选择支付宝，输入您要充值的金额，点击确认。</p>
+                            <p>&nbsp;<img src="http://upccry1.3smao.net/images/deposit/alipay_2_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/alipay_2_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>三、在点击充值进行下一步，确认您的订单后，点击提交</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/alipay_3_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/alipay_3_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>四、接著登入您的支付宝，会给您付款的二维码</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/alipay_4_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/alipay_4_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>五、再打开手机支付宝的扫一扫功能，来完成付款</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/alipay_5_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/alipay_5_2.jpg" alt="" style="max-width:300px" /></p>                                </div>
+                    </div>
+                    <div id="post_9" class="intro_content">
+                        <div class="post-wrapper">
+                            <p>&nbsp;一、首先开启左上方功能选单，点击充值</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/wechat_1_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/wechat_1_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>二、选择银联无卡支付，输入您要充值的金额，点击确认。</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/unionpay_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>三、再点击充值进行下一步</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/unionpay_3.jpg" alt="" style="max-width:300px" /></p>
+                            <p>四、确认您的订单金额后，点击提交</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/unionpay_4.jpg" alt="" style="max-width:300px" /></p>
+                            <p>五、再来输入您的银联卡号，点击下一步完成充值</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/unionpay_5_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/unionpay_5_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>您也可以登入您的银联帐户来进行付款</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/unionpay_5_3.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/unionpay_5_4.jpg" alt="" style="max-width:300px" /></p>                                </div>
+                    </div>
+                    <div id="post_10" class="intro_content">
+                        <div class="post-wrapper">
+                            <p>&nbsp;一、首先开启左上方功能选单，点击充值</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/wechat_1_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/wechat_1_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>二、选择微信支付，输入您要充值的金额，点击确认</p>
+                            <p>&nbsp;<img src="http://upccry1.3smao.net/images/deposit/wechat_2_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/wechat_2_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>三、在点击充值进行下一步，确认您的订单金额后，点击提交</p>
+                            <p>&nbsp;<img src="http://upccry1.3smao.net/images/deposit/wechat_3_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/wechat_3_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>四、接著平台会给您一个付款的二维码</p>
+                            <p>&nbsp;<img src="http://upccry1.3smao.net/images/deposit/wechat_4.jpg" alt="" style="max-width:300px" /></p>
+                            <p>五、您可以使用手机微信扫一扫</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/wechat_5_1.jpg" alt="" style="max-width:300px" /><img src="http://upccry1.3smao.net/images/deposit/wechat_5_2.jpg" alt="" style="max-width:300px" /></p>
+                            <p>&nbsp;</p>
+                            <p>或是使用手机截图后保存到相册，打开微信扫一扫，点击右上角的相册按钮</p>
+                            <p>选择刚才保存的二维码即可完成支付哦</p>
+                            <p><img src="http://upccry1.3smao.net/images/deposit/wechat_5_3.jpg" alt="" style="max-width:300px" /></p>                                </div>
+                    </div>
+                </div>
+            </div>
+            <!--内容代码结束-->
+        </div>
+    </div>
+</div>
+<script src="__JS__/jquery-1.9.1.js"></script>
+<script src="__JS__/jquery-migrate-1.4.1.min.js"></script>
+<script src="__JS__/ui/jquery-ui.min.js"></script>
+<script>
+
+    function changeIframeHeight(height) {
+        $(parent.document).find("#mainFrame").height(height);
+    }
+
+    $("#tabs").tabs({
+        show: 500,
+        activate: function (event, ui) {
+            //remark it because in ie8 it makes error.
+            //event.preventDefault();
+            changeIframeHeight($(".main").height() + 50);
+        }
+    });
+    $(".tabs").tabs({
+        show: 500
+    });
+
+    $(window).load(function () {
+        changeIframeHeight($(".main").height() + 50);
+    });
+
+</script>

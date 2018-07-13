@@ -1,0 +1,51 @@
+.section li{
+}
+.choose{
+    background: #f46b0a;
+}
+.recharge_center{
+    /*min-height: 468px;*/
+    margin: 5px;
+}
+.recharge_center ul{
+    position: inherit;
+    display: inline-flex;
+}
+.recharge_center li{
+    cursor: pointer;
+    margin: 5px 10px;
+    display: inline-block;
+}
+.cz_money{
+    line-height: 32px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.cz_money input{
+    height: 31px;
+}
+.cz_money font{
+    color: red;;
+}
+#shang_pay_txt span {
+    color: red;
+    font-size: 22px;
+}
+.pay_type_choose{
+    border: solid 3px #39d;
+}
+.btn_submit{
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    line-height: 38px;
+    background: #83a7d3;
+    color: white;
+   /* border-radius: 5%;*/
+    font-size: 20px;
+    margin: 5px 5px;
+}
+.userInput{
+    margin: 10px 10px;
+}

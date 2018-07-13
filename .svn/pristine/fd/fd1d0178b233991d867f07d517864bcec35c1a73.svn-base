@@ -1,0 +1,159 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>综合统计</h2>
+	</div>
+	
+	<!-- 高级搜索 -->
+	<form action="{:U('datelist')}" method="post">
+		<div class="search-form fr cf">
+			<!--<select class="sleft" style="width:100px;" name="user_type">
+				<?php if($para['user_type'] != 1){?>
+				<option value="0" selected="selected">全部用户</option>
+				<?php }else{ ?>
+				<option value="0">全部用户</option>
+				<?php } ?>
+
+				<?php if($para['user_type'] == 1){?>
+				<option value="1" selected="selected">一级代理</option>
+				<?php }else{ ?>
+				<option value="1">一级代理</option>
+				<?php } ?>
+			</select>-->
+			<div class="sleft">
+				用户名：<input style="width:100px" type="text" name="username" class="search-input" value="{:I('username')}" placeholder="用户名">
+			</div>
+			<div class="sleft">
+				时间从：<input style="width:100px" type="text" name="fromTime" id="first" class="search-input" value="<?=$this->iff(I('fromTime'),I('fromTime'),date('Y-m-d',time())) ?>" placeholder="开始时间">
+			</div>
+			<div class="sleft">
+				到：<input style="width:100px" type="text" name="toTime" id="end" class="search-input" value="<?=$this->iff(I('toTime'),I('toTime'),date('Y-m-d',time())) ?>" placeholder="结束时间">
+			</div>
+			<div class="sbtn">
+				<button type="submit" class="btn" id="search">查 找</button>
+			</div>	
+		</div>
+	</form>
+
+	
+    <!-- 数据列表 -->
+    <div class="data-table table-striped" id="data-table">
+	<table class="">
+    <thead>
+        <tr>
+			<th>用户名</th>
+			<th style="text-align: center">投注总额</th>
+			<th style="text-align: center">中奖总额</th>
+			<th style="text-align: center">总返点</th>
+			<th style="text-align: center" title="包括充值佣金，注册佣金，消费佣金，签到">佣金</th>
+			<th style="text-align: center">充值</th>
+			<th style="text-align: center">提现</th>
+			<th style="text-align: center">余额</th>
+			<th style="text-align: center">盈亏</th>
+			
+			<!--<th style="text-align: center">查看下级</th>-->
+		</tr>
+    </thead>
+    <tbody>
+		<if condition="$_list">
+		<volist name="_list" id="var">
+		<php>
+			$count['betAmount']+=$var['betAmount'];
+			$count['zjAmount']+=$var['zjAmount'];
+			$count['fanDianAmount']+=$var['fanDianAmount'];
+			$count['brokerageAmount']+=$var['brokerageAmount'];
+			$count['cashAmount']+=$var['cashAmount'];
+			$count['coin']+=$var['coin'];
+			$count['rechargeAmount']+=$var['rechargeAmount'];
+		</php>
+		<tr>
+			<td><?=$this->ifs($var['username'], '--')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($var['betAmount'],2), '--')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($var['zjAmount'],2), '--')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($var['fanDianAmount'],2), '--')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($var['brokerageAmount'],2), '--')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($var['rechargeAmount'],2), '--')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($var['cashAmount'],2), '--')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($var['coin'],2), '--')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($var['zjAmount']-$var['betAmount']+$var['fanDianAmount'],2), '--')?></td>
+			
+			<!--<td style="text-align: center">
+                <php> if(!$noChildren){ </php>
+                <a href="{:U('Count/datelist?parentId='.$var['uid'].'&fromTime='.$para['fromTime'].'&toTime='.$para['toTime'])}">下级</a>
+				<php>}</php>
+                <php> if($var['parentId']){ </php>
+                <a href="{:U('Count/datelist?uid='.$var['uid'].'&fromTime='.$para['fromTime'].'&toTime='.$para['toTime'])}">上级</a>
+				<php> } </php>
+            </td>-->
+		</tr>
+		</volist>
+		<!--<tr>
+			<td><span class="spn9">本页总结</span></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($count['betAmount'],2), '0')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($count['zjAmount'],2), '0')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($count['fanDianAmount'],2), '0')?></td>
+            <td style="text-align: right"><?=$this->ifs(number_format($count['brokerageAmount'],2), '0')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($count['rechargeAmount'],2), '0')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($count['cashAmount'],2), '0')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($count['coin'],2), '0')?></td>
+			&lt;!&ndash;<td style="text-align: right"><?=$this->ifs(number_format($count['zjAmount']-$count['betAmount']-$count['fanDianAmount'],2), '0')?></td>&ndash;&gt;
+			<td style="text-align: right"><?=$this->ifs(number_format(0-$count['betAmount']+$count['zjAmount']+$count['fanDianAmount'],2), '0')?></td>
+			<td></td>
+		</tr>-->
+		<!--<tr>
+			<td><span class="spn9">团队统计</span></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($all['betAmount2'],2), '&#45;&#45;')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($all['zjAmount2'],2), '&#45;&#45;')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($all['fanDianAmount2'],2), '&#45;&#45;')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($all['brokerageAmount2'],2), '&#45;&#45;')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($all['rechargeAmount2'],2), '&#45;&#45;')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($all['cashAmount2'],2), '&#45;&#45;')?></td>
+			<td style="text-align: right"><?=$this->ifs(number_format($all['coin2'],2), '&#45;&#45;')?></td>
+			&lt;!&ndash;<td style="text-align: right"><?=$this->ifs(number_format($all['zjAmount2']-$all['betAmount2']-$all['fanDianAmount2']+$all['brokerageAmount2'],2), '&#45;&#45;')?></td>&ndash;&gt;
+			<td style="text-align: right"><?=$this->ifs(number_format(0-$all['betAmount2']+$all['zjAmount2']+$all['fanDianAmount2'],2), '&#45;&#45;')?></td>
+			<td></td>
+		</tr>-->
+		<else />
+			<tr>
+				<td colspan="10" align="center">没有统计数据了。</td>
+			</tr>
+		</if>
+	</tbody>
+    </table> 
+	</div>
+    <!--<div class="page">
+        {$_page}
+    </div>-->
+</block>
+
+<block name="script">
+    <link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+	<script>
+	$(function(){
+		$('#first,#end').datetimepicker({
+			format: 'yyyy-mm-dd',
+			language:"zh-CN",
+			minView:2,
+			autoclose:true
+		});
+		//showTab();
+	});
+	</script>
+	<script type="text/javascript">
+		//回车搜索
+		$("body").keyup(function(e){
+			if(e.keyCode === 13){
+				$("#search").click();
+				return false;
+			}
+		});
+		$('.side-sub-menu').find('a[href="{:U('Count/datelist')}"]').closest('li').addClass('current');
+	</script>
+</block>

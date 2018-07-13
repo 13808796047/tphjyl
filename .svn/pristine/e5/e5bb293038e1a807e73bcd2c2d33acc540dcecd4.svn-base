@@ -1,0 +1,25 @@
+/*20170217 bobo add start*/
+.ulstyle_none{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.radius_linebox{
+  border: 1px solid #595959;
+  border: 1px solid rgba(0,0,0,0.2);
+  margin: 0 0 5px 5px;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  padding: 1em;
+  min-width: 10%;
+}
+.radius_linebox p{
+  border-top: 1px solid #595959;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  font-size: 24px;
+  padding-top: 1em;
+  margin: 0.5em 0;
+}
+/*20170217 bobo add end*/

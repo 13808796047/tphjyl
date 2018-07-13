@@ -1,0 +1,214 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no, email=no, adress=no">
+
+			<title>皇家娱乐平台  - 招行充值  </title>
+	
+<link href="http://upccry1.3smao.net/css/sy/base.css" rel="stylesheet" type="text/css" media="all" />
+<link href="http://upccry1.3smao.net/css/sy/subpage.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" media="all" href="http://upccry1.3smao.net/js/common/calendar/css/calendar-green.css"  />
+<link href="http://upccry1.3smao.net/sy/css/houtai.css" type="text/css" rel="stylesheet"/>
+<link href="http://upccry1.3smao.net/sy/css/common.css" type="text/css" rel="stylesheet"/>
+
+<script src="http://upccry1.3smao.net/sy/js/sy/subPage.js"></script>
+<script src="http://upccry1.3smao.net/sy/js/sy/tab.js"></script>
+<script src="http://upccry1.3smao.net/sy/js/sy/dialogUI/jquery-1.7.min.js"></script>
+<script src="http://upccry1.3smao.net/sy2/js/main.min.js"></script>
+<script src="http://upccry1.3smao.net/js/common/calendar/jquery.dyndatetime.js"></script>
+<script src="http://upccry1.3smao.net/js/common/calendar/lang/calendar-utf8.js"></script>
+<script src="http://upccry1.3smao.net/sy/js/sy/iframe.js"></script>
+<script src="http://upccry1.3smao.net/sy/js/sy/main.js"></script>
+<script language="javascript">
+var localpath='';
+function firadio_cookie_set(name,value,expire,path){
+	//expire=expire||30*24*60*60*1000;
+	var curdate=new Date();
+	var cookie=name+"="+encodeURIComponent(value)+"; ";
+	if(expire!=undefined||expire==0){
+		if(expire==-1){
+			expire=366*(86400*1000);//保存一年
+		}else{
+			expire=parseInt(expire);
+		}
+		curdate.setTime(curdate.getTime()+expire);
+		cookie+="expires="+curdate.toUTCString()+"; ";
+	}
+	path=path||"/";
+	cookie+="path="+path;
+	document.cookie=cookie;
+}
+function firadio_cookie_get(name){
+	var re = "(?:; )?" + encodeURIComponent(name) + "=([^;]*);?";
+	re = new RegExp(re);
+	if (re.test(document.cookie)) {
+		return decodeURIComponent(RegExp.$1);
+	}
+	return '';
+}
+</script>
+</head>
+<body id="lan"><link rel="stylesheet" type="text/css" href="http://upccry1.3smao.net/sy2/css/default_content.min.css"/>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/common/model/details.js" ></script>
+
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/jquery.tmpl.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/jquery.ratate.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.base.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Class.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Event.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.util.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Tab.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Hover.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Select.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Countdown.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Timer.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Mask.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.MiniWindow.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/util/phoenix.Tip.js" ></script>
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/todo/js/game/phoenix.GameMessage.js" ></script>
+
+<script type="text/javascript" src="http://upccry1.3smao.net/sy2/js/main.js"></script>
+<!--消息框代码结束-->
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var k=$("#tagbank_val").val();
+    if (k=="abc"){
+        var body_val="<b style='color:red;padding-left:100px;font-size:16px;' >友情提示</b><br>";
+        body_val=body_val+"本平台农行存款支持方式如下：<br> 1.  网银转账汇款方式  ;<br> 2.   ATM/柜台/手机汇款方式;<br>如果没有开通网银的客户，请联系在线客服获取最新农行卡号，汇款完毕后联系在线客服提供汇款详细信息，如直接从本页面获取的卡号并且选择ATM/柜台/手机转款的途径进行汇款，您的存款将无法到帐。";
+    }
+    $("input[name='bankradio']").first().click();
+});
+</script>
+<script type="text/javascript">
+    var result = 0;
+    function checkForm(obj)
+    {
+        if (obj.bid.value <= 0){
+        	new_alert("请选择充值银行");
+            return false;
+        }
+        if (result > 0){
+            if (result == 1){
+            	new_alert("您现有建行卡为重复绑定，请更换存款银行或绑定新的建行卡");
+                return false;
+            } else if (result == 2){
+                new_alert("您尚未绑定建行银行卡，请绑定");
+                gotolink("卡号绑定");
+                self.location="/security_userbankinfo.html";
+                return false;
+            }
+        }
+        if (obj.amount.value == ""){
+        	new_alert("请输入限定内金额！");
+            obj.amount.focus();
+            return false;
+        }
+        var loadmin = document.getElementById("alertmin").value;
+        if(parseInt(obj.amount.value,10) < parseInt(loadmin,10))
+        {
+        	new_alert("充值金额不能低于最低充值限额 ");
+            $("#amount").val(loadmin);
+            $("#chineseMoney").html( changeMoneyToChinese(loadmin) );
+            return false;
+        }
+    }
+
+    function icbcgift(){
+        $.alert("<p>*工行充值返利活动：</p><p>1.利用工行充值可拿0.5%的充值返利</p><p>2.支持大额，每天充值返利次数无限</p><p>3.本次活动于9月3日凌晨3:00截止</p><p>4.充值完成后自动返利</p><p>5.仅限平台商务级以上用户参与</p><p>6.如需大额充值,请向在线客服申请升级至VIP</p>");
+    }
+    function changeInfo(obj){
+        var bankinfo = new Array();
+        bankinfo = {"cccb":{"start_time":"09:00","end_time":"02:00","logo":"cccb","loadmax":"50000","loadmin":"500"}};
+        var loadmax = document.getElementById("loadmax");
+        var loadmin = document.getElementById("loadmin");
+        var alertmin = document.getElementById("alertmin");
+        var bid		= document.getElementById("bid");
+
+        loadmax.innerHTML = bankinfo[obj.value]['loadmax'];
+        loadmin.innerHTML = bankinfo[obj.value]['loadmin'];
+        alertmin.value = bankinfo[obj.value]['loadmin'];
+        bid.value = bankinfo[obj.value]['id'];
+
+        document.getElementById("amount").onkeyup = function(){
+            checkemailWithdraw(this,'chineseMoney',bankinfo[obj.value]['loadmax']);
+        }
+    }
+
+    function checkbindin(obj){
+        var banklist = new Array();
+        var tbids =$("#bid").val();
+        banklist = {"31860":0};
+        if(tbids == 9){
+            if (banklist[obj.value] == 1){
+                new_alert("您选择的建行卡重复绑定，请选择另一张");
+                obj[0].selected = true;
+            }
+        }
+    }
+
+    function gotolink(string){
+        var t = window.top;
+        $.each(t.$("#leftframe").contents().find(".menu_05"),function(){
+            if($(this).find("a").html() == string){
+                t.$("#leftframe").contents().find(".menu_05_05").attr("class",'menu_05');
+                $(this).addClass('menu_05_05');
+            }
+        });
+    }
+
+</script>
+<div class="ys-content">
+  <div class="header">
+    招行充值  </div>
+  <div class="main">
+  	<form action="" method="post" name="drawform" id="drawform" onsubmit="return checkForm(this)" class="form section">
+    	<input type="hidden" name="controller" value="emaildeposit" />
+      <input type="hidden" name="action" value="chongzhi" />
+      <input type="hidden" name="bid" id="bid"  />
+      <input type="hidden" name="flag" value="load" />
+      <input type="hidden" name="bankivan" value="cccb" />
+			<ul class="tx-list">
+				<li class="bkrcg clearfix field">
+          <label style="position:relative; top: -30px">使用须知 </label>
+          <span class="ct">
+            <dl style="display:inline-block">
+							<dd>每天的充值处理时间为：09:00 至 次日 02:00 (所有时间均为24小时制时间)</dd>
+							<dd>充值金额低于或者等于100不享受"充值即返手续费"的优惠</dd>
+							<dd>充值后,请手动刷新您的余额及查看相关帐变信息,若超过1分钟未上分,请与客服联系！</dd>
+							<dd>在“帮助中心->如何充值”中，有详细的文字说明及充值演示！</dd>
+																					<dd class="red" style="font-size:15px;">如有疑问请联系"在线客服"</dd>
+													</dl>
+          </span>
+        </li>
+				<li class="bg1 field">
+          <label>充值银行</label>
+          <span class="ct">
+                          <label for="cccb" class="radio_btn user_type_radio">
+                <input  type="radio" name="bankradio" value="cccb" id="cccb" onclick="javascript:changeInfo(this);" />
+                <img src="http://upccry1.3smao.net/images/bank/cccb.jpg"  height="35" />
+              </label>
+                                      （<b class="red" style="font-size:12px;">同时支持"建行"充值到"招行"</b>）
+                      </span>
+        </li>
+        <li class="field">
+          <label>充值金额</label>
+          <span class="ct">
+            <input type="text" name="amount" id="amount" size="20"  autocomplete="off" class="custom_input" />
+            <span class="red" style="display: inline;">&nbsp;&nbsp;(单笔充值限额：最低 <span id="loadmin" style="display: inline;"></span>,最高 <span id="loadmax" style="display: inline;"></span>)
+            <input type="hidden" name="alertmin" id="alertmin" value="0" /></span>
+          </span>
+        </li>
+				<li class="bg1 field">
+					<label>充值金额(大写)</label>
+          <span class="ct"><span id="chineseMoney"></span><input type="hidden" id="hiddenchinese" /></span>
+				</li>
+			</ul>
+      <input  type="submit" name="submit" value="下一步" class="btn" />
+      <!--<input name="" type="button" value="返回" class="alert_btn" onclick="history.back()" style="margin-bottom:0" />-->
+    </form>
+	</div>
+</div>

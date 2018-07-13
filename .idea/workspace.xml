@@ -1,0 +1,1223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="fe0af692-dd63-47fd-9a7c-d2843bafbd64" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/web/composer.json</pharConfigPath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="recharge.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/recharge.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="211" column="25" selection-start-line="211" selection-start-column="25" selection-end-line="211" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6">
+              <caret line="152" selection-start-line="152" selection-end-line="152" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/application/index/view/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6">
+              <caret line="70" column="40" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
+              <folding>
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>efFullData</find>
+      <find>dump</find>
+      <find>个位注数不能超过</find>
+      <find>login</find>
+      <find>sleep</find>
+      <find>&lt;script type=&quot;text/javascript&quot; src=&quot;__JS__/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;</find>
+      <find>&lt;script type=&quot;text/javascript&quot; src=&quot;http://upccry1.3smao.net/sy2/todo/js/util/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;</find>
+      <find>提现</find>
+      <find>lotterycnname</find>
+      <find>gameConfigData</find>
+      <find>host.Games</find>
+      <find>clipboard</find>
+      <find>rysslyun.b0.upaiyun.com</find>
+      <find>http://upccry1.3smao.net</find>
+      <find>defaultDiceTop</find>
+      <find>/static/js/</find>
+      <find>/static/css/</find>
+      <find>dice</find>
+      <find>http://upccry1.3smao.net/</find>
+      <find>ShowVideo</find>
+      <find>arrow-right.png</find>
+      <find>&lt;!--dice--&gt;</find>
+      <find>常见问题</find>
+      <find>icon-main-header.png</find>
+      <find>indexVideos.js</find>
+      <find>bg-main-header.png</find>
+      <find>background</find>
+      <find>body</find>
+      <find>12px 'Microsoft Yahei','Microsoft JhengHei',tahoma,Srial,helvetica,sans-serif</find>
+      <find>iframe</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&lt;script type=&quot;text/javascript&quot; src=&quot;__JS__/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;</replace>
+      <replace>__CSS__/</replace>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/web/application/index/view/game/trace_records.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/application/index/view/activity/chongzhi.html" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/application/index/view/activity/xiaofei.html" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/web/application/index/view/index/login.html" />
+        <option value="$PROJECT_DIR$/web/application/config.php" />
+        <option value="$PROJECT_DIR$/web_admin/admin/Admin/Controller/PublicController.class.php" />
+        <option value="$PROJECT_DIR$/web/application/index/controller/Recharge.php" />
+        <option value="$PROJECT_DIR$/web/application/index/controller/Login.php" />
+        <option value="$PROJECT_DIR$/web_mobile/Application/Mobile/Controller/UserController.class.php" />
+        <option value="$PROJECT_DIR$/web_admin/admin/Admin/Controller/CountController.class.php" />
+        <option value="$PROJECT_DIR$/web_mobile/Application/Mobile/Controller/GameController.class.php" />
+        <option value="$PROJECT_DIR$/web/application/index/controller/GamePlay.php" />
+        <option value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/data.js" />
+        <option value="$PROJECT_DIR$/web/application/index/view/user/user_team.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/user/user_setmenu.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/activity/index.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/user/user_userinfo.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/activity/chongzhi.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/game/project_records.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/game/play.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/activity/rigongzi.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/activity/xiaofei.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/recharge/qr_security_platwithdraw.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/recharge/emaildeposit_chongzhi.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/recharge/next_security_platwithdraw.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/common.html" />
+        <option value="$PROJECT_DIR$/web/public/static/css/index.css" />
+        <option value="$PROJECT_DIR$/web/application/index/view/report_manage/index.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/recharge/security_platwithdraw.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/recharge/emaildeposit_getmoneylist.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/report_manage/recharge_list.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/report_manage/report_list.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/footer.html" />
+        <option value="$PROJECT_DIR$/web/application/index/view/header.html" />
+        <option value="$PROJECT_DIR$/web/public/static/css/default_content.css" />
+        <option value="$PROJECT_DIR$/web/public/static/css/default_content.min.css" />
+        <option value="$PROJECT_DIR$/web/application/index/view/recharge/index.html" />
+        <option value="$PROJECT_DIR$/web/public/static/css/default.min.css" />
+        <option value="$PROJECT_DIR$/web/application/index/view/recharge/recharge.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/30秒11选5/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf-重庆时时彩/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/gf/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/mmc/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分11选5/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/一分彩/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/二分彩/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/五分彩/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/北京PK10自开/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/极速3D/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/皇家龙凤/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩 -助赢/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/bignumber.js/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/mysql-queues/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/mysql-queues/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/sqlstring/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/node_modules/util-deprecate/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩/node_modules/npm/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/mysql/node_modules/hashish/node_modules/traverse/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/mysql/node_modules/hashish/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/mysql/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/mysqlv2/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/ansi/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/archy/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/child-process-close/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/chmodr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/cmd-shim/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/editor/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/fstream-npm/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/init-package-json/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/lockfile/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/minimatch/node_modules/sigmund/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/kjq/腾讯彩zk/node_modules/npm/node_modules/node-gyp/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/web/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/web/vendor/topthink/think-helper" />
+      <path value="$PROJECT_DIR$/web/vendor/topthink/think-testing" />
+      <path value="$PROJECT_DIR$/web/vendor/topthink/think-image" />
+      <path value="$PROJECT_DIR$/web/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/web/vendor/topthink/think-queue" />
+      <path value="$PROJECT_DIR$/web/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/web/vendor/topthink/think-captcha" />
+      <path value="$PROJECT_DIR$/web/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/web/vendor/topthink/think-mongo" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/web/vendor/topthink/think-migration" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/web/vendor/topthink/think-installer" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/web/vendor/topthink/think-worker" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/web/vendor/topthink/think-angular" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/web/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/web/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/web/vendor/composer" />
+      <path value="$PROJECT_DIR$/web/vendor/workerman/workerman" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="55" />
+    <option name="y" value="22" />
+    <option name="width" value="1385" />
+    <option name="height" value="788" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="yhyl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yhyl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yhyl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yhyl" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe0af692-dd63-47fd-9a7c-d2843bafbd64" name="Default" comment="" />
+      <created>1528684092707</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1528684092707</updated>
+      <workItem from="1528684095199" duration="1085000" />
+      <workItem from="1528769391212" duration="8180000" />
+      <workItem from="1528940429568" duration="3361000" />
+      <workItem from="1529028362507" duration="342000" />
+      <workItem from="1529304987457" duration="6450000" />
+      <workItem from="1529396928321" duration="5624000" />
+      <workItem from="1529723593057" duration="8872000" />
+      <workItem from="1529889764483" duration="1039000" />
+      <workItem from="1529905566991" duration="275000" />
+      <workItem from="1529905845141" duration="1000" />
+      <workItem from="1530243736606" duration="2014000" />
+      <workItem from="1530255877036" duration="1655000" />
+      <workItem from="1530257812957" duration="20835000" />
+      <workItem from="1530428773774" duration="2000" />
+      <workItem from="1530430792004" duration="180000" />
+      <workItem from="1530754176398" duration="1716000" />
+      <workItem from="1530855531672" duration="1772000" />
+      <workItem from="1530857311617" duration="3258000" />
+      <workItem from="1530870746760" duration="12473000" />
+      <workItem from="1530949985134" duration="4682000" />
+      <workItem from="1530985857816" duration="89000" />
+      <workItem from="1531011355601" duration="726000" />
+      <workItem from="1531021253950" duration="90000" />
+      <workItem from="1531065293776" duration="30000" />
+      <workItem from="1531404698074" duration="8020000" />
+      <workItem from="1531445714992" duration="7036000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="99807000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="55" y="22" width="1385" height="788" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24535316" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3299566" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/kjq/皇家龙凤/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3529" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kjq/皇家龙凤/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2041">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kjq/腾讯彩-tx-ssc/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4426">
+          <caret line="200" column="6" lean-forward="true" selection-start-line="200" selection-start-column="6" selection-end-line="200" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/controller/Game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="139" column="25" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kjq/腾讯彩/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="225" column="17" selection-start-line="207" selection-start-column="12" selection-end-line="225" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/PlayedConst.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1223" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/user/user_setuserbankinfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/user/user_setmenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-183" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/game/trace_records.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/activity/commission.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/user/user_userinfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="7" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/game/project_records.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/activity/chongzhi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/controller/Recharge.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4336">
+          <caret line="247" column="37" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/activity/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_admin/admin/Admin/View/Count/datelist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/user/user_rigongzi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3196">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/user/user_rigongzi_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-532" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/game/play.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="935" column="17" lean-forward="true" selection-start-line="935" selection-start-column="17" selection-end-line="935" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_mobile/Application/Mobile/View/default/Team/link-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="878">
+          <caret line="135" column="24" selection-start-line="135" selection-start-column="24" selection-end-line="135" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/user/gameinfo_gamelist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="179" column="36" selection-start-line="179" selection-start-column="36" selection-end-line="179" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/activity/rigongzi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1600">
+          <caret line="13" column="71" lean-forward="true" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/qr_security_platwithdraw.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/autorouting_payindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15649" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/emaildeposit_chongzhi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/zs_pay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/zfwy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2185" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/next_security_platwithdraw.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3613">
+          <caret line="47" selection-start-line="44" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/static/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/report_manage/cash_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="103" column="33" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/report_manage/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1264">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/static/css/chongzhi.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2922" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/user/user_team.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3906">
+          <caret line="186" column="16" selection-start-line="186" selection-start-column="16" selection-end-line="186" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/security_platwithdraw.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/emaildeposit_getmoneylist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/report_manage/recharge_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/runtime/log/201807/07.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="827" column="65" selection-start-line="827" selection-start-column="65" selection-end-line="827" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/static/js/main.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5773">
+          <caret line="166" column="6489" selection-start-line="166" selection-start-column="6489" selection-end-line="166" selection-end-column="6489" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/runtime/temp/4ccf4fdf60767b7a67585ee76725ed0d.php" />
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/report_manage/report_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="46" selection-start-line="46" selection-end-line="61" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/controller/Account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1881">
+          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="100" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/controller/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/static/css/default_content.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret column="627" lean-forward="true" selection-start-column="627" selection-end-column="627" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/static/css/default_content.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="70" column="40" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
+          <folding>
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/static/css/default.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1815" selection-start-column="1815" selection-end-column="1815" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application/index/view/recharge/recharge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="211" column="25" selection-start-line="211" selection-start-column="25" selection-end-line="211" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

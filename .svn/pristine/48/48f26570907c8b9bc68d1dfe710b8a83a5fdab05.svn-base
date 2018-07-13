@@ -1,0 +1,112 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>消费报表</h2>
+	</div>
+	<form action="{:U('coinreport')}" method="post">
+		<div class="cf">
+			<!-- 高级搜索 -->
+			<div class="search-form fr cf">
+				<div class="sleft">
+					用户名：<input style="width:100px" type="text" name="username" class="search-input" value="{:I('username')}" placeholder="用户名">
+				</div>
+				<div class="sleft">
+					时间从：<input type="text" name="fromTime" id="first" class="search-input" value="<?=$this->iff(I('fromTime'),I('fromTime'),date('Y-m-d',time())) ?>" placeholder="请输入开始时间">
+				</div>
+				<div class="sleft">
+					到：<input type="text" name="toTime" id="end" class="search-input" value="<?=$this->iff(I('toTime'),I('toTime'),date('Y-m-d',time())) ?>" placeholder="请输入结束时间">
+				</div>
+				<div class="sbtn">
+					<button type="submit" class="btn" id="search">查 找</button>
+				</div>	
+			</div>		
+		</div>
+	</form>
+
+	
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+	<table class="">
+    <thead>
+        <tr>
+        <th>用户名</th>
+        <th>充值总额</th>
+        <!--<th>提现总额</th>-->
+        <th>投注总额</th>
+        <th>中奖总额</th>
+        <th>总返点</th>
+        <th>活动</th>
+        <th>总盈亏</th>
+        <th>时间</th>
+		</tr>
+    </thead>
+    <tbody>
+		<if condition="$_list">
+		<volist name="_list" id="vo">
+		<tr>
+			<td>{$vo.username}</td>
+			<td>{$vo.rechargeAmount}</td>
+			<!--<td>{$vo.cashAmount}</td>-->
+			<td>{$vo.betAmount}</td>
+			<td>{$vo.zjAmount}</td>
+			<td>{$vo.fanDianAmount}</td>
+			<td>{$vo.brokerageAmount}</td>
+			<td>{$vo.zyk}</td>
+			<td>{:date('Y-m-d H:i:s',$vo['actionTime'])}</td>
+		</tr>
+		</volist>
+			<tr>
+				<td>本页合计</td>
+				<td>{$col['sum_rechargeAmount']}</td>
+				<!--<td>{$col['sum_cashAmount']}</td>-->
+				<td>{$col['sum_betAmount']}</td>
+				<td>{$col['sum_zjAmount']}</td>
+				<td>{$col['sum_fanDianAmount']}</td>
+				<td>{$col['sum_brokerageAmount']}</td>
+				<td>{$col['sum_zyk']}</td>
+				<td>--</td>
+			</tr>
+		<else />
+			<tr>
+				<td colspan="11" align="center">暂时没有消费记录。</td>
+			</tr>
+		</if>
+	</tbody>
+    </table> 
+	</div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+    <link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+	<script>
+	$(function(){
+		$('#first,#end').datetimepicker({
+			format: 'yyyy-mm-dd',
+			language:"zh-CN",
+			minView:2,
+			autoclose:true
+		});
+		//showTab();
+	});
+	</script>
+	<script type="text/javascript">
+		//回车搜索
+		$("body").keyup(function(e){
+			if(e.keyCode === 13){
+				$("#search").click();
+				return false;
+			}
+		});
+		$('.side-sub-menu').find('a[href="{:U('business/coinreport')}"]').closest('li').addClass('current');
+	</script>
+</block>

@@ -1,0 +1,67 @@
+<table class="chart-table table table-border"
+       style="width: 100%; white-space: nowrap !important; overflow: hidden !important;">
+    <thead class="thead">
+    <tr class="title-text">
+        <th>投注时间</th>
+        <th>彩种</th>
+        <th>玩法</th>
+        <th>奖期</th>
+        <th>模式</th>
+        <th>倍数</th>
+        <th>投注内容</th>
+        <th>投注金额</th>
+        <th>开奖号码</th>
+        <th>中奖金额</th>
+        <th>撤单</th>
+        <!-- 	<th>是否追号			</th> -->
+    </tr>
+    <tbody>
+    {volist name="list" id="vo"}
+    <tr>
+        <td><a href="/game_record/index.html"
+               target="_blank" title="查看注单详情"> {$vo.actionTime}</a></td>
+        <td title='{$vo.title}'>{$vo.title}</td>
+        <td title='{$vo.name}'>{$vo.name}</td>
+        <td>{$vo.actionNo}</td>
+        <td>{$vo.mode_cn}</td>
+        <td>{$vo.beiShu}</td>
+        <!--<td>{$vo.actionData}</td>-->
+        <td>{if strlen($vo.actionData)>32 }
+            <a href="javascript:void(0)"
+               onclick="$('.task_div').hide();$('.task_div',$(this).parent()).show();">详细号码</a>
+            <div class="task_div" style="display: none;">
+                号码详情[<a href="javascript:void(0)" onclick="$(this).parent().hide();" class="fff600">关闭</a>]<br>
+                <!-- <p class="code" readonly="readonly">{$vo.actionData}</p> -->
+                <textarea class="code" readonly="readonly" style="width: 300px;">{$vo.actionData}</textarea></div>
+            {else}
+            {$vo.actionData}
+            {/if}
+        </td>
+        <td>{$vo.mode*$vo.beiShu*$vo.actionNum*($vo.fpEnable+1)}</td>
+        <td>{$vo.lotteryNo}</td>
+        <td>{$vo.bonus}</td>
+        <td>
+            {if $vo['isDelete']==1 }
+            <label class="gray">已撤单</label>
+            {elseif $vo['lotteryNo']===''}
+            <a id="cd_{$vo.id}" href="javascript:void(0);" onclick="chedan({$vo.id})" title="是否确定撤单" width="510">撤单</a>
+            {elseif $vo['zjCount']}
+            <label class="red">已中奖</label>
+            {else}
+            <label class="gray">未中奖</label>
+            {/if}
+            <!--{if $vo['isDelete']==1 }
+            <label class="gray">已撤单</label>
+            {if !$vo['lotteryNo']}
+            <label class="gray">未开奖</label>
+            {if $vo.mode*$vo.beiShu*$vo.actionNum*($vo.fpEnable+1)}
+            <label class="red">已中奖</label>
+            {else}
+            <label class="gray">未中奖</label>
+            {/if}-->
+        </td>
+        <!-- <td>否</td> -->
+    </tr>
+    {/volist}
+    </tbody>
+</table>

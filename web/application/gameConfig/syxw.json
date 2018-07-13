@@ -1,0 +1,399 @@
+{
+  "gameMethods": [
+    {
+      "title": "前三",
+      "name": "qiansan",
+      "childs": [
+        {
+          "title": "前三",
+          "name": "qiansanzu",
+          "parent": "qiansan",
+          "childs": [
+            {
+              "name": "qiansanzhixuanfushi",
+              "parent": "qiansanzu",
+              "title": "前三直选复式",
+              "mode": "qiansan",
+              "methodId": "55-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从第一位、第二位、第三位中至少各选择1个号码。",
+                "methodhelp": "从01-11共11个号码中选择3个号码组成一注，所选号码与当期开奖号码前三位相同，且顺序一致，即为中奖。",
+                "methodexample": "投注方案：01,02,03；开奖号码前三位：01,02,03；顺序一致，即中前三直选一等奖。"
+              }
+            },
+            {
+              "name": "qiansanzhixuandanshi",
+              "parent": "qiansanzu",
+              "title": "前三直选单式",
+              "mode": "qiansan",
+              "methodId": "152-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中，手动输入3个号码组成一注。",
+                "methodhelp": "手动输入3个号码组成一注，所投注的号码与当期开奖号码前三位相同，且顺序一致，即为中奖。",
+                "methodexample": "投注方案：01,02,03；开奖号码前三位：01,02,03；顺序一致，即中前三直选一等奖。"
+              }
+            },
+            {
+              "name": "qiansanzuxuanfushi",
+              "parent": "qiansanzu",
+              "title": "前三组选复式",
+              "mode": "qiansan",
+              "methodId": "56-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择3个或3个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择3个号码，所选号码与当期开奖号码前三位相同，顺序不限，即为中奖。",
+                "methodexample": "投注方案：01,02, 03；开奖号码前三位包含：01,02,03，顺序不限；即中前三组选一等奖。"
+              }
+            },
+            {
+              "name": "qiansanzuxuandanshi",
+              "parent": "qiansanzu",
+              "title": "前三组选单式",
+              "mode": "qiansan",
+              "methodId": "292-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中，手动输入3个号码组成一注。",
+                "methodhelp": "手动输入3个号码，所投注的号码与当期开奖号码前三位相同，顺序不限，即为中奖。",
+                "methodexample": "投注方案：01,02, 03；开奖号码前三位包含：01,02,03，顺序不限；即中前三组选一等奖。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "前二",
+      "name": "qianer",
+      "childs": [
+        {
+          "title": "前二",
+          "name": "qianerzu",
+          "parent": "qianer",
+          "childs": [
+            {
+              "name": "qianerzhixuanfushi",
+              "parent": "qianerzu",
+              "title": "前二直选复式",
+              "mode": "qianer",
+              "methodId": "53-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从第一位、第二位中至少各选择1个号码组成一注。",
+                "methodhelp": "从01-11共11个号码中选择2个号码组成一注，所选号码与当期开奖号码前二位相同，且顺序一致，即为中奖。",
+                "methodexample": "投注方案：01 02；开奖号码前二位：01,02；顺序一致，即中前二直选一等奖。"
+              }
+            },
+            {
+              "name": "qianerzhixuandanshi",
+              "parent": "qianerzu",
+              "title": "前二直选单式",
+              "mode": "qianer",
+              "methodId": "290-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中，手动输入2个号码组成一注。",
+                "methodhelp": "手动输入2个号码组成一注，所投注的号码与当期开奖号码前二位相同，且顺序一致，即为中奖。",
+                "methodexample": "投注方案：01 02,03 04；开奖号码前二位：01,02；顺序一致，即中前二直选一等奖。"
+              }
+            },
+            {
+              "name": "qianerzuxuanfushi",
+              "parent": "qianerzu",
+              "title": "前二组选复式",
+              "mode": "qianer",
+              "methodId": "54-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择2个或2个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择2个号码，所选号码与当期开奖号码前二位相同，顺序不限，即为中奖。",
+                "methodexample": "投注方案：01 02；开奖号码前二位包含：01,02，顺序不限；即中前二组选一等奖。"
+              }
+            },
+            {
+              "name": "qianerzuxuandanshi",
+              "parent": "qianerzu",
+              "title": "前二组选单式",
+              "mode": "qianer",
+              "methodId": "291-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中，手动输入2个号码组成一注。",
+                "methodhelp": "手动输入2个号码，所投注的号码与当期开奖号码前二位相同，顺序不限，即为中奖。",
+                "methodexample": "投注方案：01 02,03 04；开奖号码前二位包含：01,02，顺序不限；即中前二组选一等奖。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "不定位",
+      "name": "budingwei",
+      "childs": [
+        {
+          "title": "不定位",
+          "name": "budingweizu",
+          "parent": "budingwei",
+          "childs": [
+            {
+              "name": "budingwei",
+              "parent": "budingweizu",
+              "title": "前三位",
+              "mode": "budingwei",
+              "methodId": "266-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择1个或1个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择1个号码，每注由1个号码组成，只要当期开奖号码的前三位中包含所选号码，即为中奖。",
+                "methodexample": "投注方案：01；开奖号码前三位：包含01；即中一码不定位一等奖。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "定位胆",
+      "name": "dingweidan",
+      "childs": [
+        {
+          "title": "定位胆",
+          "name": "dingweidanzu",
+          "parent": "dingweidan",
+          "childs": [
+            {
+              "name": "dingweidan",
+              "parent": "dingweidanzu",
+              "title": "定位胆",
+              "mode": "dingweidan",
+              "methodId": "265-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从第一位，第二位，第三位任意位置上任意选择1个或1个以上号码。",
+                "methodhelp": "从第一位，第二位，第三位任意1个位置或多个位置上选择1个号码，所选号码与相同位置上的开奖号码一致，即为中奖。",
+                "methodexample": "投注方案：第一位投注01；开奖号码第一位：01；即中定位胆第一位一等奖。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "任选复式",
+      "name": "renxuanfushi",
+      "childs": [
+        {
+          "title": "任选复式",
+          "name": "renxuan",
+          "parent": "renxuanfushi",
+          "childs": [
+            {
+              "name": "renxuanyizhongyi",
+              "parent": "renxuan",
+              "title": "任选一中一",
+              "mode": "renxuanfushi",
+              "methodId": "45-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择1个或1个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择1个号码组成一注进行购买，只要当期开奖号码包含所选的号码，即为中奖。",
+                "methodexample": "投注方案：01；开奖号码包含：01，顺序不限；即中任选一中一一等奖。"
+              }
+            },
+            {
+              "name": "renxuanerzhonger",
+              "parent": "renxuan",
+              "title": "任选二中二",
+              "mode": "renxuanfushi",
+              "methodId": "46-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择2个或2个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择2个号码组成一注进行购买，只要当期开奖号码全部包含所选的2个号码，即为中奖。",
+                "methodexample": "投注方案：01,02；开奖号码包含：01,02，顺序不限；即中任选二中二一等奖。"
+              }
+            },
+            {
+              "name": "renxuansanzhongsan",
+              "parent": "renxuan",
+              "title": "任选三中三",
+              "mode": "renxuanfushi",
+              "methodId": "47-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择3个或3个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择3个号码组成一注进行购买，只要当期开奖号码全部包含所选的3个号码，即为中奖。",
+                "methodexample": "投注方案：01,02,03；开奖号码包含：01,02,03，顺序不限；即中任选三中三一等奖。"
+              }
+            },
+            {
+              "name": "renxuansizhongsi",
+              "parent": "renxuan",
+              "title": "任选四中四",
+              "mode": "renxuanfushi",
+              "methodId": "48-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择4个或4个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择4个号码组成一注进行购买，只要当期开奖号码全部包含所选的4个号码，即为中奖。",
+                "methodexample": "投注方案：01,02,03,04；开奖号码包含：01,02,03,04，顺序不限；即中任选四中四一等奖。"
+              }
+            },
+            {
+              "name": "renxuanwuzhongwu",
+              "parent": "renxuan",
+              "title": "任选五中五",
+              "mode": "renxuanfushi",
+              "methodId": "49-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择5个或5个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择5个号码组成一注进行购买，只要当期开奖号码全部包含所选的5个号码，即为中奖。",
+                "methodexample": "投注方案：01,02,03,04,05；开奖号码：01,02,03,04,05，顺序不限；即中任选五中五一等奖。"
+              }
+            },
+            {
+              "name": "renxuanliuzhongwu",
+              "parent": "renxuan",
+              "title": "任选六中五",
+              "mode": "renxuanfushi",
+              "methodId": "50-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择6个或6个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择6个号码组成一注进行购买，只要所选的6个号码当中，包含当期全部5个开奖号码，即为中奖。",
+                "methodexample": "投注方案：01,02,03,04,05,06；开奖号码：01,02,03,04,05，顺序不限；即中任选六中五一等奖。"
+              }
+            },
+            {
+              "name": "renxuanqizhongwu",
+              "parent": "renxuan",
+              "title": "任选七中五",
+              "mode": "renxuanfushi",
+              "methodId": "51-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择7个或7个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择7个号码组成一注进行购买，只要所选的7个号码当中，包含当期全部5个开奖号码，即为中奖。",
+                "methodexample": "投注方案：01,02,03,04,05,06,07；开奖号码：01,02,03,04,05，顺序不限；即中任选七中五一等奖。"
+              }
+            },
+            {
+              "name": "renxuanbazhongwu",
+              "parent": "renxuan",
+              "title": "任选八中五",
+              "mode": "renxuanfushi",
+              "methodId": "52-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "从01-11中任意选择8个或8个以上号码。",
+                "methodhelp": "从01-11共11个号码中选择8个号码组成一注进行购买，只要所选的8个号码当中，包含当期全部5个开奖号码，即为中奖。",
+                "methodexample": "投注方案：01,02,03,04,05,06,07,08；开奖号码：01,02,03,04,05，顺序不限；即中任选八中五一等奖。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "任选单式",
+      "name": "renxuandanshi",
+      "childs": [
+        {
+          "title": "任选单式",
+          "name": "renxuan",
+          "parent": "renxuandanshi",
+          "childs": [
+            {
+              "name": "renxuanyizhongyi",
+              "parent": "renxuan",
+              "title": "任选一中一",
+              "mode": "renxuandanshi",
+              "methodId": "282-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，从01-11中任意输入1个号码组成一注。",
+                "methodhelp": "从01-11中手动输入1个号码进行购买，只要当期开奖号码包含所投注的号码，即为中奖。",
+                "methodexample": "投注方案：01；开奖号码包含：01，顺序不限；即中任选一中一一等奖。"
+              }
+            },
+            {
+              "name": "renxuanerzhonger",
+              "parent": "renxuan",
+              "title": "任选二中二",
+              "mode": "renxuandanshi",
+              "methodId": "283-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，从01-11中任意输入2个号码组成一注。",
+                "methodhelp": "从01-11中手动输入2个号码进行购买，只要当期开奖号码全部包含所投注的2个号码，即为中奖。",
+                "methodexample": "投注方案：01 02；开奖号码包含：01,02，顺序不限；即中任选二中二一等奖。"
+              }
+            },
+            {
+              "name": "renxuansanzhongsan",
+              "parent": "renxuan",
+              "title": "任选三中三",
+              "mode": "renxuandanshi",
+              "methodId": "284-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，从01-11中任意输入3个号码组成一注。",
+                "methodhelp": "从01-11中手动输入3个号码进行购买，只要当期开奖号码全部包含所投注的3个号码，即为中奖。",
+                "methodexample": "投注方案：01 02 03；开奖号码包含：01,02,03，顺序不限；即中任选三中三一等奖。"
+              }
+            },
+            {
+              "name": "renxuansizhongsi",
+              "parent": "renxuan",
+              "title": "任选四中四",
+              "mode": "renxuandanshi",
+              "methodId": "285-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，从01-11中任意输入4个号码组成一注。",
+                "methodhelp": "从01-11中手动输入4个号码进行购买，只要当期开奖号码全部包含所投注的4个号码，即为中奖。",
+                "methodexample": "投注方案：01 02 03 04；开奖号码包含：01,02,03,04，顺序不限；即中任选四中四一等奖。"
+              }
+            },
+            {
+              "name": "renxuanwuzhongwu",
+              "parent": "renxuan",
+              "title": "任选五中五",
+              "mode": "renxuandanshi",
+              "methodId": "286-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，从01-11中任意输入5个号码组成一注。",
+                "methodhelp": "从01-11中手动输入5个号码进行购买，只要当期开奖号码全部包含所投注的5个号码，即为中奖。",
+                "methodexample": "投注方案：01 02 03 04 05；开奖号码：01,02,03,04,05，顺序不限；即中任选五中五一等奖。"
+              }
+            },
+            {
+              "name": "renxuanliuzhongwu",
+              "parent": "renxuan",
+              "title": "任选六中五",
+              "mode": "renxuandanshi",
+              "methodId": "287-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，从01-11中任意输入6个号码组成一注。",
+                "methodhelp": "从01-11中手动输入6个号码进行购买，只要所投注的6个号码当中，包含当期全部5个开奖号码，即为中奖。",
+                "methodexample": "投注方案：01 02 03 04 05 06；开奖号码：01,02,03,04,05，顺序不限；即中任选六中五一等奖。"
+              }
+            },
+            {
+              "name": "renxuanqizhongwu",
+              "parent": "renxuan",
+              "title": "任选七中五",
+              "mode": "renxuandanshi",
+              "methodId": "288-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，从01-11中任意输入7个号码组成一注。",
+                "methodhelp": "从01-11中手动输入7个号码进行购买，只要所投注的7个号码当中，包含当期全部5个开奖号码，即为中奖。",
+                "methodexample": "投注方案：01 02 03 04 05 06 07；开奖号码：01,02,03,04,05，顺序不限；即中任选七中五一等奖。"
+              }
+            },
+            {
+              "name": "renxuanbazhongwu",
+              "parent": "renxuan",
+              "title": "任选八中五",
+              "mode": "renxuandanshi",
+              "methodId": "289-2-RPMETHODID",
+              "faceparamter": {
+                "methoddesc": "手动输入号码，从01-11中任意输入8个号码组成一注。",
+                "methodhelp": "从01-11中手动输入8个号码进行购买，只要所投注的8个号码当中，包含当期全部5个开奖号码，即为中奖。",
+                "methodexample": "投注方案：01 02 03 04 05 06 07 08；开奖号码：01,02,03,04,05，顺序不限；即中任选八中五一等奖。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "defaultMethod": "qiansan.qiansanzu.qiansanzhixuanfushi",
+  "gameType": "n115",
+  "gameTypeCn": "秒秒11选5",
+  "dynamicConfigUrl": "./newgame_play.html?flag=dynamicConifg&curmid=RPMETHODID",
+  "uploadPath": "/game/upload"
+}

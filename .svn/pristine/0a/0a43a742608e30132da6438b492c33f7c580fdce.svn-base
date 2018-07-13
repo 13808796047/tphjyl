@@ -1,0 +1,38 @@
+<script src="__JS__/jquery-1.9.1.js"></script>
+<script src="__JS__/sy/subPage.js"></script>
+<link rel="stylesheet" type="text/css" href="__CSS__/default_content.min.css"/>
+<link rel="stylesheet" href="__CSS__/page.css" />
+<div class="ys-content">
+    <div class="header">最新公告</div>
+    <div class="main">
+        <div class="list">
+            <table>
+                <thead>
+                <tr>
+                    <th style="padding: 10px 15px;text-align: left;">主　　题</th>
+                    <th width="20%">日　　期</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="notices" id="vo"}
+                    <tr><td style="padding: 7px 15px;text-align: left;"><a class="title" href="{:url('/help_center/noticeDetail',['nid'=>$vo['id']])}">{$vo.title}</a></td><td class="date"><?=date('Y-m-d',$vo['addTime'])?></td></tr>
+                {/volist}
+                </tbody>
+            </table>
+        </div>
+        <div style="margin-left:15px">总计{$total}个记录, 分为{$totalPage} 页, 当前第 {$currentPage}页
+            <SPAN ID="tPages"> &nbsp;</SPAN>
+            <div style="display: inline-flex" class="page_right">
+                {$page}
+            </div>
+    </div>
+    </div>
+</div>
+<script>
+    $(window).load(function() {
+        changeIframeHeight($("body").height())
+    });
+    function changeIframeHeight(height){
+        $(parent.document).find("#mainFrame").height(height);
+    }
+</script>

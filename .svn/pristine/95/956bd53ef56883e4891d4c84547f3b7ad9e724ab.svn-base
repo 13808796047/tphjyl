@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>上帝之手</title>
+    <link rel="stylesheet" href="__STATIC__/layui/css/layui.css" media="all">
+</head>
+<body>
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item"><a href="#">上帝之手设置</a></li>
+</ul>
+<br/>
+<br/>
+<br/>
+
+<form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+    <div class="layui-form-item">
+        <label class="layui-form-label">五/二分彩盈亏率</label>
+        <div class="layui-input-block">
+            <input type="number" max="100" min="0" id="param" placeholder="请输入" value="{$param}" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <div class="layui-btn"  onclick="login()">立即设置</div>
+        </div>
+    </div>
+    <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+</form>
+<script src="__STATIC__/layui/layui.js"></script>
+<script src="__STATIC__/js/jquery-1.9.1.js"></script>
+<script>
+    layui.use('form', function(){
+        var form = layui.form;
+
+    });
+    function login() {
+        var param = $('#param').val();
+        if(param === ''){
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                layer.open({title:'提示',content:'设置值不能为空'});
+            });
+            return false;
+        }
+        $.ajax({
+            url: '/set',
+            dataType: 'json',
+            method: 'GET',
+            data:{param:param,type:'sets'},
+            success: function(r) {
+                if (r['result'] == 1) {
+                    layui.use('layer', function(){
+                        var layer = layui.layer;
+                        layer.open({title:'提示',content:r['msg']});
+                    });
+                }else {
+                    layui.use('layer', function(){
+                        var layer = layui.layer;
+                        layer.open({title:'提示',content:r['msg']});
+                    });
+                }
+            },
+            complete: function(){},
+            error: function(res){}
+        });
+    }
+</script>

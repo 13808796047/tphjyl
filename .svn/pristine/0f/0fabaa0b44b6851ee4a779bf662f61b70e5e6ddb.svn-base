@@ -1,0 +1,89 @@
+{include file="header"/}
+
+    <div class="main-header">
+        <div class="main-title">平台管理</div>
+    </div>
+    <div class="main-section">
+        <div class="left-aside">
+            <div class="header">
+                <!-- 帮助中心 -->
+                <span>帮助中心</span>
+            </div>
+            <div class="content">
+                <!-- menu title = 常见问题-->
+                <div class="row active">
+                    <a href="./answer.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>常见问题					</a>
+                </div>
+                <div class="row">
+                    <a href="./xieyi.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>游戏协议					</a>
+                </div>
+                <!-- menu title = 玩法介绍-->
+                <div class="row ">
+                    <a href="./playintroduce.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>玩法介绍					</a>
+                </div>
+                <!-- menu title = 如何充值-->
+                <!--<div class="row ">
+                    <a href="./howtorecharge.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>如何充值					</a>
+                </div>-->
+                <!-- menu title = 最新公告-->
+                <div class="row ">
+                    <a href="./latestnotice.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>最新公告					</a>
+                </div>
+                <!-- menu title = 操作指南-->
+                <!--<div class="row ">
+                    <a href="./operateguide.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>操作指南					</a>
+                </div>-->
+                <!-- menu title = 防劫持教学-->
+                <div class="row ">
+                    <a href="./repairdns.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>防劫持教学					</a>
+                </div>
+                <!-- menu title = 如何清理缓存-->
+                <div class="row ">
+                    <a href="./clearcache.html" target="mainFrame">
+
+                        <i class="arrow-right"></i>如何清理缓存					</a>
+                </div>
+            </div>
+        </div><!--menu-->
+
+        <div class="right-aside">
+            <div class="navigation">
+                <a href="/">首页</a>
+                <span>&gt;</span>
+                <!-- 帮助中心 -->
+                <a href="#">帮助中心</a>
+                <span>&gt;</span>
+                <!-- 常见问题 -->
+                <a href="#" class="navgiate1">常见问题</a>
+
+            </div><!--navigation-->
+            <iframe onload="window.autoResizeHeight()" src="./answer.html" allowtransparency="true"  name="mainFrame" width="100%" scrolling="no" frameborder="0" id="mainFrame" border="0" noresize="noresize" framespacing="0"  ></iframe>
+        </div>
+    </div>
+
+{include file="footer"/}
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86467011-1', 'auto');
+    ga('send', 'pageview');
+
+</script>

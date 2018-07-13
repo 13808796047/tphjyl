@@ -1,0 +1,114 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+<script language="javascript">
+var localpath='';
+function firadio_cookie_set(name,value,expire,path){
+	//expire=expire||30*24*60*60*1000;
+	var curdate=new Date();
+	var cookie=name+"="+encodeURIComponent(value)+"; ";
+	if(expire!=undefined||expire==0){
+		if(expire==-1){
+			expire=366*(86400*1000);//保存一年
+		}else{
+			expire=parseInt(expire);
+		}
+		curdate.setTime(curdate.getTime()+expire);
+		cookie+="expires="+curdate.toUTCString()+"; ";
+	}
+	path=path||"/";
+	cookie+="path="+path;
+	document.cookie=cookie;
+}
+function firadio_cookie_get(name){
+	var re = "(?:; )?" + encodeURIComponent(name) + "=([^;]*);?";
+	re = new RegExp(re);
+	if (re.test(document.cookie)) {
+		return decodeURIComponent(RegExp.$1);
+	}
+	return '';
+}
+</script>
+</head>
+<body id="lan"><link rel="stylesheet" href="__CSS__/default_content.min.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/select2.min.css"/>
+<script type="text/javascript" src="__JS__/util/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+function checkform(){
+	var account_name = document.getElementById("account_name");
+	if (!account_name.value){
+		alert("您忘记了填写天户人姓名！");
+		account_name.focus();
+		return false;
+	}
+	var account = document.getElementById("account");
+	if(account.value == ""){
+		alert("您忘记了填写银行账号！");
+		account.focus();
+		return false;
+	}
+}
+$(function(){
+    var parentDOM = $(parent.document);
+    var grandparentDOM = $(parent.parent.document);
+    parentDOM.find("#mainFrame_menu").height($(".content_mid").outerHeight(true) + 200);
+    grandparentDOM.find("#mainFrame").height($(parent.document).find(".ys-content").outerHeight(true) + 200);
+})
+</script>
+<form method="get" name="addform" onsubmit="return checkform()">
+<input type="hidden" name="flag" value="" />
+<input type="hidden" name="controller" value="security" />
+<input type="hidden" name="action"	value="checklatestcard" />
+<input type="hidden" name="id"	value="" />
+<div class="content_mid">
+	<div class="section form">
+		<div class="intro_content">
+			<span style="font-size:13px; padding-left: 108px; font-weight: bold;">温馨提示:</span>增加绑定银行卡需提供最近一次绑定的卡号信息！		</div>
+		    <table class="not-table">
+		            <tr class="field">
+		              <td>
+							<label>开户银行</label>
+					  </td>
+		              <td>
+						  <select name="bankId" id="bankId" class="dept_select selection"style="width: 171px;">
+							  {volist name="bankList" id="vo"}
+								  <option value="{$vo.id}">{$vo.name}</option>
+							  {/volist}
+						  </select>
+		                  <font color="#FF3300">(请现在开户银行)</font>
+		              </td>
+		            </tr>
+		            <tr class="field">
+		              <td>
+										<label>支行</label>
+									</td>
+		              <td>
+		                  <input type="text" name="bankDetail" id="bankDetail" class="custom_input"style="width: 171px;" />
+		                  <font color="#FF3300">(请输入支行)</font>
+		              </td>
+		            </tr>
+		            <tr class="field">
+		              <td>
+										<label>开户人姓名</label>
+									</td>
+		              <td>
+		                  <input type="text" name="account_name" id="account_name" class="custom_input"style="width: 171px;" />
+		                  <font color="#FF3300">(请输入最近一次绑定的银行卡开户人姓名)</font>
+		              </td>
+		            </tr>
+		            <tr class="field">
+		                <td>
+											<label>银行账号</label></td>
+		                <td>
+		                    <input type="text" name="account" id="account" class="custom_input" style="width: 171px;"/>
+		                    <font color="#FF3300">(请输入最近一次绑定的银行卡卡号)</font>
+		                </td>
+		            </tr>
+		    </table>
+				<input type="submit" class="btn" onclick="" value="提交" name="">
+	    </div>
+	</div>
+</div>
+</form>

@@ -1,0 +1,44 @@
+<?php
+	$stateName=array('已到账', '正在办理', '已取消', '已支付', '失败');
+?>
+
+	<div class="w-goods w-goods-l w-goods-ing m-user-goods" style="background: #5e6171!important;color: white">
+		<div class="w-goods-info">
+			<table id="mainTable" class="fixmargin bottom attached ui small unstackable very compact celled table" style="border: 0px;">
+				<thead>
+					<tr class="colortr">
+						<th style="background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">名称类型</th>
+						<th style="width: 28%;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">开户时间</th>
+						<th style="width: 32%;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">余额</th>
+						<th style="width: 17%; text-align: right; padding-right: 1.2em;background:#04564f!important;color:#fff!important;text-align:left!important;border-radius:0!important">详情</th>
+					</tr>
+				</thead>
+				<tbody style="background:#617177;color:#fff;">
+				<php>if (!empty($data)){</php>
+					<php>foreach ($data as $vo){</php>
+					<tr class="colortr">
+						<td>
+							<a href="{:U('team/member',['uid'=>$vo['uid']])}" style="color: #eeeeee">{$vo.username}</a>
+						</td>
+						<td><?=date('Y-m-d',$vo['regTime'])?></td>
+						<td>{$vo.coin}</td>
+						<td>
+							<a href="{:U('team/memberDetail',['uid'=>$vo['uid']])}" style="color: #13b5b1">详情</a><br>
+						</td>
+					</tr>
+					<php>}</php>	
+				<php>} else {</php>
+	                <tr>
+	                    <td colspan="4" align="center">
+	                        当前条件下没有记录，请更改条件后搜索
+	                    </td>
+	                </tr>
+                <php>}</php>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+<div class="page">
+	{$_page}
+</div>

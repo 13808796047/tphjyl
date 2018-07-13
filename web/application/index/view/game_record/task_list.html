@@ -1,0 +1,244 @@
+<script src="__JS__/sy/dialogUI/jquery-1.7.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__CSS__/default_content.min.css" />
+<link rel="stylesheet" type="text/css" href="__CSS__/select2.min.css" />
+<link rel="stylesheet" type="text/css" href="__CSS__/blue/doubleDate.css" />
+<link rel="stylesheet" href="__CSS__/page.css" />
+<div class="ys-content au-wrap">
+    <div class="header">
+        追号查询	</div>
+    <div class="main">
+        <div class="form section">
+            <form action="" method="GET">
+                <input type="hidden" name="controller" value="gameinfo">
+                <input type="hidden" name="action" value="task">
+                <input type="hidden" name="isgetdata" value="1">
+                <input type="hidden" name="new" value="1">
+                <dl class="field">
+                    <label>游戏时间</label>
+                    <input readonly="readonly" id="starttime" type="text" class="doubledate ipticon mr10" value="{$starttime}" name="starttime" /> 至
+                    <input readonly="readonly" type="text" id="endtime" class="doubledate ipticon ml10" value="{$endtime}" name="endtime" />
+                </dl>
+                <div class="inline-fields">
+                    <dl class="field">
+                        <label>游戏名称</label>
+                        <select name="lotteryid" id="lotteryid" class="dept_select selection">
+                            <option value="0">所有游戏</option>
+                            {volist name="types_data" id="vo"}
+                            <option  value="{$vo.id}">{$vo.title}</option>
+                            {/volist}
+                        </select>
+                    </dl>
+                    <dl class="field">
+                        <label>玩法</label>
+                        <select data-placeholder="所有玩法" class="dept_select selection" id="methodid" name="methodid">
+                            <option value="0">所有玩法</option>
+                        </select>
+                    </dl>
+                    <dl class="field">
+                        <label>彩种奖期</label>
+                        <select data-placeholder="所有奖期" class="dept_select selection" id="issue" name="issue">
+                            <option value="0">所有奖期</option>
+                        </select>
+                    </dl>
+                </div>
+                <dl class="field">
+                    <label>用户名</label>
+                    <input name="username" type="text" class="custom_input" value="{$cur_username}" />
+                    <label class="checkbox_label user_type_checkbox">
+                        <input type="checkbox" name="include" id="include" value="1"> 包含下级					</label>
+                </dl>
+                <input id="gameInfoBtn" type="submit" class="btn" value="搜索" />
+            </form>
+        </div>
+        <div class="list" id="touzhu_record">
+            <table>
+                <thead>
+                <tr>
+                    <th>用户</th>
+                    <th>彩种</th>
+                    <th>开始期数</th>
+                    <th>追号内容</th>
+                    <th>追号总金额</th>
+                    <th>开奖号码</th>
+                    <th>完成金额</th>
+                    <th>追号状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php  $touzhuTotal=0;$zjTotal=0;?>
+                {volist name="bets" id="vo"}
+                <tr>
+                    <?php
+                    $touzhuTotal+=$vo['mode']*$vo['beiShu']*$vo['actionNum']*($vo['fpEnable']+1);
+                    $zjTotal+=$vo['bonus'];
+                    ?>
+                    <td>{$vo.username}</td>
+                    <td>{$vo.type_name}</td>
+                    <td>{$vo.actionNo}</td>
+                    <td>{$vo.actionData}</td>
+                    <td>{$vo.mode*$vo.beiShu*$vo.actionNum*($vo.fpEnable+1)}</td>
+                    <td>
+                        {if condition="($vo.lotteryNo == '')"} ---
+                        {else /} {$vo.lotteryNo}
+                        {/if}
+                    </td>
+                    <td>{$vo.bonus}</td>
+                    <td>
+                        {if condition="($vo.isDelete == 1)"} 已撤单
+                        {elseif condition="$vo.lotteryNo == ''"/} 未开奖
+                        {elseif condition="$vo.zjCount > 0"/} 已中奖
+                        {else /} 未中奖
+                        {/if}
+                    </td>
+                </tr>
+                {/volist}
+                {empty name="bets"}
+                <tr>
+                    <td colspan="31">请选择查询条件之后进行查询</td>
+                </tr>
+                {/empty}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>小结</th>
+                    <th colspan="3"></th>
+                    <th>{$touzhuTotal}</th>
+                    <th></th>
+                    <th>{$zjTotal}</th>
+                    <th colspan="2"></th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div>
+			<span class="page" style="float:left;margin-left:15px">总计0个记录, 分为0 页, 当前第 0页<SPAN ID="tPages"> &nbsp;<A  HREF="/?controller=gameinfo&action=task&p=1&pn=25">1</A>
+&nbsp;</SPAN>
+</span>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" src="__JS__/select2.min.js"></script>
+    <script type="text/javascript" src="__JS__/doubleDate2.0.js"></script>
+    <script type="text/javascript" src="__TODO__/js/common/model/details.js"></script>
+    <script type="text/javascript" src="__JS__/jeDate/jedate.js"></script>
+    <script type="text/javascript">
+        //將所有篩選項目(投注時間、彩種名稱.etc)返回SUBMIT之前的值
+        function prevPost()
+        {
+            var $_get_lotteryid = ''.length > 0 ? '' : '0';
+            var $_get_methodid = ''.length > 0 ? '' : '0';
+            var $_get_issue = ''.length > 0 ? '' : '0';
+            if($_get_lotteryid)
+            {
+                Selected($('select[name="lotteryid"]'), $_get_lotteryid);
+            }
+
+            if($_get_methodid)
+            {
+                Selected($('select[name="methodid"]'), $_get_methodid);
+            }
+
+            if($_get_issue)
+            {
+                Selected($('select[name="issue"]'), $_get_issue);
+            }
+
+            //console.log(decodeURIComponent(''));
+//        $('input[name="username"]').val(decodeURIComponent(''));
+
+            if('')
+            {
+                $('input[name="include"]')[0].checked = true;
+            }
+
+            function Selected($obj, value)
+            {
+                $obj.children('option').each(function(){
+                    //console.log($(this).val() == value);
+                    if($(this).val() == value)
+                    {
+                        this.selected = true;
+                        $obj.trigger('change');
+                        return;
+                    }
+                });
+
+            }
+        }
+
+        $(function() {
+            var data_method = {$data_method};
+            var data_issue = {$data_issue};
+
+            $('.doubledate').kuiDate({
+                className: 'doubledate',
+                isDisabled: "1" // isDisabled为可选参数，“0”表示今日之前不可选，“1”标志今日之前可选
+            });
+
+            $('.doubledate').focusout(function(e){
+                if(!$(this).val().match(/\d{4}\-\d{2}\-\d{2} \d{2}\:\d{2}\:\d{2}/))
+                {
+                    if($.trim($(this).val().length) > 0)
+                    {
+                        $(this).val(null);
+                    }
+                }
+            });
+
+            $("#lotteryid, #methodid, #issue").select2();
+            $("select[name='pages']").select2({
+                minimumResultsForSearch: Infinity
+            });
+
+            jQuery("#lotteryid").change(function(){
+                var i =  $("#lotteryid").val();
+                if(i>0)
+                {
+                    html_method = "<option value='0'>所有玩法</option>";
+                    if(data_method[i]){
+                        $.each(data_method[i],function(j,k){
+                            html_method = html_method +"<option value='"+k.methodid+"'>"+k.methodname+"</option>";
+                        });}
+                    html_issue = "<option value='0'>所有奖期</option>";
+                    if(data_issue[i]){
+                        $.each(data_issue[i],function(j,k){
+
+                            html_issue = html_issue +"<option value='"+k.issue+"'>"+k.issue+"</option>";
+
+
+                        });}
+                }
+                else
+                {
+                    html_method = "<option value='0'>所有玩法</option>";
+                    //html = html + "&nbsp;&nbsp;";
+                    html_issue = "<option value='0'>所有奖期</option>";
+                }
+                $("#methodid").html(html_method).trigger("change.select2");
+                $("#issue").html(html_issue).trigger("change.select2");
+
+
+            });
+
+            //if(window.console){console.log('xxxx');}
+            prevPost();
+
+        });
+
+        jeDate({
+            dateCell:"#starttime",//isinitVal:true,
+            format:"YYYY-MM-DD",
+            isinitVal:true,
+            isTime:false //isClear:false,
+            /*minDate:"2015-10-19 00:00:00",
+             maxDate:"2016-11-8 00:00:00"*/
+        })
+        jeDate({
+            dateCell:"#endtime",
+            format:"YYYY-MM-DD",
+            isinitVal:true,
+            isTime:true, //isClear:false,
+            /*minDate:"2014-09-19 00:00:00",*/
+            okfun:function(val){alert(val)}
+        })
+    </script>

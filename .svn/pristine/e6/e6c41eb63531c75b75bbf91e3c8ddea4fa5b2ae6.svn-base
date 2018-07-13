@@ -1,0 +1,68 @@
+{include file="header"/}
+
+    <div class="main-header">
+        <div class="main-title">平台管理</div>
+    </div>
+    <div class="main-section">
+        <div class="left-aside">
+            <div class="header">
+                <!-- 活动专题 -->
+                <span>活动专题</span>
+            </div>
+            <div class="content">
+                <!-- menu title = 佣金活动-->
+                <div class="row active" >
+                    <a href="./commission" target="mainFrame">
+
+                        <i class="arrow-right"></i>佣金活动					</a>
+                </div>
+
+                {if strtotime($settings['activity_first_time'])<time() && strtotime($settings['activity_end_time']) >time()}
+                <div class="row">
+                    <a href="./xiaofei" target="mainFrame">
+
+                        <i class="arrow-right"></i>消费活动					</a>
+                </div>
+                {/if}
+                {if $settings['ChongZhiFanLiKaiGuan']== 1}
+                <div class="row">
+                    <a href="./chongzhi" target="mainFrame">
+                        <i class="arrow-right"></i>充值送礼</a>
+                </div>
+                {/if}
+                {if $settings['RiGongZiKaiGuan']== 1 && $user_rigongzi==true}
+                <div class="row">
+                    <a href="./rigongzi" target="mainFrame">
+
+                        <i class="arrow-right"></i>日工资</a>
+                </div>
+                {/if}
+            </div>
+        </div><!--menu-->
+
+        <div class="right-aside">
+            <div class="navigation">
+                <a href="/">首页</a>
+                <span>&gt;</span>
+                <!-- 活动专题 -->
+                <a href="#">活动专题</a>
+                <span>&gt;</span>
+                <!-- 佣金活动 -->
+                <a href="#" class="navgiate1">佣金活动</a>
+
+            </div><!--navigation-->
+            <iframe onload="window.autoResizeHeight()" src="./commission.html" allowtransparency="true"  name="mainFrame" width="100%" scrolling="no" frameborder="0" id="mainFrame" border="0" noresize="noresize" framespacing="0"  ></iframe>
+        </div>
+    </div>
+
+{include file="footer"/}
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86467011-1', 'auto');
+    ga('send', 'pageview');
+
+</script>

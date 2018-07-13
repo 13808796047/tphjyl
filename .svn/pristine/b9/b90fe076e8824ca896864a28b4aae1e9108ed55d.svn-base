@@ -1,0 +1,64 @@
+<script src="__JS__/jquery-1.9.1.js"></script>
+<link rel="stylesheet" href="__CSS__/default_content.css">
+<link rel="stylesheet" href="__CSS__/gift.css">
+<style>
+    p{
+        font-size: 13px;
+        margin: 0 0 10px 30px;
+    }
+    h1{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .step{
+        padding: 0 30px;
+    }
+    img{
+        max-width: 100%;
+    }
+</style>
+<div class="ys-content">
+    <div class="header">
+        防劫持教学
+    </div>
+    <div class="main">
+        <div class="section">
+            <p>近期您可能有碰见登录网站时，页面跳转到另外陌生网页的情况。这是由于您的网络供应商漏洞而造成的。</p>
+            <h3><b>那么该如何避免这样的问题呢？</b></h3>
+            <p>1. 请不要轻易连接陌生网络。</p>
+            <p>2. 可以通过手动指定DNS（DNS用于将域名正确转换为您想访问的网站的作用），修改后你的网络应用将更加稳定，安全。</p>
+            <p>以下是具体修改方式：</p>
+            <h1>手动修复本地DNS教程</h1>
+            <p>请根据以下简单步骤即可手动修复本地DNS：</p>
+            <h3>步骤1：点击桌面左下角的 [开始]按钮，打开 [控制面板]</h3>
+            <div class="step">
+                <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/repairdns/u6.png"></div>
+            </div>
+            <h3>步骤2：点击[查看网络状态和任务]</h3>
+            <div class="step">
+                <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/repairdns/u10.png"></div>
+            </div>
+            <h3>步骤3：点击[连接的介面]</h3>
+            <div class="step">
+                <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/repairdns/u14.png"></div>
+            </div>
+            <h3>步骤4：点击[属性]</h3>
+            <div class="step">
+                <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/repairdns/u18.png"></div>
+            </div>
+            <h3>步骤5：选择 [Internet 协议版本 4 (TCP/IPv4)]，再点击 [属性]。</h3>
+            <div class="step">
+                <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/repairdns/u22.png"></div>
+            </div>
+            <h3>步骤6：选择 [使用下面的DNS服务器地址]，输入 [首选 DNS服务器为 114.114.114.114 ]和 [备用DNS服务器为8.8.8.8]，然后点击 [确定]。</h3>
+            <div class="step">
+                <div class="formTable"><img alt="" src="http://upccry1.3smao.net/sy2/images/repairdns/u26.png"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function() {
+        $(parent.document).find("#mainFrame").height($(".ys-content").outerHeight(true) + 200);
+    })
+</script>

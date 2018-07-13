@@ -1,0 +1,132 @@
+<script type="text/javascript" src="__JS__/util/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__TODO__/js/common/model/details.js"></script>
+<script>
+    function hrefother(url){
+        window.location.href=url;
+    }
+    function checkrechargetime(recharge_start,recharge_end,current){
+        window.open("user_userbankinfo.html",'_self');
+    }
+</script>
+<link rel="stylesheet" href="__CSS__/default_content.min.css">
+<link rel="stylesheet" href="__CSS__/gift.min.css">
+<link rel="stylesheet" href="/static/todo/images/game/game-touzhu.css">
+
+<div class="ys-content">
+    <!--<div class="header">感恩回馈新老客户，平台佣金奖励大派送！</div>-->
+    <div class="main">
+        <div class="section">
+            <h3>【活动时间】2017/11/01 至 2018/12/01</h3>
+            <h3>【统计周期】每日 00:00 am – 24:00 am</h3>
+            <h3>【领取时间】次日 09:00 am – 24:00 am</h3>
+            <h3>【活动内容】</h3>
+            <!-- <h3>三、活动明细：</h3> -->
+            <div class="content">
+                <div class="step">
+                    <div class="formTable">
+                        <ul>
+                            <li>会员消费1,000元：上级得5元，上上级得2元，上上上级1元</li>
+                            <li>会员消费5,000元：上级得28元，上上级得8元，上上上级3元</li>
+                            <!--<li>会员消费10,000元：上级得58元，上上级得18元，上上上级8元</li>-->
+                            <li>会员亏损1,000元：上级得8元，上上级得5元，上上上级2元</li>
+                            <li>会员亏损3,000元：上级得28元，上上级得18元，上上上级8元</li>
+                            <!--<li>会员亏损5,000元：上级得58元，上上级得38元，上上上级18元</li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h3>【领取方式】</h3>
+            <div class="content">
+                <div class="step">
+                    <div class="formTable">
+                        {if $is_receive == 1}
+                            &emsp;<span style="color:green; font-weight:bold">您今日已领取该活动奖励 <?=array_sum(array_column($coin_report,'award'))?>元！</span>
+                            <br />&emsp;{:date('Y-m-d H:i:s')}
+                        {elseif date('H') < 9 || empty($coin_report)}
+                            &emsp;<span style="color:green; font-weight:bold">您的下級、下下級、下下下級用户昨日投注并未达标哦！请再接再厉！</span>
+                            <br />&emsp;{:date('Y-m-d H:i:s')}
+                        {else}
+                            <span id="J-bet-order2" onclick="receiveAward()" class="add-order">
+                                今日领取
+                                    <font color=red>未领取</font>
+                            </span>
+                        {/if}                  
+                    </div>
+                </div>
+            </div>
+            <h3>【注意事项】</h3>
+            <div class="step">
+                1,前一日统计周期内的佣金，超过领取时间则视为放弃。<br />
+                2,绑定同一银行卡的多账户用户，取消其活动佣金。<br />
+                3,在本平台参与其他活动，有违规操作者，取消其上级、上上级和上上上级佣金活动资格。<br />
+                4,此活动最终解释权归本平台所有。    	</div>
+            <h3>【奖金列表】</h3>
+            <div class="content">
+                <div class="step">
+                    <table class="formTable">
+                        <tr>
+                            <th width="16%">用户名</th>
+                            <th width="16%">佣金种类</th>
+                            <th width="16%">佣金</th>
+                            <th width="16%">用户层级</th>
+                        </tr>
+                {if !empty($coin_report)}
+                    {volist name="coin_report" id="vo"}
+                        <tr>
+                            <td width="16%">{$vo.username}</td>
+                            <td width="16%" style="color: {if $vo['award_type'] == '消费'}red{/if}">{$vo.award_type}</td>
+                            <td width="16%">{$vo.award}</td>
+                            <td width="16%">{$vo.member_level}</td>
+                        </tr>
+                    {/volist}
+                {else}
+                        <tr>
+                            <td colspan="4" align="center">
+                                = = = = = 今日无资料 = = = = =
+                            </td>
+                        </tr>
+                {/if}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+
+    function onclickgift(){
+
+        $('#btngift').attr('disabled', 'disabled');
+        hrefother('./gift_activitypoints.html?getmoney=1');
+
+    }
+
+    function receiveAward() {
+        if (confirm("是否确定领取该活动金额？"))
+        {
+            $('#J-bet-order2').unbind();
+            $.ajax({
+                type: "POST",
+                url: "/activity/receiveaward.html",
+                data: {},
+                dataType: "json",
+                global: false,
+                success: function (data) {
+                    if (data.code==1) {
+                        alert(data.msg);
+                        document.location.reload();
+                    }
+                    else {
+                        alert(data.msg);
+                    }
+                },
+                error: null,
+                cache: false
+            });
+        }
+    };
+</script>
